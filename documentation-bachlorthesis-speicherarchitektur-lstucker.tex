@@ -1,0 +1,51 @@
+\input{template.config.tex}
+
+% Meta-Informationen -----------------------------------------------------------
+%   Informationen über das Dokument, wie z.B. Titel, Autor, Matrikelnr. etc
+%   werden in der Datei meta.tex definiert und können danach global
+%   verwendet werden.
+% ------------------------------------------------------------------------------
+\input{meta}
+
+\begin{document}
+
+\frontmatter
+\pagestyle{empty}
+\pagenumbering{alph}
+\input{title} %title
+\cleardoublepage
+
+\pagestyle{fancy}
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+\phantomsection
+ \input{tables} %tableofcontents
+\cleardoublepage
+
+\mainmatter
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\input{chapter/Vorwort}
+ \input{chapter/konzept}
+\cleardoublepage
+
+%\appendix
+\clearpage
+\renewcommand{\appendixtocname}{Anhang}
+\renewcommand{\appendixpagename}{Anhang}
+\appendix
+%\addappheadtotoc
+\appendixpage
+
+%\pagenumbering{roman}
+%\setcounter{page}{1}
+% \input{chapter/Listings}
+% \input{Kapitel/Glosar}
+% \input{chapter/Akronyme}
+% \input{chapter/Literatur}
+% \input{Index}
+
+\end{document}

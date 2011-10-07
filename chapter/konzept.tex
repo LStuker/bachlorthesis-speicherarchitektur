@@ -1,0 +1,27 @@
+\cleardoublepage\chapter{Konzept}\label{chap:Konzept}
+%Einleitung mit Vorgehen
+\section{Einleitung}
+Es soll eine Onsite-Suche für eine beliebige Website erstellt werden.
+
+Eine Volltextsuche besteht aus einer Informationsquelle und einer Suchschnittstelle (siehe \refabb{sec:Architekturbeschreibungen}), an welcher die Suchanfragen übergeben werden. Die Informationsquelle ist in diesem Fall der Solr-Server mit dem Solr-Index (nicht zu verwechseln mit den von Nutch gecrawlten Websites). Dieser Index wird mit Daten gefüllt, welche vorher mittels Nutch von den Website-Inhalten erfasst wurden.
+
+In einem ersten Schritt sollen Solr und Nutch installiert und analysiert werden. Die Abdeckung der Anforderungen beziehungsweise Use Cases (siehe \refsec{sec:UseCases} und \refsec{sec:FunktionaleAnforderungen}) erfolgt danach in zwei Schritten:
+\begin{enumerate}
+\item Entwicklung eines Prototypen um die Volltextsuche von Solr zu demonstrieren. Dieser Punkt deckt die \textbf{Use-Cases 1 bis 4} ab.
+\item Optimierung des Solr-Index um die Sucheffizienz zu steigern. Dieser Punkt deckt den \textbf{Use-Case 5} ab.
+\end{enumerate}
+
+Sobald Nutch und Solr erfolgreich in Betrieb genommen worden sind soll ein Web-GUI erstellt werden. Die Schnittstelle zwischen Web-GUI und Solr wird mittels Javascript und PHP realisiert.
+
+\section{Definitionen}
+Hier werden häufig verwendete Begriffe aufgelistet. Es handelt sich um Namen oder Bezeichnungen, die näher erklärt werden.
+
+\subsection*{Testsystem}
+Damit ist der Rechner gemeint auf dem Solr und Nutch installiert sind. Auf demselben Rechner läuft auch Apache2 mit dem Web-GUI.
+
+\subsection*{Web-GUI}
+Mit Web-GUI ist die grafische Oberfläche der Website gemeint, welche über ein Suchformular verfügt und die Resultate ausgibt. Das Web-GUI wird im Webbrowser gerendert und basiert auf HTML, CSS und Javascript.
+
+\subsection*{Lucene}
+Die auf Java basierende Suchbibliothek. Nutch und Solr sind auf Basis von Lucene implementiert. Die Dokumentation von Lucene befindet sich auf der folgenden Website:
+\url{http://lucene.apache.org/java/docs/index.html}.

@@ -1,0 +1,176 @@
+\documentclass[
+oneside, % einseitiges Dokument
+a4paper, % Papierformat
+pdftex,
+fontsize=11pt,
+%headsepline, % use headinclude also! (see M. Kohm)
+% footsepline, % use footinclude also! (see M. Kohm)
+% headinclude, % count head to text body (not to margin)
+% footinclude, % count foot to text body (not to margin)
+% BCOR8mm, % set extra margin for book fixation
+openany,
+titlepage, % es wird eine Titelseite verwendet
+draft=false, % Status des Dokuments (final/draft)
+ngerman % für Umlaute, Silbentrennung etc.
+]{scrbook}
+
+
+\usepackage{geometry}
+\usepackage{fancyhdr}
+
+\usepackage{graphicx} % Grafiken
+\graphicspath{{media/}} % hier liegen die Bilder des Dokuments
+
+% sorgt daf¸r, dass Leerzeichen hinter parameterlosen Makros nicht als Makroendezeichen interpretiert werden
+\usepackage{xspace}
+
+\usepackage{enumerate}
+
+% Schrift
+\usepackage{helvet}
+% \usepackage{lmodern} % bessere Fonts
+\usepackage{relsize} % Schriftgröﬂe relativ festlegen
+\usepackage{ascii}
+
+\usepackage{setspace} % Einfache Definition der Zeilenabstände 
+\onehalfspacing % Zeilenabstand 1,5 Zeilen
+
+%\usepackage{helvet}
+% Umlaute ----------------------------------------------------------------------
+%   Umlaute/Sonderzeichen wie ‰¸ˆﬂ direkt im Quelltext verwenden (CodePage).
+%   Erlaubt automatische Trennung von Worten mit Umlauten.
+% ------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp} % Euro-Zeichen etc.
+
+% Anpassung an Landessprache
+\usepackage[ngerman]{babel} %Thomas hatte noch English drin
+
+% zum Einbinden von Programmcode
+\usepackage{listings}
+\usepackage[parfill]{parskip}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[toc,page]{appendix}
+
+% URL verlinken, lange URLs umbrechen etc. -------------------------------------
+\usepackage{url}
+%% Define a new 'leo' style for the package that will use a smaller font.
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\ttfamily}}}
+\makeatother
+\urlstyle{leo} % Now actually use the newly defined style.
+
+
+\usepackage{minitoc} % ToC for chapters
+\minitoc[n] % No caption for mini ToCs
+
+
+
+%\fancyfoot[RO, LE] {\thepage}
+
+% http://stackoverflow.com/questions/586572/make-code-in-latex-look-nice
+%\lstset{breaklines=true,frame=single,basicstyle=\ttfamily}
+
+\lstset{
+basicstyle=\small\ttfamily,
+numbers=left,
+numberstyle=\tiny,
+frame=b,
+columns=fullflexible,
+showstringspaces=true,
+breaklines=true
+}
+
+\lstdefinelanguage{JavaScript}{
+     keywords={attributes, class, classend, do, empty, endif, endwhile, fail, function, functionend, if, implements, in, inherit, inout, not, of, operations, out, return, set, then, types, while, use},
+     keywordstyle=\color{blue}\bfseries,
+     ndkeywords={},
+     ndkeywordstyle=\color{black}\bfseries,
+     identifierstyle=\color{black},
+     sensitive=false,
+     comment=[l]{//},
+     commentstyle=\color{black}\ttfamily,
+     stringstyle=\color{red}\ttfamily
+  }
+
+
+% \renewcommand{\familydefault}{\sfdefault} % Standardschriftart Helvet
+
+\newcommand*\oldurlbreaks{} % Handle long urls
+\let\oldurlbreaks=\UrlBreaks
+\renewcommand{\UrlBreaks}{\oldurlbreaks\do\a\do\b\do\c\do\d\do\e%
+  \do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q%
+  \do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z\do\?\do\&}
+
+
+
+\usepackage{titlepic} % http://typethinker.blogspot.com/2008/08/picture-on-title-page-in-latex.html
+
+\usepackage{hyperref}
+\hypersetup{
+    unicode=false, % non-Latin characters in Acrobat’s bookmarks
+    pdftoolbar=true, % show Acrobat’s toolbar?
+    pdfmenubar=true, % show Acrobat’s menu?
+    pdffitwindow=false, % window fit to page when opened
+    pdfstartview={FitH}, % fits the width of the page to the window
+    pdftitle={\art - \titel}, % title
+    pdfauthor={\autor}, % author
+    pdfsubject={\titel \untertitel}, % subject of the document
+    pdfcreator={\autor}, % creator of the document
+    pdfproducer={\autor}, % producer of the document
+    pdfkeywords={solr} {nutch} {information} {retrieval}, % list of keywords
+    pdfnewwindow=true, % links in new window
+    colorlinks=true, % false: boxed links; true: colored links
+    linkcolor=black, % color of internal links
+    citecolor=black, % color of links to bibliography
+    filecolor=black, % color of file links
+    urlcolor=black % color of external links
+}
+
+% http://en.wikibooks.org/wiki/LaTeX/Glossary
+%\usepackage[toc,xindy,acronym]{glossaries}
+
+\usepackage{acronym} % [printonlyused]
+
+%\usepackage[toc,xindy]{glossaries}
+%\makeglossaries
+%\input{Include/Glosar_Terme}
+
+% für Index-Ausgabe mi
+\usepackage{makeidx}
+\makeindex
+
+
+% Seitenraender -----------------------------------------------------------------
+\setlength{\headheight}{26pt}
+\geometry{a4paper, top=25mm, left=40mm, right=25mm, bottom=30mm,
+headsep=10mm, footskip=12mm}
+% Uni Freiburg entfield links 2,5 cm; rechts 2,5 cm; oben 2,5 cm; unten 2 cm
+
+\usepackage[font=small,labelfont=bf]{caption} % Caption auch in non-float tabellen/bildern setzen. Benutzung: \mycaption{table|figure}{Titel}
+
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{gray}{\parbox{\textwidth}{#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white}
+
+\newcommand{\mycaption}[2]{
+\begin{minipage}[c]{0.8\linewidth}
+\renewcommand{\figurename}{Abbildung}
+\captionsetup{type=figure}
+\captionof{#1}{#2}
+\end{minipage}
+}
+
+
+\newcommand{\reflisting}[1]{\textbf{Listing \ref{#1}}}
+\newcommand{\refabb}[1]{\textbf{Abbildung \ref{#1}}}
+\newcommand{\refchap}[1]{\textbf{Kapitel \ref{#1}}}
+\newcommand{\refsec}[1]{\textbf{Absatz \ref{#1}}}
+
+
+\setlength{\baselineskip}{16.5pt} % 16 pt usual spacing between lines

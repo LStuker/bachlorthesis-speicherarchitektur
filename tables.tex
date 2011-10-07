@@ -1,0 +1,19 @@
+\renewcommand{\contentsname}{Inhaltsverzeichnis}
+\renewcommand{\chaptername}{Kapitel}
+% \renewcommand{\listfigurename}{Abbildungsverzeichnis}
+
+
+\tableofcontents
+\cleardoublepage
+
+\listoffigures % Abbildungsverzeichnis
+\mtcaddchapter\addcontentsline{toc}{chapter}{\listfigurename}
+\cleardoublepage
+
+% Tabellenverzeichnis
+\listoftables 
+\cleardoublepage
+
+\lstlistoflistings  % Listings-Verzeichnis
+\mtcaddchapter\addcontentsline{toc}{chapter}{Source Code Verzeichnis}
+\cleardoublepage
