@@ -1,0 +1,123 @@
+%!TEX root=../documentation-bachlorthesis-speicherarchitektur-lstucker.tex
+
+\cleardoublepage
+\chapter{Soll-Analyse}
+Ziel ist es mit der Sollanalyse, den soll zustand Stand der System bzw. Speicherinfrastruktur, welche die verschiedenen Szenerien der Datenzuwachs und Datenzugriffe in den nächsten drei Jahren erfüllen soll  zu beschreiben. Der Auftraggeber geht von einen Starken Wachstum im Bereichen der Datenmengen und Datenzugriffe aus welche das Szenario 4 am ehesten wieder spiegelt.
+
+
+\section{Szenario 1 - Schwaches Datenvolumen und Datenzugriff Wachstum}
+Dieses Szenario beschreib den Soll-Zustand, wenn sich das Datenwachstum und Datenzugriffs Wachstum im gleichen umfang wie in der Ist-Analyse weiter entwickelt. Dieses Szenario würde eintreffen, wenn sich die Kunden Anzahlt und die gewünschten Aufbereitung der Daten für den Druck in den nächsten drei Jahre auf dem selben aktuellen Niveau befinden.
+
+
+Datenwachstum in Prozent pro Monat: 5\% 
+
+Datenwachstum in Tebibyte pro Monat: 0.19 Tebibyte
+
+Speichervolumen in 36 Monaten: 9.34 Tebibyte
+
+\subsection{Skalierbarkeit Datenzugriff}
+Die bestehende Speicherarchitektur konnte die bisherigen Datenzugriff mit einen Web-Server zufriedenstellend erfüllen. Eine Skalierung der Zugriffe von mehreren Server soll deshalb nicht als Hauptkriterium sein sondern.
+
+\subsection{Skalierbarkeit der Speicherkapazität}
+Die Speicherkapazität soll exklusive der Datenredundanz bis mindestens 13 Tebibyte skalieren.
+
+\subsection{Redundanz}
+Dem Kunden wird einen Qualität Standard gewährleistet, die Original gespeicherten Daten, sollen vor Veränderung geschützt werden, aus diesen Grund soll die Daten Integrität beim Zugriff auf die Original Daten sichergestellt sein.
+
+
+
+\subsection{Verfügbarkeit}
+Die Verfügbarkeit soll mindestens dem AEC-2 Standard von Harvard Research entsprechen.
+
+\subsection{Daten Integrität}
+Dem Kunden wird einen Qualität Standard gewährleistet, die Original gespeicherten Daten, sollen vor Veränderung geschützt werden, aus diesen Grund soll die Daten Integrität beim Zugriff auf die Original Daten sichergestellt sein.
+
+\subsection{Lokalität}
+Die Daten sollen in einer minimal Version an einen weiteren Standort als Backup gehalten werden.
+
+
+
+\section{Szenario 2 - Schwaches Wachstum Daten / mittleres Wachstum der Abfragen}
+Dieses Szenario beschreib den Soll-Zustand, wenn sich das Datenwachstum im gleichen umfang wie in der Ist-Analyse weiter entwickelt, sich jedoch der Datenzugriff im vergleich zur Ist-Analyse stark steigert. Diese Szenario würde eintreffen, wenn sich die Kunden Anzahl in den nächsten drei Jahren auf dem gleichen Niveau hält, jedoch die Aufbereitung der Daten für den Druck stark zunimmt.
+
+Datenwachstum in Prozent pro Monat: 5\% 
+
+Datenwachstum in Tebibyte pro Monat: 0.19 Tebibyte
+
+Speichervolumen in 36 Monaten: 9.34 Tebibyte
+
+\subsection{Skalierbarkeit Datenzugriff}
+Der Datenzugriff soll von mehreren Webserver welche die Bilddaten am Kunden ausliefern und Server welche die Original Bilder in das gewünschte Format umrechnen möglich sein. Die Anzahl Datenzugriffe soll von bis zu zwanzig Server möglich.
+
+\subsection{Skalierbarkeit der Speicherkapazität}
+Die Speicherkapazität soll exklusive der Datenredundanz bis mindestens 13 Tebibyte skalieren.
+
+\subsection{Redundanz}
+Die Daten sollen mindestens doppelt Redundanz haben.
+
+\subsection{Verfügbarkeit}
+Die Verfügbarkeit soll dem AEC-2 Standard von Harvard Research entsprechen.
+
+\subsection{Daten Integrität}
+Dem Kunden wird einen Qualität Standard gewährleistet, die Original gespeicherten Daten, sollen vor Veränderung geschützt werden, aus diesen Grund soll die Daten Integriät beim Zugriff auf die Original Daten sichergestellt sein.
+
+\subsection{Lokalität}
+Die Daten sollen in einer minimal Version an einen weiteren Standort als Backup gehalten werden.
+
+\section{Szenario 3 - Starkes Wachstum Daten / schwaches Wachstum der Abfragen}
+Dieses Szenario beschreib den Soll-Zustand, wenn sich das Datenwachstum im vergleich zum Ist-Zustand stark steigert, aber der Datenzugriff auf gleichen Niveau hält wie in der Ist-Analyse hält. Dieses Szenario würde eintreffen, wenn sich die Kunden Anzahl oder die Anzahl Bilddaten pro Kund stark steigert, jedoch die Aufbereitung der Daten für den Druck gleich bleiben würde.
+
+Datenwachstum in Prozent pro Monat: 
+
+Datenwachstum in Tebibyte pro Monat: 6 Tebibyte
+
+Speichervolumen in 36 Monaten: 218,5 Tebibyte
+
+Bilder mit einer Speichervolumen von 1 Gigibyte: 221'184
+
+\subsection{Datenzugriff}
+Durch den Geringen Zugriff auf die Daten, muss auf die Daten nicht parallel von vielen Systemen zugegriffen werden können.
+
+\subsection{Redundanz}
+Die Daten sollen in doppelte oder dreifacher Redundanz gespeichert werden.
+
+\subsection{Speicherkapazität}
+Es soll 300 Tebibyte an Speicherkapazität zur Verfügung stehen.
+
+\subsection{Verfügbarkeit}
+Die Verfügbarkeit soll dem AEC-2 Standard von Harvard Research entsprechen.
+
+\subsection{Daten Integrität}
+Dem Kunden wird einen Qualität Standard gewährleistet, die Original gespeicherten Daten, sollen vor Veränderung geschützt werden, aus diesen Grund soll die Daten Integriät beim Zugriff auf die Original Daten sichergestellt sein.
+
+\subsection{Lokalität}
+Die Daten sollen in einer minimal Version an einen weiteren Standort als Backup gehalten werden.
+
+\section{Szenario 4 - Starkes Wachstum Daten / starkes Wachstum der Abfragen}
+Dieses Szenario beschreib den Soll-Zustand, wenn sich das Datenwachstum und den Datenzugriff im vergleich zum Ist-Zustand stark steigert. Dieses Szenario würde eintreffen, wenn sich die Kunden Anzahl oder die Anzahl Bilddaten pro Kund stark steigert und somit auch die Anfragen zur Aufbereitung der Daten für den Druck.
+
+Datenwachstum in Prozent pro Monat: 
+
+Datenwachstum in Tebibyte pro Monat: 6 Tebibyte
+
+Speichervolumen in 36 Monaten: 218,5 Tebibyte
+
+Bilder mit einer Speichervolumen von 1 Gigibyte: 221'184
+
+\subsection{Datenzugriff}
+Auf die Daten müssen von verschiedenen Systemen gleichzeitig zugegriffen werden können.
+
+\subsection{Redundanz}
+Dem Kunden wird die Datensicherheit gewährleistet, aus diesen Grund sollen die Daten mindestens in doppelter oder dreifacher echter Redundanz gehalten werden.  Eine Redundanz durch Berechnung der Daten erfüllt diese Anforderung nicht sondern wird nur als Ergänzung für die Verfügbarkeit angesehen.
+
+\subsection{Speicherkapazität}
+Es soll 300 Tebibyte an Speicherkapazität zur Verfügung stehen.
+
+\subsection{Verfügbarkeit}
+Die Verfügbarkeit soll dem AEC-4 Standard von Harvard Research entsprechen. Bei hoher Kundenzahl und Speichervolumen, würde einen Unterbruch bei der Verfügbarkeit des Dienstes zu einen Repräsentation Schaden verursachen und Unsicherheit der Zuverlässigkeit bei den bestehenden Kunden in Bezug Ihrer Daten Verusachen.
+
+\subsection{Daten Integrität}
+Dem Kunden wird einen Qualität Standard gewährleistet, die Original gespeicherten Daten, sollen vor Veränderung geschützt werden, aus diesen Grund soll die Daten Integrität beim Zugriff auf die Original Daten sichergestellt sein.
+
+\subsection{Lokalität}
+Um eine Verfügbarkeit gemäss AEC-4 zu gewährleisten sollen die Daten Online über zwei Standorte zugreifbar sein. Eine Backup der Daten könnte an einen weiteren dritten Standort erfolgen.

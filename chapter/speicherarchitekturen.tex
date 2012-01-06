@@ -1,0 +1,83 @@
+\cleardoublepage
+\chapter{Speicher-Markt}
+\section{Speicherarchitekturen}
+
+Die heutigen Speicherarchitekturen können in Block- (Block-Based), Datei- (File-Based) und Objekt-Basierende Adressierende unterteilt werden.
+
+
+\section{Block-Basierend}
+\begin{quotation}
+\em Since the first disk drive in 1956,1 disks have grown by over six orders of magnitude in density and over four orders in performance, yet the storage interface (i.e., blocks) has remained largely unchanged. Although the stability of the block-based interfaces of SCSI and ATA/IDE has benefited systems, it is now becoming a lim- iting factor for many storage architectures. As storage infrastructures increase in both size and complexity, the functions system designers want to perform are fundamentally limited by the block interface. \end{quotation}\cite{Mesnier2003}
+
+Vergleicht man die erste Festplatte welche von IBM Produziert wurde mit einer Seagate von 2011, hat sich die Speicherdichte von 2000 bit per Quadratzoll auf 625 GByte  und in der Geschwindigkeit von 8 kbytes auf 600 MB verbessert.\cite{Seagate2011}\cite{Seagate2011a}
+
+Zu den Block-Basierenden Speicher Systemen zählen Direct Attached Storage (DAS) und Storage Area Network (SAN). 
+
+Bei DAS die Festplatten direkt an den Server Angeschlossen, als übliche Schnittstelle kommen meist SCSI zum Einsatz. Da DAS Storage nicht mehreren Server zur Verfügung gestellt werden können, kommt diese Form von Speicher für
+
+
+Blocks offer fast, scalable access to shared data; but without a file server to authorize the I/O and maintain the metadata, this direct access comes at the cost of limited security and data sharing.
+
+
+Direct Attached Storage
+Storage Area Network
+
+\subsection{ISCSI}
+
+
+\subsubsection{Datenverfügbarkeit / Redundanz}
+\subsubsection{Skalierbarkeit Datenvolumen / Datenzugriffe}
+\subsubsection{Integität}
+\subsubsection{Durchsatz I/O}
+\subsubsection{Lokalität}
+\subsubsection{Backup}
+
+\section{Datei-Basierend}
+
+
+\subsection{Network File System}
+Das Network File System Protocol wurde von der Firma SUN (\gls{Oracle}) 1984 vorgestellt und ermöglicht es über das Netzwerk auf Dateisysteme eines anderen Host  (Server) zu zugreifen als würde der Zugriff Lokal stattfinden. Das Protokoll von \gls{NFS} wurde mit der Version 2 1989 zum ersten mal von Internet Standard Request for Comments (\gls{RFC}) unter der Nummer 1094\footnote{\href{http://tools.ietf.org/html/rfc1094}} standardisiert. Die Version 2 von NFS verwendet ausschliesslich das \gls{UDP} Transportprotokoll. Mit Version 3 RFC 1813\footnote{\href{http://tools.ietf.org/html/rfc1813}} die im Jahr 1995 veröffentlicht wurde NFS Maschinen, Betriebsystem und Netzwerk Architektur, und Transport-Protokoll unabhängig. Die Unabhängigkeit wird mit der Verwendung von Remote Procedure Call (\gls{RPC}) welches wiederum ein eXternal Data Representation (\gls{XDR}) verwendet erreicht. Das \gls{FileLocking} wurde mittels dem separaten Protokoll Network Lock Manager (NLM) erreicht. 
+
+
+\subsection{NAS Appliance}
+
+Network Attached Storage sind Speichersystem mit angepassten Datei System für den gemeinsamer Dateizugriff in einen Hetrogenen Computer Netzwerk welche über ein LAN angeschlossen sind. Als Speicher verwenden NAS je nach Typ interne Festplatten, Direct Attached Storage oder über eine SAN angefügten Speicher.
+An Clients stellen NAS Ihren Speicher über NFS, CIFS, ISCSI zur Verfügung. High-End NAS können Ihren Speicher wiederum über Fibre-Channel zur Verfügung stellen.
+
+Gemäss Gartner gehören die Anbieter IBM, EMC und NetAPP zu den führenden NAS Anbieter in Midrange und High-End bereich. Wobei gemäss Garnter Magic Quadrant Netapp zusammen mit EMC zu den innovativsten Anbieter.
+
+\begin{quotation}
+\em 
+\textbf{Strengths}
+\begin{itemize}
+\item NetApp remains one of the few truly unified storage providers among all top-tier vendors, with its software features continuing to be industry benchmarks. The company was able to regain some of the NAS revenue market share that it had lost in 2009. Its fast revenue growth in 2010 was driven by its successful campaign targeted at midsize enterprises with the value propositions of NFS supporting VMware and unified storage in consolidating Windows application storage.
+
+\item In 2010, NetApp increased its aggregate up to 100TB with Data ONTAP 8.0.1 and introduced compression to complement its popular deduplication capability. It added a RESTful object storage interface (based on its acquisition of Bycast) to its unified storage, targeting global content repositories. On the hardware side, it launched new systems with better performance and denser disk shelves.
+\item NetApp's new software bundles have simplified the procurement process and made software pricing more affordable. For customers seeking converged infrastructure, NetApp launched FlexPod for VMware with its partners Cisco and VMware, offering packages including servers, storage and switches.
+\end{itemize}
+\textbf{Cautions} 
+\begin{itemize}
+\item The vast majority of the Data ONTAP 8.0 adoption was on the 7 mode (instead of the cluster mode) for larger aggregates, while the early adoption of the cluster mode focuses on high- performance NFS file services. The cluster mode is not ready for mainstream enterprise customers who require those 7-mode features that are still missing in the cluster mode. The ONTAP 8.1 scheduled for release later this year will likely continue to support the two modes: clustered and nonclustered modes of operation.\item While NetApp continues to enjoy its leading edge in unified storage, it's facing fiercer competition in the high-end NAS market, where file systems larger than 100TB are required and where high performance without the expensive Flash Cache is desired.NetApp is also challenged in the low-end NAS and unified storage market with new products from both major and emerging competitors.
+\end{itemize}
+\end{quotation}\cite{IEEE2003}
+
+\subsubsection{Datenverfügbarkeit / Redundanz}
+\subsubsection{Skalierbarkeit Datenvolumen / Datenzugriffe}
+\subsubsection{Integität}
+\subsubsection{Durchsatz I/O}
+\subsubsection{Lokalität}
+\subsubsection{Backup}
+
+
+\section{Objekt-Basierend}
+
+Festplatte in 1956 von IBM 1956 erschienen ist, 
+
+
+Seit die erste  pro Sekunde gesteigert, das Speicher Schnittstelle (d.h. Blöcke) blieb weitgehend unverändert. Auch wenn bisher die Systeme von der Stabilität  Block-Basierende Speicher Schnittstellen wie SCSI und ATA/IDE profitiert haben, sind Sie heute mehr den mehr der limitierende Faktor  von vielen Speicherarchitekturen geworden.
+\subsubsection{Datenverfügbarkeit / Redundanz}
+\subsubsection{Skalierbarkeit Datenvolumen / Datenzugriffe}
+\subsubsection{Integität}
+\subsubsection{Durchsatz I/O}
+\subsubsection{Lokalität}
+\subsubsection{Backup}

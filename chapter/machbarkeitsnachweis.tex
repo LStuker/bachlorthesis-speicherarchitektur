@@ -1,0 +1,28 @@
+\cleardoublepage
+\chapter{Machbarkeitsnachweis}
+
+Der selbe Hosting Provider des bestehenden Servers bietet eine Produkt an welches mit 15 SATA Festplatten mit einer Speicherkapazität von je 3 Terabyte an. Die Maximale Raid-5 Speicherkapazität \ref{eqn:maxRaid5-15disk} ist aufgrund der Anzahl Disk und der Speicherkapazität nicht die Ideale Konfiguration, da die Gefahr eines Doppelten Disk Ausfall durch die geringere MTTF \ref{eqn:MTBF15Disk}, welche durch die Zunahme der Anzahl Festplatten sinkt \ref{eqn:MTBF1Disk} und der höheren Rebuild Zeit steigt. Speichersystem Hersteller wie NetApp setze bei 
+dieser Konfiguration auf Raid-6 welche doppelte Parität bietet und somit zwei Festplattenausfälle kompensieren können.
+
+Festplattenkapazität in Tebibyte:
+\begin{equation}
+3   \, \mathrm{TB} =  3 * \frac{1000^4}{1024^4} = 2.7285  \, \mathrm{TiB}
+\label{eqn:3TerrabyteTebibyte}
+\end{equation}
+
+Maximale Raid-5 Speicherkapazität:
+\begin{equation}
+(15 -1) * 2.7285  \, \mathrm{TiB} =  38.199 \, \mathrm{TiB}
+\label{eqn:maxRaid5-15disk}
+\end{equation}
+
+MTBF 1 Festplatten (ST33000650SS): 
+\begin{equation}1'200'000  \, \mathrm{h}
+\label{eqn:MTBF1Disk}
+\end{equation}
+
+MTBF 15 Festplatten (Raid-5) (ST33000650SS): 
+\begin{equation}
+\frac{1'200'000  \, \mathrm{h}}{15}= 8'000  \, \mathrm{h}
+\label{eqn:MTBF15Disk}
+\end{equation}
