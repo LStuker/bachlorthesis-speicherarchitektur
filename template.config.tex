@@ -1,3 +1,5 @@
+%!TEX root=documentation-bachlorthesis-speicherarchitektur-lstucker.tex
+
 \documentclass[
 oneside, % einseitiges Dokument
 a4paper, % Papierformat
@@ -137,14 +139,22 @@ breaklines=true
 
 \usepackage{acronym} % [printonlyused]
 
+
 %\usepackage[toc,xindy]{glossaries}
 %\makeglossaries
 %\input{Include/Glosar_Terme}
 
 % für Index-Ausgabe mi
 \usepackage{makeidx}
+\setcounter{tocdepth}{4}
 \makeindex
 
+% Glossar
+\usepackage[
+acronym,      %ein Abkürzungsverzeichnis erstellen
+toc]          %Einträge im Inhaltsverzeichnis]{glossaries}
+{glossaries}
+\makeglossaries
 
 % Seitenraender -----------------------------------------------------------------
 \setlength{\headheight}{26pt}
@@ -171,6 +181,9 @@ headsep=10mm, footskip=12mm}
 \newcommand{\refabb}[1]{\textbf{Abbildung \ref{#1}}}
 \newcommand{\refchap}[1]{\textbf{Kapitel \ref{#1}}}
 \newcommand{\refsec}[1]{\textbf{Absatz \ref{#1}}}
+\newcommand{\refeql}[1]{\textbf{Gleichung \ref{#1}}}
+\newcommand{\refeqlb}[1]{\textbf{Berechnung \ref{#1}}}
+
 
 
 \setlength{\baselineskip}{16.5pt} % 16 pt usual spacing between lines

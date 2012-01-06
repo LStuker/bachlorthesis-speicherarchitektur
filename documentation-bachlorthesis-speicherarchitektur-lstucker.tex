@@ -27,10 +27,39 @@
 \mainmatter
 \pagenumbering{arabic}
 \setcounter{page}{1}
+% Load at the beginngin that we can use it
+\input{chapter/glossar}
 
-\input{chapter/Vorwort}
- \input{chapter/konzept}
+\input{chapter/vorwort}
+\input{chapter/zusammenfassung}
+\input{chapter/ist-analyse}
+\input{chapter/soll-analyse}
+\input{chapter/speicherarchitekturen}
+\input{chapter/machbarkeitsnachweis}
 \cleardoublepage
+
+
+
+%\pagenumbering{roman}
+%\setcounter{page}{1}
+% \input{chapter/Listings}
+% \input{chapter/glossar}
+% \input{chapter/Akronyme}
+% \input{chapter/literatur}
+
+\pagenumbering{roman}
+%Glossar ausgeben
+\printglossary[style=altlist,title=Glossar]
+%Abkürzungen ausgeben
+\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
+\printglossary[type=\acronymtype,style=long]
+%Symbole ausgeben
+\printglossary[type=symbolslist,style=long]
+
+% Literatur
+\bibliographystyle{gerplain}
+\bibliography{library.bib}
+% \input{Index}
 
 %\appendix
 \clearpage
@@ -39,13 +68,5 @@
 \appendix
 %\addappheadtotoc
 \appendixpage
-
-%\pagenumbering{roman}
-%\setcounter{page}{1}
-% \input{chapter/Listings}
-% \input{Kapitel/Glosar}
-% \input{chapter/Akronyme}
-% \input{chapter/Literatur}
-% \input{Index}
 
 \end{document}
