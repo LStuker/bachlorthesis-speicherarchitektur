@@ -1,42 +1,146 @@
+%!TEX root=../documentation-bachlorthesis-speicherarchitektur-lstucker.tex
 \cleardoublepage
-\chapter{Speicher-Markt}
-\section{Speicherarchitekturen}
+\chapter{Speicherarchitekturen}
 
-Die heutigen Speicherarchitekturen können in Block- (Block-Based), Datei- (File-Based) und Objekt-Basierende Adressierende unterteilt werden.
+Die heutigen bekannten Speicherarchitekturen können in Block- (Block-Based), Datei- (File-Based) und Objekt-Basierende Adressierende Systeme unterteilt werden.
 
 
 \section{Block-Basierend}
+Die Block-Basierende Speicherarchitektur ist wohl die traditionellste und weit verbreitetste Form zum Speichern und Zuzugreifen von Daten. Die Meisten Computersysteme, sei es Server, Desktop-PCs, Tablet-PC, Smartphones, Spielkonsole, speichern Ihre Daten in einen Blockbasierenden Speicher ab. Als Speicher werden in diesen Geräte meist magnetischen Festplatten, Solid State Disk oder Flash-Speicher eingesetzt.
+
+Bei Block-Speicher werden Daten in Blöcke gelesen und gespeichert, ein Block bildet sich aus einer Sequenz von Bits bzw. Byte. Die Grösse eines Blocks wird als Blocklänge bezeichnet, und ist bei allen Blöcken einer Einheit gleich gross. 
+
+Experten wie Mike Mesnier, Greg Ganger und Erik Riedel, sehen jedoch bei zunehmender Speichergrösse und Komplexität von Systemen fundamentale Limitierungen von Block Schnittstellen.
+
 \begin{quotation}
-\em Since the first disk drive in 1956,1 disks have grown by over six orders of magnitude in density and over four orders in performance, yet the storage interface (i.e., blocks) has remained largely unchanged. Although the stability of the block-based interfaces of SCSI and ATA/IDE has benefited systems, it is now becoming a lim- iting factor for many storage architectures. As storage infrastructures increase in both size and complexity, the functions system designers want to perform are fundamentally limited by the block interface. \end{quotation}\cite{Mesnier2003}
+\em Since the first disk drive in 1956, disks have grown by over six orders of magnitude in density and over four orders in performance, yet the storage interface (i.e., blocks) has remained largely unchanged. Although the stability of the block-based interfaces of SCSI and ATA/IDE has benefited systems, it is now becoming a lim- iting factor for many storage architectures. As storage infrastructures increase in both size and complexity, the functions system designers want to perform are fundamentally limited by the block interface. \end{quotation}\cite{Mesnier2003}
 
-Vergleicht man die erste Festplatte welche von IBM Produziert wurde mit einer Seagate von 2011, hat sich die Speicherdichte von 2000 bit per Quadratzoll auf 625 GByte  und in der Geschwindigkeit von 8 kbytes auf 600 MB verbessert.\cite{Seagate2011}\cite{Seagate2011a}
+Vergleicht man die erste Festplatte welche von IBM Produziert wurde mit einer Seagate von 2011, hat sich die Speicherdichte von 2000 bit per Quadratzoll auf 625 Gigabyte  und in der Geschwindigkeit von 8 kbytes auf 600 MB verbessert.\cite{Seagate2011}\cite{Seagate2011a}
 
-Zu den Block-Basierenden Speicher Systemen zählen Direct Attached Storage (DAS) und Storage Area Network (SAN). 
+Für den Zugriff auf Blockbasierende Speichersysteme werden meist Schnittstellen Protokolle wie Small Computer System Interface (SCSI) oder Advanced Technology Attachment (ATA) verwendet. Diese Protokolle wurden jedoch in einer Zeit Entwickelt, wo man davon ausging, dass eine Block Speicher jeweils nur von einem Computersystem verwendet wurde und nicht mit mehreren Computersystemen geteilt wird. Dies Annahme stimmt in Konsumer Elektronik Bereich meist noch heute, in Bereichen wo jedoch grosse Speicherkapazitäten oder eine grössere Verfügbarkeit gefordert ist, wie Sie im Geschäftsbereich vorkommen, stimmen diese Annahmen nicht mehr.
 
-Bei DAS die Festplatten direkt an den Server Angeschlossen, als übliche Schnittstelle kommen meist SCSI zum Einsatz. Da DAS Storage nicht mehreren Server zur Verfügung gestellt werden können, kommt diese Form von Speicher für
+Blockbasierende Speicher welche nicht aus internen Speicher eines Server gibildet werden unterscheidet man in Direct Attached Storage (DAS) und Storage Area Network (SAN). 
+
+\subsection{Direct Attached Storage}
+Bei DAS handelt es sich wie es aus der Englischen Bezeichnung zu entnehmen ist um Speicher welche direkt an ein Computersytem Angeschlossen wird. Bei DAS Enclosure handelt sich um ein Gehäuse mit mehren verbauten Festplatten, welche üblich über eine Host-Bus-Adapter an ein Computersytem angeschlossen wird. Als Schnittstellen Protokoll werden ATA, STA, eSATA, SCSI, SAS und Fibre Channel eingesetzt. DAS können mit mehreren Computersysteme geteilt werden, sofern genügen Schnittstellen zur Verfügung stehen.
 
 
 Blocks offer fast, scalable access to shared data; but without a file server to authorize the I/O and maintain the metadata, this direct access comes at the cost of limited security and data sharing.
 
 
-Direct Attached Storage
-Storage Area Network
+\subsection{Storage Area Network}
+Die Storage Networking Industry Association (SNIA) definiert ein Storage Area Network (SAN) als eine Netzwerk, welche primären Bestimmungszweck ist Daten zwischen Computersysteme und Speicherelemente und unter Storage Elemente zu transferieren. Ein SAN besteht aus einer Kommunikations-Infrastrukture, welches eine physische Verbindung und eine Management-Schicht beinhaltet, welches die Verbindungen, die Speichereinheiten und das Computersystem organisiert, so das der Datentransfer sicher und robust erfolgen kann. Der Begriff SAN wird normalerweise (aber nicht notwendigerweise) mit dem Block I/O Service in Verbindung gebracht und weniger mit dem Datei-Zugriffs-Services.\cite{SNIA2011}
 
-\subsection{ISCSI}
+Je nach SAN Implementierung kommen folgende Geräte bzw. Komponenten vor:
+\begin{itemize}
+\item Server
+\item Host Bus Adapter
+\item Gigabit Interface Converter
+\item SAN-Switch
+\item Speichersystem
+\item Tape Library
+\item Logical Unit
+\end{itemize}
 
+SAN welche über zwei
+
+\paragraph*{Server} 
+Der Server greift über das SAN auf Ressourcen von Speichersystem oder Tape Library. In einzelnen Fällen kann der Server selbst über SAN anderen Server Speicher zur Verfügung stellen.
+
+\paragraph*{Host Bus Adapter}
+Host Bus Adapter (HBA) für das SAN sind intelligente Hardwareschnittstellen welche für die Verbindung von Server in eine SAN verwendet werden. Sofern die Server nicht bereits mit einen Host Bus Adapter ausgerüstet sind können die meisten durch Host Bus Adapter in From von Steckkarten erweitert werden. Der Host Bus Adapter selber hat pro Port eine Einschub in welche eine Gigabit Interface Converter eingebaut wird. \cite{Christopher2009}
+
+\paragraph*{Gigabit Interface Converter}
+Der Gigabit Interface Converter sind modulare Schnittstellen welche Elektrische Signale in Optische Signale umwandeln.\cite{SNIA2011}
+
+\paragraph*{Logical Unit}
+Ein Logical Unit ist ein Geräte welche über SCSI Protokol andressiert wird mittel Logical Unit Number (LUN), weshalb oft auch wenn Technisch nicht korrekt das Geräte als LUN bezeichnet wird. Im Speichersystem werden mehre Festplatten mittels RAID zu einer Einheit zusammen gefasst, sofern keine weitere Virtualisierungs von den Speicherhersteller zum einsatz kommt wird die Zusammengefasste Einheit wiederum in Speichereinheiten aufgeteilt und diese als LUN dem Server zugeteilt.\cite{SNIA2011}
+
+
+\subsubsection{Fibre Channel}
+SCSI ist zwar sehr populär, ist jedoch mit  80 Mbps Geschwindigkeit, maximal 25 Meter Bus länge, und mit maximal 32 Geräte pro Bus, ein limitierender Faktor für viele Anwendungen. Unteranderem wegen diesen Limitierungen von SCSI hat, das American national Standards Institute (ANSI) die Fibre Channel Technik entwickelt. Fibre Channel ist eine mehrschichtiges Netzwerk, welche die Charakteristische und Funktionen für die Übertragung von Daten über ein Netzwerk definiert. Der Standard beinhaltet von der Physikalischen Schnittstellen, Daten Kodierung, Übertragungssteuerung (Link Control), Fluss Kontrolle, bis hinzu den Protokoll Schnittstellen. In Vergleich zu anderen Netzwerk, beinhaltet die Fibre Channel Architektur einen Signifikanten Anteil von Hardware Prozesse um eine hohe Performance zu erreichen.\cite{Gupta2002}\cite{Christopher2009}
+
+Beim Design von Fibre Channel hat man darauf geachtet die Besten Charakteristischen Eigenschaften von I/O Bus Kommunikation (Channel) zwischen zwei Geräte und der Netzwerk Kommunikation zwischen mehren Geräte zu kombinieren. Die Channel Kommunikation ist im Vergleich zur Netzwerk- Kommunikation, Hardware-Intensive, schnell und produziert wenig Overhead. Netzwerk Kommunikation ist hingegen, abhängig von der Software Implementierung genannt Protokoll, unterstützt aber die Kommunikation von einer grossen Anzahl Geräten.
+
+Anders wie es der Namen von Fibre Channel vermuten lässt, ist Fibre Channel nicht auf Fiberoptik-Kabel als Kommunikations-Medium beschränkt sondern lässt sich auch auf Kupferkabel betreiben. Aufgrund von Physikalischen Eigenschaften ist hier Fiberoptik-Kabel in Geschwindigkeit kombiniert mit Distanz dem Kuperfabel überlegen. So liegt die maximale Distanz bei Kupferkabel bei 30 Meter bei einer Geschwindigkeit von 1 Gbps, bei höheren Geschwindigkeiten wird die maximale Distanz noch weiter reduziert. Bei Fiberoptic-Kabel wird die maximale Distanz von Fiberoptic-Kabel-Typ, Lichtwellenlänge Rundreise Latenz und eingesetzter Hardware bestimmt. Bei einen 
+
+
+diese bei 10 Kilometer. Mit spezieller Hardware können auch Distanzen von bis zu 600 Kilometer \footnote{\url{http://www.enterprisestorageforum.com/industrynews/article.php/2171801/Synchronous-SAN-Sets-Fibre-Channel-Distance-Record.htm}} erreicht werden, wobei neben der Geschwindigkeit auch die grösser werdende Latenz ein limitierender Faktor ist. Für eine Distanz von 600 Kilometer braucht das Licht im Vacum $ \approx 200.138\mu s$, in einer Fiberoptic-Kabel wird dieser Wert noch höher sein.????
+Eine Fibre Channel SAN besteht aus diesen Grund in der Regeln aus Fiberoptic  Verbindungen.
+
+Es gibt drei Fibre Channel Topolgien:
+\begin{itemize}
+\item Point-to-Point
+\item Arbitrated-Loop
+\item Switched-Fabric
+\end{itemize}
+
+\paragraph*{Point-to-Point-Topologie}
+Die Point-to-Point-Topologie ist die direkte Verbindung von zwei Fibre Channel Geräte, meistens handelt sich bei der Verbindung von einen Server und einen Speichersystem, wie Sie im Direct Attached Storage (DAS) Umfeld vorkommt. \cite{Christopher2009}
+
+\paragraph*{Arbitrated-Loop-Topologie}
+Bei der Arbitrated-Loop-Topologie können bis zu  126 Knoten (NL\_Ports) an einen geteilten Bus Ring zusammen geschlossen werden. In diesen Ring kann eine Verbindung zwischen zwei Ports aktive sein, alle anderen Ports fungieren währende diese Verbindung aktive ist als Repeater und leiten das Singale weiter. Die Arbitrated-Loop-Topologie ist deshalb von der Architektur ähnlich wie den Token Ring. \cite{Gupta2002}\cite{Christopher2009}
+
+\paragraph*{Switched-Fabric-Topologie}
+Die Klassischen SAN Topologie ist die Switched-Fabric-Topologie. Eine Switched-Fabric-Topologie bestehet aus einer oder mehreren Switches die zu einer Fibre Channel Fabric zusammen geschlossen werden. Die einzelnen FC-Geräte, wie Server bzw. Storagesystem, werden über eine oder mehre Ports an eine Switched Fabric angeschlossen. In eine Fabric können bis zu $2^{24}$ Ports angeschlossen werden. \cite{Gupta2002}\cite{Christopher2009}
+
+Mit der Switched-Fabic-Topologie lassen sich verschiedene Fabric Topologien bilden.
+Die Einfachste Topologie welche das Design Ziel die Eliminierung von Single "'Point of Failure"' erfüllt ist die Dual Switch Topologie,, wie in der \refabb{abb:DualSwitchTopologie} dargestellt dient jeder Switch als eigenständige Fabric. Die FC-Geräte wie Server und Storagesystem werden jeweils pro Fabric bzw. Switch mit mindestens einen FC-Port angeschlossen. Durch den Einsatz von Path Management Software auf dem Server, kann eine vom Speichersystem zugeteiltes Logical Unit über mehre Path angesprochen werden. Diese Implementierung bietet gleich mehre Vorteile. Wenn ein Path oder eine ganze Fabric ausfällt übernimmt der andere Path automatisch für den ausgefallen Path. Bei Wartungsarbeiten an Komponenten einer Fabric kann der Service ohne Downtime weiter betrieben werden. Moderne Path Management Software und Speichersystem unterstützen zudem den Lastverteilung (Loadbalance) des I/O Last über alle Pathe.\cite{Christopher2009}
+
+\begin{center}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/}
+\mycaption{figure}{\label{abb:DualSwitchTopologie}Fibre Channel SAN mit Dual Switch Topologie}
+\end{center}
+
+Die Meshed Fabric Topologie erhöht die Ausfallsicherheit zusätzlich Innerhalb der einzelne Fabric. Für die Meshed Fabric sind pro Fabric mindestens vier Fibre Channel SAN Switches erforderlich. Jeder Switch wird wie in \refabb{abb} ersichtlich ist mit mindestens einen Path, den sogenannten Inter Switch Link (ISL), zu allen anderen Switches in der Fabric Verbunden. Die Meshed Fabric kann den Ausfall von mehren Kabel und Switch verkraften ohne das die ganze Fabric ausfällt.\cite{Christopher2009}
+
+\begin{center}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/}
+\mycaption{figure}{\label{abb:MashedFabricTopologie}Fibre Channel SAN mit Mashed Fabric Topologie}
+\end{center}
+
+\subsubsection{iSCSI}
+Das SCSI Protokoll ist eine populäres Protokoll für die Kommunikation mit I/O Geräten, spezielle für Speicher Geräte. SCSI weist die Client-Server Architektur auf, wobei der Clients bei SCSI Interface als "initiators" bezeichnet wird und die Logische Einheit vom Server als "target".
+
+SCSI Protokoll wurde schon über Protokolle Transportiert, jedoch waren all die Transport Protokolle limitiert in der Distanz. IBM startete 1996 mit der Forschung für die Übertragung von SCSI über das Ethernet, dabei untersuchten IBM ob sich der Transport mittels IP oder TCP/IP besser eignen würde. Messungen zeigte da zumal, dass in einen lokalen Netzwerk der Transport mittels IP besser eignet würde anstelle von TCP/IP, mit der Extrapolation in die Zukunft, und den Transport über die lokale Netzwerkgrenze hinweg war aber der Weg mittels TCP/IP die bessere Wahl. 1999 hatten sich IBM und Cisco geeinigt "SCSI over TCP/IP" gemeinsam in eine Internet Engineering Task Force  Standart weiter zu entwickeln. \cite{JohnL.202} Die Fertige Spezifikation von SCSI over TCP/IP ist im RFC 3720 mit dem Namen iSCSI in April 2004 fertig gestellt worden.\cite{J.Satran2004}
+
+\paragraph*{Kosten}
+Für den Betrieb eines Fibre Channel SAN sind spezielle Hardware und Fibre Channel Kenntnis notwenig. Aufgrund, dass bei iSCSI die selbe Technik wie im Computernetzwerk verwendet wird, benötigt es für den Betrieb keine zusätzliche Ausbildung, Netzwerk Infrastruktur und Management Software Lösungen, was die Gesamtbetriebskosten (TCO) senkt.
+
+Grundsätzlich kann jeder Computer welcher mit einen Netzwerkanschluss ausgerüstet ist und einen iSCSI Software Treiber hat, iSCSI nutzen. Computer welche genügen Prozessor Leistung haben können die zusätzliche Last für die Verarbeitung von iSCSI mit konventionellen Netzwerkkarten lösen. Bei Computersysteme welche die Verarbeitungsgeschwindigkeit kritisch ist, wie bei Server kann diese zusätzlich Last negativ sein. Vergleichbar wie für Fibre Channel gibt es für iSCSI spezielle Netzwerkkarten bzw. Host Bus Adapter, welche mittels TCP/IP Offload Engine (TOE) und volle iSCSI Offload Engine im eignen Chip die TCP/IP bzw. iSCSI Pakete verarbeiten. Solche Netzwerkkarten entlasten durch die Verarbeitung der TCP/IP und iSCSI Pakete im eignen Chip die Central Processing Unit (CPU) des Server entlasten und halten die Latenz tief. . 
+
+\paragraph*{Netzwerk}
+In einen Ethernet Netzwerk Verwaltet sich jeder Switch mehr oder weniger autonome, und führt eine eigenes Weiterleitungstabelle, mit welcher er Entscheidet über welchen Port eine Ethernet Packe ausgeliefert werden muss. Dazu enthält Weiterleitungstabelle pro MAC Adresse den dazugehörigen Port. Trifft eine Ethernet Packet mit noch unbekannter MAC Adresse ein, leitet der Switch das Packet über alle Ports weiter. Durch die Rückantwort des Zielsystem lernt der Switch über welchen Port das System erreichbar ist. Werden in einen Switch Netzwerk benachbarte Switches untereinander über mehre Pfade Verbunden, kann es bei in einen Solchen Szenario eintreffen, dass das Packet wieder am ursprünglichen Switch ankommt, wenn der benachbarte Switch die MAC Adresse ebenfalls nicht kennt. Es Entsteht dadurch eine Verdoppelung der Ethernet Packet im Netzwerk bzw. es kommt zu einer Schleifenbildung, was wiederum zu Netzwerkstörungen führt. Mittels Spanning Tree Protokoll (STP) sollen solche Schleifen vermieden werden. Das Spannung Tree Protokoll erstellt eine Baum Topologie mit jeweils einer aktiven Path zwischen zwei Switches. Diese Topologie hat mehre Nachteile, bei einen Topologie Wechsel, wie es durch einen Pathausfall vorkommt, zu einer neu Aushandlung des Spanning Tree  , was wiederum zu einen mindestens 15 Sekundigen Unterbruch führt in welche keine Ethernet Packet weiter geleitet werden. Eine Weiternachteil ist, dass die Ethernet Packet im Baum der Hierarchie hinauf weitergeleitet werden müssen anstelle einen direkten Path zu nehmen. Zudem ist pro Switchverbindung immer nur einen Pfad Aktive, wenn nicht zusätzlich Lnk Aggregation Groups (LAGs) eingesetzt wird.
+
+Hersteller wie Brocade haben diese Problematik für den Betrieb von iSCSI SAN erkannt und haben Lösungen entwickelt welche das Prinzip von Fibre Channel Fabrics für Ethernet Netzwerke umsetzen. Bislang ist darauf jedoch noch keinen allgemeinen Standard entstanden, weshalb es bei solche Lösungen um Porträtiere Lösungen handelt.
+
+\paragraph*{Sicherheit}
+Wie beim Fibre Channel SAN sollte im Geschäftsumfeld iSCSI über eine dediziertes Netzwerk laufen. Die Abgrenzung erhöht die Sicherheit, das Storage Netzwerk ist somit klar abgeschottet von restlichen Netzwerk. Fehlerhafte Firewall Regeln im Computer Netzwerk haben keinen direkten Einfluss auf die Sicherheit des Datennetzwerkes. Störungen oder Überlast im Computer Netzwerk haben beeinflussen nicht die iSCSI Verbindungen. Mittels IPsec kann die Sicherheit durch eine Sichere Authentifizierung und optionaler Verschlüsselung der Verbindung weiter erhöht werden. 
 
 \subsubsection{Datenverfügbarkeit / Redundanz}
+Die zugeteilten Logical Unit werden in der Regeln mit
+Die Datenverfügbarkeit kann, mit 
+
 \subsubsection{Skalierbarkeit Datenvolumen / Datenzugriffe}
+Für den Gemeinsamen 
+
 \subsubsection{Integität}
+
+
 \subsubsection{Durchsatz I/O}
+
 \subsubsection{Lokalität}
+Durch den Einsatz eines weiteren Speichersystem an einen zweiten Standort können die Daten mittels Spiegelung Standort übergreifend verfügbar gemacht werden. Sofern die Server Infrastruktur ebenfalls über zwei Standorte betrieben wird, kann einen Ausfall eines Rechenzentrums ohne Unterbauch des Service verkraftet werden.
+
 \subsubsection{Backup}
+Die Daten können mit Herkömmlichen Backup Verfahren gesichert werden.
+
 
 \section{Datei-Basierend}
 
 
 \subsection{Network File System}
-Das Network File System Protocol wurde von der Firma SUN (\gls{Oracle}) 1984 vorgestellt und ermöglicht es über das Netzwerk auf Dateisysteme eines anderen Host  (Server) zu zugreifen als würde der Zugriff Lokal stattfinden. Das Protokoll von \gls{NFS} wurde mit der Version 2 1989 zum ersten mal von Internet Standard Request for Comments (\gls{RFC}) unter der Nummer 1094\footnote{\href{http://tools.ietf.org/html/rfc1094}} standardisiert. Die Version 2 von NFS verwendet ausschliesslich das \gls{UDP} Transportprotokoll. Mit Version 3 RFC 1813\footnote{\href{http://tools.ietf.org/html/rfc1813}} die im Jahr 1995 veröffentlicht wurde NFS Maschinen, Betriebsystem und Netzwerk Architektur, und Transport-Protokoll unabhängig. Die Unabhängigkeit wird mit der Verwendung von Remote Procedure Call (\gls{RPC}) welches wiederum ein eXternal Data Representation (\gls{XDR}) verwendet erreicht. Das \gls{FileLocking} wurde mittels dem separaten Protokoll Network Lock Manager (NLM) erreicht. 
+Das Network File System Protocol wurde von der Firma SUN (\gls{Oracle}) 1984 vorgestellt und ermöglicht es über das Netzwerk auf Dateisysteme eines anderen Host  (Server) zu zugreifen als würde der Zugriff Lokal stattfinden. Das Protokoll von \gls{NFS} wurde mit der Version 2 1989 zum ersten mal von Internet Standard Request for Comments (\gls{RFC}) unter der Nummer 1094\footnote{\url{http://tools.ietf.org/html/rfc1094}} standardisiert. Die Version 2 von NFS verwendet ausschliesslich das \gls{UDP} Transportprotokoll. Mit Version 3 RFC 1813\footnote{\url{http://tools.ietf.org/html/rfc1813}} die im Jahr 1995 veröffentlicht wurde NFS Maschinen, Betriebsystem und Netzwerk Architektur, und Transport-Protokoll unabhängig. Die Unabhängigkeit wird mit der Verwendung von Remote Procedure Call (\gls{RPC}) welches wiederum ein eXternal Data Representation (\gls{XDR}) verwendet erreicht. Das \gls{FileLocking} wurde mittels dem separaten Protokoll Network Lock Manager (NLM) erreicht. 
 
 
 \subsection{NAS Appliance}
@@ -61,12 +165,12 @@ Gemäss Gartner gehören die Anbieter IBM, EMC und NetAPP zu den führenden NAS 
 \end{itemize}
 \end{quotation}\cite{IEEE2003}
 
-\subsubsection{Datenverfügbarkeit / Redundanz}
-\subsubsection{Skalierbarkeit Datenvolumen / Datenzugriffe}
-\subsubsection{Integität}
-\subsubsection{Durchsatz I/O}
-\subsubsection{Lokalität}
-\subsubsection{Backup}
+\subsubsubsection{Datenverfügbarkeit / Redundanz}
+\subsubsubsection{Skalierbarkeit Datenvolumen / Datenzugriffe}
+\subsubsubsection{Integität}
+\subsubsubsection{Durchsatz I/O}
+\subsubsubsection{Lokalität}
+\subsubsubsection{Backup}
 
 
 \section{Objekt-Basierend}
