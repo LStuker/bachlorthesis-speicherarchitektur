@@ -23,7 +23,6 @@ Blockbasierende Speicher, welche nicht aus Internen Speicher eines Server gebild
 \subsection{Direct Attached Storage}
 Bei DAS handelt es sich, wie es aus der englischen Bezeichnung zu entnehmen ist, um Speicher, welche direkt an ein Computersystem angeschlossen wird. Bei DAS Enclosure handelt sich um ein Gehäuse mit mehren verbauten Festplatten, welche üblich über einen Host-Bus-Adapter an ein Computersytem angeschlossen wird. Als Schnittstellen Protokoll werden ATA, STA, eSATA, SCSI, SAS und Fibre Channel eingesetzt. DAS können mit mehreren Computersystemen geteilt werden, sofern genügen Schnittstellen zur Verfügung stehen.
 
-
 \subsection{Storage Area Network}
 Die Storage Networking Industry Association (SNIA) definiert ein Storage Area Network (SAN) als ein Netzwerk, welch primärer Bestimmungszweck ist Daten zwischen Computersysteme und Speicherelemente und unter Storage Elemente zu transferieren. Ein SAN besteht aus einer Kommunikations-Infrastrukture, welches eine physische Verbindung und eine Management-Schicht beinhaltet, welches die Verbindungen, die Speichereinheiten und das Computersystem organisiert, sodass der Datentransfer sicher und robust erfolgen kann. Der Begriff SAN wird normalerweise (aber nicht notwendigerweise) mit dem Block I/O Service in Verbindung gebracht und weniger mit dem Datei-Zugriff-Service.\cite{SNIA2011}
 
@@ -64,11 +63,7 @@ SCSI ist zwar sehr populär, ist jedoch mit 80 Mbps Geschwindigkeit, maximal 25 
 
 Beim Design von Fibre Channel hat man darauf geachtet die Besten charakteristischen Eigenschaften von I/O Bus Kommunikation (Channel) zwischen zwei Geräte und der Netzwerk Kommunikation zwischen Mehren Geräte zu kombinieren. Die Channel Kommunikation ist im Vergleich zur Netzwerk-Kommunikation, Hardware-Intensive, schnell und produziert wenig Overhead. Netzwerk Kommunikation ist hingegen, abhängig von der Software Implementierung genannt Protokoll, unterstützt aber die Kommunikation von einer grossen Anzahl Geräten.
 
-Anders wie es der Namen von Fibre Channel vermuten lässt, ist Fibre Channel nicht auf Fiberoptik-Kabel als Kommunikations-Medium beschränkt, sondern lässt sich auch auf Kupferkabel betreiben. Aufgrund von physikalischen Eigenschaften ist hier Fiberoptik-Kabel in Geschwindigkeit kombiniert mit Distanz dem Kupferkabel überlegen. So liegt die maximale Distanz bei Kupferkabel bei 30 Metern bei einer Geschwindigkeit von 1 Gbps, bei höheren Geschwindigkeiten wird die maximale Distanz noch weiter reduziert. Bei Fiberoptic-Kabel wird die maximale Distanz von Fiberoptic-Kabel-Typ, Lichtwellenlänge Rundreise Latenz und eingesetzter Hardware bestimmt. Bei einen 
-
-
-diese bei 10 Kilometer. Mit spezieller Hardware können auch Distanzen von bis zu 600 Kilometer \footnote{\url{http://www.enterprisestorageforum.com/industrynews/article.php/2171801/Synchronous-SAN-Sets-Fibre-Channel-Distance-Record.htm}} erreicht werden, wobei neben der Geschwindigkeit auch die grösser werdende Latenz ein limitierender Faktor ist. Für eine Distanz von 600 Kilometer braucht das Licht im Vakuum $ \approx 200.138\mu s$, in einer Fiberoptic-Kabel wird dieser Wert noch höher sein.????
-Eine Fibre Channel SAN besteht aus diesen Grund in der Regeln aus Fiberoptic  Verbindungen.
+Anders wie es der Namen von Fibre Channel vermuten lässt, ist Fibre Channel nicht auf Fiberoptik-Kabel als Kommunikations-Medium beschränkt, sondern lässt sich auch auf Kupferkabel betreiben. Aufgrund von physikalischen Eigenschaften ist hier Fiberoptik-Kabel in Geschwindigkeit kombiniert mit Distanz dem Kupferkabel überlegen. So liegt die maximale Distanz bei Kupferkabel bei 30 Metern bei einer Geschwindigkeit von 1 Gbps, bei höheren Geschwindigkeiten wird die maximale Distanz noch weiter reduziert. Bei Fiberoptic-Kabel wird die maximale Distanz von der Qualität der Installation, des Fiberoptic-Kabel-Typ, der Kern-Durchmesser, der Lichtwellenlänge Rundreise Latenz und eingesetzter Hardware bestimmt. Je weiter das Licht innerhalb des Kabels übertragen werden muss, desto grösser ist der Verlust des Ursprünglichen Signal stärke. Mit spezieller Hardware können auch Distanzen von bis zu 600 Kilometer \footnote{\url{http://www.enterprisestorageforum.com/industrynews/article.php/2171801/Synchronous-SAN-Sets-Fibre-Channel-Distance-Record.htm}} erreicht werden.
 
 Es gibt drei Fibre Channel Topolgien:
 \begin{itemize}
@@ -106,12 +101,12 @@ Das SCSI-Protokoll ist ein populäres Protokoll für die Kommunikation mit I/O G
 
 SCSI Protokoll wurde schon über Protokolle transportiert, jedoch waren all die Transport Protokolle limitiert in der Distanz. IBM startete 1996 mit der Forschung für die Übertragung von SCSI über das Ethernet, dabei untersuchte IBM ob sich der Transport mittels IP oder TCP/IP besser eignen würde. Messungen zeigte da zumal, dass in einem lokalen Netzwerk, der Transport mittels IP besser eignet, anstelle von TCP/IP, mit der Extrapolation in die Zukunft, und den Transport über die lokale Netzwerkgrenze hinweg war aber der Weg mittels TCP/IP die bessere Wahl. 1999 hatten sich IBM und Cisco geeinigt "SCSI over TCP/IP" gemeinsam in eine Internet Engineering Task Force Standart weiter zu entwickeln. \cite{JohnL.202} Die fertige Spezifikation von SCSI over TCP/IP ist im RFC 3720 mit dem Namen iSCSI in April 2004 fertiggestellt worden.\cite{J.Satran2004}
 
-\paragraph*{Kosten}
+% \paragraph*{Kosten}
 Für den Betrieb eines Fibre Channel SAN sind spezielle Hardware und Fibre Channel Kenntnis notwenig. Aufgrund, dass bei iSCSI die selbe Technik wie im Computernetzwerk verwendet wird, benötigt es für den Betrieb keine zusätzliche Ausbildung, Netzwerk Infrastruktur und Management Software Lösungen, was die Gesamtbetriebskosten (TCO) senkt.
 
 Grundsätzlich kann jeder Computer, welcher mit einem Netzwerkanschluss ausgerüstet ist und einen iSCSI Software Treiber hat, iSCSI nutzen. Computer welche Genügen Prozessor Leistung haben können die zusätzliche Last für die Verarbeitung von iSCSI mit konventionellen Netzwerkkarten lösen. Bei Computersystem, welche die Verarbeitungsgeschwindigkeit kritisch ist, wie bei Server kann diese zusätzliche Last negativ sein. Vergleichbar wie für Fibre Channel gibt es für iSCSI spezielle Netzwerkkarten bzw. Host Bus Adapter, welche mittels TCP/IP Offload Engine (TOE) und volle iSCSI Offload Engine im eignen Chip die TCP/IP bzw. iSCSI Pakete verarbeiten. Solche Netzwerkkarten entlasten durch die Verarbeitung der TCP/IP und iSCSI Pakete im eignen Chip die Central Processing Unit (CPU) des Servers und weisen bessere Werte in der Latenz auf.
 
-\paragraph*{Netzwerk}
+% \paragraph*{Netzwerk}
 In einem Ethernet Netzwerk verwaltet sich jeder Switch mehr oder weniger autonome und führt eine eigene Weiterleitungstabelle, mit welcher der Switch entscheidet, über welchen Port eine Ethernet Packe ausgeliefert werden muss. Dazu enthält die Weiterleitungstabelle pro MAC Adresse den dazugehörigen Port. Trifft eine Ethernet Paket mit noch unbekannter MAC Adresse ein, leitet der Switch das Paket über alle Ports weiter. Durch die Rückantwort des Zielsystems lernt der Switch, über welchen Port, das System erreichbar ist. Werden in einen Switch Netzwerk benachbarte Switches untereinander über mehre Pfade Verbunden, kann es bei in einen solchem Szenario eintreffen, dass das Paket wieder am ursprünglichen Switch ankommt, wenn der benachbarte Switch die MAC-Adresse ebenfalls nicht kennt. Es entsteht dadurch eine Verdoppelung, der Ethernet Paket im Netzwerk bzw. es kommt zu einer Schleifenbildung, was wiederum zu Netzwerkstörungen führt. Mittels Spanning Tree Protokoll (STP) sollen solche Schleifen vermieden werden. Das Spannung Tree Protokoll erstellt eine Baum Topologie mit jeweils einer aktiven Path zwischen zwei Switches. Diese Topologie hat mehre Nachteile: 
 
 \begin{itemize}
@@ -122,10 +117,10 @@ In einem Ethernet Netzwerk verwaltet sich jeder Switch mehr oder weniger autonom
 
 Hersteller wie Brocade haben diese Problematik für den Betrieb von iSCSI SAN erkannt und haben Lösungen entwickelt welche das Prinzip von Fibre Channel Fabrics für Ethernet Netzwerke umsetzen. Bislang ist darauf jedoch noch keinen allgemeinen Standard entstanden, weshalb es bei solchen Lösungen um porträtiere Lösungen handelt.
 
-\paragraph*{Sicherheit}
+%\paragraph*{Sicherheit}
 Wie beim Fibre Channel SAN sollte im Geschäftsumfeld iSCSI über ein dediziertes Netzwerk laufen. Die Abgrenzung erhöht die Sicherheit, das Storage Netzwerk ist somit klar abgeschottet von restlichen Netzwerken. Fehlerhafte Firewall Regeln im Computer Netzwerk haben keinen direkten Einfluss auf die Sicherheit des Datennetzwerkes. Störungen oder Überlast im Computer Netzwerk haben beeinflussen nicht die iSCSI Verbindungen. Mittels IPsec kann die Sicherheit durch eine sichere Authentifizierung und optionaler Verschlüsselung der Verbindung weiter erhöht werden. 
 
-\paragraph*{Integität}
+%\paragraph*{Integität}
 iSCSI stellt die Integrität des übermittelten Paketes mit dem CRC-32c Digests sicher. Die Integrität auf anderen Ebenen, wie Speichersystem, Computer Bit Fehler auf Speichersystem-Ebene oder Memory des Computersystems können. 
 
 \paragraph*{Datenverfügbarkeit / Redundanz}
@@ -151,28 +146,23 @@ Der Report von Netapp hat ebenfalls die Latenz verglichen. Bei Latenz möchte ma
 \mycaption{figure}{\label{abb:NetappLatenz}Netapp Latenz für alle unterstützte Protokolle in Vergleich zu 4Gb FC mit 8K Block grösse \cite{Jafri2011}}
 \end{center}
  
+\subsection{Logical Volume Manager}
+Logical Volume Manager oder Dateisysteme welche die Logik eines Logical Volume Manager Kombinieren, ermöglichen es mehre Block-Geräte bzw. Logical Units zu einer grossen Logischen Volume zusammen zufassen. Diese hat den Vorteil, das die maximale Grösse eines Block-Gerätes nicht der Limitierende Faktor des darauf installierten Dateisystem ist. Neben dem erstellen von Logischen Volume, können einige Logical Volume Manager den Last Zugriff auf die verschiedenen Block-Geräte durch Striping optimaler verteilen und sorgen damit für eine besser Performance beim Daten zugriff. Eine weiter Aufgabe, die Logical Volume Manager übernehmen ist die Redundante Haltung der Daten durch Spiegelung.  Mittel serverseitige Spiegeln (Host-Based Mirroring) können die Daten mittels der Spiegelungsfunktion des Logical Volume Manager auf zwei Standorte zur Verfügung gemacht werden. Dazu werden von zwei Speichersysteme welche an unterschiedlichen Standorte installiert sind, gleich viele und gleich grosse Logical Units über das SAN den Computersystem zugeteilt werden.
+
+Klassische Server Linux Distributoren, wie Red Hat, Suse und Debian inkl. Ubuntu liefern den Quelloffenen Logical Volume Manager 2 (LVM2) in Ihrer Distribution mit. LVM2 kann theoretisch auf einen 64Bit System eine Logical Volume von 8 Exabyte bilden und Adressieren.\cite{Levine2009}
+
+Das ursprünglich von Oracle als ZFS Ersatz entwickelte Btrfs Dateisystem, könnte sich Zukünftig als Standart Dateisystem vieler Server Distributionen entwickeln. Das für Solaris entwickelte ZFS als auch Brtfs kombinieren Dateisystem und Logical Volume Manager. Brtfs selbst wurde jedoch noch nicht als Stabile Version veröffentlicht und ist deshalb für den Produktiven Betrieb noch nicht zu Empfehlen.\cite{Redler2011}
 
 
-\subsubsection{Skalierbarkeit Datenzugriffe}
-Logical Units können im SAN zwar an Mehren Computersystemen zugeteilt werden, damit ist jedoch nicht sichergestellt, dass die Computersysteme gleichzeitig von gleichem Volume lesen geschweige drauf schreiben kann. Konventionelle Dateisysteme wie Ext3 gehen von einer exklusiven Nutzung des Speichers aus, weshalb diese keine Funktionen implementiert haben, die den gleichzeitigen Zugriff regeln. Schreiben zwei Computersysteme gleichzeitig in dieselbe Datei, kann nicht sichergestellt werden, welche Änderung gültig ist, was zu inkonsistent führt. Ein Dateisystem, welches den gleichzeitigen Zugriff erlaubt, muss Dateien, welche geändert werden, von der Änderung weiteren Computersystemen gesperrt (locking) werden. Cluster Dateisysteme wie Red Hat Global Filesystem (GFS) und Red Hat Global Filesystem 2 (GFS2) unterstützen dieses Sperren.
+\subsection{Datei System}
+Betriebsysteme addressiert die Daten auf einen Block-Geräte nicht direkt an, sondern greift über eine Dateisystem zu. Das Dateisystem organisiert wie und wo Dateien auf dem Block-Geräte abgelegt werden und Verwalten den Freien Speicher. Einige Datei Systeme regeln auch die Zugriffsberechtigungen auf Dateien. Eine Block-Geräte (Logical Unit) können im SAN oder DAS an mehren Computersysteme gleichzeitig zugeteilt werden, jedoch ist es die Aufgabe des Dateisystem sicherzustellen, dass mehre Computersysteme gleichzeitig auf gleichen Dateisystem lesen bzw. schreiben können. Konventionelle Dateisysteme wie Ext3 unter Linux gehen von einer exklusiven Nutzung des Speichers aus, weshalb diese Dateisysteme keine Funktionen implementiert haben, die den gleichzeitigen Zugriff regeln. Problematik beim gleichzeitigen Zugriff ist die Sicherstellung der Konsistenz. Schreiben zum Beispiel zwei Computersysteme gleichzeitig in dieselbe Datei, kann nicht sichergestellt werden welche Änderung gültig ist, und führt zu inkonsistenz. Dateisysteme, welche den gleichzeitigen Zugriff von mehren Computersysteme unterstützen, regeln den Zugriff auf Dateien mit Sperrmechanismen (locking). Schreibt eine Computersystem in eine Datei wird die Datei vom Dateisystem vor der Änderung anderen Computersystem gesperrt. Cluster Dateisysteme wie Red Hat Global Filesystem (GFS) und Red Hat Global Filesystem 2 (GFS2) unterstützen dieses Sperren. Das Dateisystem Red Hat GFS Version 2 unterstützt bei einen 64 Bit System theoretisch Dateisysteme bis 8 Exabyte, Red Hat gewährleistet jedoch nur einen Support von maximal 100 Terabyte.\cite{Levine2011}
+
+Dateisysteme wie ZFS und Brtfs stellen die Integrität der Daten vor Veränderung, wie Sie zum Beispiel durch eine Bit Fehler auf dem Block Geräte oder in Memory entstehen können, mittels Prüfsumme sicher. Dabei wir zur jeder Datei eine Hash Prüfsumme abgespeichert, wird die Datei gelesen wird die Prüfsumme aus der Datei neu berechnet und mit der abgespeicherten Prüfsumme verglichen, sofern das Dateisystem ebenfalls gespiegelt sind, korrigiert das Dateisystem die Fehlerhafte Datei aus der intakten Kopie. Dieses Verfahren wird auch als Selbst Heilend (Self-healing) bezeichnet \cite{Bonwick2005}\cite{Oracle}
+
+Dateisysteme können mittels Sicherungssoftware auf Bandlaufwerke oder andere Speichermedien gesichert werden.
 
 
-
-\subsubsection*{Skalierbarkeit Datenvolumen}
-Durch den Einsatz eines Volume Manager können mehre Logical Unit zu einer grossen Logischen Volume zusammengefasst werden. Bei Linux Logical Volume Manager (LVM) können Logische Volumes bei einen 64Bit System von theoretisch 8 Exabyte erstellt werden. Das Dateisystem von Red Hat GFS bis Version 2 unterstützen theoretisch bei einen 64Bit System 8 Exabyte, Red Hat gibt jedoch einen Support von maximal 100 Terabyte.\cite{Levine2011}
-
-
-\subsubsection{Standortübergreifend}
-Für standortübergreifende Verfügbarkeit der Daten kann bei Block-Basierten Architekturen die serverseitige Spiegelung (Host-Based Mirroring) eingesetzt werden. Dazu sind pro Standort ein Speichersystem und der Einsatz eines Volume Manager. Bei Linux kann hier für Logical Volume Manager (LVM) eingesetzt werden. Bei LVM werden auf alle Logical Units mit einem Phyiscal-Volume-Label geschrieben, die daraus resultierenden Physical-Volumes werden zu einer Volume-Group zusammengefasst. Aus der Volume Group lässt sich ein oder mehre Logical Volume bilden, welche über die Standorte gespiegelt sind. Im Logical Volume 
-wird schlussendlich ein Dateisystem installiert, welches normal im Linux eingehängt (mount) werden.
-
-\subsubsection{Integrität}
-
-
-\subsubsection{Backup}
-Die Daten können mit Herkömmlichen Backup Verfahren gesichert werden.
-
-
+\subsection{Zusammenfassung}
 
 
 
