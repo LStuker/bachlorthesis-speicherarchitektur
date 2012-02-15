@@ -96,6 +96,12 @@ Hardvard Research Group hat die Verfügbarkeit in Verfügbarkeitsklassen eingete
 
 In der Arbeit werden zur Verfügbarkeitsbestimmung die Verfügbarkeitsklassen von Harvard Research Group verwendet.
 
+\subsection{Daten Integrität}
+Daten können durch Manipulationen oder durch Bit Fehler verfälscht werden. Solche Verfälschungen können zu Informationsverlust in den Daten bis hin zu vollständigen Korruption der Daten führen. 
+Bernd Panzer-Steindel hat zusammen mit Tim Bell, Olof Barring und Peter Kelment am CERN die Integrität von Daten untersucht. Ihre Untersuchung hat gezeigt, dass die Fehlerrate auf dem Niveau von $10^{-7}$ liegt, und hat verschiedene Ursprünge. Eine Ursprung stellt die Festplatte selbst dar, für den Untersuch haben Sie auf 3000 Server alle zwei Stunden ein 2 Gigabyte Datei mit einen speziellen Bit Muster geschrieben, neu eingelesen und mit dem Muster verglichen. Nach einer Laufzeit von 5 Wochen hatten es 500 Fehler auf 100 Server gegeben.\cite{Panzer-steindel2007}
+
+\subsection{Standortübergreifend}
+Für die Gefahren von Datenverlust oder den Verlust der Verfügbarkeit bei einen Ausfall eines Standort zu vermeiden, werden die Daten Standort übergreifend verfügbar gemacht. Häufig werden dazu die Daten an zwei Standort gleichzeitig geschrieben und optional an einen dritten weiter entfernten Standort zeitversetzt geschrieben. 
 
 \section{Bestandesaufnahme}
 \subsection{Anwendungs-Architektur}
@@ -212,11 +218,6 @@ Die jetzige Speicherkapazität erfüllt schon heute die Anforderungen nicht mehr
 \label{eqn:Verfügbarkeit_1Monate_in_Prozent}
 \end{equation}
 
-\subsubsection{old}
-Betrachtet man die erwähnte Zeitspanne hat das Datenvolumen in Bezug zur Speicherkapazität von 40\% (1556 Gibibyte bzw. 1.5 Tebibyte) auf beinahe 67\% (2568 Gibibyte bzw. 2.5 Tebibyte) in 5 Monaten zugenommen. Das durchschnittliche Datenwachstum beträgt somit gemäss Messdaten pro Monat ca. 5\% (195 Gibibyte bzw. 0.19 Tebibyte). Geht man davon aus, das sich das Datenwachstum auf dem gleichen Niveau vorsetzt, ist die Speicherkapazität innert 5 Monate ausgeschöpft.
-
-Ein geplantes neues Feature der Web-Applikation würde den Speicherplatzbedarf verdoppeln. Aufgrund der Vorhanden Speicherkapazität kann das Entwickelte Feature zur Zeit nicht Produktive verwendet werden. Nach Inbetriebnahme des Feature würde sich das Datenwachstum um den Faktor 2 auf 390 Gibibyte steigern.
-
 \subsection{Skalierbarkeit Datenvolumen}\label{AnalyseSkalierbarkeitDatenvolumen}
 Die Eingesetzte Speicherarchitektur lässt eine Skalierung des Datenvolumen mittels hinzufügen von weiteren Festplatten oder durch Migration auf grösseren Festplatten zu. Die maximale Anzahl von Festplatten wird dabei durch die Anzahl vorhandenen SATA Anschlüsse im Server bestimmt. Beim eingesetzten Server handelt sich um eine Hosting Produkt welche meist begrenzt ausbaubar ist. Bei Hosting Produkte erfolgt eine Skalierung meist durch eine Wechsel auf eine besser ausgebautes Hosting Produkt. 
 
@@ -250,10 +251,6 @@ Die bisherige System-Architektur gemäss dem Ist-Bestand ermöglichen keine AEC-
 Die Netzwerkverfügbarkeit wird vom Hosting Anbieter gemäss den Allgemeinen Geschäftsbedingungen \cite{Ag2009} mit einer Verfügbarkeit von 99\% im Jahresmittel gewährleistet. Die Verfügbarkeit könnte somit bei einem 24x365 Stunden Betrieb während 87,6 Stunden nicht gewährleistet sein.
 
 Das Speichersystem für sich selbst betrachtet kann die Verfügbarkeit und die Daten-Integrität gewährleisten, sofern keine Störungen durch einen Festplattendefekt eintreten. Das Speichersystem, welches ein interner Block-basierenden RAID 5 Speicher darstellt, ist ein Bestandteil des Serversystems und weist deshalb die selbe Verfügbarkeitsstufe wie das Serversystem auf. Die Service und Datenverfügbarkeit weist aus den genannten Gründen eine Verfügbarkeit Stufe von '"Highly Reliable"' AEC-2 auf.
-\subsubsection{old}
-
-Die Verfügbarkeit der restlichen Infrastrukturkomponenten und Systeme sind in diesem Bericht nicht aufgenommen worden (out of scope).
- \cite{Ag2009} Der Auftraggeber muss für diese Komponenten selber für die geforderte Verfügbarkeit besorgt sein.
 
 Die im \refsec{System-Architektur}  beschriebene System-Architektur gewährleistet keine Hochverfügbarkeit der Daten. Einer der Gründe dafür ist, dass die Applikation nur auf einem einzelnen Server betrieben wird, dessen Hardware mit Ausnahme der Festplatten keine Redundanz aufweist und nicht für Hochverfügbar ausgelegt ist. 
 
@@ -270,10 +267,4 @@ In einem Interview mit Ben Schwan im Technology Review hat Edward W. Felden, Pro
 ... ,die Dechiffrierungsschlüssel bei einer Festplattenverschlüsselung sitzen immer irgendwo im DRAM-Speicher. Um an sie heranzukommen, schaltet der Angreifer zunächst den Strom des Rechners aus und stellt die Energieversorgung dann gleich wieder her. Dann bootet er die Maschine in ein spezielles, böswilliges Betriebssystem hinein. Zu diesem Zeitpunkt enthält der Speicher noch immer die Originalinformationen, die verfügbar waren, als der Rechner noch nicht abgeschaltet wurde – die gewünschten Schlüssel natürlich auch. Das kurze Abschalten des Stroms hat daran rein gar nichts geändert. Der Angreifer kann dann die gewünschten Dechiffrierungsschlüssel aus dem Speicher auslesen und damit die geschützten Informationen auf der Festplatte jederzeit entschlüsseln\end{quotation}\cite{Schwan2008}
 
 Des weiteren bietet eine Festplatten keinen Schutz bei Schwachstellen in der Software oder  der Konfiguration im laufenden Betrieb. Grund dafür ist, dass das Betriebsystem und Anwendungen über eine Verschlüsselungsschicht unverschlüsselt zugreifbar sind.
-
-\subsubsection{old}
---- Skalierbarkeit Datenvolumen ---
-Bei Hosting Angeboten bezieht man in Normalfall fertige Produkte, die sich im Server-Typ, Grösse des Speichers, der Anzahl Festplatten, CPU und Memory unterscheiden. Benötigt man für seine Applikation mehr Leistung oder einen grösseren Speicher muss man das Produkt wechseln, was meist mit einer Migration auf einen anderen Server verbunden ist.
-
-Die jetzige Speicher- und Applikations-Architektur ist auf dem Betrieb auf einem einzelnen Server ausgelegt. Für die Skalierbarkeit des Datenvolumen bedeutet diese, dass man das Datenvolumen nur durch grössere Festplatten oder durch eine grössere Anzahl von Festplatten ausbauen kann. 
 
