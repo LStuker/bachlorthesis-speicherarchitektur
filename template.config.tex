@@ -53,10 +53,18 @@ ngerman % für Umlaute, Silbentrennung etc.
 \usepackage{listings}
 \usepackage[parfill]{parskip}
 \usepackage{color}
-\usepackage{xcolor}
+\usepackage[table]{xcolor}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[toc,page]{appendix}
+\usepackage{multirow} 
+\usepackage{tabularx}
+\usepackage{longtable}
+
+% Farben
+\definecolor{hsztblue}{cmyk}{0.946,0.452,0,0.349}
+\definecolor{hellgelb}{rgb}{1,1,0.9}
+\definecolor{light-gray}{gray}{0.95}
 
 % URL verlinken, lange URLs umbrechen etc. -------------------------------------
 \usepackage{url}
@@ -146,7 +154,8 @@ breaklines=true
 
 % für Index-Ausgabe mi
 \usepackage{makeidx}
-\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4} %nunmbers
+\setcounter{tocdepth}{3} %inhaltsverzeichnis
 \makeindex
 
 % Glossar
