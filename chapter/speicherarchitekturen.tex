@@ -165,8 +165,64 @@ Dateisysteme können mittels Sicherungssoftware auf Bandlaufwerke oder andere Sp
 \subsection{Zusammenfassung}
 
 
+\section{Datei-Basierend}
+Bei Datei basierte Speicherarchitekturen werden Daten nicht wie bei Block basierten Speicherarchitekturen über Blocke adressiert, sondern über Dateien.
+
+Mit dem Aufkommen von Desktop-Computer, wurden die Daten nicht mehr Zentral auf einen Mainframe bearbeitet, sondern vermehrt verteilt auf den einzelnen Desktop-Computer. Ohne Vernetzung der Computer mussten die Daten mittels portablen Speichermedien ausgetauscht werden. Diese mag noch in kleinen Umgebungen praktikabel gewesen, sobald jedoch die Anzahl Teilnehmer steigt, wird es schwierig, den Überblick über seine Daten zu haben. Die reine Vernetzung der Computer und den direkten Austausch zwischen den einzelnen Desktop-Computer über eine Netzwerk bietet hier ebenfalls keine Lösung. Die bessere Lösung dieses Problems ist eine Zentraler Speicher in welcher die Dokumente (Dateien) gespeichert sind und mittels Netzwerk Protokoll den Desktop-Computer zur Verfügung gestellt werden. Somit ist es für den Anwender klar welche Dateien existieren und hat zugriff auf auf die aktuelle Version. Unternehmen wie Sun Microsystem, IBM, Microsoft und Apple erkannten ebenfalls dieses Bedarf und entwickelten für Ihre Betriebsysteme Software und dazugehörige Protokolle für den geteilten Datenzugriff.
+
+Zu den bekanntesten und weitverbreitesten Lösungen zählen NFS und CIFS (SMB).
 
 
+\subsection{Network File System}
+Das ursprünglich rein von der Firma SUN Microsystems (heute Oracle) 1984 entwickeltes Network-File-System, ermöglicht den gemeinsamen Zugriff von mehreren Computersystemen auf das Dateisystem eines anderen Host (Server), als ob er zugriff auf ein lokales Dateisystem stattfindet. Die zweite Version von NFS erschien 1989 und war die erste Version welche von Internet Standard Request for Comments (\gls{RFC}) Standardisiert wurde und unter der RFC Nummer 1094 \footnote{003c?dpf /orth ?&gt;{http://tools.ietf.org/html/rfc1094}} veröffentlicht wurde. Für den Transport des NFS Protokoll wurde bis Version zwei ausschliesslich das \gls{UDP} Transportprotokoll unterstützt.
+Die Version 3 von NFS (RFC 1813)\footnote{003c?dpf /orth ?&gt;{http://tools.ietf.org/html/rfc1813}}, die 1995 veröffentlicht wurde, war die erste Version, welche Maschinen, Betriebsystem und Netzwerk Architektur, und Transport-Protokoll unabhängig ist. Die Unabhängigkeit wird mit der Verwendung von Remote Procedure Call (\gls{RPC}), welches wiederum ein eXternal Data Representation (\gls{XDR}) verwendet, erreicht. \cite{Stern2001}
+
+Wie im \refabb{} zu entnehmen ist, ist NFS eine weitere Schicht, welche auf dem Dateisystem und dessen Block-Geräte des Computersystems bzw. Speichersystem aufbaut. So ist es zum Beispiel die Aufgabe des Dateisystems bzw. des Block-Gerätes sich um die Redundanz und Integrität der gespeicherten Daten zu kümmern. 
+
+Die Konsistenz der Daten, bei gleichzeitigem Zugriff von Mehren Computersysteme, stellt NFS mit einem separaten Protokoll, genannt Network Lock Manager (NLM) sicher. Der Network-Lock-Manager sorgt dafür, dass eine Datei, welche von einem Computersystem geändert wird, vor der Änderung anderen Computer Systeme gesichert ist. Wenn ein Client eine Sperrung angefordert hat, muss der Client, nach nicht mehr gebrauch der Sperrung, dem Server die Entsperrung mitteilen. Dieser Implementierung der Sperrung führt jedoch zu Problemen, wenn der Client ein System Absturz erleidet, in diesen Fall kann der Client die Entsperrung dem Server nicht mitteilen und die Datei bleibt für gesperrt.
+NFS setzt mit NLM das Advisory Locking Sperr-Verfahren ein, dass bedeutet, dass ein weiter Client beim Zugriff auf eine gesperrte Datei nur hingewiesen wird, dass die Datei gesperrt ist, aber nicht den Client zwingt, keine Änderung vorzunehmen.\cite{Stern2001}
+
+
+Seit Version 4 von NFS Protokoll (RFC 3530) ist das Sperre-Verfahren (Locking) im Protokoll selber implementiert, dadurch entfällt der zusätzliche Einsatz von Network Lock Manager. NFS Version 4 beherrscht das Sperren von Bytes-Bereich in einer Datei. Zudem erhält der Client von Server nur einen Leasing-Zeitraum für eine Sperrung (Lock), welcher er vor Ablauf wieder erneuern muss, um die Sperrung aufrecht zu halten. NFS in der Version 4 unterstützt das Sperr-Verfahren Mandatory Locking, dass bedeutet ein weiter Client kann, sich über die Sperrung nicht hinwegsetzen.\cite{Callaghan2003}
+
+Dadurch, dass NFS auf TCP/IP als Kommunikation Protokoll aufbaut, kann eine NFS Freigabe, Standort übergreifend verfügbar gemacht werden, jedoch gilt auch hier das die Latenz und die Bandbreite der Verbindung zwischen den Standorten der limitierende Faktor ist.
+
+NFS selbst hat keine eigene Implementierung für die Sicherstellung der Integrität der übermittelten Daten, stattdessen verlässt sich NFS seit Version 2 auf TCP und Ethernet Fehler Erkennung. TCP prüft im Standard verfahren die Integrität mit einer 16-Bit-Integer Prüfsumme. Die 16-Bit-Integer Prüfsumme erkennt Fehler im pseudo IP-Header, TCP-Header und Daten. Das Verfahren hat jedoch schwächen bei Einzel Bit-Fehlern Erkennung. Ethernet verwendet für die Fehlererkennung einen CRC32 Prüfsumme, diese gilt als effektive in der Erkennung Behebung von Bit Fehler, bietet aber keine durchgehend (End-to-End) Schutz. Grund dafür ist, dass beim Wechseln des Pakets der Kollisionsdomäne, wie es bei einen Swtich oder Router der Fall ist, jedes Mal eine neu CRC32 Prüfsumme erstellt wird.\cite{JohnL.202}. Bei NFS ab Version 4 kann der Datentransfer zusätzlich mit Kerberos abgesichert werden. Kerberos hat einen strengen Schutz gegen Manipulationen am Datenpaket und stellt somit die Integrität der Daten sicher. Nachteil ist aber das Kerberos zusätzlich eingerichtet werden muss. 
+
+Bis und mit Version 4, wahren die Verarbeitung der Metadaten und die Verarbeitung der Daten in einem Protokoll und Server implementiert. NFS skalierte deshalb bis anhin bei der Verarbeitung von Dateien mit grosser Speicherplatz bedarf nicht ausreichend. Fragt einen NFS Client einen NFS Server für eine Datei an prüft der Server die Metadaten, die Metadaten enthalten den Speicherort, die Grösse, das Erstellungsdatum und das Änderungsdatum einer Datei, und wandelt die Anfrage in einen Disk I/O um, die Daten der Datei werden gesammelt und über das Netzwerk übertragen. Bei kleinen Dateien verwendet der Server die meiste Zeit für das sammeln der Daten, bei Grössen Dateien ist der limitierende Faktor der Transfer der Daten über das Netzwerk selbst.
+Mit der Entwicklung von pNFS wurde der Transfer der Daten parallelisiert. Die Architektur von NFS wurde dazu in mehre Komponenten aufgeteilt. Der NFS Server besteht neu aus einen getrennten Metadaten Server und eine oder mehre Daten-Servern. Die Aufgabe des Metaservers ist die Verwaltung der Daten wo und wie die Daten gespeichert sind. Die Daten Servern, wo die Dateien gespeichert sind, kümmern sich um lese und schreib Anfragen von den Clients.
+Bei einer anfrage an einer grosse Datei können Mehrere Daten-Server parallel Teile von der Datei dem Client ausliefern, der Client kann dann die Verschiedenen teile der Datei wieder zusammen setzen zu einer ganzen Datei. \cite{Shepler2010}\cite{Group2010}
+
+Mit der NFS Version 4.1 wurde pNFS Bestandteil von NFS und ist seit 2010 im RFC 5661 standardisiert. Server Linux Distributoren, wie Red Hat haben allerdings NFS 4.1, erst als Vorschau in Ihrer Distribution integriert.\cite{EastJacquelynnMichaelHidep-Smith2011}
+
+
+
+
+\subsection{NAS Appliance}
+
+Network Attached Storage sind Speichersystem mit angepassten Datei System für den gemeinsamer Dateizugriff in einen Hetrogenen Computer Netzwerk welche über ein LAN angeschlossen sind. Als Speicher verwenden NAS je nach Typ interne Festplatten, Direct Attached Storage oder über eine SAN angefügten Speicher.
+An Clients stellen NAS Ihren Speicher über NFS, CIFS, ISCSI zur Verfügung. High-End NAS können Ihren Speicher wiederum über Fibre-Channel zur Verfügung stellen.
+
+Gemäss Gartner gehören die Anbieter IBM, EMC und NetAPP zu den führenden NAS Anbieter in Midrange und High-End bereich. Wobei gemäss Garnter Magic Quadrant Netapp zusammen mit EMC zu den innovativsten Anbieter.
+
+\begin{quotation}
+\em 
+\textbf{Strengths}
+\begin{itemize}
+\item NetApp remains one of the few truly unified storage providers among all top-tier vendors, with its software features continuing to be industry benchmarks. The company was able to regain some of the NAS revenue market share that it had lost in 2009. Its fast revenue growth in 2010 was driven by its successful campaign targeted at midsize enterprises with the value propositions of NFS supporting VMware and unified storage in consolidating Windows application storage.
+
+\item In 2010, NetApp increased its aggregate up to 100TB with Data ONTAP 8.0.1 and introduced compression to complement its popular deduplication capability. It added a RESTful object storage interface (based on its acquisition of Bycast) to its unified storage, targeting global content repositories. On the hardware side, it launched new systems with better performance and denser disk shelves.
+\item NetApp's new software bundles have simplified the procurement process and made software pricing more affordable. For customers seeking converged infrastructure, NetApp launched FlexPod for VMware with its partners Cisco and VMware, offering packages including servers, storage and switches.
+\end{itemize}
+\textbf{Cautions} 
+\begin{itemize}
+\item The vast majority of the Data ONTAP 8.0 adoption was on the 7 mode (instead of the cluster mode) for larger aggregates, while the early adoption of the cluster mode focuses on high- performance NFS file services. The cluster mode is not ready for mainstream enterprise customers who require those 7-mode features that are still missing in the cluster mode. The ONTAP 8.1 scheduled for release later this year will likely continue to support the two modes: clustered and nonclustered modes of operation.\item While NetApp continues to enjoy its leading edge in unified storage, it's facing fiercer competition in the high-end NAS market, where file systems larger than 100TB are required and where high performance without the expensive Flash Cache is desired.NetApp is also challenged in the low-end NAS and unified storage market with new products from both major and emerging competitors.
+\end{itemize}
+\end{quotation}\cite{IEEE2003}
+
+
+
+\subsection{Zusammenfassung}
 
 
 
