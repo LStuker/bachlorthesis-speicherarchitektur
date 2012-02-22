@@ -2,7 +2,7 @@
 \cleardoublepage
 \chapter{Speicherarchitekturen}
 
-Die heutigen bekannten Speicherarchitekturen können in Block- (Block-Based), Datei- (File-Based) und Objekt-Basierende adressierende Systeme unterteilt werden.
+Die heutigen Speicherarchitekturen können in Block- (Block-Based), Datei- (File-Based) und Objekt-Basierende adressierende Systeme unterteilt werden.
 
 \section{Block-Basierend}
 Die Block-Basierende Speicherarchitektur ist wohl die traditionellste und weit verbreitetste Form zum Speichern und Zuzugreifen von Daten. Die meisten Computersysteme, sei es Server, Desktop-PCs, Tablet-PC, Smartphones, Spielkonsole, speichern Ihre Daten in einen Blockbasierenden Speicher ab. Als Speicher werden in diesen Geräte meist magnetischen Festplatten, Solid State Disk oder Flash-Speicher eingesetzt.
@@ -224,5 +224,26 @@ Gemäss Gartner gehören die Anbieter IBM, EMC und NetAPP zu den führenden NAS 
 
 \subsection{Zusammenfassung}
 
+
+\section{Objekt-Basierend}
+
+\subsection{Verteilte Dateisysteme}
+Unternehmen wie Google, welche Web-Applikationen mit Millionen von Anwendern Betreiben und der Speicherbedarf von hunderten Terrabyte bis Petabyte an Daten,  haben hohe Anforderungen an Ihr Speichersystem. Google hat für Ihren Bedarf eine eigenes Verteiltes Dateisystem genannt Google Filesystem entwickelt. Google hat beim Designe und des Dateisystem angenommen, das es auf gewöhnlichen und günsige Hardware laufen kann, welche aber öfter Komponenten Fehler habe. Daher ist der Ausfall von Komponenten nicht eine Sonderfalls sondern gehört zur Normalität. Zudem handelt sich bei den gespeicherten Dateien eher um grössere Dateien mit 100 Megabyte bis Multi Gigabyte an grösse. Die Auslastung ist primär durch zwei Arten von lese Vorgänge verursacht. Das lesen eines ganzen Datenstroms und das regellos Lesen. Die Schreibbelastung wird durch grosse Sequentiele schreib Vorgänge verursacht und Dateien werden erweitert als modifiziert. Als Architektur hat Google einen Cluster gewählt bestehend aus einen einzigen Metadaten Server und mehren Chunksserver. Die Daten werden bei Google in Einheiten genannt Chunks unterteilt und jeder Chunk bekommt eine eindeutige Identifizierung. Diese Chunks werden über mehre Chunkserver repliziert um die Ausfallsicherheit zu gewährleisten. Der Metadaten Server speichert in seinen Arbeitsspeicher die ganze metadaten bestehend aus Namensraum, Berechtigung Informationen, die Zuordnung der Datei zu den Chunks, und die Speicherort der Chunks. Google hat Ihre Dateisystem bis anhin nicht veröffentlich, hat jedoch eine  Studie über die Desinge und Architektur Prinzipen veröffentlicht. Einige erhältliche Verteileten Dateisysteme, wie Hadoop Distributed Filesystem (HDFS), CloudStore und GLORY-FS beruhen auf den selben Architektur Prinzipen aus der Studie.
+
+
+ Diese Studie galt für eine Verteilte Dateisysteme, wie Hadoop Distributed Filesystem (HDFS), CloudStore, GLORY-FS,
+ Das Google Filesystem 
+
+welche die
+
+
+ Google stellte an sein Dateisystem folgende Anforderungen: 
+\begin{itemize}
+\item Komponenten Fehler sind die Norm
+\item Multi-Gigabyte Dateien sind häufig
+\item Dateien werden werden hauptsächlich erweitert als überschrieben
+\end{itemize}
+
+Für diese Hauptanforderungen hat Google eine eigenes Dateisystem Entworfen und Entwickelt.
 
 
