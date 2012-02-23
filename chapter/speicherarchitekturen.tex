@@ -16,15 +16,15 @@ Experten wie Mike Mesnier, Greg Ganger und Erik Riedel, sehen jedoch bei zunehme
 
 Vergleicht man die erste Festplatte, welche von IBM produziert wurde, mit einer Seagate von 2011, hat sich die Speicherdichte von 2000 bit per Quadratzoll auf 625 Gigabyte und in der Geschwindigkeit von 8 Kilobyte auf 600 Megabyte verbessert\cite{Seagate2011}\cite{Seagate2011a}
 
-Für den Zugriff auf Blockbasierende Speichersysteme werden meist Schnittstellen Protokolle wie Small Computer System Interface (SCSI) oder Advanced Technology Attachment (ATA) verwendet. Diese Protokolle wurden jedoch in einer Zeit entwickelt, wo man davon ausging, dass ein Block Speicher jeweils nur von einem Computersystem verwendet wurde und nicht mit mehreren Computersystemen geteilt wird. Dies Annahme stimmt in Consumer Elektronik Bereich meist noch heute, in Bereichen wo jedoch grosse Speicherkapazitäten oder eine grössere Verfügbarkeit gefordert ist, wie Sie im Geschäftsbereich vorkommen, stimmen diese Annahmen nicht mehr.
+Für den Zugriff auf Blockbasierende Speichersysteme werden meist Schnittstellen Protokolle wie Small Computer System Interface (SCSI) oder Advanced Technology Attachment (kurz \gls{ATA}) verwendet. Diese Protokolle wurden jedoch in einer Zeit entwickelt, wo man davon ausging, dass ein Block Speicher jeweils nur von einem Computersystem verwendet wurde und nicht mit mehreren Computersystemen geteilt wird. Dies Annahme stimmt in Consumer Elektronik Bereich meist noch heute, in Bereichen wo jedoch grosse Speicherkapazitäten oder eine grössere Verfügbarkeit gefordert ist, wie Sie im Geschäftsbereich vorkommen, stimmen diese Annahmen nicht mehr.
 
-Blockbasierende Speicher, welche nicht aus Internen Speicher eines Server gebildet werden, unterscheidet man in Direct Attached Storage (DAS) und Storage Area Network (SAN). 
+Blockbasierende Speicher, welche nicht aus Internen Speicher eines Server gebildet werden, unterscheidet man in Direct Attached Storage (kurz DAS) und Storage Area Network (kurz SAN). 
 
 \subsection{Direct Attached Storage}
-Bei DAS handelt es sich, wie es aus der englischen Bezeichnung zu entnehmen ist, um Speicher, welche direkt an ein Computersystem angeschlossen wird. Bei DAS Enclosure handelt sich um ein Gehäuse mit mehren verbauten Festplatten, welche üblich über einen Host-Bus-Adapter an ein Computersytem angeschlossen wird. Als Schnittstellen Protokoll werden ATA, STA, eSATA, SCSI, SAS und Fibre Channel eingesetzt. DAS können mit mehreren Computersystemen geteilt werden, sofern genügen Schnittstellen zur Verfügung stehen.
+Bei DAS handelt es sich, wie es aus der englischen Bezeichnung zu entnehmen ist, um Speicher, welche direkt an ein Computersystem angeschlossen wird. Bei DAS Enclosure handelt sich um ein Gehäuse mit mehren verbauten Festplatten, welche üblich über einen Host-Bus-Adapter an ein Computersytem angeschlossen wird. Als Schnittstellen Protokoll werden \gls{ATA}, \gls{STA}, \gls{eSATA}, \gls{SCSI}, \gls{SAS} und Fibre Channel eingesetzt. DAS können mit mehreren Computersystemen geteilt werden, sofern genügen Schnittstellen zur Verfügung stehen.
 
 \subsection{Storage Area Network}
-Die Storage Networking Industry Association (SNIA) definiert ein Storage Area Network (SAN) als ein Netzwerk, welch primärer Bestimmungszweck ist Daten zwischen Computersysteme und Speicherelemente und unter Storage Elemente zu transferieren. Ein SAN besteht aus einer Kommunikations-Infrastrukture, welches eine physische Verbindung und eine Management-Schicht beinhaltet, welches die Verbindungen, die Speichereinheiten und das Computersystem organisiert, sodass der Datentransfer sicher und robust erfolgen kann. Der Begriff SAN wird normalerweise (aber nicht notwendigerweise) mit dem Block I/O Service in Verbindung gebracht und weniger mit dem Datei-Zugriff-Service.\cite{SNIA2011}
+Die Storage Networking Industry Association (kurz \gls{SNIA}) definiert ein Storage Area Network (kurz SAN) als ein Netzwerk, welch primärer Bestimmungszweck ist Daten zwischen Computersysteme und Speicherelemente und unter Storage Elemente zu transferieren. Ein SAN besteht aus einer Kommunikations-Infrastrukture, welches eine physische Verbindung und eine Management-Schicht beinhaltet, welches die Verbindungen, die Speichereinheiten und das Computersystem organisiert, sodass der Datentransfer sicher und robust erfolgen kann. Der Begriff SAN wird normalerweise (aber nicht notwendigerweise) mit dem Block I/O Service in Verbindung gebracht und weniger mit dem Datei-Zugriff-Service.\cite{SNIA2011}
 
 Je nach SAN Implementierung kommen folgende Geräte bzw. Komponenten vor:
 \begin{itemize}
@@ -41,7 +41,7 @@ Je nach SAN Implementierung kommen folgende Geräte bzw. Komponenten vor:
 Der Server greift über das SAN auf Ressourcen von Speichersystem oder Tape Library. In einzelnen Fällen kann der Server selbst über SAN anderen Server Speicher zur Verfügung stellen.
 
 \paragraph*{Host Bus Adapter}
-Host Bus Adapter (HBA) für das SAN sind intelligente Hardwareschnittstellen, welche für die Verbindung von Server in einem SAN verwendet werden. Sofern die Server nicht bereits mit einen Host Bus Adapter ausgerüstet sind, können die meisten durch Host Bus Adapter in form von Steckkarten erweitert werden. Der Host Bus Adapter selber hat pro Port ein Einschub in welche ein Gigabit Interface Converter eingebaut wird. \cite{Christopher2009}
+Host Bus Adapter (kurz HBA) für das SAN sind intelligente Hardwareschnittstellen, welche für die Verbindung von Server in einem SAN verwendet werden. Sofern die Server nicht bereits mit einen Host Bus Adapter ausgerüstet sind, können die meisten durch Host Bus Adapter in form von Steckkarten erweitert werden. Der Host Bus Adapter selber hat pro Port ein Einschub in welche ein Gigabit Interface Converter eingebaut wird. \cite{Christopher2009}
 
 \paragraph*{Gigabit Interface Converter}
 Der Gigabit Interface Converter sind modulare Schnittstellen, welche Elektrische Signale in optische Signale umwandeln.\cite{SNIA2011}
@@ -50,13 +50,13 @@ Der Gigabit Interface Converter sind modulare Schnittstellen, welche Elektrische
 Der SAN Switch ist ein Switch, welche dezidiert für das SAN Umgebung verwendet wird.
 
 \paragraph*{Speichersystem}
-Das Speichersystem stellt im SAN den geteilten Speicher zur Verfügung. Gemäss den IT Marktforschung und Analyse Unternehmen Gartner gehören EMC, IBM, NetApp, Dell, HP, Hitachi zu den Marktführer\cite{RogerW.CoxPushanRinnenStanleyZaffos2011}.
+Das Speichersystem stellt im SAN den geteilten Speicher zur Verfügung. Gemäss den \gls{IT} Marktforschung und Analyse Unternehmen Gartner gehören \gls{EMC}, \gls{IBM}, \gls{NetApp}, \gls{Dell}, \gls{HP}, \gls{Hitachi} zu den Marktführer\cite{RogerW.CoxPushanRinnenStanleyZaffos2011}.
 
 \paragraph*{Tape Library}
 Tape Library sind Bandbibliothek in welche ein oder mehre Bandlaufwerke und mehrere Magnetbänder befinden und der automatische Bandwechsel mittels eines Roboter realisiert wird. Die Tape Library werden für die Sicherung von Daten auf Band eingesetzt.
 
 \paragraph*{Logical Unit}
-Ein Logical Unit ist ein Gerät, welche über SCSI Protokoll andressiert mittel Logical Unit Number (LUN) wird, weshalb oft auch wenn technisch nicht korrekt das Gerät als LUN bezeichnet wird. Im Speichersystem werden mehre Festplatten mittels RAID zu einer Einheit zusammengefasst, sofern keine weitere Virtualisierung von dem Speicherhersteller zum Einsatz kommt, wird die zusammengefasste Einheit wiederum in Speichereinheiten aufgeteilt und diese als LUN dem Server zugeteilt.\cite{SNIA2011}
+Ein Logical Unit ist ein Gerät, welche über SCSI Protokoll andressiert mittel Logical Unit Number (kurz LUN) wird, weshalb oft auch wenn technisch nicht korrekt das Gerät als LUN bezeichnet wird. Im Speichersystem werden mehre Festplatten mittels RAID zu einer Einheit zusammengefasst, sofern keine weitere Virtualisierung von dem Speicherhersteller zum Einsatz kommt, wird die zusammengefasste Einheit wiederum in Speichereinheiten aufgeteilt und diese als LUN dem Server zugeteilt.\cite{SNIA2011}
 
 \subsubsection{Fibre Channel}
 SCSI ist zwar sehr populär, ist jedoch mit 80 Mbps Geschwindigkeit, maximal 25 Meter Bus länge, und mit maximal 32 Geräte pro Bus, ein limitierender Faktor für viele Anwendungen. Unteranderem wegen erwähnten Limitierungen von SCSI hat, das American national Standards Institute (ANSI) die Fibre Channel Technik entwickelt. Fibre Channel ist ein mehrschichtiges Netzwerk, welche die Charakteristische und Funktionen für die Übertragung von Daten über ein Netzwerk definiert. Der Standard beinhaltet von der physikalischen Schnittstelle, Daten Codierung, Übertragungssteuerung (Link Control), Fluss Kontrolle, bis hinzu den Protokoll Schnittstellen. In Vergleich zu anderen Netzwerken, beinhaltet die Fibre Channel Architektur einen signifikanten Anteil von Hardware Prozesse um eine hohe Performance zu erreichen.\cite{Gupta2002}\cite{Christopher2009}
@@ -73,7 +73,7 @@ Es gibt drei Fibre Channel Topolgien:
 \end{itemize}
 
 \paragraph*{Point-to-Point-Topologie}
-Die Point-to-Point-Topologie ist die direkte Verbindung von zwei Fibre Channel Geräte, meistens handelt es sich bei der Verbindung von einem Server und einen Speichersystem, wie Sie im Direct Attached Storage (DAS) Umfeld vorkommt. \cite{Christopher2009}
+Die Point-to-Point-Topologie ist die direkte Verbindung von zwei Fibre Channel Geräte, meistens handelt es sich bei der Verbindung von einem Server und einen Speichersystem, wie Sie im Direct Attached Storage (kurz DAS) Umfeld vorkommt. \cite{Christopher2009}
 
 \paragraph*{Arbitrated-Loop-Topologie}
 Bei der Arbitrated-Loop-Topologie können bis zu 126 Knoten (NL\_Ports) an einen geteilten Bus Ring zusammengeschlossen werden. In diesen Ring kann eine Verbindung zwischen zwei Ports aktive sein, alle anderen Ports fungieren währende diese Verbindung aktive ist als Repeater und leiten das Signal weiter. Die Arbitrated-Loop-Topologie ist deshalb von der Architektur ähnlich wie dem Token Ring.\cite{Gupta2002}\cite{Christopher2009}
@@ -89,7 +89,7 @@ Die einfachste Topologie, welche das Design Ziel die Eliminierung von Single "'P
 \mycaption{figure}{\label{abb:DualSwitchTopologie}Fibre Channel SAN mit Dual Switch Topologie}
 \end{center}
 
-Die Meshed Fabric Topologie erhöht die Ausfallsicherheit zusätzlich innerhalb den einzelne Fabric. Für die Meshed Fabric sind pro Fabric mindestens vier Fibre Channel SAN Switches erforderlich. Jeder Switch wird wie in \refabb{abb} ersichtlich ist mit mindestens einen Path, den sogenannten Inter Switch Link (ISL), zu allen anderen Switches in der Fabric Verbunden. Die Meshed Fabric kann den Ausfall von Mehren Kabel und Switch verkraften ohne das die ganze Fabric ausfällt.\cite{Christopher2009}
+Die Meshed Fabric Topologie erhöht die Ausfallsicherheit zusätzlich innerhalb den einzelne Fabric. Für die Meshed Fabric sind pro Fabric mindestens vier Fibre Channel SAN Switches erforderlich. Jeder Switch wird wie in \refabb{abb} ersichtlich ist mit mindestens einen Path, den sogenannten Inter Switch Link (kurz ISL), zu allen anderen Switches in der Fabric Verbunden. Die Meshed Fabric kann den Ausfall von Mehren Kabel und Switch verkraften ohne das die ganze Fabric ausfällt.\cite{Christopher2009}
 
 \begin{center}
 \includegraphics[width=\linewidth, keepaspectratio = true]{media/}
@@ -99,12 +99,12 @@ Die Meshed Fabric Topologie erhöht die Ausfallsicherheit zusätzlich innerhalb 
 \subsubsection{iSCSI}
 Das SCSI-Protokoll ist ein populäres Protokoll für die Kommunikation mit I/O Geräten, spezielle für Speicher Geräte. SCSI weist die Client-Server Architektur auf, wobei der Clients bei SCSI Interface als "initiators" bezeichnet wird und die logische Einheit vom Server als "target".
 
-SCSI Protokoll wurde schon über Protokolle transportiert, jedoch waren all die Transport Protokolle limitiert in der Distanz. IBM startete 1996 mit der Forschung für die Übertragung von SCSI über das Ethernet, dabei untersuchte IBM ob sich der Transport mittels IP oder TCP/IP besser eignen würde. Messungen zeigte da zumal, dass in einem lokalen Netzwerk, der Transport mittels IP besser eignet, anstelle von TCP/IP, mit der Extrapolation in die Zukunft, und den Transport über die lokale Netzwerkgrenze hinweg war aber der Weg mittels TCP/IP die bessere Wahl. 1999 hatten sich IBM und Cisco geeinigt "SCSI over TCP/IP" gemeinsam in eine Internet Engineering Task Force Standart weiter zu entwickeln. \cite{JohnL.202} Die fertige Spezifikation von SCSI over TCP/IP ist im RFC 3720 mit dem Namen iSCSI in April 2004 fertiggestellt worden.\cite{J.Satran2004}
+SCSI Protokoll wurde schon über Protokolle transportiert, jedoch waren all die Transport Protokolle limitiert in der Distanz. \gls{IBM} startete 1996 mit der Forschung für die Übertragung von SCSI über das Ethernet, dabei untersuchte \gls{IBM} ob sich der Transport mittels IP oder \gls{TCP/IP} besser eignen würde. Messungen zeigte da zumal, dass in einem lokalen Netzwerk, der Transport mittels IP besser eignet, anstelle von TCP/IP, mit der Extrapolation in die Zukunft, und den Transport über die lokale Netzwerkgrenze hinweg war aber der Weg mittels TCP/IP die bessere Wahl. 1999 hatten sich \gls{IBM} und \gls{Cisco} geeinigt "SCSI over TCP/IP" gemeinsam in eine Internet Engineering Task Force (kurz \gls{IETF}) Standart weiter zu entwickeln. \cite{JohnL.202} Die fertige Spezifikation von SCSI over \gls{TCP/IP} ist im \gls{RFC} 3720 mit dem Namen iSCSI in April 2004 fertiggestellt worden.\cite{J.Satran2004}
 
 % \paragraph*{Kosten}
-Für den Betrieb eines Fibre Channel SAN sind spezielle Hardware und Fibre Channel Kenntnis notwenig. Aufgrund, dass bei iSCSI die selbe Technik wie im Computernetzwerk verwendet wird, benötigt es für den Betrieb keine zusätzliche Ausbildung, Netzwerk Infrastruktur und Management Software Lösungen, was die Gesamtbetriebskosten (TCO) senkt.
+Für den Betrieb eines Fibre Channel SAN sind spezielle Hardware und Fibre Channel Kenntnis notwenig. Aufgrund, dass bei iSCSI die selbe Technik wie im Computernetzwerk verwendet wird, benötigt es für den Betrieb keine zusätzliche Ausbildung, Netzwerk Infrastruktur und Management Software Lösungen, was die Gesamtbetriebskosten (kurz TCO) senkt.
 
-Grundsätzlich kann jeder Computer, welcher mit einem Netzwerkanschluss ausgerüstet ist und einen iSCSI Software Treiber hat, iSCSI nutzen. Computer welche Genügen Prozessor Leistung haben können die zusätzliche Last für die Verarbeitung von iSCSI mit konventionellen Netzwerkkarten lösen. Bei Computersystem, welche die Verarbeitungsgeschwindigkeit kritisch ist, wie bei Server kann diese zusätzliche Last negativ sein. Vergleichbar wie für Fibre Channel gibt es für iSCSI spezielle Netzwerkkarten bzw. Host Bus Adapter, welche mittels TCP/IP Offload Engine (TOE) und volle iSCSI Offload Engine im eignen Chip die TCP/IP bzw. iSCSI Pakete verarbeiten. Solche Netzwerkkarten entlasten durch die Verarbeitung der TCP/IP und iSCSI Pakete im eignen Chip die Central Processing Unit (CPU) des Servers und weisen bessere Werte in der Latenz auf.
+Grundsätzlich kann jeder Computer, welcher mit einem Netzwerkanschluss ausgerüstet ist und einen iSCSI Software Treiber hat, iSCSI nutzen. Computer welche Genügen Prozessor Leistung haben können die zusätzliche Last für die Verarbeitung von iSCSI mit konventionellen Netzwerkkarten lösen. Bei Computersystem, welche die Verarbeitungsgeschwindigkeit kritisch ist, wie bei Server kann diese zusätzliche Last negativ sein. Vergleichbar wie für Fibre Channel gibt es für iSCSI spezielle Netzwerkkarten bzw. Host Bus Adapter, welche mittels TCP/IP Offload Engine (kurz TOE) und volle iSCSI Offload Engine im eignen Chip die \gls{TCP/IP} bzw. iSCSI Pakete verarbeiten. Solche Netzwerkkarten entlasten durch die Verarbeitung der \gls{TCP/IP} und iSCSI Pakete im eignen Chip die Central Processing Unit (kurz \gls{CPU}) des Servers und weisen bessere Werte in der Latenz auf.
 
 % \paragraph*{Netzwerk}
 In einem Ethernet Netzwerk verwaltet sich jeder Switch mehr oder weniger autonome und führt eine eigene Weiterleitungstabelle, mit welcher der Switch entscheidet, über welchen Port eine Ethernet Packe ausgeliefert werden muss. Dazu enthält die Weiterleitungstabelle pro MAC Adresse den dazugehörigen Port. Trifft eine Ethernet Paket mit noch unbekannter MAC Adresse ein, leitet der Switch das Paket über alle Ports weiter. Durch die Rückantwort des Zielsystems lernt der Switch, über welchen Port, das System erreichbar ist. Werden in einen Switch Netzwerk benachbarte Switches untereinander über mehre Pfade Verbunden, kann es bei in einen solchem Szenario eintreffen, dass das Paket wieder am ursprünglichen Switch ankommt, wenn der benachbarte Switch die MAC-Adresse ebenfalls nicht kennt. Es entsteht dadurch eine Verdoppelung, der Ethernet Paket im Netzwerk bzw. es kommt zu einer Schleifenbildung, was wiederum zu Netzwerkstörungen führt. Mittels Spanning Tree Protokoll (STP) sollen solche Schleifen vermieden werden. Das Spannung Tree Protokoll erstellt eine Baum Topologie mit jeweils einer aktiven Path zwischen zwei Switches. Diese Topologie hat mehre Nachteile: 
@@ -164,26 +164,92 @@ Dateisysteme können mittels Sicherungssoftware auf Bandlaufwerke oder andere Sp
 
 \subsection{Zusammenfassung}
 
+\begin{table}[htbp]
+\caption{Umgekehrte Relationen der Bewertungsskala}
+\begin{tabular}{|L{3.5cm}|L{10cm}|}
+\hline
+Redundanz & Logical Volume Manager oder Raid (Hard bzw. Software) \\ \hline
+Standortübergreifend & Einsatz von SAN und Logical Volume Manager notwendig \\ \hline
+Skalierbarkeit Datenzugriffe &  \\ \hline
+Performance &  \\ \hline
+POSIX IO & Bei Unix Dateisystem \\ \hline
+Simultaner Lesezugriff & Nur mit einen Cluster fähigen Dateisystem möglich \\ \hline
+Simultaner Schreibzugriff & Nur mit einen Cluster fähigen Dateisystem möglich \\ \hline
+Skalierbarkeit Speicherkapazität & Mit einen Logical Volume Manager, können mehre Blockgeräte zu einen grossen Zusammen gefasst werden \\ \hline
+Max Anzahl speicherbare Objekte &  \\ \hline
+Max Objekte Speichergrosse &  \\ \hline
+Datenintegrität & Dateisysteme wie Btrfs und ZFS speichern für jede Datei einen Hashwert anhand dieser kann die Integrität sichergestellt werden, jedoch ist Btrfs noch nicht Produktive einsetzbar und ZFS läuft unter Linux nur im Userspace (FUSE) und nicht im Kernel. \\ \hline
+Selbstheilung von Objekten & Dateisysteme wie Btrfs und ZFS haben diese Funktion integriert, jedoch ist Btrfs noch nicht Produktive einsetzbar und ZFS läuft unter Linux nur im Userspace (FUSE) und nicht im Kernel. \\ \hline
+Sicherung & Normales Sicherungsverfahren \\ \hline
+Sicherheit & Wird von Dateisystem bestimmt \\ \hline
+\end{tabular}
+\label{UmgekehrteBewertungsskala}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Umgekehrte Relationen der Bewertungsskala}
+\begin{tabular}{|L{3.5cm}|L{10cm}|}
+\hline
+Redundanz & Mit Switched-Fabric-Topologie können redundante SAN Netzwerke erstellt werden. Zudem können mehre Speichersysteme im SAN Verfügbar gemacht werden. \\ \hline
+Standortübergreifend & Eine Fibre-Channel SAN kann Standortübergreifend über eine ISL Verbindung Verfügbar gemacht werden. Beim Betrieb von zwei Standorte kann pro Standort je eine Speichersystem und eine Cluster Node platziert werden. \\ \hline
+Skalierbarkeit Datenzugriffe & Durch hinzufügen von mehren Verbindungen durch gehend von Server, über die Switches bis hin zu den Speichersystem, kann der Datenzugriff skaliert werden. \\ \hline
+Performance &  \\ \hline
+POSIX IO & wird durch Dateisystem sichergestellt \\ \hline
+Simultaner Lesezugriff & hängt von Dateisystem ab \\ \hline
+Simultaner Schreibzugriff & hängt von Dateisystem ab \\ \hline
+Skalierbarkeit Speicherkapazität & Einen Server kann druch zur Verfügungstellen weiterer Logical Units (Blockgeräte), mehr Speicher zur Verfügung gestellt werden. Die Speicherkapazität im ganzen SAN kann durch hinzufügen von weiteren Speichersystem oder grosseren Speichersystem skaliert werden. \\ \hline
+Max Anzahl speicherbare Objekte & hängt von Dateisystem ab \\ \hline
+Max Objekte Speichergrosse & hängt von Dateisystem ab \\ \hline
+Datenintegrität &  \\ \hline
+Selbstheilung von Objekten & hängt von Dateisystem ab \\ \hline
+Sicherung & - \\ \hline
+Sicherheit &  \\ \hline
+\end{tabular}
+\label{UmgekehrteBewertungsskala}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Umgekehrte Relationen der Bewertungsskala}
+\begin{tabular}{|L{3.5cm}|L{10cm}|}
+\hline
+Redundanz & Durch hinzufügen von mehren Verbindungen durch gehend von Server, über die Switches bis hin zu den Speichersystem, und den einsatzt von Link Aggregation. Bei einen Ausfall eines Switch bzw. Topologie wechesel kann es beim einsatz von Spanning-Tree zu einen mindestens 15-Sekundigen Unterbruch führen. Alternative Ethernet-Fabric, ist jedoch nicht Standardisiert sondern Hersteller Spezifisch. \\ \hline
+Standortübergreifend & Eine ISCSI-SAN kann Standortübergreifend Verfügbar gemacht werden. Beim Betrieb von zwei Standorte kann pro Standort je eine Speichersystem und eine Cluster Node platziert werden. \\ \hline
+Skalierbarkeit Datenzugriffe & . \\ \hline
+Performance & Bei 10 Gigabit Vergleichbar mit 8 Gigabite Fibre-Channel \\ \hline
+POSIX IO & wird durch Dateisystem sichergestellt \\ \hline
+Simultaner Lesezugriff & hängt von Dateisystem ab \\ \hline
+Simultaner Schreibzugriff & hängt von Dateisystem ab \\ \hline
+Skalierbarkeit Speicherkapazität & Einen Server kann druch zur Verfügungstellen weiterer Logical Units (Blockgeräte), mehr Speicher zur Verfügung gestellt werden. Die Speicherkapazität im ganzen SAN kann durch hinzufügen von weiteren Speichersystem oder grosseren Speichersystem skaliert werden. \\ \hline
+Max Anzahl speicherbare Objekte & hängt von Dateisystem ab \\ \hline
+Max Objekte Speichergrosse & hängt von Dateisystem ab \\ \hline
+Datenintegrität & ISCSI Pakete sind zusätlich zur 16bit TCP Checksum durch eine CRC-32c Checksumme vor Bit-Fehler oder manipulationen gesichert. \\ \hline
+Selbstheilung von Objekten & hängt von Dateisystem ab \\ \hline
+Sicherung & - \\ \hline
+Sicherheit & Kann durch IP-Sec gesichert werden \\ \hline
+\end{tabular}
+\label{UmgekehrteBewertungsskala}
+\end{table}
+
 
 \section{Datei-Basierend}
 Bei Datei basierte Speicherarchitekturen werden Daten nicht wie bei Block basierten Speicherarchitekturen über Blocke adressiert, sondern über Dateien.
 
 Mit dem Aufkommen von Desktop-Computer, wurden die Daten nicht mehr Zentral auf einen Mainframe bearbeitet, sondern vermehrt verteilt auf den einzelnen Desktop-Computer. Ohne Vernetzung der Computer mussten die Daten mittels portablen Speichermedien ausgetauscht werden. Diese mag noch in kleinen Umgebungen praktikabel gewesen, sobald jedoch die Anzahl Teilnehmer steigt, wird es schwierig, den Überblick über seine Daten zu haben. Die reine Vernetzung der Computer und den direkten Austausch zwischen den einzelnen Desktop-Computer über eine Netzwerk bietet hier ebenfalls keine Lösung. Die bessere Lösung dieses Problems ist eine Zentraler Speicher in welcher die Dokumente (Dateien) gespeichert sind und mittels Netzwerk Protokoll den Desktop-Computer zur Verfügung gestellt werden. Somit ist es für den Anwender klar welche Dateien existieren und hat zugriff auf auf die aktuelle Version. Unternehmen wie Sun Microsystem, IBM, Microsoft und Apple erkannten ebenfalls dieses Bedarf und entwickelten für Ihre Betriebsysteme Software und dazugehörige Protokolle für den geteilten Datenzugriff.
 
-Zu den bekanntesten und weitverbreitesten Lösungen zählen NFS und CIFS (SMB).
+Zu den bekanntesten und weitverbreitesten Lösungen zählen NFS und \gls{CIFS} (SMB).
 
 
 \subsection{Network File System}
-Das ursprünglich rein von der Firma SUN Microsystems (heute Oracle) 1984 entwickeltes Network-File-System, ermöglicht den gemeinsamen Zugriff von mehreren Computersystemen auf das Dateisystem eines anderen Host (Server), als ob er zugriff auf ein lokales Dateisystem stattfindet. Die zweite Version von NFS erschien 1989 und war die erste Version welche von Internet Standard Request for Comments (\gls{RFC}) Standardisiert wurde und unter der RFC Nummer 1094 \footnote{003c?dpf /orth ?&gt;{http://tools.ietf.org/html/rfc1094}} veröffentlicht wurde. Für den Transport des NFS Protokoll wurde bis Version zwei ausschliesslich das \gls{UDP} Transportprotokoll unterstützt.
-Die Version 3 von NFS (RFC 1813)\footnote{003c?dpf /orth ?&gt;{http://tools.ietf.org/html/rfc1813}}, die 1995 veröffentlicht wurde, war die erste Version, welche Maschinen, Betriebsystem und Netzwerk Architektur, und Transport-Protokoll unabhängig ist. Die Unabhängigkeit wird mit der Verwendung von Remote Procedure Call (\gls{RPC}), welches wiederum ein eXternal Data Representation (\gls{XDR}) verwendet, erreicht. \cite{Stern2001}
+Das ursprünglich rein von der Firma SUN Microsystems (heute Oracle) 1984 entwickeltes Network-File-System, ermöglicht den gemeinsamen Zugriff von mehreren Computersystemen auf das Dateisystem eines anderen Host (Server), als ob er zugriff auf ein lokales Dateisystem stattfindet. Die zweite Version von NFS erschien 1989 und war die erste Version welche von Internet Standard Request for Comments (kurz \gls{RFC}) Standardisiert wurde und unter der \gls{RFC} Nummer 1094 \footnote{\url{http://tools.ietf.org/html/rfc1094}} veröffentlicht wurde. Für den Transport des NFS Protokoll wurde bis Version zwei ausschliesslich das \gls{UDP} Transportprotokoll unterstützt.
+Die Version 3 von NFS (\gls{RFC} 1813)\footnote{\url{http://tools.ietf.org/html/rfc1813}}, die 1995 veröffentlicht wurde, war die erste Version, welche Maschinen, Betriebsystem und Netzwerk Architektur, und Transport-Protokoll unabhängig ist. Die Unabhängigkeit wird mit der Verwendung von Remote Procedure Call (\gls{RPC}), welches wiederum ein eXternal Data Representation (kurz \gls{XDR}) verwendet, erreicht. \cite{Stern2001}
 
 Wie im \refabb{} zu entnehmen ist, ist NFS eine weitere Schicht, welche auf dem Dateisystem und dessen Block-Geräte des Computersystems bzw. Speichersystem aufbaut. So ist es zum Beispiel die Aufgabe des Dateisystems bzw. des Block-Gerätes sich um die Redundanz und Integrität der gespeicherten Daten zu kümmern. 
 
-Die Konsistenz der Daten, bei gleichzeitigem Zugriff von Mehren Computersysteme, stellt NFS mit einem separaten Protokoll, genannt Network Lock Manager (NLM) sicher. Der Network-Lock-Manager sorgt dafür, dass eine Datei, welche von einem Computersystem geändert wird, vor der Änderung anderen Computer Systeme gesichert ist. Wenn ein Client eine Sperrung angefordert hat, muss der Client, nach nicht mehr gebrauch der Sperrung, dem Server die Entsperrung mitteilen. Dieser Implementierung der Sperrung führt jedoch zu Problemen, wenn der Client ein System Absturz erleidet, in diesen Fall kann der Client die Entsperrung dem Server nicht mitteilen und die Datei bleibt für gesperrt.
+Die Konsistenz der Daten, bei gleichzeitigem Zugriff von Mehren Computersysteme, stellt NFS mit einem separaten Protokoll, genannt Network Lock Manager (kurz NLM) sicher. Der Network-Lock-Manager sorgt dafür, dass eine Datei, welche von einem Computersystem geändert wird, vor der Änderung anderen Computer Systeme gesichert ist. Wenn ein Client eine Sperrung angefordert hat, muss der Client, nach nicht mehr gebrauch der Sperrung, dem Server die Entsperrung mitteilen. Dieser Implementierung der Sperrung führt jedoch zu Problemen, wenn der Client ein System Absturz erleidet, in diesen Fall kann der Client die Entsperrung dem Server nicht mitteilen und die Datei bleibt für gesperrt.
 NFS setzt mit NLM das Advisory Locking Sperr-Verfahren ein, dass bedeutet, dass ein weiter Client beim Zugriff auf eine gesperrte Datei nur hingewiesen wird, dass die Datei gesperrt ist, aber nicht den Client zwingt, keine Änderung vorzunehmen.\cite{Stern2001}
 
 
-Seit Version 4 von NFS Protokoll (RFC 3530) ist das Sperre-Verfahren (Locking) im Protokoll selber implementiert, dadurch entfällt der zusätzliche Einsatz von Network Lock Manager. NFS Version 4 beherrscht das Sperren von Bytes-Bereich in einer Datei. Zudem erhält der Client von Server nur einen Leasing-Zeitraum für eine Sperrung (Lock), welcher er vor Ablauf wieder erneuern muss, um die Sperrung aufrecht zu halten. NFS in der Version 4 unterstützt das Sperr-Verfahren Mandatory Locking, dass bedeutet ein weiter Client kann, sich über die Sperrung nicht hinwegsetzen.\cite{Callaghan2003}
+Seit Version 4 von NFS Protokoll (\gls{RFC} 3530) ist das Sperre-Verfahren (Locking) im Protokoll selber implementiert, dadurch entfällt der zusätzliche Einsatz von Network Lock Manager. NFS Version 4 beherrscht das Sperren von Bytes-Bereich in einer Datei. Zudem erhält der Client von Server nur einen Leasing-Zeitraum für eine Sperrung (Lock), welcher er vor Ablauf wieder erneuern muss, um die Sperrung aufrecht zu halten. NFS in der Version 4 unterstützt das Sperr-Verfahren Mandatory Locking, dass bedeutet ein weiter Client kann, sich über die Sperrung nicht hinwegsetzen.\cite{Callaghan2003}
 
 Dadurch, dass NFS auf TCP/IP als Kommunikation Protokoll aufbaut, kann eine NFS Freigabe, Standort übergreifend verfügbar gemacht werden, jedoch gilt auch hier das die Latenz und die Bandbreite der Verbindung zwischen den Standorten der limitierende Faktor ist.
 
@@ -193,17 +259,17 @@ Bis und mit Version 4, wahren die Verarbeitung der Metadaten und die Verarbeitun
 Mit der Entwicklung von pNFS wurde der Transfer der Daten parallelisiert. Die Architektur von NFS wurde dazu in mehre Komponenten aufgeteilt. Der NFS Server besteht neu aus einen getrennten Metadaten Server und eine oder mehre Daten-Servern. Die Aufgabe des Metaservers ist die Verwaltung der Daten wo und wie die Daten gespeichert sind. Die Daten Servern, wo die Dateien gespeichert sind, kümmern sich um lese und schreib Anfragen von den Clients.
 Bei einer anfrage an einer grosse Datei können Mehrere Daten-Server parallel Teile von der Datei dem Client ausliefern, der Client kann dann die Verschiedenen teile der Datei wieder zusammen setzen zu einer ganzen Datei. \cite{Shepler2010}\cite{Group2010}
 
-Mit der NFS Version 4.1 wurde pNFS Bestandteil von NFS und ist seit 2010 im RFC 5661 standardisiert. Server Linux Distributoren, wie Red Hat haben allerdings NFS 4.1, erst als Vorschau in Ihrer Distribution integriert.\cite{EastJacquelynnMichaelHidep-Smith2011}
+Mit der NFS Version 4.1 wurde pNFS Bestandteil von NFS und ist seit 2010 im \gls{RFC} 5661 standardisiert. Server Linux Distributoren, wie Red Hat haben allerdings NFS 4.1, erst als Vorschau in Ihrer Distribution integriert.\cite{EastJacquelynnMichaelHidep-Smith2011}
 
 
 
 
 \subsection{NAS Appliance}
 
-Network Attached Storage sind Speichersystem mit angepassten Datei System für den gemeinsamer Dateizugriff in einen Hetrogenen Computer Netzwerk welche über ein LAN angeschlossen sind. Als Speicher verwenden NAS je nach Typ interne Festplatten, Direct Attached Storage oder über eine SAN angefügten Speicher.
+Network Attached Storage (kurz NAS) sind Speichersystem mit angepassten Datei System für den gemeinsamer Dateizugriff in einen Hetrogenen Computer Netzwerk welche über ein LAN angeschlossen sind. Als Speicher verwenden NAS je nach Typ interne Festplatten, Direct Attached Storage oder über eine SAN angefügten Speicher.
 An Clients stellen NAS Ihren Speicher über NFS, CIFS, ISCSI zur Verfügung. High-End NAS können Ihren Speicher wiederum über Fibre-Channel zur Verfügung stellen.
 
-Gemäss Gartner gehören die Anbieter IBM, EMC und NetAPP zu den führenden NAS Anbieter in Midrange und High-End bereich. Wobei gemäss Garnter Magic Quadrant Netapp zusammen mit EMC zu den innovativsten Anbieter.
+Gemäss Gartner gehören die Anbieter \gls{IBM,} \gls{EMC} und \gls{NetAPP} zu den führenden NAS Anbieter in Midrange und High-End bereich. Wobei gemäss Garnter Magic Quadrant Netapp zusammen mit EMC zu den innovativsten Anbieter.
 
 \begin{quotation}
 \em 
@@ -228,10 +294,10 @@ Gemäss Gartner gehören die Anbieter IBM, EMC und NetAPP zu den führenden NAS 
 \section{Objekt-Basierend}
 
 \subsection{Verteilte Dateisysteme}
-Unternehmen wie Google, welche Web-Applikationen mit Millionen von Anwendern Betreiben und der Speicherbedarf von hunderten Terrabyte bis Petabyte an Daten,  haben hohe Anforderungen an Ihr Speichersystem. Google hat für Ihren Bedarf eine eigenes Verteiltes Dateisystem genannt Google Filesystem entwickelt. Google hat beim Designe und des Dateisystem angenommen, das es auf gewöhnlichen und günsige Hardware laufen kann, welche aber öfter Komponenten Fehler habe. Daher ist der Ausfall von Komponenten nicht eine Sonderfalls sondern gehört zur Normalität. Zudem handelt sich bei den gespeicherten Dateien eher um grössere Dateien mit 100 Megabyte bis Multi Gigabyte an grösse. Die Auslastung ist primär durch zwei Arten von lese Vorgänge verursacht. Das lesen eines ganzen Datenstroms und das regellos Lesen. Die Schreibbelastung wird durch grosse Sequentiele schreib Vorgänge verursacht und Dateien werden erweitert als modifiziert. Als Architektur hat Google einen Cluster gewählt bestehend aus einen einzigen Metadaten Server und mehren Chunksserver. Die Daten werden bei Google in Einheiten genannt Chunks unterteilt und jeder Chunk bekommt eine eindeutige Identifizierung. Diese Chunks werden über mehre Chunkserver repliziert um die Ausfallsicherheit zu gewährleisten. Der Metadaten Server speichert in seinen Arbeitsspeicher die ganze metadaten bestehend aus Namensraum, Berechtigung Informationen, die Zuordnung der Datei zu den Chunks, und die Speicherort der Chunks. Google hat Ihre Dateisystem bis anhin nicht veröffentlich, hat jedoch eine  Studie über die Desinge und Architektur Prinzipen veröffentlicht. Einige erhältliche Verteileten Dateisysteme, wie Hadoop Distributed Filesystem (HDFS), CloudStore und GLORY-FS beruhen auf den selben Architektur Prinzipen aus der Studie.
+Unternehmen wie Google, welche Web-Applikationen mit Millionen von Anwendern Betreiben und der Speicherbedarf von hunderten Terrabyte bis Petabyte an Daten,  haben hohe Anforderungen an Ihr Speichersystem. Google hat für Ihren Bedarf eine eigenes Verteiltes Dateisystem genannt Google Filesystem entwickelt. Google hat beim Designe und des Dateisystem angenommen, das es auf gewöhnlichen und günsige Hardware laufen kann, welche aber öfter Komponenten Fehler habe. Daher ist der Ausfall von Komponenten nicht eine Sonderfalls sondern gehört zur Normalität. Zudem handelt sich bei den gespeicherten Dateien eher um grössere Dateien mit 100 Megabyte bis Multi Gigabyte an grösse. Die Auslastung ist primär durch zwei Arten von lese Vorgänge verursacht. Das lesen eines ganzen Datenstroms und das regellos Lesen. Die Schreibbelastung wird durch grosse Sequentiele schreib Vorgänge verursacht und Dateien werden erweitert als modifiziert. Als Architektur hat Google einen Cluster gewählt bestehend aus einen einzigen Metadaten Server und mehren Chunksserver. Die Daten werden bei Google in Einheiten genannt Chunks unterteilt und jeder Chunk bekommt eine eindeutige Identifizierung. Diese Chunks werden über mehre Chunkserver repliziert um die Ausfallsicherheit zu gewährleisten. Der Metadaten Server speichert in seinen Arbeitsspeicher die ganze metadaten bestehend aus Namensraum, Berechtigung Informationen, die Zuordnung der Datei zu den Chunks, und die Speicherort der Chunks. Google hat Ihre Dateisystem bis anhin nicht veröffentlich, hat jedoch eine  Studie über die Desinge und Architektur Prinzipen veröffentlicht. Einige erhältliche Verteileten Dateisysteme, wie Hadoop Distributed Filesystem (kurz HDFS), CloudStore und GLORY-FS beruhen auf den selben Architektur Prinzipen aus der Studie.
 
 
- Diese Studie galt für eine Verteilte Dateisysteme, wie Hadoop Distributed Filesystem (HDFS), CloudStore, GLORY-FS,
+ Diese Studie galt für eine Verteilte Dateisysteme, wie Hadoop Distributed Filesystem (kurz HDFS), CloudStore, GLORY-FS,
  Das Google Filesystem 
 
 welche die
