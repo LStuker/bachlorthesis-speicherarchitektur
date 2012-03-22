@@ -1,0 +1,102 @@
+!TEX root=../documentation-bachlorthesis-speicherarchitektur-lstucker.tex
+
+\cleardoublepage
+\chapter{Definitionen}
+
+\section{Speichereinheit}
+In der Arbeit werden die Angaben zu den Speichereinheiten anhand des SI-Standards \cite{Technology1998} verwendet, welcher zwischen Dezimal Präfixe, wie sie bei Festplatten angewendet werden, und Binär Präfixen unterscheidet.
+
+\section{RAID-5}\label{RAID-5}
+
+Ein RAID-5 Festplatten-Array besteht aus N identischen Festplatten auf welchen die Daten verteilt gespeichert sind. Die Einheit an Daten, welche auf derselben physischen Festplatte platziert ist, bevor weitere Daten auf eine andere Festplatte geschrieben werden, wird als eine Stripe-Einheit bezeichnet.
+In der \refabb{abb:RAID-5 Architektur} wird eine Stripe-Einheit durch Blöcke dargestellt. Z.B. stellt A1 eine Stripe-Einheit dar. \cite{Kuratti1995}
+
+Stripe-Einheiten, welche auf allen Festplatten verteilt denselben physikalischen Platz bzw. Adressbereich belegen, bezeichnet man als Stripe. In der \refabb{abb:RAID-5 Architektur} sind diese durch gleichfarbige Blöcke dargestellt. Hier repräsentieren z.B. die Stripe-Einheiten A1, A2, A3 und $A_{p}$ einen Stripe.
+Jeder Stripe enthält mehrere Daten Stripe-Einheiten und eine Parität Stripe-Einheit. Eine Parität Stripe-Einheit ist eine XOR-Verknüpfung aller Daten Stripe-Einheiten eines Stripes. Durch die Speicherung und Berechnung einer Parität Stripe-Einheit pro Stripe, ermöglicht es in einem RAID-5 den Ausfall einer einzelnen Festplatte zu kompensieren. Die verlorenen Stripe-Einheiten der ausgefallenen Festplatte können durch das Lesen aller vorhandenen Daten Stripe-Einheiten und der Parität Stripe-Einheit der noch intakten Festplatten wiederberechnet bzw. rekonstruiert werden. Die Anzahl der Stripe-Einheiten eines Stripes ist durch die Stripe Width  ($W_{s}$) definiert. Die Anzahl der Daten Stripe-Einheiten in jedem Stripe ist durch $W_{s} -1$ definiert. \cite{Kuratti1995}
+
+\begin{center}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/Raid-5.png}
+\mycaption{figure}{\label{abb:RAID-5 Architektur} RAID-5 Architektur \textit{RAID-5} \cite{Wikipedia2006}}
+\end{center}
+
+Die einzelnen Parität Stripe-Einheiten werden in rotierender Folge über die Festplatten verteilt. Dieses Verfahren trägt dazu bei, die I/O Last, welche durch Anfragen eine Aktualisierung der Parität veranlassen, auf die einzelnen Festplatten besser zu verteilen. Weil die Daten in einem RAID-5 auf mehrere Festplatten verteilt sind, erhöht sich die Wahrscheinlichkeit, dass eine Festplatte bei einer I/O Operation beteiligt ist, was wiederum den Datendurchsatz und die I/O Rate eines Array erhöht. \cite{Kuratti1995}
+
+Für die Speicherung der Parität, muss ein Teil der gesamten Festplattenkapazität reserviert werden. Die für die Daten verfügbare Nettokapazität eines RAID-5 Arrays mit n Festplatten und s Speicherkapazität pro Festplatte lässt sich mit folgender Formel \cite{Kuratti1995} berechnen:
+
+\begin{equation}
+\mbox{Speicherkapaziät RAID-5}=(N-1)*S
+\label{eqn:MTBF-RAID-5}
+\end{equation}
+ 
+\section{Spare-Disk}
+Spare-Disk sind leere Festplatten, welche bei einen Ausfall einer Festplatte im RAID vom RAID System automatisch als Ersatz Festplatte verwendet werden kann. Durch den Einsatz von Spare-Disk verkleinert sich die MMTR, dadurch das die Wiederherstellung des RAID sofort nach dem erkennen des Festplattenausfalls starten kann. 
+
+\section{MTTR}
+MTTR  ist die Abkürzung von "Mean Time To Recovery"' und bedeutet so viel wie die durchschnittliche Zeit, welche eine Komponente benötigt, um sich nach einem Fehler wieder herzustellen. Die MTTR in einen RAID-5 berechnet sich aus der Zeit bis eine Ersatzfestplatte installiert ist und der Disk Wiederherstellungszeit. 
+
+\begin{equation}
+MTTR_{RAID}=Replacement+Rebuild_{RAID}
+\label{eqn:MTBF-RAID-5}
+\end{equation}
+
+Die Disk Wiederherstellungszeit in einem RAID-5 kann von den folgenden Faktoren abhängig sein:
+\begin{itemize}
+\item Anzahl der Festplatten
+\item Speicherkapazität
+\item Periodisierung der Rekonstruktion gegenüber dem normalen I/O
+\item  normale I/O-Last während der Rekonstruktion
+\item  CPU Last
+\end{itemize}
+
+Für die Ist-Analyse stehen keine aussagekräftigen Statistiken für die Disk Wiederherstellungszeit zur Verfügung. Es wird deshalb angenommen, dass heute eine allfällige MTTR 24 Stunden betragen würde.
+
+
+\section{MTBF}
+MTBF ist die Abkürzung von "Mean Time Between Failure"' und bedeutet so viel wie die durchschnittliche Betriebszeit einer Komponenten bis ein Fehler eintritt. Hersteller von Festplatten geben diesen Wert an, um die durchschnittliche Lebensdauer einer Festplatte zu beschreiben. 
+
+Die MTBF mit n Festplatten berechnet man in einem RAID-5 \cite{Chen1994} wie folgt:
+\begin{equation}
+MTBF_{RAID-5}=\frac{MTBF_{Disk}^2}{N*(N-1)*MTTR_{Disk}}
+\label{eqn:MTBF-RAID-5}
+\end{equation}
+
+\section{Verfügbarkeit}
+Ein Service bzw. ein System gilt als verfügbar, wenn es seine dafür bestimmte Tätigkeit vollständig erfüllt. Die Wahrscheinlichkeit, in welcher ein Service in einer definierten Periode verfügbar ist, bezeichnet man als Verfügbarkeit \cite{Held2004}. Im Idealfall darf eine Service nie ausfallen und soll immer verfügbar sein. In der Realität ist eine perfekte Verfügbarkeit kaum gewährleistet. Es wird angestrebt, die erforderliche oder gewünschte Verfügbarkeit möglichst genau auszudrücken, damit mit Kennzahlen und Metriken die Verfügbarkeit definiert und gemessen werden kann. 
+
+Die Verfügbarkeit wird aus dem Verhältnis der verfügbaren Zeit (Updatime) und der nicht verfügbaren Zeit (Downtime) eines Services \cite{Held2004} bemessen:
+
+\begin{equation}
+\mbox{Verfügbarkeit} = \frac{\mbox{Uptime}}{ \mbox{Downtime} + \mbox{Updatime} }
+\label{eqn:Verfügbarkeit}
+\end{equation}
+
+\section{Datenverfügbarkeit}
+Die Datenverfügbarkeit beschreibt die vom Hardware Speicherhersteller und dem Serviceanbieter als Speicherdienstleister "'Storage Service Provider (SSP)"'  gewährleistete Verfügbarkeit der Daten und die zugesicherte Antwortzeit beim Datenzugriff während dem Normalbetrieb \cite{TechTarget2001}.
+
+In dieser Arbeit wird der Begriff dazu verwendet, die gewährleistete Verfügbarkeit für den Datenzugriff des Speichersystems zu beschreiben. Die Datenverfügbarkeit aus der Sicht des Endbenutzers der Webapplikation wird mit diesen Begriff nicht definiert. 
+
+\section{Hochverfügbarkeit}
+Die Autorin Andrea Held beschreibt in Ihren Buch den Begriff "Hochverfügbar" wie folgt:
+\begin{quotation}\em
+Ein System gilt als hochverfügbar, wenn eine Anwendung auch im Fehlerfall weiterhin verfügbar ist und ohne unmittelbaren menschlichen Eingriff weiter genutzt werden kann. In der Konsequenz heisst dies, dass der Anwender kein oder nur eine kurze Unterbrechung wahrnimmt.\end{quotation}\cite{Held2004}
+
+Hardvard Research Group hat die Verfügbarkeit in Verfügbarkeitsklassen eingeteilt:
+
+\begin{itemize}
+\item Conventional (AEC-0): Funktion kann unterbrochen werden, Datenintegrität ist nicht essentiell
+\item Highly Reliable (AEC-1): Funktion kann unterbrochen werden, Datenintegrität muss jedoch gewährleistet sein.
+\item High Availability (AEC-2): Funktion darf nur innerhalb festgelegter Zeit beziehungsweise zur Hauptbetriebszeit minimal unterbrochen werden.
+\item Fault Resilient (AEC-3): Funktion muss innerhalb festgelegter Zeiten beziehungsweise während der Hauptbetriebszeit ununterbrochen aufrechterhalten werden.
+\item Fault Tolerant (AEC-4): Funktion muss ununterbrochen aufrechterhalten werden. Der 24*7 Betrieb (24 Stunden, 7 Tage die Woche) muss gewährleistet sein.
+\item Disaster tolerant (AEC-5): Funktion muss unter allen Umständen verfügbar sein.
+\end{itemize}
+\cite{Held2004}
+
+In der Arbeit werden zur Verfügbarkeitsbestimmung die Verfügbarkeitsklassen von Harvard Research Group verwendet.
+
+\section{Daten Integrität}
+Daten können durch Manipulationen oder durch Bit Fehler verfälscht werden. Solche Verfälschungen können zu Informationsverlust in den Daten bis hin zu vollständigen Korruption der Daten führen. 
+Bernd Panzer-Steindel hat zusammen mit Tim Bell, Olof Barring und Peter Kelment am CERN die Integrität von Daten untersucht. Ihre Untersuchung hat gezeigt, dass die Fehlerrate auf dem Niveau von $10^{-7}$ liegt, und hat verschiedene Ursprünge. Eine Ursprung stellt die Festplatte selbst dar, für den Untersuch haben Sie auf 3000 Server alle zwei Stunden ein 2 Gigabyte Datei mit einen speziellen Bit Muster geschrieben, neu eingelesen und mit dem Muster verglichen. Nach einer Laufzeit von 5 Wochen hatten es 500 Fehler auf 100 Server gegeben.\cite{Panzer-steindel2007}
+
+\section{Standortübergreifend}
+Für die Gefahren von Datenverlust oder den Verlust der Verfügbarkeit bei einen Ausfall eines Standort zu vermeiden, werden die Daten Standort übergreifend verfügbar gemacht. Häufig werden dazu die Daten an zwei Standort gleichzeitig geschrieben und optional an einen dritten weiter entfernten Standort zeitversetzt geschrieben. 

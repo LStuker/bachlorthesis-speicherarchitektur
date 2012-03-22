@@ -2,7 +2,9 @@
 \cleardoublepage
 \chapter{Speicherarchitekturen}
 
-Die heutigen Speicherarchitekturen können in Block- (Block-Based), Datei- (File-Based) und Objekt-Basierende adressierende Systeme unterteilt werden.
+Sowohl Private Personen als auch Unternehmen, haben individuellen Anforderungen an die Speicherung Ihrer Daten. Während früher der Speicher der Daten in der Regeln aus internen Speicher eines Computersystems gehandelt haben, haben sich heute eine grosse Bandbreite an Speicherlösungen am Markt entwickelt. Ein Grund dafür ist die kontinuierliche steigende Anforderung an die Speicherkapazität aber auch Anforderungen an das Datenverwaltung, Datensicherung und Daten zur Verfügung zu stellen, machte es bis anhin laufend notwendig neue Lösungsansätze zu entwickeln oder bestehende Lösungsansätze zu erweitern. 
+
+Die heutigen am Markt erhältlichen Speicherarchitekturen lassen sich in der Obersten Kategorie in  in Block- (Block-Based), Datei- (File-Based) und Objekt-Basierende adressierende Systeme unterteilt werden. Wobei man die Kategorisierung für die Einteilung nicht ganz exakt verallgemeinern kann, da einige Speicherlösungen Mischungen von mehren Kategorien sein können.
 
 \section{Block-Basierend}
 Die Block-Basierende Speicherarchitektur ist wohl die traditionellste und weit verbreitetste Form zum Speichern und Zuzugreifen von Daten. Die meisten Computersysteme, sei es Server, Desktop-PCs, Tablet-PC, Smartphones, Spielkonsole, speichern Ihre Daten in einen Blockbasierenden Speicher ab. Als Speicher werden in diesen Geräte meist magnetischen Festplatten, Solid State Disk oder Flash-Speicher eingesetzt.
@@ -222,7 +224,7 @@ Simultaner Schreibzugriff & hängt von Dateisystem ab \\ \hline
 Skalierbarkeit Speicherkapazität & Einen Server kann druch zur Verfügungstellen weiterer Logical Units (Blockgeräte), mehr Speicher zur Verfügung gestellt werden. Die Speicherkapazität im ganzen SAN kann durch hinzufügen von weiteren Speichersystem oder grosseren Speichersystem skaliert werden. \\ \hline
 Max Anzahl speicherbare Objekte & hängt von Dateisystem ab \\ \hline
 Max Objekte Speichergrosse & hängt von Dateisystem ab \\ \hline
-Datenintegrität & ISCSI Pakete sind zusätlich zur 16bit TCP Checksum durch eine CRC-32c Checksumme vor Bit-Fehler oder manipulationen gesichert. \\ \hline
+Datenintegrität & ISCSI Pakete sind zusätzlich zur 16bit TCP Prüfsumme durch eine CRC-32c Prüfsumme vor Bit-Fehler oder manipulationen gesichert. \\ \hline
 Selbstheilung von Objekten & hängt von Dateisystem ab \\ \hline
 Sicherung & - \\ \hline
 Sicherheit & Kann durch IP-Sec gesichert werden \\ \hline
@@ -311,5 +313,6 @@ welche die
 \end{itemize}
 
 Für diese Hauptanforderungen hat Google eine eigenes Dateisystem Entworfen und Entwickelt.
+
 
 

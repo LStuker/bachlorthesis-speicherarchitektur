@@ -1,0 +1,90 @@
+%!TEX root=../documentation-bachlorthesis-speicherarchitektur-lstucker.tex
+\cleardoublepage
+\chapter{Soll-Analyse}
+Bei der Soll-Analyse sollen die erarbeiteten Szenarien aus dem Szenarien Beschreib berücksichtigt werden. 
+
+\section{Szenario-1}\label{Soll-1}
+
+\subsection{Verfügbarkeit}
+Die Verfügbarkeit soll durchgehend von Speichersystem bis zum Web-Service mindestens dem AEC-2 Standard von Harvard Research entsprechen. Dass bedeutet die Verfügbarkeit der Applikation beziehungsweise der Daten darf nur innerhalb festgelegter Zeit beziehungsweise zur Hauptbetriebszeit minimal unterbrochen werden. Die bestehende Infrastruktur besteht jedoch nur aus einen einzigen Web-Server. Der Web-Server ist zugleich mit seinen internen Festplatten, welche mit einen RAID-5 Zusammengefasst sind, das Speichersystem der Infrastruktur. Wie in der Ist-Analyse beschrieben, erfüllt das Speichersystem des Server zwar eine Verfügbarkeit des Harvard Research von AEC-2. Die Restlichen Komponenten bzw. Software des Web-Services, erfüllen diesen Standard jedoch nicht. Die bestehende Speicherarchitekur kann jedoch den Speicher, nicht ohne Anpassung der Architektur, an weitere Web-Server zur Verfügung stellen.
+
+Die Daten müssen mindesten in einfacher Redundanz vorhanden sein. 
+
+Um den AEC-2 Standard zu erfüllen ist es nicht notwendig, dass die \gls{Primären-Daten} Standortübergreifend verfügbar sind.
+
+\subsection{Datenzugriff}
+Die bestehende Speicherarchitektur konnte die bisherigen Datenzugriffe mit einem Web-Server bisher zufriedenstellend erfüllen. Es wird davon ausgegangen, dass sich die Anzahl Datenzugriff für die Bildaufbereitung und Speicherung von neuen Bilddaten, nicht weiter steigert. Durch die Anforderungen in der Verfügbarkeit ist es notwendig, dass der Datenzugriff auf das Speichersystem von mindestens einen weiteren Web-Server Zugegriffen werden kann. 
+
+Der \gls{POSIX-IO} Zugriff soll nach Möglichkeit für die einfache Integration in die Web-Applikation unterstützt werden.
+
+Der Simultane Lesezugriff auf die gleiche Objekte muss unterstützt werden.
+
+Der Simultane Schreibzugiff auf ein Objekt muss nicht unterstützt werden.
+
+\subsection{Speicherkapazität}
+Für die Erfüllung der Speicheranforderungen des Szenario-1 muss das Speichersystem den Ausbau auf mindestens 16.1 Tebibyte unterstützen. In den 16.1 Tebibyte ist eine Reserve von 40\% für allfälliges zusätzliches Wachstum oder Migration Reserve einkalkuliert exklusive notwendiger Speicherkapazität für die Redundanz.
+
+Das Speichersystem soll 400'000 speicherbare Objekte unterstützen.
+
+Das Speichersystem muss die Speicherung von Objekten von mindestens 2 Gibibyte grösse unterstützen.
+
+\subsection{Datenqualität}
+
+Die Selbstheilung von Objekten muss nicht unterstützen werden und gilt als optional.
+
+Die Sicherung und Wiederherstellung der Daten aus einer Sicherung muss möglich sein. Die Sicherung der Daten muss bei Fehlenden standortübergreifende Verfügbarkeit der Daten an einen anderen Standort möglich sein.
+
+\subsection{Vergleich mit Ist-Zustand}
+Vergleicht man die Anforderungen der Soll-Analyse mit dem Ist-Zustand ergeben sich folgende Vorteile:
+
+\begin{itemize}
+\item Durchgehende Verfügbarkeit nach AEC-2 Standard
+\item Redundante Web-Server
+\item Kein Singel Point of Failure
+\item Erfüllt Speicherkapazität Anforderungen für die nächsten 36 Monate
+\item Unterstützung von simulatne Lesezugriffe auf die gleiche Objekte
+\end{itemize}
+
+\section{Szenario-2}
+
+\subsection{Verfügbarkeit}
+Die Verfügbarkeit soll dem AEC-4 Standard von Harvard Research entsprechen. Dass bedeutet die Verfügbarkeit der Applikation beziehungsweise der Daten muss ununterbrochen aufrechterhalten werden.  Der 24*7 Betrieb (24 Stunden, 7 Tage die Woche) muss gewährleistet sein. Bei hoher Kundenzahl und Speichervolumen, würde einen Unterbruch bei der Verfügbarkeit des Dienstes zu einen Repräsentation Schaden verursachen und Unsicherheit der Zuverlässigkeit bei den bestehenden Kunden in Bezug Ihrer Daten Verursachen.
+
+Die Daten müssen mindesten in einfacher idealer weise in doppelter Redundanz gespeichert sein. 
+
+Die \gls{Primären-Daten} müssen mindestens an zwei Standorte verfügbar sein.
+
+\subsection{Datenzugriff}
+Durch die Zunahme der Datenzugriff, muss es möglich sein die Daten an mehre Web-Server zur Verfügung stellen.
+
+Der \gls{POSIX-IO} Zugriff soll nach Möglichkeit für die einfache Integration in die Web-Applikation unterstützt werden.
+
+Der Simultane Lesezugriff auf die gleiche Objekte muss unterstützt werden.
+
+Der Simultane Schreibzugiff auf ein Objekt muss nicht unterstützt werden.
+
+\subsection{Speicherkapazität}
+Für die Erfüllung der Speicheranforderungen des Szenario-2, muss das Speichersystem 306 Tebibyte unterstützen. In den 306 Tebibyte ist eine Reserve von 40\% für allfälliges zusätzliches Wachstum oder Migration Reserve einkalkuliert exklusive notwendiger Speicherkapazität für die Redundanz.
+
+Geht man von einem Datenwachstum von 6 Tebibyte pro Monat aus, wird das Speichervolumen für das Speichern aller Bilddaten nach 36 Monaten 218,5 Tebibyte betragen. Rechnet man mit einer zusätzlichen Reserve von 40\% für Eventuelles zusätzliches Wachstum oder Migration Reserve, muss das Speichersystem mindestens 306 Tebibyte exklusive der Datenredundanz an Speicherkapazität zur Verfügung stellen können.
+
+Das Speichersystem soll 9'500'000 speicherbare Objekte unterstützen.
+
+Das Speichersystem muss die Speicherung von Objekten von mindestens 2 Gibibyte grösse unterstützen
+
+\subsection{Datenqualität}
+Wegen der grossen Datenmenge soll die Selbstheilung von Objekten unterstützt werden, diese verringert den Bedarf an manuelle Wiederherstellung.
+
+Die Sicherung und Wiederherstellung der Daten aus einer Sicherung soll möglich sein. Die Sicherung der Daten muss bei Fehlenden standortübergreifende Verfügbarkeit der Daten an einen anderen Standort möglich sein.
+
+\subsection{Vergleich mit Ist-Zustand}
+Vergleicht man die Anforderungen der Soll-Analyse mit dem Ist-Zustand ergeben sich folgende Vorteile:
+
+\begin{itemize}
+\item Durchgehende Verfügbarkeit nach AEC-7 Standard
+\item Redundante Web-Server
+\item Kein Singel Point of Failure
+\item Erfüllt Speicherkapazität Anforderungen für die nächsten 36 Monate
+\item Unterstützung von Selbstheilung von korrupten Objekten
+\item Unterstützung von simulatne Lesezugriffe auf die gleiche Objekte
+\end{itemize}

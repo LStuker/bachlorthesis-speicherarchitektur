@@ -19,6 +19,8 @@ ngerman % für Umlaute, Silbentrennung etc.
 
 \usepackage{geometry}
 \usepackage{fancyhdr}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{}
 
 \usepackage{graphicx} % Grafiken
 \graphicspath{{media/}} % hier liegen die Bilder des Dokuments
@@ -185,7 +187,16 @@ headsep=10mm, footskip=12mm}
 \end{minipage}
 }
 
-\newcommand{\reftab}[1]{\textbf{Tabelle \ref{#1}}}
+\newcounter{qcounter}
+\newcounter{para} \setcounter{para}{0}
+\newcommand{\newpara}{%
+  \refstepcounter{para}%
+  \noindent\llap{\thepar. }\quad}
+\newcommand{\oldpara}[1]{%
+  \noindent\llap{\ref{#1}. }\quad}
+
+\newcommand{\refsoll}[1]{\textbf{\nameref{#1}}}
+\newcommand{\reftab}[1]{\textbf{Tabelle (\ref{#1})}}
 \newcommand{\reflisting}[1]{\textbf{Listing \ref{#1}}}
 \newcommand{\refabb}[1]{\textbf{Abbildung \ref{#1}}}
 \newcommand{\refchap}[1]{\textbf{Kapitel \ref{#1}}}
@@ -203,3 +214,8 @@ headsep=10mm, footskip=12mm}
 \newcommand{\rtab}{\raggedleft\arraybackslash} % Tabellenabschnitt rechtsbündig
 
 \setlength{\baselineskip}{16.5pt} % 16 pt usual spacing between lines
+
+
+%Footnote
+\newcommand{\footnoteremember}[2{\footnote{#2}\newcounter{#1}\setcounter{#1}{\value{footnote}}}
+\newcommand{\footnoterecall}[1]{\footnotemark[\value{#1}]}

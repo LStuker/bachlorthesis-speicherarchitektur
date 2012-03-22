@@ -1,0 +1,87 @@
+%!TEX root=../documentation-bachlorthesis-speicherarchitektur-lstucker.tex
+
+\cleardoublepage
+\chapter{Entscheidungsfindung bei Evaluation}
+\section{Grundlagen}
+Evaluation ist der systematische Prozess der Datensammunlung und Analyse, um eine Entscheidung treffen zu könne.
+\section{AHP}
+Für die das Evaluation bzw. Bewertung Verfahren wird das Analytische Hierachie-Prozess (AHP) Verfahren angewendet. AHP wurde in den siebziger Jahren von Thomas L. Saaty zur Lösung mehrkriterieller Entscheidungsprobleme entwickelt.
+
+Der Entscheidungsprozesse ist beim AHP Analytisch und Hirachisch. Die Analyse beruht auf mathematischen und logischen Entschlüsse. Die Hirachie wird durch
+
+Beim AHP werden die Priorität bzw. die Gewichtung jedes Element im vergleich zu den anderen Elemente mittels Evaluationsmatrix abgeleitet. In der Evaluationsmatrix werden die Elemente untereinander in Paarvergleich zu einander Bewertet. Für die Bewertung wird dazu die 9-Punkte-Bewertungsskale aus der \reftab{tab:9PBewertungsskala} bzw. der Umkehr Relation aus der \reftab{tab:UmgekehrteBewertungsskala} verwendet.
+
+\begin{table}[htbp]
+\caption{9-Punkte-Bewertungsskala}
+\begin{tabular}{|c|L{3.5cm}|L{8.5cm}|}
+\hline
+\multicolumn{1}{|l|}{} & Definition & Interpretation \\ \hline
+ 1 &  gleiche Bedeutung &  Beide verglichenen Elemente haben die gleiche ""Bedeutung für das nächsthöhere Element. \\ \hline
+3 &  etwas grossere "" ""Bedeutung & 
+Erfahrung und Einschätzung sprechen für eine ""
+etwas größere Bedeutung eines Elements im 
+Vergleich zu einem anderen \\ \hline
+5 &  erheblich grössere "" Bedeutung & 
+Erfahrung und Einschätzung sprechen für eine "" 
+erheblich größere Bedeutung eines Elements im ""
+Vergleich zu einem andere \\ \hline
+7 &  sehr viel grössere ""Bedeutung & 
+Die sehr viel größere Bedeutung eines Elements 
+hat sich in der Vergangenheit klar gezeigt. \\ \hline
+9 &  absolut dominierend &  Es handelt sich um den größtmöglichen ""
+Bedeutungsunterschied zwischen zwei 
+Elemente \\ \hline
+\multicolumn{1}{|l|}{2,4,6,8} & Zwischenwerte &  \\ \hline
+\end{tabular}
+\label{tab:9PBewertungsskala}
+\end{table}
+
+\begin{table}[htbp]
+\caption{Umgekehrte Relationen der Bewertungsskala}
+\begin{tabular}{|c|L{3.5cm}|L{7.3cm}|}
+\hline
+\multicolumn{1}{|l|}{} & Definition & Intepretation \\ \hline
+1 & gleiche Bedeutung & Beide verglichenen Elemente haben die gleiche 
+Bedeutung für das nächsthöhere Element. \\ \hline
+ 1/3 & etwas geringere Bedeutung & Erfahrung und Einschätzung sprechen für eine 
+etwas geringere Bedeutung eines Elements im 
+Vergleich zu einem anderen.  \\ \hline
+ 1/5 & erheblich geringere Bedeutung & 
+Erfahrung und Einschätzung sprechen für eine 
+erheblich geringere Bedeutung eines Elements im 
+Vergleich zu einem anderen \\ \hline
+ 1/7 & sehr viel geringere Bedeutung & 
+Die sehr viel geringere Bedeutung eines Elements 
+hat sich in der Vergangenheit klar gezeigt \\ \hline
+ 1/9 & absolut unterlegen & Es handelt sich um den größtmöglichen 
+Bedeutungsunterschied zwischen zwei 
+Elementen \\ \hline
+\multicolumn{1}{|l|}{1/2, 1/4, 1/6, 1/8} & Zwischenwerte &  \\ \hline
+\end{tabular}
+\label{tab:UmgekehrteBewertungsskala}
+\end{table}
+
+In dieser Arbeit wurde für die Berechnung der Priorität die Methode für die Vereinfachte Berechnung eingesetzt, wie diese in der \reftab{tab:Gewichtsberechnung} dargestellt ist.
+Beim der Vereinfachte Berechnung werde die Paarvergleichswerte auf eine vergleichbare Basis gebracht. Dazu werden die Spaltensummen ($c_i$) der Evaluationsmatrix bestimmt. Dann werden diese auf 1 normiert, indem man jeden Paarvergleichswert durch die Spaltensumme dividiert. Anschließend werden aus 
+der normalisierten Matrix die Zeilensummen ($r_i$) gebildet und durch die Anzahl für das jeweilige Element 
+ergibt. 
+
+\begin{table}[htbp]
+\caption{Gewichtsberechnung mit der Eigenvektormethode }
+\begin{tabular}{l|llll|llll|l|l}
+ & \multicolumn{ 4}{c|}{Evaluationsmatrix} & \multicolumn{ 4}{c|}{Normalisierung} &  & Gewicht \\ 
+ & $a_1$ & $a_2$ & \dots & $a_n$ & $a_1$ & $a_2$ & \dots & $a_n$ & $r_i$ &  $w$ \\ \hline
+$a_1$ & $a_1_1=1$ & $a_1_2$ & \dots & $a_1_n$ & $\frac{a_1_1}{c_1}$  & $\frac{a_1_2}{c_1}$  &  \dots & $\frac{a_1_n}{c_n}$  & $r_1$  & $w_1=\frax{r_1}{n}$  \\ 
+$a_2$ & $a_2_1 = \frac{1}{a_1_2}$ & 1 &  \dots & $a_2_n$  &  $\frac{a_2_1}{c_1} & $\frac{a_2_2}{c_2}$  & \dots &  $\frac{a_2_n}{c_n}$ &  $r_2$ & $w_2 = \frac{r_2}{n}$  \\ 
+\vdots & \vdots & \vdots  &  &  \vdots&\vdots  & \vdots &  & \vdots & \vdots &\vdots  \\ 
+$a_n$ & $a_n_1 =\frac{1}{a_1_n}$ & $a_2_n$ & \dots  & $a_n_n = 1$  & $\frac{a_n_1}{c_1}$  & $\frac{a_n_2}{c_s}$ & \dots  & $\frac{a_n_n}{c_n}$  & $r_n$ & $w_n = \frac{r_n}{n}$ \\ \hline
+$c_i$ & $c_1 = \displaystyle\sum\limits_{i=1}^n a_i_1$ & $c_2 = \displaystyle\sum\limits_{i=1}^n a_i_2$ & \dots & $c_n$ & 1 & 1 & \dots & 1 & $n$ & 1 \\ 
+\end{tabular}
+\label{tab:Gewichtsberechnung}
+\end{table}
+
+\subsection{Auswahl der Kriterien}
+
+
+\section{Ablauf der Evaluation}
+

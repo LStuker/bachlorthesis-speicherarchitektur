@@ -1,0 +1,34 @@
+%!TEX root=../documentation-bachlorthesis-speicherarchitektur-lstucker.tex
+
+\cleardoublepage
+\chapter{Szenarien Beschreibung}
+Der Auftraggeber hat gewünscht bei der Evaluation der Speicherlösungen mehre Szenerien in der Entwicklung des Speicherbedarfs zu Berücksichtigen. 
+
+Die beschriebenen Szenarien, sind mit den Auftraggeber besprochen worden. Die folgenden Annahmen wurden nicht aufgrund eines vorhandenen Geschäftsplan, und können von Auftraggeber definierte Geschäftsziele abweichen. 
+
+
+\section{Szenario-1 Schwaches Datenvolumen und Datenzugriff Wachstum}\label{Szenario1}
+Bei Szenario-1 wird angenommen, dass sich der Kundenzuwachs, welche die Dienstleistung zur Speicherung und Aufbereitung Ihrer Bilddaten verwenden, marginal steigert. In diesen Fall beträgt das durchschnittliche Datenzuwachstum 0.25 Tebibyte pro Monat und bewegt sich in einem Vergleichbaren Umfang wie im Ist-Zustand.
+
+
+Datenwachstum in Tebibyte pro Monat: 0.25 Tebibyte
+
+Bilder\footnote{Durchschnittsgrösse von 100 Mebibyte pro Bild} Zuwachs pro Monat: 4'690 Bilder
+
+Speichervolumen in 36 Monaten: 11.5 Tebibyte
+
+Anzahl Bilder\footnotemark[\value{footnote}] in 36 Monaten: 168'821 Bilder
+
+\section{Szenario-2  Starkes Wachstum Daten / starkes Wachstum der Abfragen}
+Das Szenario-2 wird davon ausgegangen, das sich die Kundenbasis im Vergleich zum Ist-Zustand stark anwächst. Durch die Starke Zunahme an neuen Kunden 
+beträgt das durchschnittliche Datenwachstumg 6 Tebibyte pro Monat.
+
+
+Datenwachstum in Tebibyte pro Monat: 6 Tebibyte
+
+Bilder\footnotemark[\value{footnote}] Zuwachs pro Monat: 12'583 Bilder
+
+Speichervolumen in 36 Monaten: 218,5 Tebibyte
+
+Anzahl Bilder\footnotemark[\value{footnote}] in 36 Monaten: 458'228 Bilder
+ 
