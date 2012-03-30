@@ -511,6 +511,19 @@ Ci & \multicolumn{1}{r|}{18.333} & \multicolumn{1}{r|}{10.593} & \multicolumn{1}
 \section{Analyse Alternativen auf KO-Kriterien}
 
 \section{Daten Sammeln}
+\subsection{Hetzner Server}
+Hetzner ist einer der Grössten Hosting Anbieter in Deutschland und bietet seit 1997 für Unternehmen und Privat Personen Hosting-Produkte an. In den Vergangenen Jahren hat Hetzer diverse Computer-Magazin Auszeichnungen bekommen. Hetzner betreibt in Deutschland mehre Rechenzentren die mehrfach Redundant an das Internet Angeschlossen sind.
+
+Der Grösste Dedicated Server welche Hetzner in seinen Produkte Katalog führt, ist der Root Server XS 29. Der XS 29 ist mit 15 3 Terabyte SATA Festplatten ausgerüstet, inklusive einen Hardware RAID Kontrollen. Als CPU hat der Server einen Intel Xeon E3-1245 Quad-Core eingebaut und Verfügt über 16 Gigabyte Hauptspeicher. 
+
+Redundanz um die grosst mögliche Speicherkapazität mit einfacher Redundanz zu erhalten, werden die 15 Festplatten mit RAID 5 zusammengefasst. Diese gibt gemässs \refeqlb{eqn:MaxSpeicherkapazitätHeztner} von 38,192 Tebibyte.
+
+
+\begin{equation}
+\mbox{Anzahl Server} = (15 -1)* 2,728 \mathrm{\ TiB}=  38,192 \mathrm{\ TiB}
+\label{eqn:MaxSpeicherkapazitätHeztner}
+\end{equation}
+
 \subsection{Netapp}
 
 Wie in der Markt Analyse erwähnt ist NetApp der Führende Anbieter in midtrange und Highen
@@ -584,5 +597,100 @@ Für die Berechtigung und Verwaltung stellt Amazon ein Web-GUI zur Verfügung. B
 
 Amazon bietet neben der Redundanz der Objekte kein weiteres Sicherungsverfahren an. Beim Herunterladen der Daten fallen für den Transfer weiter Kosten an.
 
-\subsection{Gluster}
+\subsection{OpenStack Objekt Storage}
+OpenStack Object Storage ist eine Quelloffene frei verfügbare Verteilter Speicherlösung. OpenStack Object Storage selbst ist kein Dateisystem sondern eher eine Speicher Cluster, welche primär für die Speicherung von Virtual Maschine Images, Bilder, E-Mail und Sicherungskopien vorgesehen ist. Für einen OpenStack Cluster kommen vergleichbar mit dem Google Filesystem, kosten günstige Konventionelle Computer Hardware zum Einsatz. 
+
+
+
+OpenStack Object Storage wurde so konzipiert das einen Ausfall einer Hardware Komponente, der weiter Betrieb weiter aufrecht erhalten werden kann ohne dabei einen Datenverlust oder die Verfügbarkeit des System zu gefährden. Die Daten bzw. Objekte werden Redundant auf mehren Zonen gespeichert. Zonen sind Gruppierungen von Servern. Die Anzahl redundanten Replikate für eine Objekt kann konfiguriert werden, gewöhnlich werden drei Kopien verwendet.
+
+Möchte man den Speicher Standort übergreifend betreiben, ist es erforderlich, dass pro Standort nicht mehr als $(Redundanz -1)$ Zonen betrieben werden, da ansonsten die Gefahr besteht das alle Replikate am gleichen Standort gespeichert werden.
+
+Der OpenStack Object Storage Cluster lässt sich im laufenden Betreib ohne Unterbruch, vergrössern. In der Regeln können auch Software Update und Patches ohne Unterbruch des Clusters eingespielt werden, wenn darauf geachtet wird nie mehr als eine Zone gleichzeitig zu aktualisieren.
+
+Grundsätzlich ist Anzahl an Speicherbaren Objekten nicht begrenzt. Der Container Server von OpenStack Object Storage, welcher primärer Aufgabe ist die Auflistung der gespeicherten Objekten in einen Container zu handhaben, speichert die Informationen welche Objekte im Container befinden pro Container in eine SQLite Datenbank. Die Performance der Datenbank, welche mit der Anzahl Einträge abnimmt, kann sich zum Limitierenden Faktor entwickeln wie viele Objekte in einen Container gespeichert werden können. Der Performance Einbruch kann, je nach Leistung der Hardware und die generelle Last auf dem Cluster, bei einer Million Objekte pro Container eintreten. Es können jedoch pro Account mehre Container erstellt werden, wodurch sich das Problem mit der Limitierung durch Datenbank entschärfen lässt. Zu beachten ist hier jedoch, das pro Account ebenfalls eine SQLite Datenbank geführt wird mit allen Container und hier die selben Limitierung zum tragen kommt.\cite{OpenStack2012}\cite{A2011}
+
+Der Zugriff auf die gespeicherten Objekten erfolgt vergleichbar wie bei Amazon S3 über ein API. Das API verwendet für den Zugriff das Standard HTTP Request. Mehre Speicherlösung Hersteller haben angekündigt, das Swift API ebenfalls für den Zugriff auf Ihren Speicher unterstützen zu wollen. Glusterfs ebenfalls eine Verteile Speicherlösung, bietet in Ihrer Entwickler Version bereits die Unterstützung für Swift an. Applikationen welche, das Swift API unterstützen können Ihren Speicherlösung zukünftig einfacher austauschen ohne dabei die Applikation anpassen zu müssen. Neben den Zugriff mit dem Swift API, bietet OpenStack eine Amazon S3 kompatibles API an. Der Zugriff über POSIX IO auf den Speicher ist nicht möglich.
+
+Der Zugriff auf den Speicher erfolgt über einen Proxy welche, den Speicherort des Objektes prüft und die Anfrage weiterleitet. Pro OpenStack Object Storage Cluster können mehre Proxy eingesetzt werden. Mit Hilfe eines Load Balancers (Last Verteiler) können die Anfragen über die vorhanden Proxy verteilt werden.
+
+Die Maximale Upload Grösse beträgt 5 GB, die Download Grösse selber ist jedoch unbeschränkt. Wenn ein Objekt welches grösser als 5 GB hochgeladen wird, wird das Objekt in Teilen hochgeladen und gespeichert, die Abfrage auf das Objekte erfolgt jedoch wie bei einen ganzen Objekt, es müssen also keine Teile durch das API Adressiert werden.\cite{OpenStack2012a}
+
+
+
+OpenStack Object Storage stellt die Datenintegrität beim Speichern von Objekten in den Speicher und beim auslesen der Daten sicher. Somit ist gewährleistet, dass die Daten im Original gespeichert werden und bei der Speicherung kein Datenverlust entsteht. Die Selbstheilung von korrupten Objekten, stellt OpenStack Objekt Storage mit dem Auditors Dienst sicher. Der Auditors Dienst läuft auf jeden Server und prüft dort die Integrität von Objekten, wenn ein korruptes Objekt festgestellt wird, wird die Datei unter Quarantäne gestellt und durch ein korrektes reblikations Objekt ersetzt.
+Um die Last die durch den Auditors möglichst gering zu halten, kann die Anzahl Objekte oder die Anzahl Bits die pro Sekunde geprüft werden konfiguriert werden.\cite{OpenStack2012}
+
+
+
+OpenStack Objekt Storage bietet neben der Redundanz der Objekte keine Möglichkeit, die Daten zu Sichern. Dadurch ist keine Versionierung der Objekte möglich. Zwar lässt sich die Cluster Nodes mit einen konventionellen Sicherungssoftware direkt sichern, jedoch wurde sich nur der gesamte Cluster wiederherstellen und nicht einzelne Objekte. Zudem wäre die Speicherkapazität pro Sicherung, so gross wie es für die redundante Speicherung der Objekte Speicherkapazität benötigt wird.
+\cite{AndyBrezinsky2011}
+
+
+Die Sicherheit der Daten wird mit sogenannten Accounts Sichergestellt, dass heist das ein Account nur auf seine gespeicherten Objekten zugreifen kann. Die Daten werden auf dem OpenStack Cluster Unverschlüsselt in Binären form gespeichert. Durch die Verteilung der Daten müsste jedoch eine Angreifer Zugriff auf alle Cluster Node erlangen um an alle Daten eines Account zu gelangen.
+
+OpenStack Objekt Storage wurde von der Firma RackSpace unter dem Code Name Swift entwickelt. Zusammen mit National Aeronautics and Space Administration (kurz. NASA) hat RackSpace die Softwareprojekt-Gemeinschaft OpenStack gegründet und Swift zusammen mit den Cloud Lösungen Nova für die Verwaltung von Virutellen Maschinen und Glace für die Verwaltung von Image als Quelloffene Software veröffentlicht. Die OpenStack Gemeinschaft ist in Vergleich zu anderen Quelloffenen Gemeinschaften noch eine relative jung Gemeinschaft, es gelangt Ihr dennoch neben den beiden Gründer Unternehmen, weiter bedeutende Unternehmen aus der Informatik Branche, wie Hewlett Packard, Dell, Citrix, Intel, AMD, NetApp und weitere zu gewinnen. Eine vollständige Liste aller Unterstützende  Unternehmen ist unter \urs{http://openstack.org/community/companies/} zu finden. Die Aktivität auf der Projekt Seite von OpenStack Object Storage, lässt erkennen, dass die Entwicklung aktive vorangetrieben wird und viele Beiträge zur neuen Funktionen oder Verbesserungen von Anwender und Entwickler bei gesteuert werden. \cite{Ohloh2012}
+
+Die Internet-Recherche auf OpenStack spezialisierte Firmen mit Standort Schweiz ergaben keine Ergebnisse. Einige
+Gemäss Internet Recherchen gibt es noch keine spezialisierte Firma für OpenStack Lösungen. Einige wenige Experten für OpenStack mit Domizil in der Schweiz konnten über die Profile bei LinkedIn einen Soziales Netzwerk für Geschäft gefunden werden. 
+
+Die Verwaltung des Speichers bietet OpenStack ein Kommandozeilen Tools an. Ein Web-GUI für Objekt Storage von OpenStack gibt es nicht. Die Firma SwiftStack bietet  
+
+Die Überwachung des Speichers, zum Beispiel die Verfügbarkeit einzelner Cluster Nodes, muss jedoch mit zusätzlichen Fremdlösungen erfolgen. 
+
+\subsection{Kosten Szenarion2}
+
+Im OpenStack Object Storage sollte Objekte mindestens dreifache Redundanz um die Verfügbarkeit zu gewährleisten. Wie in der \refeqlb{eqn:SpeicherkapazitätS2} zu entnehmen ist, sind für die aus der Soll-Analyse bestimmten 306 Tebibyte ist dafür die Speicherkapazität von 918 Tebibyte notwendig.
+
+\begin{equation}
+\mbox{Speicherkapazität}_{Redundanz} = 306  \mathrm{\ TiB} * 3 \mbox{\ Redundanz} =  918 \mathrm{\ TiB}
+\label{eqn:SpeicherkapazitätS2}
+\end{equation}
+
+Für die Architekt wird von Joe Arnolds CEO bei SwiftStack bei dreifacher Redundanz, die Implementierung von 5 Zone empfohlen. OpenStack Object Storage, speichert die Redundante Objekte jeweils in einer separaten Zonen. Eine Zone kann bei kleinen Implementationen auch nur aus Gruppen von Festplatten bestehen, also innerhalb eines einzigen Server existieren, es wird aber empfohlen eine Zone auf Hierarchie von Server-Gruppen zu implementieren. Das bedeutet jede Redundante Kopie auf einen eigenen Server gespeichert. \cite{Arnold} 
+
+Um die Kosten der Rechenzentrumskosten möglichst tief zu halten, welche pro Rack verrechnet werden, soll möglichst viel Speicherkapazität in eine Rackeinheit gepackt werden.
+
+Als Server System wird eine auf dem von SuperMicro Komponenten Stammendes Transtec Server gesetzt. Das "Lynx CALLEO Application Server 4260" hat ein 4 Rack-Höheneinheit hohes Gehäuse, dass 24 an der Vorderseite und 12 3,5 Zoll Festplatten an der Rückseite fasst. Insgesamt können somit 36 Festplatten eingebaut werden. Der Server ist mit zwei Intel Intel Xeon Prozessor E5-2620 und mit 64 Gigabyte Hauptspeicher ausgerüstet. Zudem wurde der Server mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 8'672 CHF.
+
+Um die Preise für die Festplatten möglichst tief zu halten werden diese separate beschaffen. Als Festplatte soll eine SATA-3 3.5 Zoll 3 Terabyte Festplatte eingesetzt werden, diese entspricht 2.728 Tebibyte. Die Kosten für Festplatten sind stark Marktabhängig, für die Arbeit wird deshalb der einfachhalber mit ca. 300 CHF pro Festplatte gerechnet.
+
+Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der  \refeqlb{eqn:SpeicherkapazitätServer} eine Speicherkapazität von 98.208 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 918 Tebibyte und der 5 Zonen insgesamt 10 Server notwendig (siehe \refeqlb{eqn:AnzahlServer}). Für die Erreichung der Speicherkapazität von 918 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 340 Festplatten notwendig, dass heisst pro Server sind 34 Einschub mit Festplatten belegt. Sie könnten also bei Bedarf noch weiter aufgerüstet werden.
+
+\begin{equation}
+\mbox{Speicherkapazität}_{Server} = 2,728 \mathrm{\ TiB} * 36 \mbox{\ Einschub} =  98.208 \mathrm{\ TiB}
+\label{eqn:SpeicherkapazitätServer}
+\end{equation}
+
+\begin{equation}
+\mbox{Anzahl Server} = \frac{918 \mathrm{\ TiB}}{98.208 \mathrm{\ TiB}} \approx  10 \mbox{\ (Auf 5 Zonen gerundet)}
+\label{eqn:AnzahlServer}
+\end{equation}
+
+\begin{equation}
+\mbox{Anzahl Festplatten} = \frac{918 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx  340 \mbox{\ (Auf 10 Server gerundet)}
+\label{eqn:AnzahlServer}
+\end{equation}
+
+Zusätzlich zu den Speicherserver benötigt es noch zwei oder mehrere Proxy Server um die hohe Verfügbarkeit zu gewährleisten. Die Proxy Server, werden bei Rackspace mit  10 Gb Ethernet an den Netzwerk-Switch angeschlossen werden. \cite{OpenStack2011}
+Als Proxy Server wurden die Transtec Server-Systeme "Lynx CALLEO Application Server 2260S" ausgewählt. Somit gibt es nur einen Ansprechpartner für Server Hardware.
+Die Proxy sind mit einen Intel Xeon Prozessor E5-2665 mit 64 Gigabyte Hauptspeicher ausgerüstet. Die Server haben eine Rack-Höheneinheit von je 2 Einheiten. Wie bei den Datenserver wurde bei den Proxy, den selben Service ausgewählt. Der Preis pro Server beträgt 9'954 CHF.
+
+Neben der Server Infrastruktur sind noch zwei Netzwerk-Switches notwendig. Der Dell PowerConnect 8024 bietet 24 Port mit 10GbE. Die Switch haben eine Rack-Höheneinheit von je 1 Einheiten und benötigen gemäss Hersteller maximal 237,77 Watt. Dell gewährt einen 3 Jahres Support für den Switch. Der Preis pro Switch beträgt 14'732 CHF.
+
+Als Rechenzentrum Betreiber wurde Nine Internet Solution ausgewählt. Nine Betreibt seine Rechenzentrum in Zürich und ist auf die Hosting Spezialisiert. Der Nahe Standort zum Auftraggeber, welcher ebenfalls in Zürich befindet, hat den Vorteil von kurzen Anfahrtsweg. Nine bietet in Ihren Full Rack Angebot, ein ganzes Rack mit der Rack-Höheneinheit von 47 Einheiten. Im Angebot ist eine Internet Anbindung von Mbps und 2000 Watt inklusive. Der Preis pro Rack beträgt 1450 CHF pro Monat. Zu den 1450 CHF können kommen eine einmalige Einrichtung Gebühr von 1500 CHF pro Rack dazu. Zusätzliche Watt sind in Pakete von 500 Watt zu einen Preis von 165 CHF pro Monat erhältlich.
+
+Für den Betreib sind gemäss \refeqlb{eqn:AnzahlRack} Rack notwendig. Für die Server gibt es leider keine Angaben von Hersteller wie viel Watt der Server bezieht. Aus diesen Grund wird angenommen, dass der Daten-Server ca. 700 Watt und der Proxy-Server 500 Watt bezieht. Nimmt man diese Zahlen gibt die \refeqlb{eqn:AnzahlWattPakete}, dass Zusätzlich zum Rack beinhalteten Watt, 13 Watt Pakete pro Monat dazu gekauft werden müssen.
+
+\begin{equation}
+\mbox{Anzahl Racks} = \frac{10 * 4 \mathrm{\ U} + 2 * 2 \mathrm{\ U} + 2 * 2 \mathrm{\ U}}{47\mathrm{\ U}} \approx  1 \mbox{\ (Auf ganze Rack gerundet)}
+\label{eqn:AnzahlRack}
+\end{equation}
+
+\begin{equation}
+\mbox{Anzahl 500 \mathrm{W} Pakete} = \frac{10 * 700 \mathrm{\ W} + 2 * 500 \mathrm{\ W} +2 * 237,77 \mathrm{\ W} - 2000 \mathrm{\ W} }{500\mathrm{\ W}} \approx  13 \mbox{\}
+\label{eqn:AnzahlWattPakete}
+\end{equation}
+
+Für den den Betrieb der Speicherinfrastruktur wird mit einer Mann Stelle gerechnet. Organisatorisch kann diese auch auf mehre Prozentual Stellen aufgeteilt werden, somit ist auch der Betreib während Ferien abweseheit geregelt.
 
