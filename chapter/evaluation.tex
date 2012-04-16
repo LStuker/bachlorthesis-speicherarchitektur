@@ -128,14 +128,14 @@ Die KO-Kriterien sind muss Kriterien die von einen Speichersystem erfüllt werde
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{KO-\arabic{paragraph}}
 
-\paragraph{Dateigrösse bis 2 Gigibyte}
-Die Speicherung von Dateien die eine Speichergrösse von 2 Gigibyte muss unterstützt werden.
+\paragraph{Dateigrösse bis 2 Gigibyte}\label{KO-1}
+Die Speicherung von Dateien die eine Speichergrösse von 2 Gibibyte muss unterstützt werden.
 
-\paragraph{Speicherkapazität Szenarien}
+\paragraph{Speicherkapazität Szenarien}\label{KO-2}
 Die geforderten Speicherkapazitäten der Szenerien inklusive die benötigte Kapazität für die Redundanz muss von der Speicherlösung unterstützt werden.
 
-\paragraph{System Redundanz}
-Das Speichersystem soll auf mehren Systemen betrieben werden können.
+\paragraph{Kosten Spannweite}\label{KO-2}
+Die Kosten der teuersten Speicherlösung, darf nicht dreimal teuerer sein als die Günstigste Lösung.
 
 \section{Auswahl der Alternativen / Vertreter}
 Mit dem Auftraggeber wurde definiert, dass aus den Speicherlösung, SAN, NAS, Distributed Filesystem Cluster, Online Speicher und   Dedizierter Server Webserver einen Vertreter für die Evaluation ausgewählt werden soll. Die Lösungen wurden nach Marktverbreitung, Technologie Leader ausgewählt.
@@ -144,24 +144,22 @@ Die Alternativen/ Vertreter sind für die spätere Verweise die Verweise Nummeri
 
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Al-\arabic{paragraph}}
-
-\paragraph{NetApp}\label{Al-1}
-Als Vertreter für die NAS Speicherlösung wurde Netapp xxx ausgewählt. Die Firma Netapp gehört mit ihren NAS Speicherlösung zu den Markführer (siehe \refsec{MartkEtabliert}) und gelten als 
+\paragraph{Hetzner}\label{Al-1}
+Dedizierte Webserver zählen im engeren Sinn nicht als reine Speicherlösungen, der Deutsche Hosting Anbieter Hetzner bietet jedoch Dedizierte Webserver mit einer Speicherkapazität welche die Anforderung an die Kapazität des Szenario 1 (siehe \refsec{Szenario1}) erfüllen. Hetzner als Dedizierter Webserver Anbieter wurde ausgewählt, weil die bestehende Lösungen ebenfalls mit Hetzer Webserver realisiert ist. 
 
 \paragraph{NetApp}\label{Al-2}
+Als Vertreter für die NAS Speicherlösung wurde Netapp xxx ausgewählt. Die Firma Netapp gehört mit ihren NAS Speicherlösung zu den Markführer (siehe \refsec{MartkEtabliert}) und gelten als 
 
-\paragraph{Hadoop}\label{Al-3}
-Als Vertreter für Distributed Filesystem wurde das 
-
-\paragraph{Open-Stack Swift}
+\paragraph{NetApp}\label{Al-3}
 
 
+\paragraph{Open-Stack Cloud Storage}\label{Al-4}
+Open-Stack 
+Als Verteilte Speicherlösung wurde ursprünglich zu beginn der Arbeit Hadoop HDFS ausgewählt, jedoch haben eigene Recherchen ergeben, dass Hadoop HDFS eher für die Speicherung von grossen Daten welche mittels einen MapReduce Algorithmus verarbeitet werden. Als Alternative zu Hadoop HDFS, kristalisierte sich GlusterFS und OpenStack Cloud Storage. Die Entscheidung viel am Ende auf Open-Stack Cloud Storage, da diese bereits erfolgreich bei RackSpace einen grösseren Online Speicheranbieter betrieben wird und es eine vergleichbares API hat wie Amazon S3. Zudem wird OpenStack von namhaften Informatik Unternehmen unterstützt-
 
-\paragraph{Amazone S3}
-Als Vertreter für Online Speicherlösung (Cloud Storage) gewählt. Amazon gilt als Führender Anbieter in Bereich Cloud Lösungen (siehe \\refsec{MartkEtabliert} und betreibt Rechenzentren den Vereinigten Staaten, Europa und Asien. 
 
-\paragraph{Hetzner}\label{Al-3}
-Dedizierte Webserver zählen im engeren Sinn nicht als reine Speicherlösungen, der Deutsche Hosting Anbieter Hetzner bietet jedoch Dedizierte Webserver mit einer Speicherkapazität welche die Anforderung an die Kapazität des Szenario 1 (siehe \refsec{Szenario1}) erfüllen. Hetzner als Dedizierter Webserver Anbieter wurde ausgewählt, weil die bestehende Lösungen ebenfalls mit Hetzer Webserver realisiert ist. Root Server XS 29
+\paragraph{Amazon S3}\label{Al-5}
+Amazon S3 wurde als Represetator für Online Speicherlösung gewählt. Amazon S3 ist gemäss \refsec{MartkEtabliert} einer der Etabliertesten wenn nicht die erfolgreichste Online Speicherlösung. Amazon betreibt mehre Rechenzentrum in der gesamten Welt, als Speicherlösung Standort wird Europa ausgewählt.
 
 
 \subsection{Gewichtung der Soll-Kriterien mit AHP}
@@ -511,12 +509,23 @@ Ci & \multicolumn{1}{r|}{18.333} & \multicolumn{1}{r|}{10.593} & \multicolumn{1}
 \section{Analyse Alternativen auf KO-Kriterien}
 
 \section{Daten Sammeln}
-\subsection{Hetzner Server}
-Hetzner ist einer der Grössten Hosting Anbieter in Deutschland und bietet seit 1997 für Unternehmen und Privat Personen Hosting-Produkte an. In den Vergangenen Jahren hat Hetzer diverse Computer-Magazin Auszeichnungen bekommen. Hetzner betreibt in Deutschland mehre Rechenzentren die mehrfach Redundant an das Internet Angeschlossen sind.
+\subsection{\ref{Al-1}: Hetzner Server}
+Hetzner ist einer der grössten Hosting Anbieter in Deutschland und bietet seit 1997 für Unternehmen und Privat Personen Hosting-Produkte an. In den Vergangenen Jahren hat Hetzer diverse Computer-Magazin Auszeichnungen bekommen. Hetzner betreibt in Deutschland mehre Rechenzentren die mehrfach Redundant an das Internet Angeschlossen sind.
 
-Der Grösste Dedicated Server welche Hetzner in seinen Produkte Katalog führt, ist der Root Server XS 29. Der XS 29 ist mit 15 3 Terabyte SATA Festplatten ausgerüstet, inklusive einen Hardware RAID Kontrollen. Als CPU hat der Server einen Intel Xeon E3-1245 Quad-Core eingebaut und Verfügt über 16 Gigabyte Hauptspeicher. 
+\paragraph{Speicherkapazität}
+Der Grösste Dezidierter Server welche Hetzner in seinen Produkte Katalog führt, ist der Root Server XS 29. Der XS 29 ist mit 15 mal 3 Terabyte SATA Festplatten ausgerüstet. Mit dem zusätzlich eingebauten Hardware RAID Kontroller lassen, sich die 15 Festplatten zu einen RAID zusammen fügen.
+Als CPU hat der Server einen Intel Xeon E3-1245 Quad-Core eingebaut und Verfügt über 16 Gigabyte Hauptspeicher. 
 
-Redundanz um die grosst mögliche Speicherkapazität mit einfacher Redundanz zu erhalten, werden die 15 Festplatten mit RAID 5 zusammengefasst. Diese gibt gemässs \refeqlb{eqn:MaxSpeicherkapazitätHeztner} von 38,192 Tebibyte.
+Die Max Grösse einer Datei ist von Dateisystem abhängig. ext3 oder "third extended filesystem" genannt, ist bei den meisten bekannten Linux Distributoren das Standard Dateisystem. Die maximale grösse einer Datei hängt von der verwendeten Blockgrösse ab. Nach eigener Test ist die Standard Blockgrösse bei Debian, Ubuntu, Red Hat und Suse 4 Kibibyte, gross. Bei einer Blockgrösse von 4 Kibibyte, kann eine Datei maximal 2 Tebibyte und das Dateisystem 16 Tebibyte gross sein. \cite{Card1993}
+
+Die Maximale Anzahl an Objekte, hängt von der grösse des Dateisystems ab. Bei einen 16 Tebibyte ist mit der Standard Konfiguration maximal 17'592'186'044'416 Objekte. 
+
+\paragraph*{Verfügbarkeit}
+Die RAID-5 Konfiguration mit dem 15 Festplatten im RAID bietet mit 38,192 Tebibyte gemäss \refeqlb{eqn:MaxSpeicherkapazitätHeztner} bei einfacher Redundanz die grösste mögliche Speicherkapazität. Wegen der möglicherweise langen Wiederherstellungs-Zeit (MTTR) dieser Konfiguration, ist man darauf angewiesen, dass der Ausfall durch die eigene Überwachungssystem erkannt und nach Benachrichtigung des Hetzner Support die defekte Festplatte rasch ausgetauscht wird. Die Festplatten selber sind während des Betriebs austauschbar, es ist somit kein Unterbruch des Betriebs erforderlich.
+
+Der eingesetzte LSI RAID Kontrolle lässt auch die Konfiguration einer Hot-Spare Festplatte zu. Eine Host-Spare Festplatte ist eine leere ungenutzte Festplatte, die bei einen Ausfall einer Festplatte im RAID automatisch die defekte Festplatte ersetzt. 
+
+Da es sich nur um ein Server System handelt, ist eine Standort-übergreifende Verfügbarkeit der Daten nicht möglich.
 
 
 \begin{equation}
@@ -524,7 +533,69 @@ Redundanz um die grosst mögliche Speicherkapazität mit einfacher Redundanz zu 
 \label{eqn:MaxSpeicherkapazitätHeztner}
 \end{equation}
 
-\subsection{Netapp}
+\begin{equation}
+\mbox{Anzahl Server} = (15 -1-1)* 2,728 \mathrm{\ TiB}=  35,464 \mathrm{\ TiB}
+\label{eqn:MaxSpeicherkapazitätHeztnerHotspare}
+\end{equation}
+
+\paragraph*{Datenzugriff}
+Der Datenzugriff findet lokal über POSIX IO statt, dass heisst das die Web-Applikation auf dem selben Server betrieben wird. 
+
+Der Lese Zugriff und Schreibzugriff ist auf den Server begrenzt. Theoretisch könnte der Speicher mit Protokollen wie NFS zwischen, mehreren Systemen geteilt werden. Es handelt sich jedoch beim System um einen Miete Server, es kann deshalb nicht davon ausgegangen werden, das weitere Miete Server am selben Netzwerk Knoten angeschlossen sind, oder sich sogar im gleichen Rechenzentrum befindet. Es muss aus diesen Gründen mit einer schlechten Bandbreite mit hoher Latenz zwischen den Systemen gerechnet werden, was die Teilung des Speichers aus Performance gründen unbefriedigend macht.
+
+\subsubsection{Datenschutz}
+Die Integrität der Daten wird nur auf RAID Ebene sichergestellt und nicht auf Objekt ebene. Die Selbstheilung von Objekten wird aus diesen Grund nicht unterstützt.
+
+Die Daten können mit einen RSYNC Job in Gesichert werden, gegen zusätzliche Gebühre von 79 € für 10 GB ist die Sicherung auch eine Sicherung bei Hetzner möglich.
+
+Der Datenzugriff lässt sich über die Dateiberechtigung im Dateisystem auf Benutzer und Gruppen ebene steuern. Vor den Physischen Datenzugriff, lässt sich durch Verschlüsselung der Disk schützen.
+
+\subsubsection{Technologie}
+Die Konfiguration und Betrieb des Server inklusive RAID ist dem Mieter überlassen. Die RAID Technologie ist eine viele eingesetzte und bewehrte Technologie.
+
+Für die Konfiguration und Betrieb des Server, reichen Standard Linux Administration Wissen aus.
+
+Die Verwaltung des Speicher erfolgt über Kommandozeile bzw. über \gls{SSH}.
+
+\subsubsection{Kosten}
+Abgesehen von den einmaligen Einrichtung Kosten, welche 499 € Betragen, und die Installation der Servers, gibt es keine weitere Investitionskosten. 
+
+Für die Installation und Betrieb des gemieteten Server ist der Mieter selber Verantwortlich. Die Mietkosten betragen pro Monat 299 €.
+
+Die Kosten für die Miete des Server bleiben während der gesamten Mietdauer konstant. Die Kündigung ist jeweils auf 30 Tage zum Monatsende möglich. 
+
+\paragraph*{Kosten Szenario-1}
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der Tabelle (10.9) Total € 22'027.00 das sind zum aktuellen Tageskurs (13 April 2012) 26'464.31 CHF.
+
+\begin{table}[htbp]
+\caption{Kosten OpenStack S1}
+\begin{small}
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Beschreibung} & \multicolumn{1}{l|}{\textbf{Kosten pro Stk/M.}} & \multicolumn{1}{l|}{\textbf{Anzahl}} & \multicolumn{1}{l|}{\textbf{Total}} \\ \hline
+  \multicolumn{ 4}{c}{} \\  \hline
+\multicolumn{ 4}{|c|}{\textbf{Investitionskosten}} \\ \hline
+Einrichtung Root Server XS 29 & € 499.00 & 1 & € 499.00 \\ \hline \hline
+  \multicolumn{ 3}{r|}{\textbf{Total:}}  & \textbf{€ 499.50} \\ 
+  \cline{4-4}
+\multicolumn{ 4}{c}{} \\   \hline
+\multicolumn{ 4}{|c|}{\textbf{Fortlaufende Kosten}} \\ \hline
+Root Server XS 29  & € 299.00 & 1 & € 299.00 \\ \hline \hline
+  \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & € 299.00 \\
+\cline{4-4}
+  \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{€ 21'528.00} \\ \cline{4-4}
+  \multicolumn{ 4}{c}{} \\  \cline{4-4}
+  \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{€ 22'027.00} \\ \cline{4-4}
+\end{tabular}
+\end{small}
+\label{KostenOpenStackS1}
+\end{table}
+
+
+\paragraph*{Kosten Szenario-2}
+Kein Produkt erhältlich welche die Anforderungen der Speicherkapazität von Szenario-2 erfüllen.
+
+\subsection{\ref{Al-2}: Netapp}
 
 Wie in der Markt Analyse erwähnt ist NetApp der Führende Anbieter in midtrange und Highen
 
@@ -561,55 +632,27 @@ Beim Snapshots Sicherungsverfahren werden zeitbezogene Sicherung des Dateisystem
 
 Sicherheit NFS IPSEC, intern
 
-\subsection{Amazon S3}
-Amazon zählt zu den Grössten, wenn nicht der grösste Online Speicheranbieter weltweit. Genaue Anzahlen über die Anzahl Kunden und Speicherkapazität veröffentlich Amazon nicht. Seit 2006 bietet Amazon Ihren Kunden unter den Produktname S3, einen Online Speicher an. Die genaueren Technischen Eigenschaften und Architektur des Online Speicher ist bis anhin von Amazon nicht veröffentlicht worden. Nach eigenen Angaben von Amazon basiert die Dienstleistung auf gewöhnlichen Computer Hardware.
 
-Durch den Bezug des Speichersressourcen als Dienstleistung, fallen für den Kunden keine Investitionskosten in Hardware an. Zudem muss es sich nicht um die Wartung des Speichersystems kümmern. Dafür muss er allenfalls Kosten für die Anpassung der Applikation an das Amazon S3 API investieren, diese Kosten sollten jedoch in vergleich geringer ausfallen. Im Vergleich zum Betrieb eigener Speicherinfrastruktur wo der Kunde jeweils Speicherkapazitätsreserven haben muss, Zahlt der Kunde nur die effektive verwendete Speicherkapazität. Zudem fallen im keine Wartungskosten an um die Speicherinfrastruktur zu betreiben. Der Online Speicher von Amazon S3 gilt als ausgereiftes und etabliertes Produkt im Markt, weshalb davon ausgegangen werden kann, dass die Dienstleistung über die nächsten vier Jahre drübenraus noch bestehen wird und für den Kunden keine Migration notwendig ist. Amazon S3 wird ebenfalls von SmugMug ebenfalls eine Photodienstleister oder andere bekannte Web-Applikationen wie Dropbox verwendet.\cite{SmugMug}\cite{Dropbox2011}
 
-Der Online Speicher Markt ist im Verhältnis zu anderen Speicher Märkte noch relativ jung, Analysten wie Jeff Boles gehen davon aus, dass der Online Speicher Markt in den nächsten Jahren weiter stark wächst. Wie in der Marktstudie beschrieben konnte Amazon seit dem Start des Amazon S3 Produktes die Anzahl gespeicherte Objekte jeweils pro Jahr mehr als verdoppeln (sie dazu \refabb{abb:AnzahlObjekteAmazonS3}). Die Konkurrenz von grossen Anbietern wie Google, Microsoft oder Rackspace nimmt für Amazon bereits zu. Für den Kunden bedeutet diese, dass die Anbieter Ihre Preise noch stärker kalkulieren müssen um ein Konkurrenz fähiges Angebot zu haben. Amazon hat die Preise für S3 Speicher erst kürzlich angepasst.\cite{Boles2011}\cite{Barr2012a}
-
-Bei Online Speicher wie Amazon S3, kann der Kunde gleich nach Anmeldung an den Dienst, die Speicherressourcen verwenden. Es fallen also keine Installation von für
-die Speicherinfrastruktur an. 
-
-Die Daten können bei Amazon in mehren Regionen gespeichert werden. Zu den verfügbaren Regionen gehören, US Standard, US West (Oregon), US West (Northern California), EU (Ireland), Asia Pacific (Singapore), Asia Pacific (Tokyo), South America (Sao Paulo). Gemäss Amazon verlassen die Gespeicherten Daten eine Region nicht, ausser für die Erfüllung von Gesetzen oder auf Anforderung von Regierung Anweisung. Als US Amerikanisches Unternehmen steht Amazon wegen dem Patrot Act, unter der Pflicht, den USA Behörden Zugang zu Informationen zu gewährleisten auf behördlichen Anforderungen, auch wenn diese Informationen ausserhalb der USA gespeichert sind. Gemäss EU Recht darf jedoch keine gespeicherten Informationen, an dritten Zugänglich gemacht werden oder ausserhalb der EU gespeichert werden, ohne Einverständnis. Bei Microsoft ebenfalls eine Grosser Cloud Anbieter bestätigt diese Annahme, das die Daten nicht vor den Zugriff der USA geschützt sind.\cite{Amazon2012}\cite{Ostler}
-
-Amazon S3 Speichert die Daten auf mehren Geräten in Verschiedenen Rechenzentren in der selben Region ab. Bei speichern werden die Daten Synchron in Verschiedene Rechenzentren gespeichert bevor die Speicherung als erfolgreich gemeldet ist, damit ist sicher gestellt, dass die Daten von beginn weg Redundant gespeichert sind. Die Integrität der Daten wird mit einer Prüfsumme sichergestellt. Die gespeicherten Daten werden von Amazon regelmässig auf Ihre Integrität geprüft und bei bedarf von einer Integer Kopie der Daten ersetzt. Mit diesen Massnahmen gewährleistet Amazon gemäss Dienstgütevereinbarung eine Zuverlässigkeit von 99.999999999\%. Bei bedarf kann die Zuverlässigkeit für Daten welche wenig Schutz benörigen, wie zum Beispiel Thumbnails von Bilder, mit einer geringeren Zuverlässigkeit von 99.99\% zu einen günstigeren Preis gespeichert werden.\cite{Amazon2007}
-
-Durch die Redundante Speicherung der Daten auf mehre Geräten gewährleistet Amazone gemäss Dienstgütevereinbarung von 99.99\% pro Monat
-
-Der Zugriff auf die Daten findet über eine API oder über die Verwaltungskonsole von Amazon statt. Für den Zugriff mit einen API bietet Amazon ein \gls{REST} und ein \gls{SOAP} Schnittstelle an. Der \gls{REST} Zugriff findet über HTTP statt, dabei werden Standard HTTP requests verwendet. Für den Zugriff kann auch einen gewöhnlichen Web-Browser verwendet werden solange die Objekte Öffentlich sind.
-
-Einen Offiziellen POSIX IO Zugriff von Amazon steht nicht zur Verfügung, es existiert jedoch eine Quelloffenes Projekt Namens s3fs\footnote{\url{https://code.google.com/p/s3fs/}} welche es ermöglicht eine Amazon S3 Speicher unter Linux zu mounten. \cite{S3fs}
-
-Amazon S3 unterstützt das Lesen und Schreiben von mehren Systemen. Beim Lesen einen Objekts welche von mehren Systemen Zugegriffen wird und beschrieben, stellt Amazon S3 die Lese konsistent sicher.\cite{Amazon2012a}
-
-Im Amazon S3 können eine unbegrenzte Zahl von Objekten gespeichert werden, welche eine Speichergrösse von 1 Byte bis zu 5 Terrabyte haben können, wobei aber in einen PUT maximal 5 Gigabyte hochgeladen werden können. Für das Hochladen von Grösseren Objekten, muss die Multipart Funktion verwendet werden, welche das Objekte in mehren Teilen hochladet.\cite{Amazon2012b}
-
-Die Daten können Verschlüsselt per SSL Zugegriffen bzw. gespeichert werden, somit ist gewährleistet, das dritte die Daten beim Transport nicht lesen können. Seit 2011 bietet Amazon kostenlos ebenfalls die Verschlüsselung mit AES-256 von Objekten im Speicher an. Dabei wird jedes Objekt mit einen eigenen Schluss ver- und entschlüsselt. Die erzeugten Schlüssel werden mit einen Master-Schlüssel ebenfalls Verschlüsselt und auf den Amazon-Servern gespeichert. Das Schlüsselmanagment bleibt jedoch bei Amazon, weshalb man abhängig von den Massnahmen zum schuzt des Schlusselmanagment die Amazon trifft. Wird diese Kompromittiert oder fällt aus ist der Zugriff auf die Verschlüsselten Daten nicht mehr möglich.\cite{RobertLippert2011}
-
-Die Berechtigung auf gespeicherte Objekte oder Ordner können mit einen Rechte-Management verwaltet werden. Objekte können öffentlich zugänglich gemacht werden oder nur an bestimmte Authentifizierte Benutzer zur Verfügung gestellt werden. Zudem lassen Sich Zugriffe auf Objekte Protokollieren.\cite{Amazon2012b}
-
-Für das Einlesen von Grossen Datenmengen bietet Amazon einen kostenpflichtigen Import/Export Dienstleistung an. Bei dieser Dienstleistung sendet der Kunde die Daten gespeichert auf  einen tragbares Speichergeräte an Amazon, welches die Daten direkt in Ihre Cloud ohne Umwege über das Internet einliesst.
-
-Die API von Amazon ist gut Dokumentiert, weshalb für einen erfahrenen Entwickler die Anbindung der Web-Applikation an Amazon S3 umsetzbar sein sollte.
-
-Für die Berechtigung und Verwaltung stellt Amazon ein Web-GUI zur Verfügung. Bis auf das eröffnen eines Speichers und die Initial Berechtigung sollten, wahrscheinlich nicht viel mehr Verwaltungsaufgaben anfallen.
-
-Amazon bietet neben der Redundanz der Objekte kein weiteres Sicherungsverfahren an. Beim Herunterladen der Daten fallen für den Transfer weiter Kosten an.
-
-\subsection{OpenStack Objekt Storage}
+\subsection{\ref{Al-4}: OpenStack Objekt Storage}
 OpenStack Object Storage ist eine Quelloffene frei verfügbare Verteilter Speicherlösung. OpenStack Object Storage selbst ist kein Dateisystem sondern eher eine Speicher Cluster, welche primär für die Speicherung von Virtual Maschine Images, Bilder, E-Mail und Sicherungskopien vorgesehen ist. Für einen OpenStack Cluster kommen vergleichbar mit dem Google Filesystem, kosten günstige Konventionelle Computer Hardware zum Einsatz. 
 
 
-
+\paragraph{Verfügbarkeit}
 OpenStack Object Storage wurde so konzipiert das einen Ausfall einer Hardware Komponente, der weiter Betrieb weiter aufrecht erhalten werden kann ohne dabei einen Datenverlust oder die Verfügbarkeit des System zu gefährden. Die Daten bzw. Objekte werden Redundant auf mehren Zonen gespeichert. Zonen sind Gruppierungen von Servern. Die Anzahl redundanten Replikate für eine Objekt kann konfiguriert werden, gewöhnlich werden drei Kopien verwendet.
+
+Für die Architekt wird von Joe Arnolds CEO bei SwiftStack bei dreifacher Redundanz, die Implementierung von 5 Zone empfohlen. OpenStack Object Storage, speichert die Redundante Objekte jeweils in einer separaten Zonen. Eine Zone kann bei kleinen Implementationen auch nur aus Gruppen von Festplatten bestehen, also innerhalb eines einzigen Server existieren, es wird aber empfohlen eine Zone auf Hierarchie von Server-Gruppen zu implementieren. Das bedeutet jede Redundante Kopie auf einen eigenen Server gespeichert. \cite{Arnold} 
+
+Zusätzlich zu den Speicherserver benötigt es noch zwei oder mehrere Proxy Server um die hohe Verfügbarkeit zu gewährleisten. Die Proxy Server, werden bei Rackspace mit  10 Gb Ethernet an den Netzwerk-Switch angeschlossen werden. \cite{OpenStack2011}
 
 Möchte man den Speicher Standort übergreifend betreiben, ist es erforderlich, dass pro Standort nicht mehr als $(Redundanz -1)$ Zonen betrieben werden, da ansonsten die Gefahr besteht das alle Replikate am gleichen Standort gespeichert werden.
 
+\paragraph*{Speicherkapazität}
 Der OpenStack Object Storage Cluster lässt sich im laufenden Betreib ohne Unterbruch, vergrössern. In der Regeln können auch Software Update und Patches ohne Unterbruch des Clusters eingespielt werden, wenn darauf geachtet wird nie mehr als eine Zone gleichzeitig zu aktualisieren.
 
 Grundsätzlich ist Anzahl an Speicherbaren Objekten nicht begrenzt. Der Container Server von OpenStack Object Storage, welcher primärer Aufgabe ist die Auflistung der gespeicherten Objekten in einen Container zu handhaben, speichert die Informationen welche Objekte im Container befinden pro Container in eine SQLite Datenbank. Die Performance der Datenbank, welche mit der Anzahl Einträge abnimmt, kann sich zum Limitierenden Faktor entwickeln wie viele Objekte in einen Container gespeichert werden können. Der Performance Einbruch kann, je nach Leistung der Hardware und die generelle Last auf dem Cluster, bei einer Million Objekte pro Container eintreten. Es können jedoch pro Account mehre Container erstellt werden, wodurch sich das Problem mit der Limitierung durch Datenbank entschärfen lässt. Zu beachten ist hier jedoch, das pro Account ebenfalls eine SQLite Datenbank geführt wird mit allen Container und hier die selben Limitierung zum tragen kommt.\cite{OpenStack2012}\cite{A2011}
 
+\paragraph*{Datenzugriff}
 Der Zugriff auf die gespeicherten Objekten erfolgt vergleichbar wie bei Amazon S3 über ein API. Das API verwendet für den Zugriff das Standard HTTP Request. Mehre Speicherlösung Hersteller haben angekündigt, das Swift API ebenfalls für den Zugriff auf Ihren Speicher unterstützen zu wollen. Glusterfs ebenfalls eine Verteile Speicherlösung, bietet in Ihrer Entwickler Version bereits die Unterstützung für Swift an. Applikationen welche, das Swift API unterstützen können Ihren Speicherlösung zukünftig einfacher austauschen ohne dabei die Applikation anpassen zu müssen. Neben den Zugriff mit dem Swift API, bietet OpenStack eine Amazon S3 kompatibles API an. Der Zugriff über POSIX IO auf den Speicher ist nicht möglich.
 
 Der Zugriff auf den Speicher erfolgt über einen Proxy welche, den Speicherort des Objektes prüft und die Anfrage weiterleitet. Pro OpenStack Object Storage Cluster können mehre Proxy eingesetzt werden. Mit Hilfe eines Load Balancers (Last Verteiler) können die Anfragen über die vorhanden Proxy verteilt werden.
@@ -617,11 +660,9 @@ Der Zugriff auf den Speicher erfolgt über einen Proxy welche, den Speicherort d
 Die Maximale Upload Grösse beträgt 5 GB, die Download Grösse selber ist jedoch unbeschränkt. Wenn ein Objekt welches grösser als 5 GB hochgeladen wird, wird das Objekt in Teilen hochgeladen und gespeichert, die Abfrage auf das Objekte erfolgt jedoch wie bei einen ganzen Objekt, es müssen also keine Teile durch das API Adressiert werden.\cite{OpenStack2012a}
 
 
-
+\paragraph*{Datenschutz}
 OpenStack Object Storage stellt die Datenintegrität beim Speichern von Objekten in den Speicher und beim auslesen der Daten sicher. Somit ist gewährleistet, dass die Daten im Original gespeichert werden und bei der Speicherung kein Datenverlust entsteht. Die Selbstheilung von korrupten Objekten, stellt OpenStack Objekt Storage mit dem Auditors Dienst sicher. Der Auditors Dienst läuft auf jeden Server und prüft dort die Integrität von Objekten, wenn ein korruptes Objekt festgestellt wird, wird die Datei unter Quarantäne gestellt und durch ein korrektes reblikations Objekt ersetzt.
 Um die Last die durch den Auditors möglichst gering zu halten, kann die Anzahl Objekte oder die Anzahl Bits die pro Sekunde geprüft werden konfiguriert werden.\cite{OpenStack2012}
-
-
 
 OpenStack Objekt Storage bietet neben der Redundanz der Objekte keine Möglichkeit, die Daten zu Sichern. Dadurch ist keine Versionierung der Objekte möglich. Zwar lässt sich die Cluster Nodes mit einen konventionellen Sicherungssoftware direkt sichern, jedoch wurde sich nur der gesamte Cluster wiederherstellen und nicht einzelne Objekte. Zudem wäre die Speicherkapazität pro Sicherung, so gross wie es für die redundante Speicherung der Objekte Speicherkapazität benötigt wird.
 \cite{AndyBrezinsky2011}
@@ -629,68 +670,382 @@ OpenStack Objekt Storage bietet neben der Redundanz der Objekte keine Möglichke
 
 Die Sicherheit der Daten wird mit sogenannten Accounts Sichergestellt, dass heist das ein Account nur auf seine gespeicherten Objekten zugreifen kann. Die Daten werden auf dem OpenStack Cluster Unverschlüsselt in Binären form gespeichert. Durch die Verteilung der Daten müsste jedoch eine Angreifer Zugriff auf alle Cluster Node erlangen um an alle Daten eines Account zu gelangen.
 
-OpenStack Objekt Storage wurde von der Firma RackSpace unter dem Code Name Swift entwickelt. Zusammen mit National Aeronautics and Space Administration (kurz. NASA) hat RackSpace die Softwareprojekt-Gemeinschaft OpenStack gegründet und Swift zusammen mit den Cloud Lösungen Nova für die Verwaltung von Virutellen Maschinen und Glace für die Verwaltung von Image als Quelloffene Software veröffentlicht. Die OpenStack Gemeinschaft ist in Vergleich zu anderen Quelloffenen Gemeinschaften noch eine relative jung Gemeinschaft, es gelangt Ihr dennoch neben den beiden Gründer Unternehmen, weiter bedeutende Unternehmen aus der Informatik Branche, wie Hewlett Packard, Dell, Citrix, Intel, AMD, NetApp und weitere zu gewinnen. Eine vollständige Liste aller Unterstützende  Unternehmen ist unter \urs{http://openstack.org/community/companies/} zu finden. Die Aktivität auf der Projekt Seite von OpenStack Object Storage, lässt erkennen, dass die Entwicklung aktive vorangetrieben wird und viele Beiträge zur neuen Funktionen oder Verbesserungen von Anwender und Entwickler bei gesteuert werden. \cite{Ohloh2012}
+\paragraph*{Technologie}
+OpenStack Objekt Storage wurde von der Firma RackSpace unter dem Code Name Swift entwickelt. Zusammen mit National Aeronautics and Space Administration (kurz. NASA) hat RackSpace die Softwareprojekt-Gemeinschaft OpenStack gegründet und Swift zusammen mit den Cloud Lösungen Nova für die Verwaltung von Virutellen Maschinen und Glace für die Verwaltung von Image als Quelloffene Software veröffentlicht. Die OpenStack Gemeinschaft ist in Vergleich zu anderen Quelloffenen Gemeinschaften noch eine relative jung Gemeinschaft, es gelangt Ihr dennoch neben den beiden Gründer Unternehmen, weiter bedeutende Unternehmen aus der Informatik Branche, wie Hewlett Packard, Dell, Citrix, Intel, AMD, NetApp und weitere zu gewinnen. Eine vollständige Liste aller Unterstützende  Unternehmen ist unter \url{http://openstack.org/community/companies/} zu finden. Die Aktivität auf der Projekt Seite von OpenStack Object Storage, lässt erkennen, dass die Entwicklung aktive vorangetrieben wird und viele Beiträge zur neuen Funktionen oder Verbesserungen von Anwender und Entwickler bei gesteuert werden. \cite{Ohloh2012}
 
 Die Internet-Recherche auf OpenStack spezialisierte Firmen mit Standort Schweiz ergaben keine Ergebnisse. Einige
 Gemäss Internet Recherchen gibt es noch keine spezialisierte Firma für OpenStack Lösungen. Einige wenige Experten für OpenStack mit Domizil in der Schweiz konnten über die Profile bei LinkedIn einen Soziales Netzwerk für Geschäft gefunden werden. 
 
-Die Verwaltung des Speichers bietet OpenStack ein Kommandozeilen Tools an. Ein Web-GUI für Objekt Storage von OpenStack gibt es nicht. Die Firma SwiftStack bietet  
+Die Verwaltung des Speichers bietet OpenStack ein Kommandozeilen Tools an. Ein Web-GUI für Objekt Storage von OpenStack gibt es nicht. Die Firma SwiftStack bietet hierfür jedoch Kostenpflichtige Lösungen an. Die Überwachung des Speichers, zum Beispiel die Verfügbarkeit einzelner Cluster Nodes, muss jedoch mit zusätzlichen Fremdlösungen erfolgen. 
 
-Die Überwachung des Speichers, zum Beispiel die Verfügbarkeit einzelner Cluster Nodes, muss jedoch mit zusätzlichen Fremdlösungen erfolgen. 
+\subsubsection{Kosten}
+Grundsätzlich unterscheidet sich die Kosten für die beiden Szenario nur in der Anzahl Server, den Verwendeten Server Typen, in der Anzahl Festplatten und den benötigten Rack Platz. Die restlichen Faktoren sind für beide Szenerien die selben und werden in diesen Abschnitt behandelt.
 
-\subsection{Kosten Szenarion2}
+Um die Kosten der Rechenzentrumskosten möglichst tief zu halten, welche pro Rack verrechnet werden, soll möglichst viel Speicherkapazität in eine Rackeinheit gepackt werden. Dass bedeutet, dass die Richtigen Server für die Anzahl zur Verfügung gestellten Speicherkapazität verwendet werden soll.
 
-Im OpenStack Object Storage sollte Objekte mindestens dreifache Redundanz um die Verfügbarkeit zu gewährleisten. Wie in der \refeqlb{eqn:SpeicherkapazitätS2} zu entnehmen ist, sind für die aus der Soll-Analyse bestimmten 306 Tebibyte ist dafür die Speicherkapazität von 918 Tebibyte notwendig.
+Um die Preise für die Festplatten möglichst tief zu halten werden diese separate beschaffen. Als Festplatte soll eine SATA-3 3.5 Zoll 3 Terabyte Festplatte eingesetzt werden, diese entspricht 2.728 Tebibyte. Die Kosten für Festplatten sind stark Marktabhängig, für die Arbeit wird deshalb der einfachhalber mit ca. 300 CHF pro Festplatte gerechnet.
+
+Für beide Szenerien werden die gleichen Proxy-Server verwendet. Als Proxy Server wurden die Transtec Server-Systeme "'Lynx CALLEO Application Server 2260S'" ausgewählt. Die Proxy Server stammen von selben Hersteller wie die in den Szenerien aufgeführten Datenserver, diese hat den Vorteil, dass nur ein Ansprechpartner für die Server Hardware gibt. Es ist jedoch kein muss Kriterium und kann bei bedarf auch durch eine besseres Angebot eines anderen Hersteller ersetzt werden. Die Proxy sind mit einen Intel Xeon Prozessor E5-2665 mit 64 Gigabyte Hauptspeicher ausgerüstet. Die Server haben eine Rack-Höheneinheit von je 2 Einheiten. Wie bei den Datenserver wurde ein 365 mal 24 Stunden vor Ort Service ausgewählt. Der Preis pro Server beträgt 9'954 CHF.
+
+Neben der Server Infrastruktur sind noch zwei Netzwerk-Switches notwendig. Der Dell PowerConnect 8024 bietet 24 Port mit 10GbE. Die Switch haben eine Rack-Höheneinheit von je 1 Einheiten und benötigen gemäss Hersteller maximal 237,77 Watt. Dell gewährt einen 3 Jahres Support für den Switch. Der Preis pro Switch beträgt 14'732 CHF.
+
+Als Rechenzentrum Betreiber wurde Nine Internet Solution ausgewählt. Nine Betreibt seine Rechenzentrum in Zürich und ist auf die Hosting Spezialisiert. Mit seinen Rechenzentrum Standort in der Stadt Zürich, befindet sich Nine Geographisch in der Nähe des Auftraggeber. Die Anfahrtszeit und Anfahrtsweg kann so für den Auftraggeber kurz gehalten werden. Die Verschiedenen Rack Produkte welche Nine anbietet, unterscheiden sich von der Anzahl beinhalteten Rack-Höheneinheiten und deren beinhalteten Watt Leistung. In den Produkten ist zusätzlich die Anbindung ans  Internet Anbindung mit 100 Mbps beinhaltet. Bei Zusätzlichen Watt bedarf, bietet Nine die Möglichkeit die Zusätliche Watt in 500 Pakete zu 165 CHF pro Monat an.
+
+Für den den Betrieb der Speicherinfrastruktur wird mit einer Mann Stelle gerechnet. Organisatorisch kann diese auch auf mehre Prozentual Stellen aufgeteilt werden, somit ist auch der Betreib während Ferien Abwesenheit geregelt. Pro Monat wird mit Personal Kosten von 15'000 CHF gerechnet.
+
+
+\paragraph*{Kosten Szenario-1}
+
+Für die dreifache Redundanz sind für die aus der Soll-Analyse bestimmten 306 Tebibyte gemäss \refeqlb{eqn:SpeicherkapazitätS1} 918 Tebibyte an Speicherkapazität notwendig.
+
+\begin{equation}
+\mbox{Speicherkapazität}_{Redundanz} = 306  \mathrm{\ TiB} * 3 \mbox{\ Redundanz} =  918 \mathrm{\ TiB}
+\label{eqn:SpeicherkapazitätS1}
+\end{equation}
+
+
+Als Server System wurde der Transtec Lynx CALLEO Application Server 1260 gewählt. Der Server basiert auf Server Hardware des Herstellers  SuperMicro. Der Server benötigt 1 Rack-Höcheneinheiten Rack platz und bieten Platz für den Einbau von 4 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen ein Intel Xeon Prozessor E5-2620 zum Einsatz, zudem verfügt der Server über 32 Gigabyte Hauptspeicher. Der Server wurde mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 1'260 CHF.
+
+
+Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der  \refeqlb{eqn:SpeicherkapazitätServerS1} eine Speicherkapazität von 10,912 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 48,3 Tebibyte und der 5 Zonen insgesamt 5 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS1}). Für die Erreichung der Speicherkapazität von 48,3 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 20 Festplatten notwendig.
+
+\begin{equation}
+\mbox{Speicherkapazität}_{Server} = 2,728 \mathrm{\ TiB} * 4 \mbox{\ Einschub} =  10,912 \mathrm{\ TiB}
+\label{eqn:SpeicherkapazitätServerS1}
+\end{equation}
+
+\begin{equation}
+\mbox{Anzahl Server} = \frac{48,3 \mathrm{\ TiB}}{10,912 \mathrm{\ TiB}} \approx  5 \mbox{\ (Auf 5 Zonen gerundet)}
+\label{eqn:AnzahlServerS1}
+\end{equation}
+
+\begin{equation}
+\mbox{Anzahl Festplatten} = \frac{48,3 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx  20 \mbox{\ (Auf 5 Server gerundet)}
+\label{eqn:AnzahlServerS1}
+\end{equation}
+
+Gemäss \refeqlb{eqn:AnzahlRackS1} wird ein viertel Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Quarter Rack Angebot von Nine, welches 11 Rack-Höheneinheiten platz bietet. Der Preis pro Rack beträgt 450 CHF pro Monat, plus 650 CHF für die einmalige Einrichtung des Racks durch Nine.
+Für die Berechnung der Gesamt Watt Leistung welcher der Server im Betrieb benötigt, fehlen die Angaben des Hersteller. Aus diesen Grund wird angenommen, dass der Daten-Server ca. 300 Watt und der Proxy-Server 500 Watt bezieht. Mit diesen Annahmen benötigt es gemäss  \refeqlb{eqn:AnzahlWattPaketeS1}, den 500 Watt welche im Rack beinhaltet sind, zusätzliche 5 Pakete a 500 Watt pro Monat.
+
+\begin{equation}
+\mbox{Anzahl Racks} = \frac{5 * 1 \mathrm{\ U} + 2 * 2 \mathrm{\ U} + 2 * 2 \mathrm{\ U}}{11\mathrm{\ U}} \approx  1 \mbox{\ (Auf viertel Rack gerundet)}
+\label{eqn:AnzahlRackS1}
+\end{equation}
+
+\begin{equation}
+\mbox{Anzahl 500 \mathrm{W} Pakete} = \frac{5 * 300 \mathrm{\ W} + 2 * 500 \mathrm{\ W} +2 * 237,77 \mathrm{\ W} - 2000 \mathrm{\ W} }{500\mathrm{\ W}} \approx  5
+\label{eqn:AnzahlWattPaketeS1}
+\end{equation}
+
+Wie aus der \reftab{tab:KostenOpenStackS1} ersichtlich ist, betragen die Gesamtkosten 653'646.50 CHF.
+
+
+\begin{table}[htbp]
+\caption{Kosten OpenStack S1}
+\begin{small}
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Beschreibung} & \multicolumn{1}{l|}{\textbf{Kosten pro Stk/M.}} & \multicolumn{1}{l|}{\textbf{Anzahl}} & \multicolumn{1}{l|}{\textbf{Total}} \\ \hline
+  \multicolumn{ 4}{c}{} \\  \hline
+\multicolumn{ 4}{|c|}{\textbf{Investitionskosten}} \\ \hline
+Dell PowerConnect 8024 & CHF 14'732.00 & 2 & CHF 29'464.00 \\ \hline
+Lynx CALLEO App. Server 1260 & CHF 5'451.50 & 2 & CHF 10'903.00 \\ \hline
+Lynx CALLEO App. Server 1260 & CHF 2'831.30 & 5 & CHF 14'156.50 \\ \hline
+Festplatte 3,5 3 TB & CHF 300.00 & 20 & CHF 6'000.00 \\ \hline
+Rack Einrichtung & CHF 650.00 & 1 & CHF 650.00 \\ \hline \hline
+  \multicolumn{ 3}{r|}{\textbf{Total:}}  & \textbf{CHF 61'173.50} \\ 
+  \cline{4-4}
+\multicolumn{ 4}{c}{} \\   \hline
+\multicolumn{ 4}{|c|}{\textbf{Fortlaufende Kosten}} \\ \hline
+Dell Service  & CHF 0.00 & 2 & CHF 0.00 \\ \hline
+Transtec Service (Server 1260) & CHF 26.08 & 2 & CHF 52.17 \\ \hline
+Transtec Service (Server 1260) & CHF 26.08 & 5 & CHF 130.42 \\ \hline
+Rackkosten 11 U (500 W) & CHF 450.00 & 1 & CHF 450.00 \\ \hline
+Strom 500 W & CHF 165.00 & 5 & CHF 825.00 \\ \hline
+Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
+  \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & CHF 16'457.58 \\
+\cline{4-4}
+  \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{CHF 592'473.00} \\ \cline{4-4}
+  \multicolumn{ 4}{c}{} \\  \cline{4-4}
+  \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 653'646.50} \\ \cline{4-4}
+\end{tabular}
+\end{small}
+\label{KostenOpenStackS1}
+\end{table}
+
+
+
+\subsubsection{Kosten Szenario-2}
+
+Für die dreifache Redundanz sind für die aus der Soll-Analyse bestimmten 306 Tebibyte gemäss \refeqlb{eqn:SpeicherkapazitätS2} 918 Tebibyte an Speicherkapazität notwendig.
 
 \begin{equation}
 \mbox{Speicherkapazität}_{Redundanz} = 306  \mathrm{\ TiB} * 3 \mbox{\ Redundanz} =  918 \mathrm{\ TiB}
 \label{eqn:SpeicherkapazitätS2}
 \end{equation}
 
-Für die Architekt wird von Joe Arnolds CEO bei SwiftStack bei dreifacher Redundanz, die Implementierung von 5 Zone empfohlen. OpenStack Object Storage, speichert die Redundante Objekte jeweils in einer separaten Zonen. Eine Zone kann bei kleinen Implementationen auch nur aus Gruppen von Festplatten bestehen, also innerhalb eines einzigen Server existieren, es wird aber empfohlen eine Zone auf Hierarchie von Server-Gruppen zu implementieren. Das bedeutet jede Redundante Kopie auf einen eigenen Server gespeichert. \cite{Arnold} 
 
-Um die Kosten der Rechenzentrumskosten möglichst tief zu halten, welche pro Rack verrechnet werden, soll möglichst viel Speicherkapazität in eine Rackeinheit gepackt werden.
+Als Server System wurde der Transtec Lynx CALLEO Application Server 4260 gewählt. Der Server basiert auf Server Hardware des Herstellers  SuperMicro, welche gemäss eigenen Recherchen auch bei anderen OpenStack Lösungen verwendet wird. Der Server benötigt 4 Rack-Höcheneinheiten Rack platz und bieten Platz für den Einbau von 36 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen zwei Intel Xeon Prozessor E5-2620 zum Einsatz, zudem verfügt der Server über 64 Gigabyte Hauptspeicher. Der Server wurde mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 8'672 CHF.
 
-Als Server System wird eine auf dem von SuperMicro Komponenten Stammendes Transtec Server gesetzt. Das "Lynx CALLEO Application Server 4260" hat ein 4 Rack-Höheneinheit hohes Gehäuse, dass 24 an der Vorderseite und 12 3,5 Zoll Festplatten an der Rückseite fasst. Insgesamt können somit 36 Festplatten eingebaut werden. Der Server ist mit zwei Intel Intel Xeon Prozessor E5-2620 und mit 64 Gigabyte Hauptspeicher ausgerüstet. Zudem wurde der Server mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 8'672 CHF.
 
-Um die Preise für die Festplatten möglichst tief zu halten werden diese separate beschaffen. Als Festplatte soll eine SATA-3 3.5 Zoll 3 Terabyte Festplatte eingesetzt werden, diese entspricht 2.728 Tebibyte. Die Kosten für Festplatten sind stark Marktabhängig, für die Arbeit wird deshalb der einfachhalber mit ca. 300 CHF pro Festplatte gerechnet.
-
-Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der  \refeqlb{eqn:SpeicherkapazitätServer} eine Speicherkapazität von 98.208 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 918 Tebibyte und der 5 Zonen insgesamt 10 Server notwendig (siehe \refeqlb{eqn:AnzahlServer}). Für die Erreichung der Speicherkapazität von 918 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 340 Festplatten notwendig, dass heisst pro Server sind 34 Einschub mit Festplatten belegt. Sie könnten also bei Bedarf noch weiter aufgerüstet werden.
+Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der  \refeqlb{eqn:SpeicherkapazitätServerS2} eine Speicherkapazität von 98.208 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 918 Tebibyte und der 5 Zonen insgesamt 10 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS2}). Für die Erreichung der Speicherkapazität von 918 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 340 Festplatten notwendig, dass heisst pro Server sind 34 Einschub mit Festplatten belegt. Sie könnten also bei Bedarf noch weiter aufgerüstet werden.
 
 \begin{equation}
 \mbox{Speicherkapazität}_{Server} = 2,728 \mathrm{\ TiB} * 36 \mbox{\ Einschub} =  98.208 \mathrm{\ TiB}
-\label{eqn:SpeicherkapazitätServer}
+\label{eqn:SpeicherkapazitätServerS2}
 \end{equation}
 
 \begin{equation}
 \mbox{Anzahl Server} = \frac{918 \mathrm{\ TiB}}{98.208 \mathrm{\ TiB}} \approx  10 \mbox{\ (Auf 5 Zonen gerundet)}
-\label{eqn:AnzahlServer}
+\label{eqn:AnzahlServerS2}
 \end{equation}
 
 \begin{equation}
 \mbox{Anzahl Festplatten} = \frac{918 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx  340 \mbox{\ (Auf 10 Server gerundet)}
-\label{eqn:AnzahlServer}
+\label{eqn:AnzahlServerS2}
 \end{equation}
 
-Zusätzlich zu den Speicherserver benötigt es noch zwei oder mehrere Proxy Server um die hohe Verfügbarkeit zu gewährleisten. Die Proxy Server, werden bei Rackspace mit  10 Gb Ethernet an den Netzwerk-Switch angeschlossen werden. \cite{OpenStack2011}
-Als Proxy Server wurden die Transtec Server-Systeme "Lynx CALLEO Application Server 2260S" ausgewählt. Somit gibt es nur einen Ansprechpartner für Server Hardware.
-Die Proxy sind mit einen Intel Xeon Prozessor E5-2665 mit 64 Gigabyte Hauptspeicher ausgerüstet. Die Server haben eine Rack-Höheneinheit von je 2 Einheiten. Wie bei den Datenserver wurde bei den Proxy, den selben Service ausgewählt. Der Preis pro Server beträgt 9'954 CHF.
-
-Neben der Server Infrastruktur sind noch zwei Netzwerk-Switches notwendig. Der Dell PowerConnect 8024 bietet 24 Port mit 10GbE. Die Switch haben eine Rack-Höheneinheit von je 1 Einheiten und benötigen gemäss Hersteller maximal 237,77 Watt. Dell gewährt einen 3 Jahres Support für den Switch. Der Preis pro Switch beträgt 14'732 CHF.
-
-Als Rechenzentrum Betreiber wurde Nine Internet Solution ausgewählt. Nine Betreibt seine Rechenzentrum in Zürich und ist auf die Hosting Spezialisiert. Der Nahe Standort zum Auftraggeber, welcher ebenfalls in Zürich befindet, hat den Vorteil von kurzen Anfahrtsweg. Nine bietet in Ihren Full Rack Angebot, ein ganzes Rack mit der Rack-Höheneinheit von 47 Einheiten. Im Angebot ist eine Internet Anbindung von Mbps und 2000 Watt inklusive. Der Preis pro Rack beträgt 1450 CHF pro Monat. Zu den 1450 CHF können kommen eine einmalige Einrichtung Gebühr von 1500 CHF pro Rack dazu. Zusätzliche Watt sind in Pakete von 500 Watt zu einen Preis von 165 CHF pro Monat erhältlich.
-
-Für den Betreib sind gemäss \refeqlb{eqn:AnzahlRack} Rack notwendig. Für die Server gibt es leider keine Angaben von Hersteller wie viel Watt der Server bezieht. Aus diesen Grund wird angenommen, dass der Daten-Server ca. 700 Watt und der Proxy-Server 500 Watt bezieht. Nimmt man diese Zahlen gibt die \refeqlb{eqn:AnzahlWattPakete}, dass Zusätzlich zum Rack beinhalteten Watt, 13 Watt Pakete pro Monat dazu gekauft werden müssen.
+Gemäss \refeqlb{eqn:AnzahlRackS2} wird ein ganzes Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Full Rack Angebot von Nine, welches 47 Rack-Höheneinheiten platz bietet. Der Preis pro Rack beträgt 1450 CHF pro Monat, plus 1500 CHF für die einmalige Einrichtung des Racks durch Nine.
+Für die Berechnung der Gesamt Watt Leistung welcher der Server im Betrieb benötigt, fehlen die Angaben des Hersteller. Aus diesen Grund wird angenommen, dass der Daten-Server ca. 700 Watt und der Proxy-Server 500 Watt bezieht. Mit diesen Annahmen benötigt es gemäss  \refeqlb{eqn:AnzahlWattPaketeS2}, den 2000 Watt welche im Rack beinhaltet sind, zusätliche 13 Pakete a 500 Watt pro Monat.
 
 \begin{equation}
 \mbox{Anzahl Racks} = \frac{10 * 4 \mathrm{\ U} + 2 * 2 \mathrm{\ U} + 2 * 2 \mathrm{\ U}}{47\mathrm{\ U}} \approx  1 \mbox{\ (Auf ganze Rack gerundet)}
-\label{eqn:AnzahlRack}
+\label{eqn:AnzahlRackS2}
 \end{equation}
 
 \begin{equation}
-\mbox{Anzahl 500 \mathrm{W} Pakete} = \frac{10 * 700 \mathrm{\ W} + 2 * 500 \mathrm{\ W} +2 * 237,77 \mathrm{\ W} - 2000 \mathrm{\ W} }{500\mathrm{\ W}} \approx  13 \mbox{\}
-\label{eqn:AnzahlWattPakete}
+\mbox{Anzahl 500 \mathrm{W} Pakete} = \frac{10 * 700 \mathrm{\ W} + 2 * 500 \mathrm{\ W} +2 * 237,77 \mathrm{\ W} - 2000 \mathrm{\ W} }{500\mathrm{\ W}} \approx  13
+\label{eqn:AnzahlWattPaketeS2}
 \end{equation}
 
-Für den den Betrieb der Speicherinfrastruktur wird mit einer Mann Stelle gerechnet. Organisatorisch kann diese auch auf mehre Prozentual Stellen aufgeteilt werden, somit ist auch der Betreib während Ferien abweseheit geregelt.
+Wie aus der \reftab{tab:KostenOpenStackS1} ersichtlich ist, betragen die Gesamtkosten 893'965 CHF.
 
+\begin{table}[htbp]
+\caption{Kosten OpenStack}
+\begin{small}
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Beschreibung} & \multicolumn{1}{l|}{\textbf{Kosten pro Stk/M.}} & \multicolumn{1}{l|}{\textbf{Anzahl}} & \multicolumn{1}{l|}{\textbf{Total}} \\ \hline
+  \multicolumn{ 4}{c}{} \\  \hline
+\multicolumn{ 4}{|c|}{\textbf{Investitionskosten}} \\ \hline
+Dell PowerConnect 8024 & CHF 14'732.00 & 2 & CHF 29'464.00 \\ \hline
+Lynx CALLEO App. Server 1260 & CHF 5'451.50 & 2 & CHF 10'903.00 \\ \hline
+Lynx CALLEO App. Server 4260H & CHF 6'111.00 & 10 & CHF 61'110.00 \\ \hline
+Festplatte 3,5 3 TB & CHF 300.00 & 340 & CHF 102'000.00 \\ \hline \hline
+  \multicolumn{ 3}{r|}{\textbf{Total:}} & \textbf{CHF 203'477.00} \\ \cline{4-4}
+\multicolumn{ 4}{c}{} \\   \hline
+\multicolumn{ 4}{|c|}{\textbf{Fortlaufende Kosten}} \\ \hline
+Dell Service  & CHF 0.00 & 2 & CHF 0.00 \\ \hline
+Transtec Service (Server 1260) & CHF 26.08 & 2 & CHF 52.17 \\ \hline
+Transtec Service (Server 4260H) & CHF 53.31 & 10 & CHF 533.06 \\ \hline
+ Rackkosten 47 U (2000 W) & CHF 1'450.00 & 1 & CHF 1'450.00 \\ \hline
+Strom 500 W  & CHF 165.00 & 13 & CHF 2'145.00 \\ \hline
+Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
+  \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & CHF 19'180.22 \\ \cline{4-4}
+  \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{CHF 690'488.00} \\ \cline{4-4}
+  \multicolumn{ 4}{c}{} \\  \cline{4-4}
+  \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 893'965.00} \\ \cline{4-4}
+\end{tabular}
+\end{small}
+\label{tab:KostenOpenStackS2}
+\end{table}
+
+
+\subsection{\ref{Al-5}: Amazon S3}
+Amazon zählt zu den Grössten, wenn nicht der grösste Online Speicheranbieter weltweit. Genaue Anzahlen über die Anzahl Kunden und Speicherkapazität veröffentlich Amazon nicht. Seit 2006 bietet Amazon Ihren Kunden unter den Produktname S3, einen Online Speicher an. Die genaueren Technischen Eigenschaften und Architektur des Online Speicher ist bis anhin von Amazon nicht veröffentlicht worden. Nach eigenen Angaben von Amazon basiert die Dienstleistung auf gewöhnlichen Computer Hardware.
+
+
+
+
+
+
+Bei Online Speicher wie Amazon S3, kann der Kunde gleich nach Anmeldung an den Dienst, die Speicherressourcen verwenden. Es fallen also keine Installation von für
+die Speicherinfrastruktur an. 
+
+\paragraph*{Verfügbarkeit}
+Amazon S3 Speichert die Daten auf mehren Geräten in Verschiedenen Rechenzentren in der selben Region ab. Bei speichern werden die Daten Synchron in Verschiedene Rechenzentren gespeichert bevor die Speicherung als erfolgreich gemeldet ist, damit ist sicher gestellt, dass die Daten von beginn weg Redundant gespeichert sind. Mit diesen Massnahmen gewährleistet Amazon gemäss Dienstgütevereinbarung eine Zuverlässigkeit von 99.999999999\%. Bei bedarf kann die Zuverlässigkeit für Daten welche wenig Schutz benötigen, wie zum Beispiel Thumbnails von Bilder, mit einer geringeren Zuverlässigkeit von 99.99\% zu einen günstigeren Preis gespeichert werden.\cite{Amazon2007}
+
+Durch die Redundante Speicherung der Daten auf mehre Geräten gewährleistet Amazone gemäss Dienstgütevereinbarung von 99.99\% pro Monat
+
+\paragraph*{Datenzugriff}
+Der Zugriff auf die Daten findet über eine API oder über die Verwaltungskonsole von Amazon statt. Für den Zugriff mit einen API bietet Amazon ein \gls{REST} und ein \gls{SOAP} Schnittstelle an. Der \gls{REST} Zugriff findet über HTTP statt, dabei werden Standard HTTP requests verwendet. Für den Zugriff kann auch einen gewöhnlichen Web-Browser verwendet werden solange die Objekte Öffentlich sind.
+
+Einen Offiziellen POSIX IO Zugriff von Amazon steht nicht zur Verfügung, es existiert jedoch eine Quelloffenes Projekt Namens s3fs\footnote{\url{https://code.google.com/p/s3fs/}} welche es ermöglicht eine Amazon S3 Speicher unter Linux zu mounten. \cite{S3fs}
+
+Da die Infrastruktur von Amazon S3 nicht bekannt ist, können keine detailierte Angaben wie Amazon die Skalierung der Datenzugriffe handhabt. Es kann jedoch von einen hochskalierbaren System ausgegangen werden, da Amazon die Zugriffe von tausenden von Kunden gleichzeitig handhaben muss.
+
+Amazon S3 unterstützt das Lesen und Schreiben von mehren Systemen. Beim Lesen einen Objekts welche von mehren Systemen Zugegriffen wird und beschrieben, stellt Amazon S3 die Lese konsistent sicher.\cite{Amazon2012a}
+
+Für das Einlesen von Grossen Datenmengen bietet Amazon einen kostenpflichtigen Import/Export Dienstleistung an. Bei dieser Dienstleistung sendet der Kunde die Daten gespeichert auf  einen tragbares Speichergeräte an Amazon, welches die Daten direkt in Ihre Cloud ohne Umwege über das Internet einliesst.
+
+Die API von Amazon ist gut Dokumentiert, weshalb für einen erfahrenen Entwickler die Anbindung der Web-Applikation an Amazon S3 umsetzbar sein sollte.
+
+\paragraph*{Speicherkapazität}
+Für die Skalierung der Speicherkapazität kümmert sich Amazon.
+
+Im Amazon S3 können eine unbegrenzte Zahl von Objekten gespeichert werden, welche eine Speichergrösse von 1 Byte bis zu 5 Terrabyte haben können, wobei aber in einen PUT maximal 5 Gigabyte hochgeladen werden können. Für das Hochladen von Grösseren Objekten, muss die Multipart Funktion verwendet werden, welche das Objekte in mehren Teilen hochladet.\cite{Amazon2012b}
+
+\paragraph*{Datenschutz}
+Die Daten können bei Amazon in mehren Regionen gespeichert werden. Zu den verfügbaren Regionen gehören, US Standard, US West (Oregon), US West (Northern California), EU (Ireland), Asia Pacific (Singapore), Asia Pacific (Tokyo), South America (Sao Paulo). Gemäss Amazon verlassen die Gespeicherten Daten eine Region nicht, ausser für die Erfüllung von Gesetzen oder auf Anforderung von Regierung Anweisung. Als US Amerikanisches Unternehmen steht Amazon wegen dem Patrot Act, unter der Pflicht, den USA Behörden Zugang zu Informationen zu gewährleisten auf behördlichen Anforderungen, auch wenn diese Informationen ausserhalb der USA gespeichert sind. Gemäss EU Recht darf jedoch keine gespeicherten Informationen, an dritten Zugänglich gemacht werden oder ausserhalb der EU gespeichert werden, ohne Einverständnis. Bei Microsoft ebenfalls eine Grosser Cloud Anbieter bestätigt diese Annahme, das die Daten nicht vor den Zugriff der USA geschützt sind.\cite{Amazon2012}\cite{Ostler}
+
+Die Integrität der Daten wird mit einer Prüfsumme sichergestellt. Die gespeicherten Daten werden von Amazon regelmässig auf Ihre Integrität geprüft und bei bedarf von einer Integer Kopie der Daten ersetzt. 
+
+Die Daten können Verschlüsselt per SSL Zugegriffen bzw. gespeichert werden, somit ist gewährleistet, das dritte die Daten beim Transport nicht lesen können. Seit 2011 bietet Amazon kostenlos ebenfalls die Verschlüsselung mit AES-256 von Objekten im Speicher an. Dabei wird jedes Objekt mit einen eigenen Schluss ver- und entschlüsselt. Die erzeugten Schlüssel werden mit einen Master-Schlüssel ebenfalls Verschlüsselt und auf den Amazon-Servern gespeichert. Das Schlüsselmanagment bleibt jedoch bei Amazon, weshalb man abhängig von den Massnahmen zum schuzt des Schlusselmanagment die Amazon trifft. Wird diese Kompromittiert oder fällt aus ist der Zugriff auf die Verschlüsselten Daten nicht mehr möglich.\cite{RobertLippert2011}
+
+Die Berechtigung auf gespeicherte Objekte oder Ordner können mit einen Rechte-Management verwaltet werden. Objekte können öffentlich zugänglich gemacht werden oder nur an bestimmte Authentifizierte Benutzer zur Verfügung gestellt werden. Zudem lassen Sich Zugriffe auf Objekte Protokollieren.\cite{Amazon2012b}
+
+Für die Berechtigung und Verwaltung stellt Amazon ein Web-GUI zur Verfügung. Bis auf das eröffnen eines Speichers und die Initial Berechtigung sollten, wahrscheinlich nicht viel mehr Verwaltungsaufgaben anfallen.
+
+Amazon bietet neben der Redundanz der Objekte kein weiteres Sicherungsverfahren an. Beim Herunterladen der Daten fallen für den Transfer weiter Kosten an.
+
+\paragraph*{Technologie}
+Der Online Speicher von Amazon S3 gilt als ausgereiftes und etabliertes Produkt im Markt, weshalb davon ausgegangen werden kann, dass die Dienstleistung über die nächsten vier Jahre drübenraus noch bestehen wird und für den Kunden keine Migration notwendig ist. Amazon S3 wird ebenfalls von SmugMug ebenfalls eine Photodienstleister oder andere bekannte Web-Applikationen wie Dropbox verwendet.\cite{SmugMug}\cite{Dropbox2011}
+
+Der Online Speicher Markt ist im Verhältnis zu anderen Speicher Märkte noch relativ jung, Analysten wie Jeff Boles gehen davon aus, dass der Online Speicher Markt in den nächsten Jahren weiter stark wächst. Wie in der Marktstudie beschrieben konnte Amazon seit dem Start des Amazon S3 Produktes die Anzahl gespeicherte Objekte jeweils pro Jahr mehr als verdoppeln (sie dazu \refabb{abb:AnzahlObjekteAmazonS3}). Die Konkurrenz von grossen Anbietern wie Google, Microsoft oder Rackspace nimmt für Amazon bereits zu. Für den Kunden bedeutet diese, dass die Anbieter Ihre Preise noch stärker kalkulieren müssen um ein Konkurrenz fähiges Angebot zu haben. Amazon hat die Preise für S3 Speicher erst kürzlich angepasst.\cite{Boles2011}\cite{Barr2012a}
+
+
+\subsubsection{Kosten}
+Durch den Bezug des Speichersressourcen als Dienstleistung, fallen für den Kunden keine Investitionskosten für die Speicher Infrastruktur an.
+Dafür muss in den meisten Fällen, die Applikation für den Zugriff mittels Amazon S3 API vorbereitet werden, wodurch Entwicklungskosten anfallen könnten.
+
+Beim Amazon S3 wird jeweils nur der Effektive verwendete Speicherplatz pro Monat verrechnet, im Preis von Amazon ist jeweils die dreifache Redundanz inbegriffen. Der Speicherplatz Kostet ab 1 Terabyte bis 49 Terabyte \$ 0.110 per Gigiabyte. Ab 49 Terabyte bis 450 Terabyte reduzieren sich die Kosten pro Gigabyte auf \$ 0.095. Anders als beim betrieb seiner eigenen Speicherinfrastruktur muss der Kunden keine zusätzliche Speicherkapazitätsreserven für unvorhergesehenes einrechnen, da Ihm diese bei Bedarf jederzeit von Amazon zur Verfügung gestellt wird, was wiederum die Kosten für den Kunden senkt, da er keine Reserve zu Verfügung stellen muss.
+
+Bei Verwendung von Amazon S3 fallen für den Kunden zudem keine Wartungskosten für den Betrieb der Speicherinfrastruktur an. 
+
+Im vergleich zu betrieb der eignen Speicherinfrastruktur, fallen dem Kunden, stattdessen Kosten für den Transfer und Abfragen der Daten an, welche bei der eignenden Infrastruktur generell durch die Investition in die Infrastruktur beinhaltet ist. So Kostet der Transfer der Daten aus der Amazon S3 Speicher aus, für jedes GB \$ 0.12 bei einen Transfervolumen bis 10 TB.  Für die Abfrage wird unterschieden zwischen Schreibenden und Lesenden Abfragen. Für den Lese Zugriff auf die Daten wird pro 10'000 Abfragen \$ 0.01 und für jede Schreibzugriff pro 1'000 Abfragen\$ 0.01 verrechnet. Gerade diese Kosten sind jedoch schwer vorher zubestimmen und könnten zu Überraschungen sorgen. Grund dafür ist, dass diese jeweils stark von jeweiligen Anzahl Benutzer und deren Benutzerverhalten abhängig sind und diese schwer zu vorhersagen ist.
+
+\paragraph*{Kosten Szenario-1}
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der\reftab{tab:KostenAmazonS3S1} Total  \$ 42'646.32 das sind zum aktuellen Tageskurs (13 April 2012)  39'10.52 CHF. 
+
+
+\subsubsection*{Kosten Szenario-2}
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der \reftab{tab:KostenAmazonS3S2} Total  \$ 493'902.84 das sind zum aktuellen Tageskurs (13 April 2012)  450'637.17 CHF. 
+
+\begin{table}
+\caption{Kosten Amazon S3 Szenario-1}
+\begin{center}
+\begin{tabular}{|l|r|r|r|}
+\hline
+\multicolumn{1}{|l|}{\textbf{Bezeichnung}} &\multicolumn{1}{|l|}{\textbf{Monat}} & \multicolumn{1}{l|}
+{\textbf{Speicherkapazität}} & \multicolumn{1}{l|}{\textbf{Kosten}} \\ \hline
+\multicolumn{4}{c}{} \\  \hline
+\multicolumn{ 4}{|c|}{\textit{Investitionskosten}} \\ \hline 
+- &  &  &    \\ \hline
+\multicolumn{3}{r|}{\textbf{Total:}} & CHF 0.00 \\ \cline{4-4}
+\multicolumn{4}{c}{} \\  \hline
+\multicolumn{ 4}{|c|}{\textit{Fortlaufende Kosten}} \\ \hline
+Amazon S3 & 1 & 2,75 &  \$691.82  \\ \hline
+Amazon S3 & 2 & 3 &  \$719.98  \\ \hline
+Amazon S3 & 3 & 3,25 &  \$748.14  \\ \hline
+Amazon S3 & 4 & 3,5 &  \$776.30  \\ \hline
+Amazon S3 & 5 & 3,75 &  \$804.46  \\ \hline
+Amazon S3 & 6 & 4 &  \$832.62  \\ \hline
+Amazon S3 & 7 & 4,25 &  \$860.78  \\ \hline
+Amazon S3 & 8 & 4,5 &  \$888.94  \\ \hline
+Amazon S3 & 9 & 4,75 &  \$917.10  \\ \hline
+Amazon S3 & 10 & 5 &  \$945.26  \\ \hline
+Amazon S3 & 11 & 5,25 &  \$973.42  \\ \hline
+Amazon S3 & 12 & 5,5 &  \$1'001.58  \\ \hline
+Amazon S3 & 13 & 5,75 &  \$1'029.74  \\ \hline
+Amazon S3 & 14 & 6 &  \$1'057.90  \\ \hline
+Amazon S3 & 15 & 6,25 &  \$1'086.06  \\ \hline
+Amazon S3 & 16 & 6,5 &  \$1'114.22  \\ \hline
+Amazon S3 & 17 & 6,75 &  \$1'142.38  \\ \hline
+Amazon S3 & 18 & 7 &  \$1'170.54  \\ \hline
+Amazon S3 & 19 & 7,25 &  \$1'198.70  \\ \hline
+Amazon S3 & 20 & 7,5 &  \$1'226.86  \\ \hline
+Amazon S3 & 21 & 7,75 &  \$1'255.02  \\ \hline
+Amazon S3 & 22 & 8 &  \$1'283.18  \\ \hline
+Amazon S3 & 23 & 8,25 &  \$1'311.34  \\ \hline
+Amazon S3 & 24 & 8,5 &  \$1'339.50  \\ \hline
+Amazon S3 & 25 & 8,75 &  \$1'367.66  \\ \hline
+Amazon S3 & 26 & 9 &  \$1'395.82  \\ \hline
+Amazon S3 & 27 & 9,25 &  \$1'423.98  \\ \hline
+Amazon S3 & 28 & 9,5 &  \$1'452.14  \\ \hline
+Amazon S3 & 29 & 9,75 &  \$1'480.30  \\ \hline
+Amazon S3 & 30 & 10 &  \$1'508.46  \\ \hline
+Amazon S3 & 31 & 10,25 &  \$1'536.62  \\ \hline
+Amazon S3 & 32 & 10,5 &  \$1'564.78  \\ \hline
+Amazon S3 & 33 & 10,75 &  \$1'592.94  \\ \hline
+Amazon S3 & 34 & 11 &  \$1'621.10  \\ \hline
+Amazon S3 & 35 & 11,25 &  \$1'649.26  \\ \hline
+Amazon S3 & 36 & 11,5 &  \$1'677.42  \\ \hline
+\multicolumn{3}{r|}{\textbf{Total:}} & \textbf{\$ 42'646.32} \\ \cline{4-4}
+\multicolumn{4}{c}{} \\  \cline{4-4}
+\multicolumn{3}{r|}{\textbf{Total Gesamt:}} & \textbf{ \$ 42'646.32} \\ \cline{4-4}
+\end{tabular}
+\end{center}
+\label{tab:KostenAmazonS3S1}
+\end{table}
+
+\begin{table}
+\caption{Kosten Amazon S3 Szenario-2}
+\begin{center}
+\begin{tabular}{|l|r|r|r|}
+\hline
+\multicolumn{1}{|l|}{\textbf{Bezeichnung}} &\multicolumn{1}{|l|}{\textbf{Monat}} & \multicolumn{1}{l|}
+{\textbf{Speicherkapazität}} & \multicolumn{1}{l|}{\textbf{Kosten}} \\ \hline
+\multicolumn{4}{c}{} \\  \hline
+\multicolumn{ 4}{|c|}{\textit{Investitionskosten}} \\ \hline 
+- &  &  &    \\ \hline
+\multicolumn{3}{r|}{\textbf{Total:}} & CHF 0.00 \\ \cline{4-4}
+\multicolumn{4}{c}{} \\  \hline
+\multicolumn{ 4}{|c|}{\textit{Fortlaufende Kosten}} \\ \hline
+Amazon S3 & 1 & 8.5 &  \$2'937.87  \\ \hline
+Amazon S3 & 2 & 14.5 &  \$3'613.71  \\ \hline
+Amazon S3 & 3 & 20.5 &  \$4'289.55  \\ \hline
+Amazon S3 & 4 & 26.5 &  \$4'965.39  \\ \hline
+Amazon S3 & 5 & 32.5 &  \$5'641.23  \\ \hline
+Amazon S3 & 6 & 38.5 &  \$6'317.07  \\ \hline
+Amazon S3 & 7 & 44.5 &  \$6'992.91  \\ \hline
+Amazon S3 & 8 & 50.5 &  \$7'661.07  \\ \hline
+Amazon S3 & 9 & 56.5 &  \$8'244.75  \\ \hline
+Amazon S3 & 10 & 62.5 &  \$8'828.43  \\ \hline
+Amazon S3 & 11 & 68.5 &  \$9'412.11  \\ \hline
+Amazon S3 & 12 & 74.5 &  \$9'995.79  \\ \hline
+Amazon S3 & 13 & 80.5 &  \$10'579.47  \\ \hline
+Amazon S3 & 14 & 86.5 &  \$11'163.15  \\ \hline
+Amazon S3 & 15 & 92.5 &  \$11'746.83  \\ \hline
+Amazon S3 & 16 & 98.5 &  \$12'330.51  \\ \hline
+Amazon S3 & 17 & 104.5 &  \$12'914.19  \\ \hline
+Amazon S3 & 18 & 110.5 &  \$13'497.87  \\ \hline
+Amazon S3 & 19 & 116.5 &  \$14'081.55  \\ \hline
+Amazon S3 & 20 & 122.5 &  \$14'665.23  \\ \hline
+Amazon S3 & 21 & 128.5 &  \$15'248.91  \\ \hline
+Amazon S3 & 22 & 134.5 &  \$15'832.59  \\ \hline
+Amazon S3 & 23 & 140.5 &  \$16'416.27  \\ \hline
+Amazon S3 & 24 & 146.5 &  \$16'999.95  \\ \hline
+Amazon S3 & 25 & 152.5 &  \$17'583.63  \\ \hline
+Amazon S3 & 26 & 158.5 &  \$18'167.31  \\ \hline
+Amazon S3 & 27 & 164.5 &  \$18'750.99  \\ \hline
+Amazon S3 & 28 & 170.5 &  \$19'334.67  \\ \hline
+Amazon S3 & 29 & 176.5 &  \$19'918.35  \\ \hline
+Amazon S3 & 30 & 182.5 &  \$20'502.03  \\ \hline
+Amazon S3 & 31 & 188.5 &  \$21'085.71  \\ \hline
+Amazon S3 & 32 & 194.5 &  \$21'669.39  \\ \hline
+Amazon S3 & 33 & 200.5 &  \$22'253.07  \\ \hline
+Amazon S3 & 34 & 206.5 &  \$22'836.75  \\ \hline
+Amazon S3 & 35 & 212.5 &  \$23'420.43  \\ \hline
+Amazon S3 & 36 & 218.5 &  \$24'004.11  \\ \hline
+\multicolumn{3}{r|}{\textbf{Total:}} & \textbf{\$ 493'902.84}
+ \\ \cline{4-4}
+\multicolumn{4}{c}{} \\  \cline{4-4}
+\multicolumn{3}{r|}{\textbf{Total Gesamt:}} & \textbf{\$ 493'902.84}
+ \\ \cline{4-4}
+\end{tabular}
+\end{center}
+\label{tab:KostenAmazonS3S2}
+\end{table}
+
+
+
+
+\subsection{Evaluation KO Kriteren}
+\subsubsection{Evaluation KO Kriteren Szenario 1}
+
+Alle Alternativen \refbf{Al-1} bis \refbf{Al-5} unterstützen die Speicherung von Dateien bis 2 Gibibyte Speichergrösse (\refbf{KO-1}).
+
+Alle Alternativen \refbf{Al-1} bis \refbf{Al-5} aus dem Szenario-1 erfüllen die geforderten Speicherkapazität (\refbf{KO-1}).
+
+Mit sdf
+Die günstigste Lösung ist die Alternative Al-1 mit Gesamtkosten von 26’464.31 CHF
