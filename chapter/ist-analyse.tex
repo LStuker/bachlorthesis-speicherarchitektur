@@ -16,7 +16,7 @@ Ruby On Rails auch "'Rails"' oder "'RoR"' genannt, implementiert eine Model-View
 
 \begin{center}
 \includegraphics[width=\linewidth, keepaspectratio = true]{media/rails-architecture.png}
-\mycaption{figure}{\label{abb:Rails-architektur}Rails Architektur \cite{Niwatori2008}}
+\mycaption{figure}{\label{abb:Rails-architektur}Rails Architektur  \cite{Niwatori2008}}
 \end{center}
 
 Beides, Ruby On Rails und Ruby sind Open-Source Programme. Die Quellprogramme sind für jeden Programmierer offen. Ruby wird unter der Lizenz "'Ruby License"' und GPL veröffentlicht, während Rails unter der "'MIT License"' veröffentlicht ist.
@@ -30,7 +30,8 @@ Die Speicher-Architektur besteht aus einem internen Block-basierendem RAID 5 Fes
 Im RAID Speicher sind ein root Dateisystem für das Betriebsystem, die Webapplikation, Datenbank, Logdateien und sämtliche Bilddaten installiert.
 
 \subsection{Speicherkapazität}
-Die von RAID 5 zur Verfügung gestellte Speicherkapazität beträgt gemäss \refeqlb{eqn:RAID 5-3disk} 3.636 Tebibyte, davon sind nach Installation des Dateisystems $\approx 3.5$ Tebibyte bzw. $\ca. 3.8 $ Terabyte effektiv verfügbar. Davon sind anhand des \textit{df} Befehls,  wie im\reflisting{df} ersichtlich, $\ca. 2.5$ Terabyte für das Betriebsystem, die Webapplikation, Datenbank, Logdateien und Bilddaten reserviert. Als freier Speicherplatz verbleiben $\ca. 1.3$ Terabyte.
+Die von RAID 5 zur Verfügung gestellte Speicherkapazität beträgt gemäss \refeqlb{eqn:RAID 5-3disk} 3.636 Tebibyte, davon sind nach Installation des Dateisystems $\approx 3.5$ Tebibyte bzw. ca. 3.8 Terabyte effektiv verfügbar. Davon sind anhand des \textit{df}\footnote{\url{http://www.debianadmin.com/manpages/dfmanpage.htm}}
+ Befehls,  wie im \reflisting{df} ersichtlich, ca. 2.5 Terabyte für das Betriebsystem, die Webapplikation, Datenbank, Logdateien und Bilddaten reserviert. Als freier Speicherplatz verbleiben ca. 1.3 Terabyte.
 
 \begin{equation}
 \mbox{Speicherkapazität RAID 5}= (3 - 1) * 1.818  \, \mathrm{TiB} =  3.636 \, \mathrm{TiB}
@@ -42,7 +43,6 @@ root@www1:~# df -h
 Filesystem            Size  Used Avail Use% Mounted on
 simfs                      3.8T  2.5T  1.3T   67% /
 \end{lstlisting}
-\footnote{\url{http://www.debianadmin.com/manpages/dfmanpage.htm}}
 
 \subsection{Datenwachstum}
 Das \refabb{abb:disk-usage-by-year} zeigt den Speicherzuwachs von Mitte Juni bis Ende November 2011.
