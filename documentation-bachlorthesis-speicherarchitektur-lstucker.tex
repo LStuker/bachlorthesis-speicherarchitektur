@@ -44,7 +44,7 @@
 \input{chapter/machbarkeitsnachweis}
 \cleardoublepage
 
-\usepackage{fancyhdr}
+% \usepackage{fancyhdr}
 %\pagenumbering{roman}
 %\setcounter{page}{1}
 % \input{chapter/Listings}
@@ -53,13 +53,13 @@
 % \input{chapter/literatur}
 
 \pagenumbering{roman}
-%Glossar ausgeben
+% Glossar ausgeben
 \printglossary[style=altlist,title=Glossar]
-%Abkürzungen ausgeben
-\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
-\printglossary[type=\acronymtype,style=long]
+% Abkürzungen ausgeben
+% \deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
+% \printglossary[type=\acronymtype,style=long]
 %Symbole ausgeben
-\printglossary[type=symbolslist,style=long]
+% \printglossary[type=symbolslist,style=long]
 
 % Literatur
 \bibliographystyle{gerplain}
@@ -73,5 +73,8 @@
 \appendix
 %\addappheadtotoc
 \appendixpage
+
+\input{chapter/evaluationdetails}
+\input{chapter/installation}
 
 \end{document}

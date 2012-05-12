@@ -131,14 +131,14 @@ iSCSI stellt die Integrität des übermittelten Paketes mit dem CRC-32c Digests 
 \paragraph*{Skalierbarkeit Datenvolumen}
 Einen Server können mehre Logical Unit zugeteilt werden. Durch den Einsatz eines Volume Manager können mehre Logical Unit zu einer grossen Logischen Volume zusammengefasst werden. Sollte die Kapazität einer Speichersystems nicht ausreichen kann ein weiteres Speichersystem ans SAN angeschlossen werden.
 
-\paragraph*{Durchsatz I/O}
+\paragraph*{Durchsatz I/O}\label{DurchsatzIO}
 Die Firma Netapp zählt zu den Marktführen in Bereich Unternehmens NAS Speicherlösungen. Neben dem "Network File System" (NFS), beherrschen die Speicherlösungen von Netapp auch das zur Verfügungsstellen von Logical Units über iSCSI als auch über Fibre Channel. Saad Jafri und Chris Lemmons von Netapp haben die Bereitstellung von Speicher über die verschiedenen Verfahren, bezüglich Performance für eine VMWare vSphere Umgebung untersucht. Netapp weisst in Ihren Report nicht die konkreten Messzahlen aus, sondern die Werte in Vergleich zu einen 4Gb Fibre Channel.
 
 Wie im \refabb{abb:NetappIOPS} von Netapp zu entnehmen ist sind die I/O pro Sekunden Werte von iSCSI in einen 1Gb Ethernet Netzwerk in Vergleich zu 4Gb Fibre Channel rund 8\%tiefer. Wobei höhere Werte bei I/0 pro Sekunden besser sind. Im 10 Gb Ethernet Netzwerk erreicht iSCSI dieselben Werte wie Fibre Channel in einen 8Gb Netzwerk.\cite{Jafri2011}
 
 \begin{center}
 \includegraphics[width=\linewidth, keepaspectratio = true]{media/netapp_iops.png}
-\mycaption{figure}{\label{abb:NetappIOPS}Netapp IOPS durchsatz für alle unterstützte Protokolle in Vergleich zu 4Gb FC mit 8K Block grösse\cite{Jafri2011}}
+\mycaption{figure}{\label{abb:NetappIOPS}Netapp IOPS durchsatz für alle unterstützte Protokolle in Vergleich zu 4Gb FC mit 8K Block grösse \cite{Jafri2011}}
 \end{center}
 
 Der Report von Netapp hat ebenfalls die Latenz verglichen. Bei Latenz möchte man möglichst einen tiefen Wert erreichen. Gemäss \refabb{abb:NetappLatenz} ist die Latenz von iSCSI in einen 1 Gb Ethernet Netzwerk rund 9\% höher als bei Fibre Channel in einen 4Gb Netzwerk. Bei iSCSI in 10Gb Ethernet waren die Werte gleich wie Fibre Channel in 4Gb Netzwerk. Fibre Channel in einen 8Gb Netzwerk hatte jedoch rund 1\% tiefere Werte.\cite{Jafri2011}
