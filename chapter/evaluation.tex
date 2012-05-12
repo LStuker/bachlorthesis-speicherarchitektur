@@ -17,7 +17,7 @@ Die Haupt-Kriterien sind auf der obersten Hierarchie Ebene und werden durch Ihre
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Soll-\arabic{paragraph}}
 \paragraph{Kosten}\label{Soll-1}
-Die Kosten sollen das Kostendach von ??? nicht überschreiten. 
+Die Kosten sollen einen gewinnbringenden Betrieb ermöglichen. 
 
 \paragraph{Verfügbarkeit}\label{Soll-2}
 Die Verfügbarkeit der Daten soll in Bezug auf die Szenerien die Verfügbarkeit erfüllen können. 
@@ -69,7 +69,7 @@ Die Speicherlösung sollte bei bedarf Ihren Speicher an bis zu 30 Serversysteme 
 Die Speicherlösung soll eine IO Performance von mindesten 27.31 MBit pro Sekunde haben.
 
 \paragraph{POSIX IO}\label{Soll-3-3}
-Die POSIX IO (inoffizielle Bezeichnung) ist eine Teil des POSIX Standards welche die IO Schnittstelle für POSIX Kompatible Applikationen definiert. Der Standard definiert unteranderem die Funktionen read(), write(), open(), close() inklisive deren Fehler Behandlung. Die Speicherlösung soll, für eine einfache Implementierung, nach Möglichkeit diesen Standard unterstützen. 
+Die POSIX IO (inoffizielle Bezeichnung) ist ein Teil des POSIX Standards welche die IO Schnittstelle für POSIX Kompatible Applikationen definiert. Der Standard definiert unteranderem die Funktionen read(), write(), open(), close() inklisive deren Fehler Behandlung. Die Speicherlösung soll, für ein einfache Implementierung, nach Möglichkeit diesen Standard unterstützen. 
 
 \paragraph{Simultaner Lesezugriff auf Objekte}\label{Soll-3-4}
 Das gleichzeitige Lesen auf das selbe Objekte von zwei oder mehrere Serversysteme soll möglich sein.
@@ -95,7 +95,7 @@ Das Speichersystem muss die Speicherung von Objekten mit einer Speichergrösse v
 Die Datenintegrität der gespeicherten Daten soll gewährleistet sein.
 
 \paragraph{Selbstheilung von Objekten}\label{Soll-5-2}
-Die Selbstheilung von nicht mehr integer Daten soll nach Möglichkeit unterstützt werden. Diese Funktion ist bei der Verwaltung von grossen Datenmengen eine unterstützende Funktion.
+Die Selbstheilung von nicht mehr integer Daten soll nach Möglichkeit unterstützt werden. Diese Funktion ist bei der Verwaltung von grossen Datenmengen ein unterstützende Funktion.
 
 \paragraph{Datensicherung}\label{Soll-5-3}
 Die gespeicherten Daten soll mit einen Sicherungsverfahren gesichert werden können. Wenn die aktiven Daten nicht an zwei Standorten zur Verfügung gestellt werden können, wie in (\refsoll{Soll-2-3}) definiert, ist es zwingen erforderlich das die Sicherung an einen zweiten Standort erfolgen kann.
@@ -107,7 +107,7 @@ Die Datenberechtigung wird in der Applikation Implementiert, die Speicherlösung
 \renewcommand\theparagraph{Soll-6-\arabic{paragraph}}
 
 \paragraph{Marktverbreitung / Marktchancen}\label{Soll-6-1}
-Die Speicherlösung soll im Markt verbreitet sein oder Tendenzen aufweisen die auf eine Verbreiterung im Markt in den nächsten fünf Jahren schliessen lässt.
+Die Speicherlösung soll im Markt verbreitet sein oder Tendenzen aufweisen die auf ein Verbreiterung im Markt in den nächsten fünf Jahren schliessen lässt.
 
 \paragraph{Weiterentwicklung}\label{Soll-6-2}
 Die Speicher Technologien welche aktive Weiterentwickelt werden soll hoher bewertet werden als Speicherlösung Technologie welche nicht mehr weiter gepflegt werden.
@@ -119,7 +119,7 @@ Die Verfügbarkeit von Experten Speicherlösungstechnologie soll gegeben sein. D
 Die Speichertechnologie soll die geforderte Datenmenge mit möglichst geringen Aufwand komfortable verwalten lassen.
 
 \paragraph{Kinderschuhe / Ausgereift}\label{Soll-6-5}
-Die Speicher Technologie soll Ausgereift und Stabil laufen. Eine Implementierung von Beta Technologie ist nicht erwünscht.
+Die Speicher Technologie soll Ausgereift und Stabil laufen. Ein Implementierung von Beta Technologie ist nicht erwünscht.
 Die Technologie soll Ausgereift sein, bzw. keine erst Implementierung.
 
 \section{KO-Kriterien}
@@ -129,7 +129,7 @@ Die KO-Kriterien sind muss Kriterien die von einen Speichersystem erfüllt werde
 \renewcommand\theparagraph{KO-\arabic{paragraph}}
 
 \paragraph{Dateigrösse bis 2 Gigibyte}\label{KO-1}
-Die Speicherung von Dateien die eine Speichergrösse von 2 Gibibyte muss unterstützt werden.
+Die Speicherung von Dateien die ein Speichergrösse von 2 Gibibyte muss unterstützt werden.
 
 \paragraph{Speicherkapazität Szenarien}\label{KO-2}
 Die geforderten Speicherkapazitäten der Szenerien inklusive die benötigte Kapazität für die Redundanz muss von der Speicherlösung unterstützt werden.
@@ -138,7 +138,7 @@ Die geforderten Speicherkapazitäten der Szenerien inklusive die benötigte Kapa
 Die Kosten der teuersten Speicherlösung, darf nicht dreimal teuerer sein als die Günstigste Lösung.
 
 \section{Auswahl der Alternativen / Vertreter}
-Mit dem Auftraggeber wurde definiert, dass aus den Speicherlösung, SAN, NAS, Distributed Filesystem Cluster, Online Speicher und   Dedizierter Server Webserver einen Vertreter für die Evaluation ausgewählt werden soll. Die Lösungen wurden nach Marktverbreitung, Technologie Leader ausgewählt.
+Mit dem Auftraggeber wurde definiert, dass aus den Speicherlösung, SAN, NAS, Distributed Filesystem Cluster, Online Speicher und Dedizierter Server Webserver einen Vertreter für die Evaluation ausgewählt werden soll. Die Lösungen wurden nach Marktverbreitung, Technologie Leader ausgewählt.
 
 Die Alternativen/ Vertreter sind für die spätere Verweise die Verweise Nummeriert.
 
@@ -147,96 +147,119 @@ Die Alternativen/ Vertreter sind für die spätere Verweise die Verweise Nummeri
 \paragraph{Hetzner}\label{Al-1}
 Dedizierte Webserver zählen im engeren Sinn nicht als reine Speicherlösungen, der Deutsche Hosting Anbieter Hetzner bietet jedoch Dedizierte Webserver mit einer Speicherkapazität welche die Anforderung an die Kapazität des Szenario 1 (siehe \refsec{Szenario-1}) erfüllen. Hetzner als Dedizierter Webserver Anbieter wurde ausgewählt, weil die bestehende Lösungen ebenfalls mit Hetzer Webserver realisiert ist. 
 
-\paragraph{NetApp}\label{Al-2}
-Als Vertreter für die NAS Speicherlösung wurde Netapp xxx ausgewählt. Die Firma Netapp gehört mit ihren NAS Speicherlösung zu den Markführer (siehe \refsec{MartkEtabliert}) und gelten als 
+\paragraph{NetApp NFS}\label{Al-2}
+Als Vertreter für die NAS Speicherlösung wurde die NetApp FAS2240-4 ausgewählt. Für die Entscheidung zu NetApp haben dazu beigetragen, dass die Firma NetApp zu den Marktführer im NAS Bereich gehören und als Innovativ von Gartner eingestuft wurde. Zudem haben Sie ein Breites Partner Netzwerk in der Schweiz.
 
-\paragraph{NetApp}\label{Al-3}
+\paragraph{NetApp iSCSI}\label{Al-3}
+Als Vertreter für Block Speicherlösung wurde ebenfalls die NetApp FAS2240-4 gewählt. Die NetApp FAS2240-4 beherrscht ebenfalls iSCSI und FC SAN und kann somit als Block Speicherlösung ebenfalls verwendet werden. Für iSCSI in vergleich zu FC SAN sprechen, dass nicht zusätzliche Netzwerk Technologien neben der Ethernet-Netzwerk Technologie, eingesetzt werden müssen.
 
+\paragraph{OpenStack Object Storage}\label{Al-4}
 
-\paragraph{Open-Stack Cloud Storage}\label{Al-4}
-Open-Stack 
-Als Verteilte Speicherlösung wurde ursprünglich zu beginn der Arbeit Hadoop HDFS ausgewählt, jedoch haben eigene Recherchen ergeben, dass Hadoop HDFS eher für die Speicherung von grossen Daten welche mittels einen MapReduce Algorithmus verarbeitet werden. Als Alternative zu Hadoop HDFS, kristalisierte sich GlusterFS und OpenStack Cloud Storage. Die Entscheidung viel am Ende auf Open-Stack Cloud Storage, da diese bereits erfolgreich bei RackSpace einen grösseren Online Speicheranbieter betrieben wird und es eine vergleichbares API hat wie Amazon S3. Zudem wird OpenStack von namhaften Informatik Unternehmen unterstützt-
-
+Als Vertreter für Verteilten Speicher, war ursprünglich Hadoop HDFS vorgesehen. In der aktuellen Version stellt derder Name-Node von HDFS noch als Single Point of Failure (kurz SPOF) dar. Zudem liegen die stärken bei HDFS auf die Prozessieren der Daten der gespeicherten Objekte mittels MapReduce Algorithmus. Aus diesen Grund wurden noch andere Verteilte Dateisystem untersucht wie GlusterFS und OpenStack Object Storage. OpenStack Object Storage soll von der Architektur vergleichbar sein wie Amazon S3, zudem wird es bei einen grösseren Online Speicheranbieter RackSpace erfolgreich eingesetzt. Ein weiterer Grund die für OpenStack Object Storage sprechen, ist das es dem Quelloffenen Projekt gelungen ist viele namhafte IT-Hersteller als Partner zu gewinnen.
 
 \paragraph{Amazon S3}\label{Al-5}
-Amazon S3 wurde als Represetator für Online Speicherlösung gewählt. Amazon S3 ist gemäss \refsec{MartkEtabliert} einer der Etabliertesten wenn nicht die erfolgreichste Online Speicherlösung. Amazon betreibt mehre Rechenzentrum in der gesamten Welt, als Speicherlösung Standort wird Europa ausgewählt.
+Amazon S3 wurde als Represenator für Online Speicherlösung gewählt. Amazon S3 ist gemäss \refsec{MartkEtabliert} einer der Etabliertesten wenn nicht die erfolgreichste Online Speicherlösung. Amazon betreibt mehre Rechenzentrum in der gesamten Welt, als Speicherlösung Standort wird Europa ausgewählt.
 
 
 \subsection{Gewichtung der Soll-Kriterien mit AHP}
 
-In diesen Abschnitt werden alle Soll-Kriteren der gleichen Hierarchie-Ebene bzw.  gleichen Unter-Kriterien paarweise mit einander Verglichen und mit der Skala \reftab{tab:Gewichtsberechnung} aus dem \refchap{kab:Entscheidungsfindung} Gewicht.
+In diesen Abschnitt werden alle Soll-Kriteren der gleichen Hierarchie-Ebene bzw. gleichen Unter-Kriterien paarweise mit einander Verglichen und mit der Skala \reftab{tab:Gewichtsberechnung} aus dem \refchap{kab:Entscheidungsfindung} Gewicht.
 
 % Vergleich mit Kosten
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-2} (\ref{Soll-1}/\ref{Soll-2})} 
-Mit steigenden Anforderungen an die Verfügbarkeit steigen auch die Kosten. Der Betrieb einer Infrastruktur eines Service Anbieters muss Kostendecken sein. Einen Ausfall des System während definierten Zeiten in welches das System Online sein muss, hat ebenfalls Auswirkungen auf das Unternehmen. So kann es zum Image Verlust, zu Kunden Abgänge führen, oder die Zahlung von Entschädigung erfordern. Einen Datenverlust kann trotzt Sicherungskopie bei Grossen Datenmengen zeitintensive und kostspielig werden. Aus diesen Gründen ist eine gute Balance zwischen Kosten und Verfügbarkeit zu finden. Die Kosten sind deshalb im Vergleich zur Verfügbarkeit zwischen gleich und etwas grösser zu Gewichten.
+Mit steigenden Anforderungen an die Verfügbarkeit steigen auch die Kosten. Der Betrieb einer Infrastruktur eines Service Anbieters muss Kostendecken sein. Einen Ausfall des System während definierten Zeiten in welches das System Online sein muss, hat ebenfalls Auswirkungen auf das Unternehmen. So kann es zum Image Verlust, zu Kunden Abgänge führen, oder die Zahlung von Entschädigung erfordern. Einen Datenverlust kann trotzt Sicherungskopie bei Grossen Datenmengen zeitintensive und kostspielig werden. Aus diesen Gründen ist ein gute Balance zwischen Kosten und Verfügbarkeit zu finden. Die Kosten sind deshalb im Vergleich zur Verfügbarkeit etwas grösser zu Gewichten.
 
-\textbf{Gewichtung: 2}
+\textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-3} (\ref{Soll-1}/\ref{Soll-3})}
-Die Unterkriterien von Datenzugriffe sind mit Skalierbarkeit der Datenzugriffe, Performance und usw. wichtige Entscheidungskriteren, dennoch sind diese im Gesamten im Vergleich zu den Kosten Kritikern etwas tiefer zu Gewichten. Grund dafür ist, dass der rentable Betrieb der Web-Applikation sichergestellt werden muss.
+Die Unterkriterien von Datenzugriffe sind mit Skalierbarkeit der Datenzugriffe, Performance und usw. wichtige Entscheidungskriteren, dennoch sind diese im Gesamten im Vergleich zu den Kosten Kritikern etwas tiefer zu Gewichten. Grund dafür ist, dass der rentable Betrieb der Web-Applikation sichergestellt werden muss. Aus diesen Grund sind die Kosten etwas Hoher zu Gewichten als die Datenzugriffe.
 
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-4}}
-Die Kosten und die Speicherkapazität sind gleich hoch zu Gewichten. Grund dafür ist, dass die Speicherlösung den rentablen Betrieb der Web-Applikation ermöglichen muss, zugleich muss jedoch sichergestellt werden, dass die geforderte Speicherkapazität vom Speichersystem erfüllt wird.
+Die Kosten und die Speicherkapazität sind gleich hoch bis etwas Grösser zu Gewichten. Grund dafür ist, dass die Speicherlösung den rentablen Betrieb der Web-Applikation ermöglichen muss, zugleich muss jedoch sichergestellt werden, dass die geforderte Speicherkapazität vom Speichersystem erfüllt wird. Aus diesen Grund ist
 
-\textbf{Gewichtung: 1}
+\textbf{Gewichtung: 2}
 
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-5}}
-Wie in den anderen Vergleiche ist sicherzustellen, das die Web-Applikation rentable Betrieben werden kann, aus diesen Grund sind möglichst tiefe Kosten erforderlich. Die Kosten sind deshalb in Vergleich zur Technologie erheblich Grösser zu Gewichten.
+Für eine Web-Dienstleistung ist der Schutz der Daten wichtig. Ist man Opfer eine Angriffs und wird diese Publik, kann diese zu grossen Image Verlusten führen. Aus diesen Grund ist sicherzustellen, das die Web-Applikation sicher betrieben werden kann. Die Sicherheit muss jedoch in erster Linie auf der Web-Applikation und Webserver sichergestellt werden als auf dem Speichersystem. Die Kosten sind deshalb in Vergleich zur Datenschutz sehr viel  bis absolut Grösser zu Gewichten.
 
-\textbf{Gewichtung: 5}
+\textbf{Gewichtung: 8}
 
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-6}}
+Wie in den anderen Vergleiche ist sicherzustellen, das die Web-Applikation rentable Betrieben werden kann, aus diesen Grund sind möglichst tiefe Kosten erforderlich. Die Kosten sind deshalb in Vergleich zur Technologie erheblich Grösser zu Gewichten.
 
 \textbf{Gewichtung: 7}
+
 % Vergleich mit Verfügbarkeit
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-3}}
-Aus Sicht des Anwenders ist die Verfügbarkeit der Daten höher zu Gewichten als möglichst schnellen Zugriff oder die Art und weise wie zugegriffen wird. Allerdings kann eine langes Zeitüberschreitung beim ausliefern der Daten für den Anwender ebenfalls als nicht Verfügbarkeit empfunden werden. Die Verfügbarkeit ist zwischen etwas Grösser bis erheblich Grösser zu Gewichten als der Datenzugriff.
+Aus Sicht des Anwenders ist die Verfügbarkeit der Daten höher zu Gewichten als möglichst schnellen Zugriff oder die Art und weise wie der Zugriff stattfindet. Allerdings kann ein langes Zeitüberschreitung beim ausliefern der Daten für den Anwender ebenfalls als nicht Verfügbarkeit empfunden werden.  Es ist daher wichtig das der Zugriff auch von Speichersystem bewältig werden kann. Die Verfügbarkeit ist deshalb gleich bis etwas Grösser zu Gewichten als der Datenzugriff.
 
-\textbf{Gewichtung: 4}
+\textbf{Gewichtung: 2}
 
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-4}}
-Zum Geschäftsmodell des Auftraggeber gehört unter anderem die Bereitstellung von Speicherkapazität für die Speicherung der Bilddaten seiner Kunden. Sind die Speicherkapazitäten ausgeschöpft ist es dem Auftraggeber nicht mehr möglich in diesen Geschäftsbereich weiter zu Wachsen. Aus diesen Grund ist die Verfügbarkeit etwas geringere zu Gewichten als die Speicherkapazität.
+Zum Geschäftsmodell der Web-Applikation gehört das Bereitstellung von Speicherkapazität für die Speicherung von grossen Bilddaten. Sind die Speicherkapazitäten ausgeschöpft und ist keine Wachstum mehr in der Speicherkapazität möglich, ist für den Auftraggeber eine weiteres Wachstum im Markt nicht mehr möglich. Aus diesen Grund ist die Verfügbarkeit etwas geringere zu Gewichten als die Speicherkapazität.
 
 \textbf{Gewichtung: 1/3}
 
-
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-5}}
-sdsd
-\paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-6}}
+Um eine möglichst hohe Verfügbarkeit zu erreichen, werden bei den Massnahmen zur Gewährleistung der Verfügbarkeit auch Massnahmen für den Datenschutz unternommen. Aus diesen Grund ist die Verfügbarkeit 
+Die Verfügbarkeit kann auch durch Schwachstellen erheblich höher zu Gewichten als der Datenschutz.
 
+\textbf{Gewichtung: 5}
+
+\paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-6}}
+Für den Betrieb ist sicherzustellen, dass die Verfügbarkeit gewährleistet ist. Im Vergleich zur, Marktverbreitung und die Verfügbarkeit von Experten, welche die Technologie beinhaltet ist deshalb die Verfügbarkeit erheblich bis sehr viel 
+Grösser zu Gewichten.
+
+\textbf{Gewichtung: 6}
 
 % Vergleich mit Datenzugriffe
 \paragraph*{\refsoll{Soll-3} verglichen mit \refsoll{Soll-4}}
+Die Skalierbarkeit der Datenzugriff ist für ein Speichersystem fast eben so wichtig wie die Skalierbarkeit der Speicherkapazität. Die Art uns weise wie der Zugriff stattfindet ist hingegen weniger wichtig, wie Faktoren über die Maximale Grösse eines Speicherbaren Objekts. Aus diesen Grund ist der Datenzugriff etwas weniger Gross zu Gewichten wie die Speicherkapazität. 
+
+\textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-3} verglichen mit \refsoll{Soll-5}}
+Für die Web-Applikation ist es wichtig das die geforderten Zugriffe auf das Speichersystem verarbeitbar ist. Die Sicherheit der Daten soll zudem vorwiegend auf Schicht der Applikation sichergestellt werden. Aus diesen Grund ist der Datenzugriff sehr viel Grösser zu Gewichten als der Datenschutz.
+
+\textbf{Gewichtung: 7}
 
 \paragraph*{\refsoll{Soll-3} verglichen mit \refsoll{Soll-6}}
+Für die Web-Applikation ist es wichtig das die geforderten Zugriffe auf das Speichersystem verarbeitbar ist. Für den Langezeit Betrieb ist es aber auch wichtig, dass die Speichertechnolgie sich mit den Entwickelten Anforderungen, welche in Zukunft gestellt werden sich mitentwickelt. Aus diesen Grund ist der Datenzugriff erheblich Grösser zu Gewichten als die Technologie.
+
+\textbf{Gewichtung: 5}
 
 % Vergleich mit Speicherkapazität
 \paragraph*{\refsoll{Soll-4} verglichen mit \refsoll{Soll-5}}
+Zum Geschäftsmodell der Web-Applikation gehört das Bereitstellung von Speicherkapazität für die Speicherung von grossen Bilddaten. Sind die Speicherkapazitäten ausgeschöpft und ist keine Wachstum mehr in der Speicherkapazität möglich, ist für den Auftraggeber eine weiteres Wachstum im Markt nicht mehr möglich. Der Datenschutz der Daten ist ebenfalls wichtig, der Schutz der Daten muss jedoch Hauptsächlich auf der Applikation Seite erfolgen. Aus diesen Grund ist die Speicherkapazität sehr viel bis Absolut Grösser zu Gewichten als der Datenschutz.
+
+\textbf{Gewichtung: 8}
 
 \paragraph*{\refsoll{Soll-4} verglichen mit \refsoll{Soll-6}}
+Für den langen Fristig Betrieb ist es wichtig das die Technologie weiter hin den neuen Anforderungen angepasst werden kann und genügend Experten vorhanden sind welche mit der Technologie vertraut sind. Für das Geschäftsmodell ist es aber wichtiger die notwendige Speicherkapazität zur Verfügung stellen zu können aus diesen Grund ist die Speicherkapazität sehr viel wichtiger als die Technologie.
+
+\textbf{Gewichtung: 7}
 
 % Vergleich mit Datenschutz
 \paragraph*{\refsoll{Soll-5} verglichen mit \refsoll{Soll-6}}
+Für den Langezeit Betrieb ist es aber auch wichtig, dass die Speichertechnolgie sich mit den Entwickelten Anforderungen, welche in Zukunft gestellt werden sich mitentwickelt und das genügend Experten Vorhanden sind welche eine solche Technologie betreiben können. Aus diesen Grund ist der Datenschutz etwas bis erheblich Geringer zu Gewichten als  die Technologie.
 
-
-
+\textbf{Gewichtung: 4}
 
 \begin{table}[htbp]
 \caption{AHP Gewichtung Top Kriterien}
-\begin{tabular}{|l|c|c|c|c|c|r|r|}
+\begin{tabular}{|l|r|r|r|r|r|r|r|}
 \hline
-\multicolumn{ 1}{|c|}{} & \multicolumn{ 5}{c|}{Evalutations Matrix} & \multicolumn{1}{l|}{} & \multicolumn{1}{l|}{Gewicht} \\ \cline{ 2- 8}
-\multicolumn{ 1}{|c|}{} & K & V & P & S & D & \multicolumn{1}{c|}{r} & \multicolumn{1}{c|}{w} \\ \hline
-Kosten (K) & \textbf{1} & 2 & 3 & 1 & 1 & 1.131 & 0.226 \\ \hline
-Verfügbarkeit (V) &  1/2 & \textbf{1} & 5 &  1/3 &  1/8 & 0.569 & 0.114 \\ \hline
-Performance (P) &  1/3 &  1/5 & \textbf{1} &  1/4 &  1/7 & 0.257 & 0.051 \\ \hline
-Speicherkapazität (S) & 1 & 3 & 4 & \textbf{1} &  1/2 & 1.071 & 0.214 \\ \hline
-Datenqualität (D) & 1 & 8 & 7 & 2 & \textbf{1} & 1.972 & 0.394 \\ \hline  \hline
-Ci & \multicolumn{1}{r|}{3.833} & \multicolumn{1}{r|}{14.200} & \multicolumn{1}{r|}{20.000} & \multicolumn{1}{r|}{4.583} & \multicolumn{1}{r|}{2.768} & 5 & 1 \\ \hline 
+\multicolumn{ 8}{|c|}{\textbf{Top Kriterien}} \\ \hline
+ & \multicolumn{1}{l|}{\textbf{K}} & \multicolumn{1}{l|}{\textbf{V}} & \multicolumn{1}{l|}{\textbf{D}} & \multicolumn{1}{l|}{\textbf{S}} & \multicolumn{1}{l|}{\textbf{Ds}} & \multicolumn{1}{l|}{\textbf{T}} & \multicolumn{1}{l|}{\textbf{Gewicht}} \\ \hline
+\textbf{Kosten (K)} & \textbf{1} & 3 & 3 & 2 & 8 & 7 & 0.353 \\ \hline
+\textbf{Verfügbarkeit (V)} &  1/3 & \textbf{1} & 2 &  1/3 & 5 & 6 & 0.155 \\ \hline
+\textbf{Datenzugriff (D)} &  1/3 &  1/2 & \textbf{1} &  1/4 & 7 & 5 & 0.122 \\ \hline
+\textbf{Speicherkapazität (S)} & 0.5 & 3 & 4 & \textbf{1} & 8 & 7 & 0.299 \\ \hline
+\textbf{Datenschutz (Ds)} &  1/8 &  1/5 &  1/7 &  1/8 & \textbf{1} &  1/4 & 0.026 \\ \hline
+\textbf{Technologie (T)} &  1/7 &  1/6 &  1/5 &  1/7 & 4 & \textbf{1} & 0.045 \\ \hline
+\textbf{Konsistenz Kennzahl} & 0.083  \\ \cline{1-2}
 \end{tabular}
 \label{AHPTop}
 \end{table}
@@ -273,7 +296,7 @@ Der Hauptkostenfakor in der Lebenzeit eines Information System sind die Betreibs
 \textbf{Anschaffung (A)} & 1 & \multicolumn{1}{r|}{0,2} & \multicolumn{1}{r|}{0,333} & \multicolumn{1}{r|}{0,105} \\ \hline
 \textbf{Unterhaltskosten (U)} & 5 & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{3} & \multicolumn{1}{r|}{0,637} \\ \hline
 \textbf{Langlebigkeit (L)} & 3 & \multicolumn{1}{r|}{0,333} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0.258} \\ \hline
-\textbf{Konsistenz Kennzahl} & 0.033  \\ \cline{1-2}
+\textbf{Konsistenz Kennzahl} & 0.033 \\ \cline{1-2}
 \end{tabular}
 \label{tab:AHPKosten}
 \end{table}
@@ -286,7 +309,7 @@ Die Paarvergleiche im Detail:
 
 \paragraph*{\refsoll{Soll-2-1} verglichen mit \refsoll{Soll-2-2} (\ref{Soll-2-1}/\ref{Soll-2-2})}
 Die Daten eines Informationssystem sind dessen wertvollstes Gut, mit höherer Redundanz der Daten steigt auch die Verfügbarkeit der Daten.
-Die Gesamt Verfügbarkeit hängt jedoch auch von der Verfügbarkeit der System Komponenten zusammen. Aus diesen Grund sollten die Daten System übergreifend Redundant sein um eine hohe Verfügbarkeit zu erreichen. Gemäss eigener Erfahrungen, ist die Zahl der Datenträger ausfälle höher als die restlichen Komponenten ausfälle eines Systems. Die Datenredundanz ist deshalb erheblich grösser zu Gewichten als die System Redundanz.
+Die Gesamt Verfügbarkeit hängt jedoch auch von der Verfügbarkeit der System Komponenten zusammen. Aus diesen Grund sollten die Daten System übergreifend Redundant sein um ein hohe Verfügbarkeit zu erreichen. Gemäss eigener Erfahrungen, ist die Zahl der Datenträger ausfälle höher als die restlichen Komponenten ausfälle eines Systems. Die Datenredundanz ist deshalb erheblich grösser zu Gewichten als die System Redundanz.
 
 \textbf{Gewichtung: 5}
 
@@ -297,7 +320,7 @@ Die Standortübergreifende Verfügbarkeit der Daten kann nur mit Redundanz der D
 
 \paragraph*{\refsoll{Soll-2-2} verglichen mit \refsoll{Soll-2-3} (\ref{Soll-2-2}/\ref{Soll-2-3})}
 Die Standortübergreifende Verfügbarkeit des System kann, erreicht werden wenn die Daten auf mehre Standortverteilt werden und an diesen Standorten die Daten von einen System am selben Standort gelesen werden kann. Das zweite System könnte z.B. ein Typ gleiches sein, welches am zweiten Standort abgeschaltet ist und bei einen Ausfall des Hauptstandorts hochgefahren wird.
-Um die Verfügbarkeit jedoch zu gewährleisten sollte keinen manuellen Eingriff erforderlich sein, da diese mit einen Unterbruch der Dienstleistung verbunden ist. Aus diesen Grund ist die Systemverfügbarkeit höher etwas bis erheblich höher zu Gewichten als die  Standortübergreifende Verfügbarkeit.
+Um die Verfügbarkeit jedoch zu gewährleisten sollte keinen manuellen Eingriff erforderlich sein, da diese mit einen Unterbruch der Dienstleistung verbunden ist. Aus diesen Grund ist die Systemverfügbarkeit höher etwas bis erheblich höher zu Gewichten als die Standortübergreifende Verfügbarkeit.
 
 \textbf{Gewichtung: 4}
 
@@ -328,19 +351,19 @@ Die Skalierung der Datenzugriff, dass heisst der Zugriff von mehren Systemen, er
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-3-1} verglichen mit \refsoll{Soll-3-3} (\ref{Soll-3-1}/\ref{Soll-3-2})}
-Ist eine Zugriff auf die Daten über POSIX IO möglich, fällt allenfalls die Anpassung der Entwickelte Web-Applikation geringer aus als wenn er auf die Daten per API zugreifen muss. Für den Betrieb der Web-Applikation ist die Skalierung des Datenzugriffs sehr viel bis absolut bedeutender als die Methode des Datenzugriffs.
+Ist ein Zugriff auf die Daten über POSIX IO möglich, fällt allenfalls die Anpassung der Entwickelte Web-Applikation geringer aus als wenn er auf die Daten per API zugreifen muss. Für den Betrieb der Web-Applikation ist die Skalierung des Datenzugriffs sehr viel bis absolut bedeutender als die Methode des Datenzugriffs.
 
 \textbf{Gewichtung: 8}
 
 
 \paragraph*{\refsoll{Soll-3-1} verglichen mit \refsoll{Soll-3-4} (\ref{Soll-3-1}/\ref{Soll-3-4})}
-Der Simultaner Lese Zugriff auf ein Objekt ermöglicht es, dass eine Bilddatei von mehren Server simultan gelesen werden kann und den Website Besuchern dargestellt werden kann. Wird diese nicht unterstützt ist es möglich das dem Webseiten Besucher die Bilddatei nicht dargestellt werden kann, wenn ein anderer Besucher die selbe Bilddatei betrachtet. Aus diesen Grund ist die Skalierung und der Simultane Lese Zugriff auf Objekten gleich bedeutend.
+Der Simultaner Lese Zugriff auf ein Objekt ermöglicht es, dass ein Objekt von mehren Server simultan gelesen werden kann und den Website Besuchern dargestellt werden kann. Wird diese nicht unterstützt ist es möglich das dem Webseiten Besucher die Bilddatei nicht dargestellt werden kann, wenn ein anderer Besucher die selbe Bilddatei betrachtet. Aus diesen Grund ist die Skalierung und der Simultane Lese Zugriff auf Objekten gleich bedeutend.
 
 \textbf{Gewichtung: 1}
 
 
 \paragraph*{\refsoll{Soll-3-1} verglichen mit \refsoll{Soll-3-5} (\ref{Soll-3-1}/\ref{Soll-3-5})}
-Der Simultaner Schreibzugriff auf ein Objekt erlaubt es, dass eine Objekt simultan von zwei oder mehreren Systemen modifiziert werden kann. Die Web-Applikation des Auftraggeber führt jedoch keine Änderungen an einer Original Bilddatei durch sondern erstellt modifizierte Kopien. Aus diesen Grund ist Möglichkeit der gleichzeitigen Schreibzugriff auf ein Objekt absolut geringer zu Gewichten als die Skalierung des Datenzugriffs
+Der Simultaner Schreibzugriff auf ein Objekt erlaubt es, dass ein Objekt simultan von zwei oder mehreren Systemen modifiziert werden kann. Die Web-Applikation des Auftraggeber führt jedoch keine Änderungen an einer Original Bilddatei durch sondern erstellt modifizierte Kopien. Aus diesen Grund ist Möglichkeit der gleichzeitigen Schreibzugriff auf ein Objekt absolut geringer zu Gewichten als die Skalierung des Datenzugriffs
 
 \textbf{Gewichtung: 9}
 
@@ -367,7 +390,7 @@ Die Zugriff Methode der Web-Applikation kann bei bedarf durch die Entwickler ang
 
 
 \paragraph*{\refsoll{Soll-3-3} verglichen mit \refsoll{Soll-3-5} (\ref{Soll-3-3}/\ref{Soll-3-5})}
- Aufgrund das keine Änderungen an Original Bilddateien durchgeführt werden, ist es für den Auftraggeber bedeutender, dass eine Zugriff über POSIX IO möglich ist.
+ Aufgrund das keine Änderungen an Original Bilddateien durchgeführt werden, ist es für den Auftraggeber bedeutender, dass ein Zugriff über POSIX IO möglich ist.
 
 \textbf{Gewichtung: 3}
 
@@ -382,13 +405,13 @@ Die Webapplikation des Auftraggeber führt keine Änderungen an der Original Bil
 \begin{tabular}{|l|c|c|c|c|c|l|}
 \hline
 \multicolumn{ 7}{|c|}{\textbf{Datenzugriff}} \\ \hline
- & \multicolumn{1}{l|}{\textbf{SK}} & \multicolumn{1}{l|}{\textbf{Pe}} & \multicolumn{1}{l|}{\textbf{POI}} & \multicolumn{1}{l|}{\textbf{L}} & \multicolumn{1}{l|}{\textbf{S  }} & \multicolumn{1}{l|}{\textbf{Gewicht}} \\ \hline
+ & \multicolumn{1}{l|}{\textbf{SK}} & \multicolumn{1}{l|}{\textbf{Pe}} & \multicolumn{1}{l|}{\textbf{POI}} & \multicolumn{1}{l|}{\textbf{L}} & \multicolumn{1}{l|}{\textbf{S}} & \multicolumn{1}{l|}{\textbf{Gewicht}} \\ \hline
 \textbf{Skalierbarkeit (Sk)} & 1 & 3 & 8 & 1 & 9 & 0,364 \\ \hline
 \textbf{Performance (Pe)} & 1/3 & 1 & 6 & 1/5 & 5 & 0,158 \\ \hline
 \textbf{POSIX IO (POI)} & 1/8 & 1/6 & 1 & 1/5 & 3 & 0,056 \\ \hline
 \textbf{Simultaner Lesezugriff auf Objekte (L)} & 1 & 5 & 5 & 1 & 9 & 0,392 \\ \hline
 \textbf{Simultaner Schreibzugriff auf Objekte (S)} & 1/9 & 1/5 & 1/3 & 1/9 & 1 & 0,031 \\ \hline
-\textbf{Konsistenz Kennzahl} & 0,08  \\ \cline{1-2}
+\textbf{Konsistenz Kennzahl} & 0,08 \\ \cline{1-2}
 \end{tabular}
 \label{tab:AHPDatenzugriff}
 \end{table}
@@ -401,7 +424,7 @@ Wie nach der Gewichtung und in der \reftab{tab:AHPSpeicherkapazität} zu entnehm
 Die Paarvergleiche im Detail:
 
 \paragraph*{\refsoll{Soll-4-1} verglichen mit \refsoll{Soll-4-2} (\ref{Soll-4-1}/\ref{Soll-4-2})}
-Die Skalierung der Speicherkapazität ist gleich zu Gewichten wie die maximal Anzahl Speicherbare Objekt. Beides sind limitierende Faktoren, die bei erreichen der Grenze die Speicherung von neuen Objekten verunmöglichen. Erreicht man die Grenze der Speicherbaren Objekten,  kann der Vorhandene frei Speicherkapazität nicht für neue Objekte verwendet werden. Umgekehrt kann die Speicherkapazität nicht ausgebaut werden, können die frei Kapazität an Speicherbaren Objekten nicht dazu verwendet werden neue Objekte zu Speichern.
+Die Skalierung der Speicherkapazität ist gleich zu Gewichten wie die maximal Anzahl Speicherbare Objekt. Beides sind limitierende Faktoren, die bei erreichen der Grenze die Speicherung von neuen Objekten verunmöglichen. Erreicht man die Grenze der Speicherbaren Objekten, kann der Vorhandene frei Speicherkapazität nicht für neue Objekte verwendet werden. Umgekehrt kann die Speicherkapazität nicht ausgebaut werden, können die frei Kapazität an Speicherbaren Objekten nicht dazu verwendet werden neue Objekte zu Speichern.
 
 \textbf{Gewichtung: 1}
 
@@ -424,7 +447,7 @@ Die maximale Anzahl speicherbare Objekte, ist für den Betrieb sehr viel grösse
 \textbf{Skalierbarkeit (S)} & 1 & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{7} & \multicolumn{1}{r|}{0,467} \\ \hline
 \textbf{Max Anzahl speicherbare Objekte (A)} & 1 & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{7} & \multicolumn{1}{r|}{0,467} \\ \hline
 \textbf{Max Objekt Speichergrosse grösser als 2 GiB (O)} & 1/7 & \multicolumn{1}{r|}{1/7} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0.067} \\ \hline
-\textbf{Konsistenz Kennzahl} & 0   \\ \cline{1-2}
+\textbf{Konsistenz Kennzahl} & 0 \\ \cline{1-2}
 \end{tabular}
 \label{tab:AHPSpeicherkapazität}
 \end{table}
@@ -442,8 +465,8 @@ Damit das Speichersystem korrupte Objekte selbständig heilen kann, ist es erfor
 \textbf{Gewichtung: 5}
 
 \paragraph*{\refsoll{Soll-5-1} verglichen mit \refsoll{Soll-5-3} (\ref{Soll-5-1}/\ref{Soll-5-3})}
-Verliert man alle \gls{Primären-Daten} durch einen Hard-, Software Fehler oder durch einwirken von dritten, ist es unerlässlich das eine Sicherungskopie bereit steht um nicht den Total Datenverlust zu erleiden.
-Eine weiter Gefahr von Datenverlust besteht, wenn die Datenintegrität nicht sichergestellt ist. Ist ein Objekt nicht mehr integer bzw. korrupt und wird diese vor der Sicherung nicht festgestellt, besteht die Gefahr eines Datenverlustes.
+Verliert man alle \gls{Primären-Daten} durch einen Hard-, Software Fehler oder durch einwirken von dritten, ist es unerlässlich das ein Sicherungskopie bereit steht um nicht den Total Datenverlust zu erleiden.
+Ein weiter Gefahr von Datenverlust besteht, wenn die Datenintegrität nicht sichergestellt ist. Ist ein Objekt nicht mehr integer bzw. korrupt und wird diese vor der Sicherung nicht festgestellt, besteht die Gefahr eines Datenverlustes.
 Der Verlust aller Daten ist jedoch schwerwiegender als der Verlust einzelner Daten.
 Aus diesen Grund ist die Datenintegrität geringer zu Gewichten als die Datensicherung.
 
@@ -467,7 +490,7 @@ Primär muss bei einer Webapplikation die Sicherheit der Daten innerhalb der Web
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-5-3} verglichen mit \refsoll{Soll-5-4} (\ref{Soll-5-3}/\ref{Soll-5-4})}
-Die Datensicherheit ist Primär auf der Web-Applikation Schicht zu gewährleisten und zu realisieren. Erfährt man einen Datenverlust durch einwirken von dritten, ist sicherzustellen das eine Sicherungskopie der Daten existiert. Aus diesen Grund ist die Sicherung der Daten sehr viel höher zu Gewichten als die Sicherheit.  
+Die Datensicherheit ist Primär auf der Web-Applikation Schicht zu gewährleisten und zu realisieren. Erfährt man einen Datenverlust durch einwirken von dritten, ist sicherzustellen das ein Sicherungskopie der Daten existiert. Aus diesen Grund ist die Sicherung der Daten sehr viel höher zu Gewichten als die Sicherheit. 
 
 \textbf{Gewichtung: 7}
 
@@ -493,18 +516,18 @@ Wie nach der Gewichtung und in der \reftab{tab:AHPTechnologie} zu entnehmen ist,
 Die Paarvergleiche im Detail:
 
 
-\paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-2} (\ref{Soll-6-1}/\ref{Soll-6-2})}Eine Technologie die nicht mehr weiter Entwickelt wird, wird trotzt allfähiger aktuellen grosser Marktverbreitung, über kurz oder längere Zeit durch neuere Technologie aus dem Markt verdrängt. Beim entscheid einer neuen Lösung ist es deshalb wichtig, dass man sich für eine Technologie Entscheidet die nicht am Ende Ihrer Lebenszyklus steht. Aus diesen Grund ist die Marktverbreitung/Marktchance erheblich geringer zu Gewichten als die Weiterentwicklung.
+\paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-2} (\ref{Soll-6-1}/\ref{Soll-6-2})} Ein Technologie die nicht mehr weiter Entwickelt wird, wird trotzt allfähiger aktuellen grosser Marktverbreitung, über kurz oder längere Zeit durch neuere Technologie aus dem Markt verdrängt. Beim entscheid einer neuen Lösung ist es deshalb wichtig, dass man sich für ein Technologie Entscheidet die nicht am Ende Ihrer Lebenszyklus steht. Aus diesen Grund ist die Marktverbreitung/Marktchance erheblich geringer zu Gewichten als die Weiterentwicklung.
 
 \textbf{Gewichtung: 1/5}
 
 
 \paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-3} (\ref{Soll-6-1}/\ref{Soll-6-3})}
-Durch eine hohe Marktverbreitung ist in der Regeln die Verfügbarkeit von Experten ebenfalls gegeben. Aus diesen Grund sind die Marktverbreitung und die Verfügbarkeit von Experten gleich zu Gewichten
+Durch ein hohe Marktverbreitung ist in der Regeln die Verfügbarkeit von Experten ebenfalls gegeben. Aus diesen Grund sind die Marktverbreitung und die Verfügbarkeit von Experten gleich zu Gewichten
 
 \textbf{Gewichtung: 1}
 
 \paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-1}/\ref{Soll-6-4})}
-Ein Produkt welches hohen Verwaltungskomfort aufweist, jedoch wegen anderen Faktoren eine schlechte Marktverbreitung oder Marktchancen aufweist, ist für den längeren betrieb schlechter geeignet als eine Produkt mit weniger hohen Verwaltungskomfort. Die Marktverbreitung ist deshalb etwas hoher zu Gewichten als der Verwaltungskomfort.
+Ein Produkt welches hohen Verwaltungskomfort aufweist, jedoch wegen anderen Faktoren ein schlechte Marktverbreitung oder Marktchancen aufweist, ist für den längeren betrieb schlechter geeignet als ein Produkt mit weniger hohen Verwaltungskomfort. Die Marktverbreitung ist deshalb etwas hoher zu Gewichten als der Verwaltungskomfort.
 
 \textbf{Gewichtung: 3}
 
@@ -520,28 +543,28 @@ Eine Technologie, welche nicht mehr weiter entwickelt wird lauft Gefahr den Mark
 
 \paragraph*{\refsoll{Soll-6-2} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-2}/\ref{Soll-6-4})}
 
-Die Weiterentwicklung ist für den Langezeit betrieb wichtiger als der Verwaltungskomfort. Bestehende Schwächen im Verwaltungskomfort, könnten in Weiterentwickelten Versionen behoben oder verbessert sein. Die Weiterentwicklung wird deshalb für den langzeit Betrieb sehr höher gewichtet als der Verwaltungskomfort.
+Die Weiterentwicklung ist für den Langzeitbetrieb wichtiger als der Verwaltungskomfort. Bestehende Schwächen im Verwaltungskomfort könnten in weiterentwickelten Versionen behoben oder verbessert sein. Die Weiterentwicklung wird deshalb für den Langzeitbetrieb sehr höher gewichtet als der Verwaltungskomfort.
 
 \textbf{Gewichtung: 7}
 
 \paragraph*{\refsoll{Soll-6-2} verglichen mit \refsoll{Soll-6-5} (\ref{Soll-6-2}/\ref{Soll-6-5})}
-Für den Betrieb der Web-Applikation ist es wichtig, dass die Speicherlösung technisch und Betrieblich ausgereift sind. Die Weiterentwicklung ist deshalb erheblich geringer zu Gewichten als die Ausgereifheit der Speicherlösung.
+Für den Betrieb der Web-Applikation ist es wichtig, dass die Speicherlösung technisch und betrieblich ausgereift ist. Die Weiterentwicklung ist deshalb erheblich geringer zu Gewichten als die Ausgereiftheit der Speicherlösung.
 
 \textbf{Gewichtung: 1/5}
 
 
 \paragraph*{\refsoll{Soll-6-3} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-3}/\ref{Soll-6-4})}
-Biete eine Speicherlösung einen hohen Verwaltungskomfort, können die Verwaltung in der Regel schneller und von weniger gut geschulten Personal durchgeführt werden. Folglich ist verringert sich die Abhängigkeit zu Experten. Für die Konzeption, Inbetriebnahme, spätere Optimierung und Problemlösungen der Speicherinfrastruktur ist man in der Regeln weiterhin auf das Wissen von Experten angewiesen. Aus diesen Grund ist es wichtig das der Zugriff auf Experten Wissen gegeben ist. Die Verfügbarkeit von Experten ist deshalb, erheblich höher zu Gewichten als der Verwaltungskomfort. 
+Biete ein Speicherlösung einen hohen Verwaltungskomfort, kann die Verwaltung in der Regel schneller und von weniger gut geschultem Personal durchgeführt werden. Folglich ist verringert sich die Abhängigkeit zu Experten. Für die Konzeption, Inbetriebnahme, spätere Optimierung und Problemlösungen der Speicherinfrastruktur ist man in der Regel weiterhin auf das Wissen von Experten angewiesen. Aus diesen Grund ist es wichtig das der Zugriff auf Experten Wissen gegeben ist. Die Verfügbarkeit von Experten ist deshalb, erheblich höher zu Gewichten als der Verwaltungskomfort. 
 
 \textbf{Gewichtung: 5}
 
 \paragraph*{\refsoll{Soll-6-3} verglichen mit \refsoll{Soll-6-5} (\ref{Soll-6-3}/\ref{Soll-6-5})}
-Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und Betrieblich ausgereift sind. Ist eine Produkt nicht ausgereift, bzw. verfügt über massive Mängeln die einen Betrieb gefährden, kann diese nicht gänzlich durch Experten Wissen kompensiert werden. Die Verfügbarkeit von Experten ist deshalb sehr viel geringer zu Gewichten als die Ausgereifheit der Speicherlösung.
+Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und betrieblich ausgereift sind. Ist ein Produkt nicht ausgereift, bzw. verfügt über massive Mängel, die einen Betrieb gefährden, kann diese nicht gänzlich durch Experten Wissen kompensiert werden. Die Verfügbarkeit von Experten ist deshalb sehr viel geringer zu Gewichten als die Ausgereiftheit der Speicherlösung.
 
 \textbf{Gewichtung: 1/7}
 
 \paragraph*{\refsoll{Soll-6-4} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-3}/\ref{Soll-6-5})}
-Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und Betrieblich ausgereift sind. Der beste Verwaltungskomfort, bring am Ende nichts, wenn das Produkt durch Mängeln den Betrieb gefährdet.
+Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und betrieblich ausgereift sind. Der beste Verwaltungskomfort bring am Ende nichts, wenn das Produkt durch Mängeln den Betrieb gefährdet.
 
 Der Verwaltungskomfort ist deshalb absolut geringer zu Gewichten als die Ausgereiftheit der Speicherlösung.
 
@@ -558,7 +581,7 @@ Der Verwaltungskomfort ist deshalb absolut geringer zu Gewichten als die Ausgere
 \textbf{Verfügbarkeit von Experten (E)} & 1 & 1/2 & 1 & 5 & 1/7 & 0.079 \\ \hline
 \textbf{Verwaltungskomfort (V)} & 1/3 & 1/7 & 1/2 & 1 & 1/9 & 0.031 \\ \hline
 \textbf{Ausgereift (A)} & 9 & 5 & 7 & 9 & 1 & 0.588 \\ \hline
-\textbf{Konsistenz Kennzahl} & \multicolumn{1}{r|}{0.094}  \\ \cline{1-2}
+\textbf{Konsistenz Kennzahl} & \multicolumn{1}{r|}{0.094} \\ \cline{1-2}
 \end{tabular}
 \label{AHPTechnologie}
 \end{table}
@@ -570,33 +593,33 @@ Der Verwaltungskomfort ist deshalb absolut geringer zu Gewichten als die Ausgere
 \subsection{\ref{Al-1}: Hetzner Server}
 Hetzner ist einer der grössten Hosting Anbieter in Deutschland und bietet seit 1997 für Unternehmen und Privat Personen Hosting-Produkte an. In den Vergangenen Jahren hat Hetzer diverse Computer-Magazin Auszeichnungen bekommen. Hetzner betreibt in Deutschland mehre Rechenzentren die mehrfach Redundant an das Internet Angeschlossen sind.
 
-\paragraph{Speicherkapazität}
+\subsubsection{Speicherkapazität}
 Der Grösste Dezidierter Server welche Hetzner in seinen Produkte Katalog führt, ist der Root Server XS 29. Der XS 29 ist mit 15 mal 3 Terabyte SATA Festplatten ausgerüstet. Mit dem zusätzlich eingebauten Hardware RAID Kontroller lassen, sich die 15 Festplatten zu einen RAID zusammen fügen.
 Als CPU hat der Server einen Intel Xeon E3-1245 Quad-Core eingebaut und Verfügt über 16 Gigabyte Hauptspeicher. 
 
-Die Max Grösse einer Datei ist von Dateisystem abhängig. ext3 oder "third extended filesystem" genannt, ist bei den meisten bekannten Linux Distributoren das Standard Dateisystem. Die maximale grösse einer Datei hängt von der verwendeten Blockgrösse ab. Nach eigener Test ist die Standard Blockgrösse bei Debian, Ubuntu, Red Hat und Suse 4 Kibibyte, gross. Bei einer Blockgrösse von 4 Kibibyte, kann eine Datei maximal 2 Tebibyte und das Dateisystem 16 Tebibyte gross sein. \cite{Card1993}
+Die Max Grösse einer Datei ist von Dateisystem abhängig. ext3 oder "third extended filesystem" genannt, ist bei den meisten bekannten Linux Distributoren das Standard Dateisystem. Die maximale grösse einer Datei hängt von der verwendeten Blockgrösse ab. Nach eigener Test ist die Standard Blockgrösse bei Debian, Ubuntu, Red Hat und Suse 4 Kibibyte, gross. Bei einer Blockgrösse von 4 Kibibyte, kann ein Datei maximal 2 Tebibyte und das Dateisystem 16 Tebibyte gross sein. \cite{Card1993}
 
 Die Maximale Anzahl an Objekte, hängt von der grösse des Dateisystems ab. Bei einen 16 Tebibyte ist mit der Standard Konfiguration maximal 17'592'186'044'416 Objekte. 
 
-\paragraph*{Verfügbarkeit}
+\subsubsection{Verfügbarkeit}
 Die RAID-5 Konfiguration mit dem 15 Festplatten im RAID bietet mit 38,192 Tebibyte gemäss \refeqlb{eqn:MaxSpeicherkapazitätHeztner} bei einfacher Redundanz die grösste mögliche Speicherkapazität. Wegen der möglicherweise langen Wiederherstellungs-Zeit (MTTR) dieser Konfiguration, ist man darauf angewiesen, dass der Ausfall durch die eigene Überwachungssystem erkannt und nach Benachrichtigung des Hetzner Support die defekte Festplatte rasch ausgetauscht wird. Die Festplatten selber sind während des Betriebs austauschbar, es ist somit kein Unterbruch des Betriebs erforderlich.
 
-Der eingesetzte LSI RAID Kontrolle lässt auch die Konfiguration einer Hot-Spare Festplatte zu. Eine Host-Spare Festplatte ist eine leere ungenutzte Festplatte, die bei einen Ausfall einer Festplatte im RAID automatisch die defekte Festplatte ersetzt. 
+Der eingesetzte LSI RAID Kontrolle lässt auch die Konfiguration einer Hot-Spare Festplatte zu. Ein Host-Spare Festplatte ist ein leere ungenutzte Festplatte, die bei einen Ausfall einer Festplatte im RAID automatisch die defekte Festplatte ersetzt. 
 
-Da es sich nur um ein Server System handelt, ist eine Standort-übergreifende Verfügbarkeit der Daten nicht möglich.
+Da es sich nur um ein Server System handelt, ist ein Standort-übergreifende Verfügbarkeit der Daten nicht möglich.
 
 
 \begin{equation}
-\mbox{Anzahl Server} = (15 -1)* 2,728 \mathrm{\ TiB}=  38,192 \mathrm{\ TiB}
+\mbox{Max Speicherkapazität} = (15 -1)* 2,728 \mathrm{\ TiB}= 38,192 \mathrm{\ TiB}
 \label{eqn:MaxSpeicherkapazitätHeztner}
 \end{equation}
 
 \begin{equation}
-\mbox{Anzahl Server} = (15 -1-1)* 2,728 \mathrm{\ TiB}=  35,464 \mathrm{\ TiB}
+\mbox{Max Speicherkapazität mit Hostspare} = (15 -1-1)* 2,728 \mathrm{\ TiB}= 35,464 \mathrm{\ TiB}
 \label{eqn:MaxSpeicherkapazitätHeztnerHotspare}
 \end{equation}
 
-\paragraph*{Datenzugriff}
+\subsubsection{Datenzugriff}
 Der Datenzugriff findet lokal über POSIX IO statt, dass heisst das die Web-Applikation auf dem selben Server betrieben wird. 
 
 Der Lese Zugriff und Schreibzugriff ist auf den Server begrenzt. Theoretisch könnte der Speicher mit Protokollen wie NFS zwischen, mehreren Systemen geteilt werden. Es handelt sich jedoch beim System um einen Miete Server, es kann deshalb nicht davon ausgegangen werden, das weitere Miete Server am selben Netzwerk Knoten angeschlossen sind, oder sich sogar im gleichen Rechenzentrum befindet. Es muss aus diesen Gründen mit einer schlechten Bandbreite mit hoher Latenz zwischen den Systemen gerechnet werden, was die Teilung des Speichers aus Performance gründen unbefriedigend macht.
@@ -604,12 +627,12 @@ Der Lese Zugriff und Schreibzugriff ist auf den Server begrenzt. Theoretisch kö
 \subsubsection{Datenschutz}
 Die Integrität der Daten wird nur auf RAID Ebene sichergestellt und nicht auf Objekt ebene. Die Selbstheilung von Objekten wird aus diesen Grund nicht unterstützt.
 
-Die Daten können mit einen RSYNC Job in Gesichert werden, gegen zusätzliche Gebühre von 79 € für 10 GB ist die Sicherung auch eine Sicherung bei Hetzner möglich.
+Die Daten können mit einen RSYNC Job in Gesichert werden, gegen zusätzliche Gebühre von 79 € für 10 GB ist die Sicherung auch ein Sicherung bei Hetzner möglich.
 
 Der Datenzugriff lässt sich über die Dateiberechtigung im Dateisystem auf Benutzer und Gruppen ebene steuern. Vor den Physischen Datenzugriff, lässt sich durch Verschlüsselung der Disk schützen.
 
 \subsubsection{Technologie}
-Die Konfiguration und Betrieb des Server inklusive RAID ist dem Mieter überlassen. Die RAID Technologie ist eine viele eingesetzte und bewehrte Technologie.
+Die Konfiguration und Betrieb des Server inklusive RAID ist dem Mieter überlassen. Die RAID Technologie ist ein viele eingesetzte und bewehrte Technologie.
 
 Für die Konfiguration und Betrieb des Server, reichen Standard Linux Administration Wissen aus.
 
@@ -623,92 +646,199 @@ Für die Installation und Betrieb des gemieteten Server ist der Mieter selber Ve
 Die Kosten für die Miete des Server bleiben während der gesamten Mietdauer konstant. Die Kündigung ist jeweils auf 30 Tage zum Monatsende möglich. 
 
 \paragraph*{Kosten Szenario-1}
-Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der Tabelle (10.9) Total € 11'163.00 das sind zum aktuellen Tageskurs (13 April 2012) 13'422.95 CHF.
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der Tabelle (10.9) Total € 11'163.00 das sind zum aktuellen Tageskurs (13 April 2012) 13'422.95 CHF.
 
 \begin{table}[htbp]
-\caption{Kosten OpenStack S1}
+\caption{Kosten Hetzner S1}
 \begin{small}
 \begin{tabular}{|l|r|r|r|}
 \hline
 \textbf{Beschreibung} & \multicolumn{1}{l|}{\textbf{Kosten pro Stk/M.}} & \multicolumn{1}{l|}{\textbf{Anzahl}} & \multicolumn{1}{l|}{\textbf{Total}} \\ \hline
-  \multicolumn{ 4}{c}{} \\  \hline
+ \multicolumn{ 4}{c}{} \\ \hline
 \multicolumn{ 4}{|c|}{\textbf{Investitionskosten}} \\ \hline
 Einrichtung Root Server XS 29 & € 499.00 & 1 & € 499.00 \\ \hline \hline
-  \multicolumn{ 3}{r|}{\textbf{Total:}}  & \textbf{€ 499.00} \\ 
-  \cline{4-4}
-\multicolumn{ 4}{c}{} \\   \hline
+ \multicolumn{ 3}{r|}{\textbf{Total:}} & \textbf{€ 499.00} \\ 
+ \cline{4-4}
+\multicolumn{ 4}{c}{} \\ \hline
 \multicolumn{ 4}{|c|}{\textbf{Fortlaufende Kosten}} \\ \hline
-Root Server XS 29  & € 299.00 & 1 & € 299.00 \\ \hline \hline
-  \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & € 299.00 \\
+Root Server XS 29 & € 299.00 & 1 & € 299.00 \\ \hline \hline
+ \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & € 299.00 \\
 \cline{4-4}
-  \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{€ 10'764.00} \\ \cline{4-4}
-  \multicolumn{ 4}{c}{} \\  \cline{4-4}
-  \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{€ 11'163.00} \\ \cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{€ 10'764.00} \\ \cline{4-4}
+ \multicolumn{ 4}{c}{} \\ \cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{€ 11'163.00} \\ \cline{4-4}
 \end{tabular}
 \end{small}
-\label{KostenOpenStackS1}
+\label{KostenHetznerS1}
 \end{table}
 
 
 \paragraph*{Kosten Szenario-2}
 Kein Produkt erhältlich welche die Anforderungen der Speicherkapazität von Szenario-2 erfüllen.
 
-\subsection{\ref{Al-2}: Netapp}
+\subsection{\ref{Al-2} und \ref{Al-3}: Netapp NFS und iSCSI}
 
-Wie in der Markt Analyse erwähnt ist NetApp der Führende Anbieter in midtrange und Highen
+Wie in der Markt Analyse erwähnt ist NetApp der Führende Anbieter in Mittlerer (engl. midrange) und Oberen (Highend) Bereich von NAS und Speicherlösungen. Für beide Szenarien wurde das Modell FAS2240-4 gewählt. 
 
-Die Firma NetApp beschäftigt in  der Schweiz an ihren drei Standorten, Wallisellen, Lausanne und Bern ca. 80 Mitarbeiter. Zudem verfügt NetApp Schweiz über ein gut ausgebautes Partner Netzwerk, mit welche Sie die ganze Schweiz gut verankert sind. Mit FastLane und QSkills sind zwei Schulungspartner im Raum Zürich verfügbar, welche offizielle Kurse und Zertifizierenden für NetApp Produkte anbieten. 
+Die Firma NetApp beschäftigt in der Schweiz an ihren drei Standorten, Wallisellen, Lausanne und Bern ca. 80 Mitarbeiter. Zudem verfügt NetApp Schweiz über ein gut ausgebautes Partner Netzwerk, mit welche Sie die ganze Schweiz gut verankert sind. Mit FastLane und QSkills sind zwei Schulungspartner im Raum Zürich verfügbar, welche offizielle Kurse und Zertifizierenden für NetApp Produkte anbieten. 
 
 Neben der Allgemeinen Garantie Gewährleistungen, bietet NetApp weiteren kostenpflichtige Support Leistungen an. So steht mit dem SupportEdge Premium, den Remote Support mit einer Reaktionszeit von minimal 30 Minuten rund um die Uhr zur Verfügung, oder den die Installation von Ersatzteilen mit einer Reaktionszeit von minimal 2 Stunden rund um die Uhr zur Verfügung. 
 
 Für den Support und Wartungen stehen mehre Produkte bereit von Verlängerung der Hardware-Garantie, Auto-Support mit oder ohne Austausch der Hardware durch NetApp.
 
-
 Für die Verwaltung der NetApp stehen, neben eines Kommandzeilen, Web-Interface weitere teilweise Kostenpflichtige Lösungen von NetApp zu Verfügung. 
 
-Die Netapp hat mehre Mechanismen für die Sicherstellung der Daten Verfügbarkeit. So werden die Festplatten mittels RAID-DB System zusammen gefasst. RAID-DP ist eines  auf Basis von RAID-4 von NetApp weiter entwickeltes RAID. Bei RAID-DP wird jedoch im Unterschied zu RAID-4 eine weiter Paritäts-Festplatte eingesetzt. Wie im \refabb{abb:RAID-DP} ersichtlich, gibt es eine Horizontale Parität und eine Diagonale Parität, die diagonale Parität ist durch die Farben dargestellt und auf der Festplatte DP gespeichert, die horizontale ist auf der Festplatte P gespeichert, die Festplatten mit D sind normale RAID Daten Festplatten. Die Doppelte Parität hat den Vorteil, dass die Verfügbarkeit des RAID erhöht wird. So kann bei einen RAID-DP gleichzeitig zwei Festplatten im RAID zur gleichen Zeit ausfallen, ohne das diese zu einen Datenverlust führt. Im Vergleich dazu kann RAID-4 oder RAID-5 nur den Ausfall einer Festplatte kompensieren. \cite{White2010}
+\subsubsection{Verfügbarkeit}
+Die Netapp hat mehre Mechanismen für die Sicherstellung der Daten Verfügbarkeit. So werden die Festplatten mittels RAID-DB System zusammen gefasst. RAID-DP ist eines auf Basis von RAID-4 von NetApp weiter entwickeltes RAID. Bei RAID-DP wird jedoch im Unterschied zu RAID-4 ein weiter Paritäts-Festplatte eingesetzt. Wie im \refabb{abb:RAID-DP} ersichtlich, gibt es ein Horizontale Parität und eine Diagonale Parität, die diagonale Parität ist durch die Farben dargestellt und auf der Festplatte DP gespeichert, die horizontale ist auf der Festplatte P gespeichert, die Festplatten mit D sind normale RAID Daten Festplatten. Die Doppelte Parität hat den Vorteil, dass die Verfügbarkeit des RAID erhöht wird. So kann bei einen RAID-DP gleichzeitig zwei Festplatten im RAID zur gleichen Zeit ausfallen, ohne das diese zu einen Datenverlust führt. Im Vergleich dazu kann RAID-4 oder RAID-5 nur den Ausfall einer Festplatte kompensieren. \cite{White2010}
 
 \begin{center}
 \includegraphics[ keepaspectratio = true]{media/raid-dp.png}
-\mycaption{figure}{\label{abb:RAID-DP}NetApp RAID-DP doppelte Parität\cite{White2010}}
+\mycaption{figure}{\label{abb:RAID-DP}NetApp RAID-DP doppelte Parität \cite{White2010}}
 \end{center}
-
 
 Als weiteren Schutzmassnahme vor Datenverluste, empfiehlt NetApp den Einsatz von Spare-Festplatten. Durch den Einsatz von Spare-Festplatten kann die Wiederherstellungszeit MTTR verkleinert werden, da die Wiederherstellung automatisch starten kann. Die Anzahl an Spare-Festplatten ist abhängig von der Anzahl Festplatten und Enclosure.
 
-Die Datenverfügbarkeit kann mittels weiteren NetApp und der Snapmirror Funktion weiter erhöht werden. Dabei werden alle Änderungen an den Daten auf an eine weitere NetApp Synchronisiert. 
+Die NetApp FAS2240-4 ist mit zwei Storage Controller im Aktiv-/Aktiv-Betrieb mit Cluster Failover Funktionausgerüstet.
 
-NetApp Speichert die Daten auf die Disk in 4 Kilo Byte Blocks. Zu jeden 4 Kilo Byte Block berechnet NetApp eine Prüfsumme und speichert diese in die Block Metadaten. Wenn der Block zu einen späteren Zeitpunkt wieder gelesen ist, berechnet die NetApp die Prüfsumme erneut und vergleicht diese mit der Gespeicherten Prüfsumme. Wenn die Prüfsumme nicht übereinstimmt, wird der Block mittels den Paritäts-Daten neu geschrieben, erneut gelesen und geprüft. Um die Integrität von Daten zu gewährleisten auf welche über eine langen Zeitraum nicht zugegriffen wird, wie diese zum Beispiel bei Archive Daten der Fall ist, hat NetApp eine konfigurierbare RAID durchkämmen (engl. RAID scrub) Funktion. Die Funktion geht durch alle Daten durch, wodurch die Prüfsumme von allen gespeicherten Daten geprüft wird. Die Funktion kann Zeitgesteuert oder wenn das System im Leerlauf befindet. \cite{Sundaram2006}
+
+\subsubsection{Datenzugriff}
+Der Datenzugriff auf die NetApp kann per NFS, CIFS, iSCSI oder Fibre Channel erfolgen.
+
+Bei NFS ist es möglich dass mehre Server Simultan ein Datei lesen. Das Simultane Schreiben wird mit einen Sperr (engl. Locking) Verfahren verhindert, damit die Konsistenz der Datei gewährleistet bleibt.
+
+Bei iSCSI wird der Simultane Lese Zugriff auf Dateien mittels Cluster fähigen Dateisystem und Volume Manager wie dem Global Filesystem bzw. LVM sichergestellt. Der Simultane Schreibzugriff wird vom Dateisystem mit einem Sperr Verfahren verhindert.
+
+\subsubsection{Speicherkapazität}
+Die Maximale Grösse einer Datei bzw. eines Objekts wird bei NetApp durch die maximale Grösse des Aggregates bestimmt. Seit der Betriebsystem Version OnTab 8.0 sind Aggregate von 100 TiB möglich.
+
+Bei iSCSI werden auf der NetApp LUN Dateien erstellt, die über iSCSI anderen Server zur Verfügung gestellt werden. Die LUN Datei ist für den Zugeteilten Server wie ein gewöhnliche Disk. Die Limitierungen für die Maximale Datei Grösse und maximal Anzahl an Dateien, wird bei iSCSI nicht mehr durch die NetApp Limitiert sondern durch das auf dem Server verwendete Dateisystem. So gewährleistet Red Hat für Global Filesystem (kurz GFS) maximal 100 Terabyte grosses Dateisystem Produktive zu betreiben. Die selbe Beschränkung gilt für Dateien. 
+
+Die Anzahl möglicher Objekte die in einen NetApp Volumen gespeichert werden können werden durch die Anzahl Inodes des WAFEL Dateisystem bestimmt. NetApp legt standardmässig für jedes 32KiB eine Inode an. Bei einen 100 TiB Volume können somit maximal 3'355'443'200 Objekte gespeichert werden (\refeql{eqn:MaxObjekteNetApp}).
+
+\begin{equation}
+\mbox{Max Objekte} = \frac{107'374'182'400 \mathrm{\ KiB}}{32 \mathrm{\ KiB}}= 3'355'443'200 
+\label{eqn:MaxObjekteNetApp}
+\end{equation}
+
+Die maximale Anzahl an möglicher Objekte eines GFS Dateisystem ist variable. Inodes werden dynamisch alloziert.
+
+\subsubsection*{Datenschutz}
+NetApp Speichert die Daten auf die Disk in 4 Kilo Byte Blocks. Zu jeden 4 Kilo Byte Block berechnet NetApp ein Prüfsumme und speichert diese in die Block Metadaten. Wenn der Block zu einen späteren Zeitpunkt wieder gelesen ist, berechnet die NetApp die Prüfsumme erneut und vergleicht diese mit der Gespeicherten Prüfsumme. Wenn die Prüfsumme nicht übereinstimmt, wird der Block mittels den Paritäts-Daten neu geschrieben, erneut gelesen und geprüft. Um die Integrität von Daten zu gewährleisten auf welche über ein langen Zeitraum nicht zugegriffen wird, wie diese zum Beispiel bei Archive Daten der Fall ist, hat NetApp ein konfigurierbare RAID durchkämmen (engl. RAID scrub) Funktion. Die Funktion geht durch alle Daten durch, wodurch die Prüfsumme von allen gespeicherten Daten geprüft wird. Die Funktion kann Zeitgesteuert oder wenn das System im Leerlauf befindet. \cite{Sundaram2006}
 
 Zu beachten ist, dass die Prüfsumme auf dem Block nur auf der Speicherebene Wirkung hat. Fehler die in einer höheren Ebene stattfindet, wie zum Beispiel beim Einsatz von iSCSI zusammen mit einen Dateisystem, könnte bereits einen Fehler im Dateisystem durch einen Software Fehler oder Memory Fehler statt finden. 
 
-NetApp bietet mehre Möglichkeiten eine Sicherungskopie der Daten herzustellen. Beim Einsatz von NFS oder iSCSI können die Daten über die Web-Servern mit einer Handels üblichen Sicherungs-Software gesichert werden. Bei NFS wird dazu die angefügten NFS Freigaben gesichert, bei iSCSI werden die Daten wie bei allen anderen Dateisystemen gesichert. Zubeachten ist jedoch, bei diesen verfahren, dass die Daten von der NetApp über den Server transferiert werden müssen, und dadurch der Web-Server mit dem Sicherungslast belastet wird. Neben der Sicherung der NetApp über den Server lässt sich die NetApp auch direkt sichern, dabei gibt es zwei Verfahren, mittels  Network Data Management Protocol (kurz NDMP) oder Mittels Snapshots. 
+NetApp bietet mehre Möglichkeiten ein Sicherungskopie der Daten herzustellen. Beim Einsatz von NFS oder iSCSI können die Daten über die Web-Servern mit einer Handels üblichen Sicherungs-Software gesichert werden. Bei NFS wird dazu die angefügten NFS Freigaben gesichert, bei iSCSI werden die Daten wie bei allen anderen Dateisystemen gesichert. Zubeachten ist jedoch, bei diesen verfahren, dass die Daten von der NetApp über den Server transferiert werden müssen, und dadurch der Web-Server mit dem Sicherungslast belastet wird. Neben der Sicherung der NetApp über den Server lässt sich die NetApp auch direkt sichern, dabei gibt es zwei Verfahren, mittels Network Data Management Protocol (kurz NDMP) oder Mittels Snapshots. 
 
-NDMP ist eines von NetApp mitentwickeltes Protokoll, welches für die Sicherung von NAS Geräte entwickelt wurde. Das Problem bei NAS Geräte ist, dass auf Ihnen ein dezidierte Betriebsystem läuft auf welche keine Installation eines Sicherungs-Agenten erlaubt, aus diesen Grund wurde das NDMP Protokoll entwickelt um eine allgemeines Agenten-Loses Sicherungsverfahren für NAS Geräte zu ermöglichen. NDMP wurde dem IETF im Jahr 2000 von der NDMP Initianden als Entwurf eingereicht, bis anhin ist jedoch noch kein RFC für NDMP Standardisiert. Trotzdem wird es von vielen NAS-Geräte- und Sicherungs-Software- Herstellern unterstützt. Eine Liste mit Sicherungs-Software Produkten, welche das NDMP Verfahren unterstützen gibt es auf der Webseite der NDMP Initianden\footnote{\url{http://www.ndmp.org/products/index.shtml#backup}} zu finden. \cite{NDMP.orga}\cite{NDMP.org}
+NDMP ist eines von NetApp mitentwickeltes Protokoll, welches für die Sicherung von NAS Geräte entwickelt wurde. Das Problem bei NAS Geräte ist, dass auf Ihnen ein dezidierte Betriebsystem läuft auf welche keine Installation eines Sicherungs-Agenten erlaubt, aus diesen Grund wurde das NDMP Protokoll entwickelt um ein allgemeines Agenten-Loses Sicherungsverfahren für NAS Geräte zu ermöglichen. NDMP wurde dem IETF im Jahr 2000 von der NDMP Initianden als Entwurf eingereicht, bis anhin ist jedoch noch kein RFC für NDMP Standardisiert. Trotzdem wird es von vielen NAS-Geräte- und Sicherungs-Software- Herstellern unterstützt. Ein Liste mit Sicherungs-Software Produkten, welche das NDMP Verfahren unterstützen gibt es auf der Webseite der NDMP Initianden\footnote{\url{http://www.ndmp.org/products/index.shtml#backup}} zu finden. \cite{NDMP.orga}\cite{NDMP.org}
 
-Beim Snapshots Sicherungsverfahren werden zeitbezogene Sicherung des Dateisystem  erstellt. Bei den Snapshots wird nicht eine eigentliche Kopie der Daten bzw. Blöcke erstellt sondern die Referenz auf die Blöcke gespeichert. Wird nach dem erstellen eines Snapshots ein Block geändert wird die Änderung nicht im Original Block vorgenommen sondern in einen neuen Block und diesen Referenziert. Dadurch benötigt ein Snapshot minimalen Speicher, zudem lassen sich die Snapshots und damit die Sicherung in Sekunden erstellen unabhängig von der Anzahl Dateien oder der Verwendete Speicherkapazität. Durch den Einsatz von zwei NetApp Systemen und der SnapMirror Funktion kann, das ganze Dateisystem bzw. Volume inklusive aller Snapshots auf der zweiten NetApp gesichert werden. Die Sicherung mit Snapshots hat bei grossen Datenmengen entscheidende Vorteile, die Sicherung benötigt minimalen Speicherplatz, die Sicherung und Wiederherstellung ist innert Sekunden erstellt bzw. wiederhergestellt. Nachteile sind, dass der Speicherplatz mit der Sicherung bzw. Snapshots geteilt werden muss und das löschen der Daten zusätzlichen Speicherplatz verbraucht.
+Beim Snapshots Sicherungsverfahren werden zeitbezogene Sicherung des Dateisystem erstellt. Bei den Snapshots wird nicht ein eigentliche Kopie der Daten bzw. Blöcke erstellt sondern die Referenz auf die Blöcke gespeichert. Wird nach dem erstellen eines Snapshots ein Block geändert wird die Änderung nicht im Original Block vorgenommen sondern in einen neuen Block und diesen Referenziert. Dadurch benötigt ein Snapshot minimalen Speicher, zudem lassen sich die Snapshots und damit die Sicherung in Sekunden erstellen unabhängig von der Anzahl Dateien oder der Verwendete Speicherkapazität. Durch den Einsatz von zwei NetApp Systemen und der SnapMirror Funktion kann, das ganze Dateisystem bzw. Volume inklusive aller Snapshots auf der zweiten NetApp gesichert werden. Die Sicherung mit Snapshots hat bei grossen Datenmengen entscheidende Vorteile, die Sicherung benötigt minimalen Speicherplatz, die Sicherung und Wiederherstellung ist innert Sekunden erstellt bzw. wiederhergestellt. Nachteile sind, dass der Speicherplatz mit der Sicherung bzw. Snapshots geteilt werden muss und das löschen der Daten zusätzlichen Speicherplatz verbraucht.
 
+Bei bedarf kann die Kommunikation zwischen Speichersystem und Applikation Server mit IPSec abhörsicher verschlüsselt werden. Zusätzlich bietet NetApp ab Version 8 die Verschlüsselung der ganzen Disk an.
 %Sicherheit NFS IPSEC, intern
 
+\subsubsection{Kosten}
 
+\paragraph*{Kosten Szenario-1}
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der Total 225'711.15 CHF. Davon sind 44'811.15 CHF Investitionskosten und 180'900.00 CHF Fortlaufende Kosten für die drei Jahre.
+
+\begin{table}[htbp]
+\caption{Kosten NetApp NFS/iSCSI Szenario-1}
+\begin{small}
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Beschreibung} & \multicolumn{1}{l|}{\textbf{Kosten pro Stk/M.}} & \multicolumn{1}{l|}{\textbf{Anzahl}} & \multicolumn{1}{l|}{\textbf{Total}} \\ \hline
+ \multicolumn{ 4}{c}{} \\ \hline
+\multicolumn{ 4}{|c|}{\textbf{Investitionskosten}} \\ \hline
+Dell PowerConnect 8024 & CHF 14'732.00 & 1 & CHF 14'732.00 \\ \hline
+NetApp FAS2240-2 12*2TB & CHF 29'429.15 & 1 & CHF 29'429.15 \\ \hline
+Rack Einrichtung & CHF 650.00 & 1 & CHF 650.00 \\ \hline \hline
+ \multicolumn{ 3}{r|}{\textbf{Total:}} & \textbf{CHF 44'811.15} \\ 
+ \cline{4-4}
+\multicolumn{ 4}{c}{} \\ \hline
+\multicolumn{ 4}{|c|}{\textbf{Fortlaufende Kosten}} \\ \hline
+Dell Service & CHF 0.00 & 2 & CHF 0.00 \\ \hline
+Rackkosten 11 U (500 W) & CHF 450.00 & 1 & CHF 450.00 \\ \hline
+Strom 500 W & CHF 165.00 & 5 & CHF 825.00 \\ \hline
+Personal & CHF 3'750.00 & 1 & CHF 3'750.00 \\ \hline \hline
+ \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & CHF 5'025.00 \\
+\cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{CHF 180'900.00} \\ \cline{4-4}
+ \multicolumn{ 4}{c}{} \\ \cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 225'711.15} \\ \cline{4-4}
+\end{tabular}
+\end{small}
+\label{KostenNetAppS1}
+\end{table}
+
+
+\paragraph*{Kosten Szenario-2}
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der Total 884'772.44 CHF. Davon sind 550'152.44 CHF Investitionskosten und 334'620.00 CHF Fortlaufende Kosten für die drei Jahre.
+
+% Zur Bereitstellung der 306 TiB sind 5 Disk Selfs des Typ DS4243 in der maximal Konfiguration mit 24 mal 3 TB SATA Festplatten erforderlich.
+
+% Gemäss \refeqlb{eqn:AnzahlRackNetappS2} werden zwei ganzes Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Full Rack Angebot von Nine, welches 47 Rack-Höheneinheiten platz bietet. Der Preis pro Rack beträgt 1450 CHF pro Monat, plus 1500 CHF für die einmalige Einrichtung des Racks durch Nine.
+
+% \begin{equation}
+% \mbox{Anzahl Rack} = \frac{2*4\mathrm{\ U}+10*\mathrm{\ U}+2*1\mathrm{\ U}}{47\mathrm{\ U} } \approx 2 \mbox{(Auf ganze Rack gerundet)}
+% \label{eqn:AnzahlRackNetappS2}
+% \end{equation}
+ 
+
+\begin{table}[htbp]
+\caption{Kosten NetApp NFS/iSCSI Szenario-2}
+\begin{small}
+\begin{tabular}{|l|r|r|r|}
+\hline
+\textbf{Beschreibung} & \multicolumn{1}{l|}{\textbf{Kosten pro Stk/M.}} & \multicolumn{1}{l|}{\textbf{Anzahl}} & \multicolumn{1}{l|}{\textbf{Total}} \\ \hline
+ \multicolumn{ 4}{c}{} \\ \hline
+\multicolumn{ 4}{|c|}{\textbf{Investitionskosten}} \\ \hline
+Dell PowerConnect 8024 & CHF 14'732.00 & 2 & CHF 29'464.00 \\ \hline
+NetApp FAS2240-2 24*3TB & CHF 51'133.77 & 2 & CHF 102'267.54 \\ \hline
+Disk Shelf DS4243 24*3TB & CHF 40'251.65 & 10 & CHF 402'516.50 \\ \hline
+SnapMirror Lizenz & CHF 11'404.40 & 1 & CHF  11'404.40 \\ \hline
+Rack Einrichtung & CHF 1'500.00 & 2 & CHF 3'000.00 \\ \hline 
+Multi-Site Einrichtung & CHF 1'500.00 & 1 & CHF 1'500.00 \\ \hline \hline
+ \multicolumn{ 3}{r|}{\textbf{Total:}} & \textbf{CHF 550'152.44} \\ 
+ \cline{4-4}
+\multicolumn{ 4}{c}{} \\ \hline
+\multicolumn{ 4}{|c|}{\textbf{Fortlaufende Kosten}} \\ \hline
+Dell Service & CHF 0.00 & 2 & CHF 0.00 \\ \hline
+Rackkosten 47 U (2000 W) & CHF 1450.00 & 2 & CHF 2'900.00 \\ \hline
+Strom 500 W & CHF 165.00 & 13 & CHF 2'145.00 \\ \hline
+Mulit-Site 1 GBit/s & CHF 500.00 & 1 & CHF 500.00 \\ \hline
+Personal & CHF 3'750.00 & 1 & CHF 3'750.00 \\ \hline \hline
+ \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & CHF 9'295.00 \\
+\cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{CHF 334'620.00} \\ \cline{4-4}
+ \multicolumn{ 4}{c}{} \\ \cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 884'772.44} \\ \cline{4-4}
+\end{tabular}
+\end{small}
+\label{KostenNetAppS2}
+\end{table}
 
 \subsection{\ref{Al-4}: OpenStack Objekt Storage}
-OpenStack Object Storage ist eine Quelloffene frei verfügbare Verteilter Speicherlösung. OpenStack Object Storage selbst ist kein Dateisystem sondern eher eine Speicher Cluster, welche primär für die Speicherung von Virtual Maschine Images, Bilder, E-Mail und Sicherungskopien vorgesehen ist. Für einen OpenStack Cluster kommen vergleichbar mit dem Google Filesystem, kosten günstige Konventionelle Computer Hardware zum Einsatz. 
+OpenStack Object Storage ist ein Quelloffene frei verfügbare Verteilter Speicherlösung. OpenStack Object Storage selbst ist kein Dateisystem sondern eher ein Speicher Cluster, welche primär für die Speicherung von Virtual Maschine Images, Bilder, E-Mail und Sicherungskopien vorgesehen ist. Für einen OpenStack Cluster kommen vergleichbar mit dem Google Filesystem, kosten günstige Konventionelle Computer Hardware zum Einsatz. 
+
+\begin{center}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/OpenStack.png}
+\mycaption{figure}{\label{abb:OpenStack-Infrastruktur} OpenStack Infrastrutkur}
+\end{center}
 
 
-\paragraph{Verfügbarkeit}
-OpenStack Object Storage wurde so konzipiert das einen Ausfall einer Hardware Komponente, der weiter Betrieb weiter aufrecht erhalten werden kann ohne dabei einen Datenverlust oder die Verfügbarkeit des System zu gefährden. Die Daten bzw. Objekte werden Redundant auf mehren Zonen gespeichert. Zonen sind Gruppierungen von Servern. Die Anzahl redundanten Replikate für eine Objekt kann konfiguriert werden, gewöhnlich werden drei Kopien verwendet.
+\paragraph*{Verfügbarkeit}
+OpenStack Object Storage wurde so konzipiert das einen Ausfall einer Hardware Komponente, der weiter Betrieb weiter aufrecht erhalten werden kann ohne dabei einen Datenverlust oder die Verfügbarkeit des System zu gefährden. Die Daten bzw. Objekte werden Redundant auf mehren Zonen gespeichert. Zonen sind Gruppierungen von Servern. Die Anzahl redundanten Replikate für ein Objekt kann konfiguriert werden, gewöhnlich werden drei Kopien verwendet.
 
 Für die Architekt wird von Joe Arnolds CEO bei SwiftStack bei dreifacher Redundanz, die Implementierung von 5 Zone empfohlen. OpenStack Object Storage, speichert die Redundante Objekte jeweils in einer separaten Zonen. Eine Zone kann bei kleinen Implementationen auch nur aus Gruppen von Festplatten bestehen, also innerhalb eines einzigen Server existieren, es wird aber empfohlen eine Zone auf Hierarchie von Server-Gruppen zu implementieren. Das bedeutet jede Redundante Kopie auf einen eigenen Server gespeichert. \cite{Arnold} 
 
-Zusätzlich zu den Speicherserver benötigt es noch zwei oder mehrere Proxy Server um die hohe Verfügbarkeit zu gewährleisten. Die Proxy Server, werden bei Rackspace mit  10 Gb Ethernet an den Netzwerk-Switch angeschlossen werden. \cite{OpenStack2011}
+Zusätzlich zu den Speicherserver benötigt es noch zwei oder mehrere Proxy Server um die hohe Verfügbarkeit zu gewährleisten. Die Proxy Server, werden bei Rackspace mit 10 Gb Ethernet an den Netzwerk-Switch angeschlossen werden. \cite{OpenStack2011}
 
 Möchte man den Speicher Standort übergreifend betreiben, ist es erforderlich, dass pro Standort nicht mehr als $(Redundanz -1)$ Zonen betrieben werden, da ansonsten die Gefahr besteht das alle Replikate am gleichen Standort gespeichert werden.
 
 \paragraph*{Speicherkapazität}
 Der OpenStack Object Storage Cluster lässt sich im laufenden Betreib ohne Unterbruch, vergrössern. In der Regeln können auch Software Update und Patches ohne Unterbruch des Clusters eingespielt werden, wenn darauf geachtet wird nie mehr als eine Zone gleichzeitig zu aktualisieren.
 
-Grundsätzlich ist Anzahl an Speicherbaren Objekten nicht begrenzt. Der Container Server von OpenStack Object Storage, welcher primärer Aufgabe ist die Auflistung der gespeicherten Objekten in einen Container zu handhaben, speichert die Informationen welche Objekte im Container befinden pro Container in eine SQLite Datenbank. Die Performance der Datenbank, welche mit der Anzahl Einträge abnimmt, kann sich zum Limitierenden Faktor entwickeln wie viele Objekte in einen Container gespeichert werden können. Der Performance Einbruch kann, je nach Leistung der Hardware und die generelle Last auf dem Cluster, bei einer Million Objekte pro Container eintreten. Es können jedoch pro Account mehre Container erstellt werden, wodurch sich das Problem mit der Limitierung durch Datenbank entschärfen lässt. Zu beachten ist hier jedoch, das pro Account ebenfalls eine SQLite Datenbank geführt wird mit allen Container und hier die selben Limitierung zum tragen kommt. \cite{OpenStack2012}\cite{A2011}
+Grundsätzlich ist Anzahl an Speicherbaren Objekten nicht begrenzt. Der Container Server von OpenStack Object Storage, welcher primärer Aufgabe ist die Auflistung der gespeicherten Objekten in einen Container zu handhaben, speichert die Informationen welche Objekte im Container befinden pro Container in ein SQLite Datenbank. Die Performance der Datenbank, welche mit der Anzahl Einträge abnimmt, kann sich zum Limitierenden Faktor entwickeln wie viele Objekte in einen Container gespeichert werden können. Der Performance Einbruch kann, je nach Leistung der Hardware und die generelle Last auf dem Cluster, bei einer Million Objekte pro Container eintreten. Es können jedoch pro Account mehre Container erstellt werden, wodurch sich das Problem mit der Limitierung durch Datenbank entschärfen lässt. Zu beachten ist hier jedoch, das pro Account ebenfalls eine SQLite Datenbank geführt wird mit allen Container und hier die selben Limitierung zum tragen kommt. \cite{OpenStack2012}\cite{A2011}
 
 \paragraph*{Datenzugriff}
 Der Zugriff auf die gespeicherten Objekten erfolgt vergleichbar wie bei Amazon S3 über ein API. Das API verwendet für den Zugriff das Standard HTTP Request. Mehre Speicherlösung Hersteller haben angekündigt, das Swift API ebenfalls für den Zugriff auf Ihren Speicher unterstützen zu wollen. Glusterfs ebenfalls eine Verteile Speicherlösung, bietet in Ihrer Entwickler Version bereits die Unterstützung für Swift an. Applikationen welche, das Swift API unterstützen können Ihren Speicherlösung zukünftig einfacher austauschen ohne dabei die Applikation anpassen zu müssen. Neben den Zugriff mit dem Swift API, bietet OpenStack eine Amazon S3 kompatibles API an. Der Zugriff über POSIX IO auf den Speicher ist nicht möglich.
@@ -728,7 +858,7 @@ OpenStack Objekt Storage bietet neben der Redundanz der Objekte keine Möglichke
 Die Sicherheit der Daten wird mit sogenannten Accounts Sichergestellt, dass heist das ein Account nur auf seine gespeicherten Objekten zugreifen kann. Die Daten werden auf dem OpenStack Cluster Unverschlüsselt in Binären form gespeichert. Durch die Verteilung der Daten müsste jedoch eine Angreifer Zugriff auf alle Cluster Node erlangen um an alle Daten eines Account zu gelangen.
 
 \paragraph*{Technologie}
-OpenStack Objekt Storage wurde von der Firma RackSpace unter dem Code Name Swift entwickelt. Zusammen mit National Aeronautics and Space Administration (kurz. NASA) hat RackSpace die Softwareprojekt-Gemeinschaft OpenStack gegründet und Swift zusammen mit den Cloud Lösungen Nova für die Verwaltung von Virutellen Maschinen und Glace für die Verwaltung von Image als Quelloffene Software veröffentlicht. Die OpenStack Gemeinschaft ist in Vergleich zu anderen Quelloffenen Gemeinschaften noch eine relative jung Gemeinschaft, es gelangt Ihr dennoch neben den beiden Gründer Unternehmen, weiter bedeutende Unternehmen aus der Informatik Branche, wie Hewlett Packard, Dell, Citrix, Intel, AMD, NetApp und weitere zu gewinnen. Eine vollständige Liste aller Unterstützende  Unternehmen ist unter \url{http://openstack.org/community/companies/} zu finden. Die Aktivität auf der Projekt Seite von OpenStack Object Storage, lässt erkennen, dass die Entwicklung aktive vorangetrieben wird und viele Beiträge zur neuen Funktionen oder Verbesserungen von Anwender und Entwickler bei gesteuert werden. \cite{Ohloh2012}
+OpenStack Objekt Storage wurde von der Firma RackSpace unter dem Code Name Swift entwickelt. Zusammen mit National Aeronautics and Space Administration (kurz. NASA) hat RackSpace die Softwareprojekt-Gemeinschaft OpenStack gegründet und Swift zusammen mit den Cloud Lösungen Nova für die Verwaltung von Virutellen Maschinen und Glace für die Verwaltung von Image als Quelloffene Software veröffentlicht. Die OpenStack Gemeinschaft ist in Vergleich zu anderen Quelloffenen Gemeinschaften noch eine relative jung Gemeinschaft, es gelangt Ihr dennoch neben den beiden Gründer Unternehmen, weiter bedeutende Unternehmen aus der Informatik Branche, wie Hewlett Packard, Dell, Citrix, Intel, AMD, NetApp und weitere zu gewinnen. Eine vollständige Liste aller Unterstützende Unternehmen ist unter \url{http://openstack.org/community/companies/} zu finden. Die Aktivität auf der Projekt Seite von OpenStack Object Storage, lässt erkennen, dass die Entwicklung aktive vorangetrieben wird und viele Beiträge zur neuen Funktionen oder Verbesserungen von Anwender und Entwickler bei gesteuert werden. \cite{Ohloh2012}
 
 Die Internet-Recherche auf OpenStack spezialisierte Firmen mit Standort Schweiz ergaben keine Ergebnisse. Einige
 Gemäss Internet Recherchen gibt es noch keine spezialisierte Firma für OpenStack Lösungen. Einige wenige Experten für OpenStack mit Domizil in der Schweiz konnten über die Profile bei LinkedIn einen Soziales Netzwerk für Geschäft gefunden werden. 
@@ -746,7 +876,7 @@ Für beide Szenerien werden die gleichen Proxy-Server verwendet. Als Proxy Serve
 
 Neben der Server Infrastruktur sind noch zwei Netzwerk-Switches notwendig. Der Dell PowerConnect 8024 bietet 24 Port mit 10GbE. Die Switch haben eine Rack-Höheneinheit von je 1 Einheiten und benötigen gemäss Hersteller maximal 237,77 Watt. Dell gewährt einen 3 Jahres Support für den Switch. Der Preis pro Switch beträgt 14'732 CHF.
 
-Als Rechenzentrum Betreiber wurde Nine Internet Solution ausgewählt. Nine Betreibt seine Rechenzentrum in Zürich und ist auf die Hosting Spezialisiert. Mit seinen Rechenzentrum Standort in der Stadt Zürich, befindet sich Nine Geographisch in der Nähe des Auftraggeber. Die Anfahrtszeit und Anfahrtsweg kann so für den Auftraggeber kurz gehalten werden. Die Verschiedenen Rack Produkte welche Nine anbietet, unterscheiden sich von der Anzahl beinhalteten Rack-Höheneinheiten und deren beinhalteten Watt Leistung. In den Produkten ist zusätzlich die Anbindung ans  Internet Anbindung mit 100 Mbps beinhaltet. Bei Zusätzlichen Watt bedarf, bietet Nine die Möglichkeit die Zusätliche Watt in 500 Pakete zu 165 CHF pro Monat an.
+Als Rechenzentrum Betreiber wurde Nine Internet Solution ausgewählt. Nine Betreibt seine Rechenzentrum in Zürich und ist auf die Hosting Spezialisiert. Mit seinen Rechenzentrum Standort in der Stadt Zürich, befindet sich Nine Geographisch in der Nähe des Auftraggeber. Die Anfahrtszeit und Anfahrtsweg kann so für den Auftraggeber kurz gehalten werden. Die Verschiedenen Rack Produkte welche Nine anbietet, unterscheiden sich von der Anzahl beinhalteten Rack-Höheneinheiten und deren beinhalteten Watt Leistung. In den Produkten ist zusätzlich die Anbindung ans Internet Anbindung mit 100 Mbps beinhaltet. Bei Zusätzlichen Watt bedarf, bietet Nine die Möglichkeit die Zusätliche Watt in 500 Pakete zu 165 CHF pro Monat an.
 
 Für den den Betrieb der Speicherinfrastruktur wird mit einer Mann Stelle gerechnet. Organisatorisch kann diese auch auf mehre Prozentual Stellen aufgeteilt werden, somit ist auch der Betreib während Ferien Abwesenheit geregelt. Pro Monat wird mit Personal Kosten von 15'000 CHF gerechnet.
 
@@ -756,41 +886,41 @@ Für den den Betrieb der Speicherinfrastruktur wird mit einer Mann Stelle gerech
 Für die dreifache Redundanz sind für die aus der Soll-Analyse bestimmten 306 Tebibyte gemäss \refeqlb{eqn:SpeicherkapazitätS1} 918 Tebibyte an Speicherkapazität notwendig.
 
 \begin{equation}
-\mbox{Speicherkapazität}_{Redundanz} = 306  \mathrm{\ TiB} * 3 \mbox{\ Redundanz} =  918 \mathrm{\ TiB}
+\mbox{Speicherkapazität}_{Redundanz} = 306 \mathrm{\ TiB} * 3 \mbox{\ Redundanz} = 918 \mathrm{\ TiB}
 \label{eqn:SpeicherkapazitätS1}
 \end{equation}
 
 
-Als Server System wurde der Transtec Lynx CALLEO Application Server 1260 gewählt. Der Server basiert auf Server Hardware des Herstellers  SuperMicro. Der Server benötigt 1 Rack-Höcheneinheiten Rack platz und bieten Platz für den Einbau von 4 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen ein Intel Xeon Prozessor E5-2620 zum Einsatz, zudem verfügt der Server über 32 Gigabyte Hauptspeicher. Der Server wurde mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 1'260 CHF.
+Als Server System wurde der Transtec Lynx CALLEO Application Server 1260 gewählt. Der Server basiert auf Server Hardware des Herstellers SuperMicro. Der Server benötigt 1 Rack-Höcheneinheiten Rack platz und bieten Platz für den Einbau von 4 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen ein Intel Xeon Prozessor E5-2620 zum Einsatz, zudem verfügt der Server über 32 Gigabyte Hauptspeicher. Der Server wurde mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 1'260 CHF.
 
 
-Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der  \refeqlb{eqn:SpeicherkapazitätServerS1} eine Speicherkapazität von 10,912 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 48,3 Tebibyte und der 5 Zonen insgesamt 5 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS1}). Für die Erreichung der Speicherkapazität von 48,3 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 20 Festplatten notwendig.
+Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der \refeqlb{eqn:SpeicherkapazitätServerS1} eine Speicherkapazität von 10,912 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 48,3 Tebibyte und der 5 Zonen insgesamt 5 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS1}). Für die Erreichung der Speicherkapazität von 48,3 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 20 Festplatten notwendig.
 
 \begin{equation}
-\mbox{Speicherkapazität}_{Server} = 2,728 \mathrm{\ TiB} * 4 \mbox{\ Einschub} =  10,912 \mathrm{\ TiB}
+\mbox{Speicherkapazität}_{Server} = 2,728 \mathrm{\ TiB} * 4 \mbox{\ Einschub} = 10,912 \mathrm{\ TiB}
 \label{eqn:SpeicherkapazitätServerS1}
 \end{equation}
 
 \begin{equation}
-\mbox{Anzahl Server} = \frac{48,3 \mathrm{\ TiB}}{10,912 \mathrm{\ TiB}} \approx  5 \mbox{\ (Auf 5 Zonen gerundet)}
+\mbox{Anzahl Server} = \frac{48,3 \mathrm{\ TiB}}{10,912 \mathrm{\ TiB}} \approx 5 \mbox{\ (Auf 5 Zonen gerundet)}
 \label{eqn:AnzahlServerS1}
 \end{equation}
 
 \begin{equation}
-\mbox{Anzahl Festplatten} = \frac{48,3 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx  20 \mbox{\ (Auf 5 Server gerundet)}
+\mbox{Anzahl Festplatten} = \frac{48,3 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx 20 \mbox{\ (Auf 5 Server gerundet)}
 \label{eqn:AnzahlServerS1}
 \end{equation}
 
 Gemäss \refeqlb{eqn:AnzahlRackS1} wird ein viertel Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Quarter Rack Angebot von Nine, welches 11 Rack-Höheneinheiten platz bietet. Der Preis pro Rack beträgt 450 CHF pro Monat, plus 650 CHF für die einmalige Einrichtung des Racks durch Nine.
-Für die Berechnung der Gesamt Watt Leistung welcher der Server im Betrieb benötigt, fehlen die Angaben des Hersteller. Aus diesen Grund wird angenommen, dass der Daten-Server ca. 300 Watt und der Proxy-Server 500 Watt bezieht. Mit diesen Annahmen benötigt es gemäss  \refeqlb{eqn:AnzahlWattPaketeS1}, den 500 Watt welche im Rack beinhaltet sind, zusätzliche 5 Pakete a 500 Watt pro Monat.
+Für die Berechnung der Gesamt Watt Leistung welcher der Server im Betrieb benötigt, fehlen die Angaben des Hersteller. Aus diesen Grund wird angenommen, dass der Daten-Server ca. 300 Watt und der Proxy-Server 500 Watt bezieht. Mit diesen Annahmen benötigt es gemäss \refeqlb{eqn:AnzahlWattPaketeS1}, den 500 Watt welche im Rack beinhaltet sind, zusätzliche 5 Pakete a 500 Watt pro Monat.
 
 \begin{equation}
-\mbox{Anzahl Racks} = \frac{5 * 1 \mathrm{\ U} + 2 * 2 \mathrm{\ U} + 2 * 2 \mathrm{\ U}}{11\mathrm{\ U}} \approx  1 \mbox{\ (Auf viertel Rack gerundet)}
+\mbox{Anzahl Racks} = \frac{5 * 1 \mathrm{\ U} + 2 * 2 \mathrm{\ U} + 2 * 2 \mathrm{\ U}}{11\mathrm{\ U}} \approx 1 \mbox{\ (Auf viertel Rack gerundet)}
 \label{eqn:AnzahlRackS1}
 \end{equation}
 
 \begin{equation}
-\mbox{Anzahl 500 \mathrm{W} Pakete} = \frac{5 * 300 \mathrm{\ W} + 2 * 500 \mathrm{\ W} +2 * 237,77 \mathrm{\ W} - 2000 \mathrm{\ W} }{500\mathrm{\ W}} \approx  5
+\mbox{Anzahl 500 \mathrm{W} Pakete} = \frac{5 * 300 \mathrm{\ W} + 2 * 500 \mathrm{\ W} +2 * 237,77 \mathrm{\ W} - 2000 \mathrm{\ W} }{500\mathrm{\ W}} \approx 5
 \label{eqn:AnzahlWattPaketeS1}
 \end{equation}
 
@@ -803,28 +933,28 @@ Wie aus der \reftab{tab:KostenOpenStackS1} ersichtlich ist, betragen die Gesamtk
 \begin{tabular}{|l|r|r|r|}
 \hline
 \textbf{Beschreibung} & \multicolumn{1}{l|}{\textbf{Kosten pro Stk/M.}} & \multicolumn{1}{l|}{\textbf{Anzahl}} & \multicolumn{1}{l|}{\textbf{Total}} \\ \hline
-  \multicolumn{ 4}{c}{} \\  \hline
+ \multicolumn{ 4}{c}{} \\ \hline
 \multicolumn{ 4}{|c|}{\textbf{Investitionskosten}} \\ \hline
 Dell PowerConnect 8024 & CHF 14'732.00 & 2 & CHF 29'464.00 \\ \hline
 Lynx CALLEO App. Server 1260 & CHF 5'451.50 & 2 & CHF 10'903.00 \\ \hline
 Lynx CALLEO App. Server 1260 & CHF 2'831.30 & 5 & CHF 14'156.50 \\ \hline
 Festplatte 3,5 3 TB & CHF 300.00 & 20 & CHF 6'000.00 \\ \hline
 Rack Einrichtung & CHF 650.00 & 1 & CHF 650.00 \\ \hline \hline
-  \multicolumn{ 3}{r|}{\textbf{Total:}}  & \textbf{CHF 61'173.50} \\ 
-  \cline{4-4}
-\multicolumn{ 4}{c}{} \\   \hline
+ \multicolumn{ 3}{r|}{\textbf{Total:}} & \textbf{CHF 61'173.50} \\ 
+ \cline{4-4}
+\multicolumn{ 4}{c}{} \\ \hline
 \multicolumn{ 4}{|c|}{\textbf{Fortlaufende Kosten}} \\ \hline
-Dell Service  & CHF 0.00 & 2 & CHF 0.00 \\ \hline
+Dell Service & CHF 0.00 & 2 & CHF 0.00 \\ \hline
 Transtec Service (Server 1260) & CHF 26.08 & 2 & CHF 52.17 \\ \hline
 Transtec Service (Server 1260) & CHF 26.08 & 5 & CHF 130.42 \\ \hline
 Rackkosten 11 U (500 W) & CHF 450.00 & 1 & CHF 450.00 \\ \hline
 Strom 500 W & CHF 165.00 & 5 & CHF 825.00 \\ \hline
 Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
-  \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & CHF 16'457.58 \\
+ \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & CHF 16'457.58 \\
 \cline{4-4}
-  \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{CHF 592'473.00} \\ \cline{4-4}
-  \multicolumn{ 4}{c}{} \\  \cline{4-4}
-  \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 653'646.50} \\ \cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{CHF 592'473.00} \\ \cline{4-4}
+ \multicolumn{ 4}{c}{} \\ \cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 653'646.50} \\ \cline{4-4}
 \end{tabular}
 \end{small}
 \label{KostenOpenStackS1}
@@ -837,45 +967,45 @@ Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
 Für die dreifache Redundanz sind für die aus der Soll-Analyse bestimmten 306 Tebibyte gemäss \refeqlb{eqn:SpeicherkapazitätS2} 918 Tebibyte an Speicherkapazität notwendig.
 
 \begin{equation}
-\mbox{Speicherkapazität}_{Redundanz} = 306  \mathrm{\ TiB} * 3 \mbox{\ Redundanz} =  918 \mathrm{\ TiB}
+\mbox{Speicherkapazität}_{Redundanz} = 306 \mathrm{\ TiB} * 3 \mbox{\ Redundanz} = 918 \mathrm{\ TiB}
 \label{eqn:SpeicherkapazitätS2}
 \end{equation}
 
 
-Als Server System wurde der Transtec Lynx CALLEO Application Server 4260 gewählt. Der Server basiert auf Server Hardware des Herstellers  SuperMicro, welche gemäss eigenen Recherchen auch bei anderen OpenStack Lösungen verwendet wird. Der Server benötigt 4 Rack-Höcheneinheiten Rack platz und bieten Platz für den Einbau von 36 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen zwei Intel Xeon Prozessor E5-2620 zum Einsatz, zudem verfügt der Server über 64 Gigabyte Hauptspeicher. Der Server wurde mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 8'672 CHF.
+Als Server System wurde der Transtec Lynx CALLEO Application Server 4260 gewählt. Der Server basiert auf Server Hardware des Herstellers SuperMicro, welche gemäss eigenen Recherchen auch bei anderen OpenStack Lösungen verwendet wird. Der Server benötigt 4 Rack-Höcheneinheiten Rack platz und bieten Platz für den Einbau von 36 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen zwei Intel Xeon Prozessor E5-2620 zum Einsatz, zudem verfügt der Server über 64 Gigabyte Hauptspeicher. Der Server wurde mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 8'672 CHF.
 
 
-Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der  \refeqlb{eqn:SpeicherkapazitätServerS2} eine Speicherkapazität von 98.208 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 918 Tebibyte und der 5 Zonen insgesamt 10 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS2}). Für die Erreichung der Speicherkapazität von 918 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 340 Festplatten notwendig, dass heisst pro Server sind 34 Einschub mit Festplatten belegt. Sie könnten also bei Bedarf noch weiter aufgerüstet werden.
+Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der \refeqlb{eqn:SpeicherkapazitätServerS2} eine Speicherkapazität von 98.208 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 918 Tebibyte und der 5 Zonen insgesamt 10 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS2}). Für die Erreichung der Speicherkapazität von 918 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 340 Festplatten notwendig, dass heisst pro Server sind 34 Einschub mit Festplatten belegt. Sie könnten also bei Bedarf noch weiter aufgerüstet werden.
 
 \begin{equation}
-\mbox{Speicherkapazität}_{Server} = 2,728 \mathrm{\ TiB} * 36 \mbox{\ Einschub} =  98.208 \mathrm{\ TiB}
+\mbox{Speicherkapazität}_{Server} = 2,728 \mathrm{\ TiB} * 36 \mbox{\ Einschub} = 98.208 \mathrm{\ TiB}
 \label{eqn:SpeicherkapazitätServerS2}
 \end{equation}
 
 \begin{equation}
-\mbox{Anzahl Server} = \frac{918 \mathrm{\ TiB}}{98.208 \mathrm{\ TiB}} \approx  10 \mbox{\ (Auf 5 Zonen gerundet)}
+\mbox{Anzahl Server} = \frac{918 \mathrm{\ TiB}}{98.208 \mathrm{\ TiB}} \approx 10 \mbox{\ (Auf 5 Zonen gerundet)}
 \label{eqn:AnzahlServerS2}
 \end{equation}
 
 \begin{equation}
-\mbox{Anzahl Festplatten} = \frac{918 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx  340 \mbox{\ (Auf 10 Server gerundet)}
+\mbox{Anzahl Festplatten} = \frac{918 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx 340 \mbox{\ (Auf 10 Server gerundet)}
 \label{eqn:AnzahlServerS2}
 \end{equation}
 
-Gemäss \refeqlb{eqn:AnzahlRackS2} wird ein ganzes Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Full Rack Angebot von Nine, welches 47 Rack-Höheneinheiten platz bietet. Der Preis pro Rack beträgt 1450 CHF pro Monat, plus 1500 CHF für die einmalige Einrichtung des Racks durch Nine.
-Für die Berechnung der Gesamt Watt Leistung welcher der Server im Betrieb benötigt, fehlen die Angaben des Hersteller. Aus diesen Grund wird angenommen, dass der Daten-Server ca. 700 Watt und der Proxy-Server 500 Watt bezieht. Mit diesen Annahmen benötigt es gemäss  \refeqlb{eqn:AnzahlWattPaketeS2}, den 2000 Watt welche im Rack beinhaltet sind, zusätliche 13 Pakete a 500 Watt pro Monat.
+Gemäss \refeqlb{eqn:AnzahlRackS2} wird ein ganzes Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Full Rack Angebot von Nine, welches 47 Rack-Höheneinheiten platz bietet. Der Preis pro halbes Rack beträgt 750 CHF pro Monat, plus 850 CHF für die einmalige Einrichtung des Racks durch Nine.
+Für die Berechnung der Gesamt Watt Leistung welcher der Server im Betrieb benötigt, fehlen die Angaben des Hersteller. Aus diesen Grund wird angenommen, dass der Daten-Server ca. 700 Watt und der Proxy-Server 500 Watt bezieht. Mit diesen Annahmen benötigt es gemäss \refeqlb{eqn:AnzahlWattPaketeS2}, den 2000 Watt welche im Rack beinhaltet sind, zusätliche 13 Pakete a 500 Watt pro Monat.
 
 \begin{equation}
-\mbox{Anzahl Racks} = \frac{10 * 4 \mathrm{\ U} + 2 * 2 \mathrm{\ U} + 2 * 2 \mathrm{\ U}}{47\mathrm{\ U}} \approx  1 \mbox{\ (Auf ganze Rack gerundet)}
+\mbox{Anzahl Racks} = \frac{10 * 4 \mathrm{\ U} + 2 * 2 \mathrm{\ U} + 2 * 2 \mathrm{\ U}}{47\mathrm{\ U}} \approx 1 \mbox{\ (Auf ganze Rack gerundet)}
 \label{eqn:AnzahlRackS2}
 \end{equation}
 
 \begin{equation}
-\mbox{Anzahl 500 \mathrm{W} Pakete} = \frac{10 * 700 \mathrm{\ W} + 2 * 500 \mathrm{\ W} +2 * 237,77 \mathrm{\ W} - 2000 \mathrm{\ W} }{500\mathrm{\ W}} \approx  13
+\mbox{Anzahl 500 \mathrm{W} Pakete} = \frac{10 * 700 \mathrm{\ W} + 2 * 500 \mathrm{\ W} +2 * 237,77 \mathrm{\ W} - 2000 \mathrm{\ W} }{500\mathrm{\ W}} \approx 13
 \label{eqn:AnzahlWattPaketeS2}
 \end{equation}
 
-Wie aus der \reftab{tab:KostenOpenStackS1} ersichtlich ist, betragen die Gesamtkosten 893'965 CHF.
+Wie aus der \reftab{tab:KostenOpenStackS1} ersichtlich ist, betragen die Gesamtkosten 916'965.00 CHF.
 
 \begin{table}[htbp]
 \caption{Kosten OpenStack}
@@ -883,25 +1013,28 @@ Wie aus der \reftab{tab:KostenOpenStackS1} ersichtlich ist, betragen die Gesamtk
 \begin{tabular}{|l|r|r|r|}
 \hline
 \textbf{Beschreibung} & \multicolumn{1}{l|}{\textbf{Kosten pro Stk/M.}} & \multicolumn{1}{l|}{\textbf{Anzahl}} & \multicolumn{1}{l|}{\textbf{Total}} \\ \hline
-  \multicolumn{ 4}{c}{} \\  \hline
+ \multicolumn{ 4}{c}{} \\ \hline
 \multicolumn{ 4}{|c|}{\textbf{Investitionskosten}} \\ \hline
 Dell PowerConnect 8024 & CHF 14'732.00 & 2 & CHF 29'464.00 \\ \hline
 Lynx CALLEO App. Server 1260 & CHF 5'451.50 & 2 & CHF 10'903.00 \\ \hline
 Lynx CALLEO App. Server 4260H & CHF 6'111.00 & 10 & CHF 61'110.00 \\ \hline
-Festplatte 3,5 3 TB & CHF 300.00 & 340 & CHF 102'000.00 \\ \hline \hline
-  \multicolumn{ 3}{r|}{\textbf{Total:}} & \textbf{CHF 203'477.00} \\ \cline{4-4}
-\multicolumn{ 4}{c}{} \\   \hline
+Festplatte 3,5 3 TB & CHF 300.00 & 340 & CHF 102'000.00 \\ \hline
+Rack Einrichtung & CHF 850.00 & 2 & CHF 1700.00 \\ \hline \hline
+Mulit-Site Einrichtung & CHF 1500.00 & 1 & CHF 1500.00 \\ \hline \hline
+ \multicolumn{ 3}{r|}{\textbf{Total:}} & \textbf{CHF 206'677.00} \\ \cline{4-4}
+\multicolumn{ 4}{c}{} \\ \hline
 \multicolumn{ 4}{|c|}{\textbf{Fortlaufende Kosten}} \\ \hline
-Dell Service  & CHF 0.00 & 2 & CHF 0.00 \\ \hline
+Dell Service & CHF 0.00 & 2 & CHF 0.00 \\ \hline
 Transtec Service (Server 1260) & CHF 26.08 & 2 & CHF 52.17 \\ \hline
 Transtec Service (Server 4260H) & CHF 53.31 & 10 & CHF 533.06 \\ \hline
- Rackkosten 47 U (2000 W) & CHF 1'450.00 & 1 & CHF 1'450.00 \\ \hline
-Strom 500 W  & CHF 165.00 & 13 & CHF 2'145.00 \\ \hline
+Rackkosten 22 U (1000 W) & CHF 750.00 & 2 & CHF 1'500.00 \\ \hline
+Strom 500 W & CHF 165.00 & 13 & CHF 2'145.00 \\ \hline
+Mulit-Site 1 GBit/s & CHF 500.00 & 1 & CHF 500.00 \\ \hline
 Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
-  \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & CHF 19'180.22 \\ \cline{4-4}
-  \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{CHF 690'488.00} \\ \cline{4-4}
-  \multicolumn{ 4}{c}{} \\  \cline{4-4}
-  \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 893'965.00} \\ \cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total pro Monat:}} & CHF 19'730.22 \\ \cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total 36 Monate:}} & \textbf{CHF 710'288.00} \\ \cline{4-4}
+ \multicolumn{ 4}{c}{} \\ \cline{4-4}
+ \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 916'965.00} \\ \cline{4-4}
 \end{tabular}
 \end{small}
 \label{tab:KostenOpenStackS2}
@@ -933,7 +1066,7 @@ Da die Infrastruktur von Amazon S3 nicht bekannt ist, können keine detailierte 
 
 Amazon S3 unterstützt das Lesen und Schreiben von mehren Systemen. Beim Lesen einen Objekts welche von mehren Systemen Zugegriffen wird und beschrieben, stellt Amazon S3 die Lese konsistent sicher. \cite{Amazon2012a}
 
-Für das Einlesen von Grossen Datenmengen bietet Amazon einen kostenpflichtigen Import/Export Dienstleistung an. Bei dieser Dienstleistung sendet der Kunde die Daten gespeichert auf  einen tragbares Speichergeräte an Amazon, welches die Daten direkt in Ihre Cloud ohne Umwege über das Internet einliesst.
+Für das Einlesen von Grossen Datenmengen bietet Amazon einen kostenpflichtigen Import/Export Dienstleistung an. Bei dieser Dienstleistung sendet der Kunde die Daten gespeichert auf einen tragbares Speichergeräte an Amazon, welches die Daten direkt in Ihre Cloud ohne Umwege über das Internet einliesst.
 
 Die API von Amazon ist gut Dokumentiert, weshalb für einen erfahrenen Entwickler die Anbindung der Web-Applikation an Amazon S3 umsetzbar sein sollte.
 
@@ -969,14 +1102,14 @@ Beim Amazon S3 wird jeweils nur der Effektive verwendete Speicherplatz pro Monat
 
 Bei Verwendung von Amazon S3 fallen für den Kunden zudem keine Wartungskosten für den Betrieb der Speicherinfrastruktur an. 
 
-Im vergleich zu betrieb der eignen Speicherinfrastruktur, fallen dem Kunden, stattdessen Kosten für den Transfer und Abfragen der Daten an, welche bei der eignenden Infrastruktur generell durch die Investition in die Infrastruktur beinhaltet ist. So Kostet der Transfer der Daten aus der Amazon S3 Speicher aus, für jedes GB \$ 0.12 bei einen Transfervolumen bis 10 TB.  Für die Abfrage wird unterschieden zwischen Schreibenden und Lesenden Abfragen. Für den Lese Zugriff auf die Daten wird pro 10'000 Abfragen \$ 0.01 und für jede Schreibzugriff pro 1'000 Abfragen\$ 0.01 verrechnet. Gerade diese Kosten sind jedoch schwer vorher zubestimmen und könnten zu Überraschungen sorgen. Grund dafür ist, dass diese jeweils stark von jeweiligen Anzahl Benutzer und deren Benutzerverhalten abhängig sind und diese schwer zu vorhersagen ist.
+Im vergleich zu betrieb der eignen Speicherinfrastruktur, fallen dem Kunden, stattdessen Kosten für den Transfer und Abfragen der Daten an, welche bei der eignenden Infrastruktur generell durch die Investition in die Infrastruktur beinhaltet ist. So Kostet der Transfer der Daten aus der Amazon S3 Speicher aus, für jedes GB \$ 0.12 bei einen Transfervolumen bis 10 TB. Für die Abfrage wird unterschieden zwischen Schreibenden und Lesenden Abfragen. Für den Lese Zugriff auf die Daten wird pro 10'000 Abfragen \$ 0.01 und für jede Schreibzugriff pro 1'000 Abfragen\$ 0.01 verrechnet. Gerade diese Kosten sind jedoch schwer vorher zubestimmen und könnten zu Überraschungen sorgen. Grund dafür ist, dass diese jeweils stark von jeweiligen Anzahl Benutzer und deren Benutzerverhalten abhängig sind und diese schwer zu vorhersagen ist.
 
 \paragraph*{Kosten Szenario-1}
-Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der\reftab{tab:KostenAmazonS3S1} Total  \$ 42'646.32 das sind zum aktuellen Tageskurs (13 April 2012)  39'10.52 CHF. 
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der\reftab{tab:KostenAmazonS3S1} Total \$ 42'646.32 das sind zum aktuellen Tageskurs (13 April 2012) 39'10.52 CHF. 
 
 
 \subsubsection*{Kosten Szenario-2}
-Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der \reftab{tab:KostenAmazonS3S2} Total  \$ 493'902.84 das sind zum aktuellen Tageskurs (13 April 2012)  450'637.17 CHF. 
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der \reftab{tab:KostenAmazonS3S2} Total \$ 493'902.84 das sind zum aktuellen Tageskurs (13 April 2012) 450'637.17 CHF. 
 
 \begin{table}
 \caption{Kosten Amazon S3 Szenario-1}
@@ -985,50 +1118,50 @@ Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der \reftab{tab:Kos
 \hline
 \multicolumn{1}{|l|}{\textbf{Bezeichnung}} &\multicolumn{1}{|l|}{\textbf{Monat}} & \multicolumn{1}{l|}
 {\textbf{Speicherkapazität}} & \multicolumn{1}{l|}{\textbf{Kosten}} \\ \hline
-\multicolumn{4}{c}{} \\  \hline
+\multicolumn{4}{c}{} \\ \hline
 \multicolumn{ 4}{|c|}{\textit{Investitionskosten}} \\ \hline 
-- &  &  &    \\ \hline
+- & & & \\ \hline
 \multicolumn{3}{r|}{\textbf{Total:}} & CHF 0.00 \\ \cline{4-4}
-\multicolumn{4}{c}{} \\  \hline
+\multicolumn{4}{c}{} \\ \hline
 \multicolumn{ 4}{|c|}{\textit{Fortlaufende Kosten}} \\ \hline
-Amazon S3 & 1 & 2,75 &  \$691.82  \\ \hline
-Amazon S3 & 2 & 3 &  \$719.98  \\ \hline
-Amazon S3 & 3 & 3,25 &  \$748.14  \\ \hline
-Amazon S3 & 4 & 3,5 &  \$776.30  \\ \hline
-Amazon S3 & 5 & 3,75 &  \$804.46  \\ \hline
-Amazon S3 & 6 & 4 &  \$832.62  \\ \hline
-Amazon S3 & 7 & 4,25 &  \$860.78  \\ \hline
-Amazon S3 & 8 & 4,5 &  \$888.94  \\ \hline
-Amazon S3 & 9 & 4,75 &  \$917.10  \\ \hline
-Amazon S3 & 10 & 5 &  \$945.26  \\ \hline
-Amazon S3 & 11 & 5,25 &  \$973.42  \\ \hline
-Amazon S3 & 12 & 5,5 &  \$1'001.58  \\ \hline
-Amazon S3 & 13 & 5,75 &  \$1'029.74  \\ \hline
-Amazon S3 & 14 & 6 &  \$1'057.90  \\ \hline
-Amazon S3 & 15 & 6,25 &  \$1'086.06  \\ \hline
-Amazon S3 & 16 & 6,5 &  \$1'114.22  \\ \hline
-Amazon S3 & 17 & 6,75 &  \$1'142.38  \\ \hline
-Amazon S3 & 18 & 7 &  \$1'170.54  \\ \hline
-Amazon S3 & 19 & 7,25 &  \$1'198.70  \\ \hline
-Amazon S3 & 20 & 7,5 &  \$1'226.86  \\ \hline
-Amazon S3 & 21 & 7,75 &  \$1'255.02  \\ \hline
-Amazon S3 & 22 & 8 &  \$1'283.18  \\ \hline
-Amazon S3 & 23 & 8,25 &  \$1'311.34  \\ \hline
-Amazon S3 & 24 & 8,5 &  \$1'339.50  \\ \hline
-Amazon S3 & 25 & 8,75 &  \$1'367.66  \\ \hline
-Amazon S3 & 26 & 9 &  \$1'395.82  \\ \hline
-Amazon S3 & 27 & 9,25 &  \$1'423.98  \\ \hline
-Amazon S3 & 28 & 9,5 &  \$1'452.14  \\ \hline
-Amazon S3 & 29 & 9,75 &  \$1'480.30  \\ \hline
-Amazon S3 & 30 & 10 &  \$1'508.46  \\ \hline
-Amazon S3 & 31 & 10,25 &  \$1'536.62  \\ \hline
-Amazon S3 & 32 & 10,5 &  \$1'564.78  \\ \hline
-Amazon S3 & 33 & 10,75 &  \$1'592.94  \\ \hline
-Amazon S3 & 34 & 11 &  \$1'621.10  \\ \hline
-Amazon S3 & 35 & 11,25 &  \$1'649.26  \\ \hline
-Amazon S3 & 36 & 11,5 &  \$1'677.42  \\ \hline
+Amazon S3 & 1 & 2,75 & \$691.82 \\ \hline
+Amazon S3 & 2 & 3 & \$719.98 \\ \hline
+Amazon S3 & 3 & 3,25 & \$748.14 \\ \hline
+Amazon S3 & 4 & 3,5 & \$776.30 \\ \hline
+Amazon S3 & 5 & 3,75 & \$804.46 \\ \hline
+Amazon S3 & 6 & 4 & \$832.62 \\ \hline
+Amazon S3 & 7 & 4,25 & \$860.78 \\ \hline
+Amazon S3 & 8 & 4,5 & \$888.94 \\ \hline
+Amazon S3 & 9 & 4,75 & \$917.10 \\ \hline
+Amazon S3 & 10 & 5 & \$945.26 \\ \hline
+Amazon S3 & 11 & 5,25 & \$973.42 \\ \hline
+Amazon S3 & 12 & 5,5 & \$1'001.58 \\ \hline
+Amazon S3 & 13 & 5,75 & \$1'029.74 \\ \hline
+Amazon S3 & 14 & 6 & \$1'057.90 \\ \hline
+Amazon S3 & 15 & 6,25 & \$1'086.06 \\ \hline
+Amazon S3 & 16 & 6,5 & \$1'114.22 \\ \hline
+Amazon S3 & 17 & 6,75 & \$1'142.38 \\ \hline
+Amazon S3 & 18 & 7 & \$1'170.54 \\ \hline
+Amazon S3 & 19 & 7,25 & \$1'198.70 \\ \hline
+Amazon S3 & 20 & 7,5 & \$1'226.86 \\ \hline
+Amazon S3 & 21 & 7,75 & \$1'255.02 \\ \hline
+Amazon S3 & 22 & 8 & \$1'283.18 \\ \hline
+Amazon S3 & 23 & 8,25 & \$1'311.34 \\ \hline
+Amazon S3 & 24 & 8,5 & \$1'339.50 \\ \hline
+Amazon S3 & 25 & 8,75 & \$1'367.66 \\ \hline
+Amazon S3 & 26 & 9 & \$1'395.82 \\ \hline
+Amazon S3 & 27 & 9,25 & \$1'423.98 \\ \hline
+Amazon S3 & 28 & 9,5 & \$1'452.14 \\ \hline
+Amazon S3 & 29 & 9,75 & \$1'480.30 \\ \hline
+Amazon S3 & 30 & 10 & \$1'508.46 \\ \hline
+Amazon S3 & 31 & 10,25 & \$1'536.62 \\ \hline
+Amazon S3 & 32 & 10,5 & \$1'564.78 \\ \hline
+Amazon S3 & 33 & 10,75 & \$1'592.94 \\ \hline
+Amazon S3 & 34 & 11 & \$1'621.10 \\ \hline
+Amazon S3 & 35 & 11,25 & \$1'649.26 \\ \hline
+Amazon S3 & 36 & 11,5 & \$1'677.42 \\ \hline
 \multicolumn{3}{r|}{\textbf{Total:}} & \textbf{\$ 42'646.32} \\ \cline{4-4}
-\multicolumn{4}{c}{} \\  \cline{4-4}
+\multicolumn{4}{c}{} \\ \cline{4-4}
 \multicolumn{3}{r|}{\textbf{Total Gesamt:}} & \textbf{ \$ 42'646.32} \\ \cline{4-4}
 \end{tabular}
 \end{center}
@@ -1042,51 +1175,51 @@ Amazon S3 & 36 & 11,5 &  \$1'677.42  \\ \hline
 \hline
 \multicolumn{1}{|l|}{\textbf{Bezeichnung}} &\multicolumn{1}{|l|}{\textbf{Monat}} & \multicolumn{1}{l|}
 {\textbf{Speicherkapazität}} & \multicolumn{1}{l|}{\textbf{Kosten}} \\ \hline
-\multicolumn{4}{c}{} \\  \hline
+\multicolumn{4}{c}{} \\ \hline
 \multicolumn{ 4}{|c|}{\textit{Investitionskosten}} \\ \hline 
-- &  &  &    \\ \hline
+- & & & \\ \hline
 \multicolumn{3}{r|}{\textbf{Total:}} & CHF 0.00 \\ \cline{4-4}
-\multicolumn{4}{c}{} \\  \hline
+\multicolumn{4}{c}{} \\ \hline
 \multicolumn{ 4}{|c|}{\textit{Fortlaufende Kosten}} \\ \hline
-Amazon S3 & 1 & 8.5 &  \$2'937.87  \\ \hline
-Amazon S3 & 2 & 14.5 &  \$3'613.71  \\ \hline
-Amazon S3 & 3 & 20.5 &  \$4'289.55  \\ \hline
-Amazon S3 & 4 & 26.5 &  \$4'965.39  \\ \hline
-Amazon S3 & 5 & 32.5 &  \$5'641.23  \\ \hline
-Amazon S3 & 6 & 38.5 &  \$6'317.07  \\ \hline
-Amazon S3 & 7 & 44.5 &  \$6'992.91  \\ \hline
-Amazon S3 & 8 & 50.5 &  \$7'661.07  \\ \hline
-Amazon S3 & 9 & 56.5 &  \$8'244.75  \\ \hline
-Amazon S3 & 10 & 62.5 &  \$8'828.43  \\ \hline
-Amazon S3 & 11 & 68.5 &  \$9'412.11  \\ \hline
-Amazon S3 & 12 & 74.5 &  \$9'995.79  \\ \hline
-Amazon S3 & 13 & 80.5 &  \$10'579.47  \\ \hline
-Amazon S3 & 14 & 86.5 &  \$11'163.15  \\ \hline
-Amazon S3 & 15 & 92.5 &  \$11'746.83  \\ \hline
-Amazon S3 & 16 & 98.5 &  \$12'330.51  \\ \hline
-Amazon S3 & 17 & 104.5 &  \$12'914.19  \\ \hline
-Amazon S3 & 18 & 110.5 &  \$13'497.87  \\ \hline
-Amazon S3 & 19 & 116.5 &  \$14'081.55  \\ \hline
-Amazon S3 & 20 & 122.5 &  \$14'665.23  \\ \hline
-Amazon S3 & 21 & 128.5 &  \$15'248.91  \\ \hline
-Amazon S3 & 22 & 134.5 &  \$15'832.59  \\ \hline
-Amazon S3 & 23 & 140.5 &  \$16'416.27  \\ \hline
-Amazon S3 & 24 & 146.5 &  \$16'999.95  \\ \hline
-Amazon S3 & 25 & 152.5 &  \$17'583.63  \\ \hline
-Amazon S3 & 26 & 158.5 &  \$18'167.31  \\ \hline
-Amazon S3 & 27 & 164.5 &  \$18'750.99  \\ \hline
-Amazon S3 & 28 & 170.5 &  \$19'334.67  \\ \hline
-Amazon S3 & 29 & 176.5 &  \$19'918.35  \\ \hline
-Amazon S3 & 30 & 182.5 &  \$20'502.03  \\ \hline
-Amazon S3 & 31 & 188.5 &  \$21'085.71  \\ \hline
-Amazon S3 & 32 & 194.5 &  \$21'669.39  \\ \hline
-Amazon S3 & 33 & 200.5 &  \$22'253.07  \\ \hline
-Amazon S3 & 34 & 206.5 &  \$22'836.75  \\ \hline
-Amazon S3 & 35 & 212.5 &  \$23'420.43  \\ \hline
-Amazon S3 & 36 & 218.5 &  \$24'004.11  \\ \hline
+Amazon S3 & 1 & 8.5 & \$2'937.87 \\ \hline
+Amazon S3 & 2 & 14.5 & \$3'613.71 \\ \hline
+Amazon S3 & 3 & 20.5 & \$4'289.55 \\ \hline
+Amazon S3 & 4 & 26.5 & \$4'965.39 \\ \hline
+Amazon S3 & 5 & 32.5 & \$5'641.23 \\ \hline
+Amazon S3 & 6 & 38.5 & \$6'317.07 \\ \hline
+Amazon S3 & 7 & 44.5 & \$6'992.91 \\ \hline
+Amazon S3 & 8 & 50.5 & \$7'661.07 \\ \hline
+Amazon S3 & 9 & 56.5 & \$8'244.75 \\ \hline
+Amazon S3 & 10 & 62.5 & \$8'828.43 \\ \hline
+Amazon S3 & 11 & 68.5 & \$9'412.11 \\ \hline
+Amazon S3 & 12 & 74.5 & \$9'995.79 \\ \hline
+Amazon S3 & 13 & 80.5 & \$10'579.47 \\ \hline
+Amazon S3 & 14 & 86.5 & \$11'163.15 \\ \hline
+Amazon S3 & 15 & 92.5 & \$11'746.83 \\ \hline
+Amazon S3 & 16 & 98.5 & \$12'330.51 \\ \hline
+Amazon S3 & 17 & 104.5 & \$12'914.19 \\ \hline
+Amazon S3 & 18 & 110.5 & \$13'497.87 \\ \hline
+Amazon S3 & 19 & 116.5 & \$14'081.55 \\ \hline
+Amazon S3 & 20 & 122.5 & \$14'665.23 \\ \hline
+Amazon S3 & 21 & 128.5 & \$15'248.91 \\ \hline
+Amazon S3 & 22 & 134.5 & \$15'832.59 \\ \hline
+Amazon S3 & 23 & 140.5 & \$16'416.27 \\ \hline
+Amazon S3 & 24 & 146.5 & \$16'999.95 \\ \hline
+Amazon S3 & 25 & 152.5 & \$17'583.63 \\ \hline
+Amazon S3 & 26 & 158.5 & \$18'167.31 \\ \hline
+Amazon S3 & 27 & 164.5 & \$18'750.99 \\ \hline
+Amazon S3 & 28 & 170.5 & \$19'334.67 \\ \hline
+Amazon S3 & 29 & 176.5 & \$19'918.35 \\ \hline
+Amazon S3 & 30 & 182.5 & \$20'502.03 \\ \hline
+Amazon S3 & 31 & 188.5 & \$21'085.71 \\ \hline
+Amazon S3 & 32 & 194.5 & \$21'669.39 \\ \hline
+Amazon S3 & 33 & 200.5 & \$22'253.07 \\ \hline
+Amazon S3 & 34 & 206.5 & \$22'836.75 \\ \hline
+Amazon S3 & 35 & 212.5 & \$23'420.43 \\ \hline
+Amazon S3 & 36 & 218.5 & \$24'004.11 \\ \hline
 \multicolumn{3}{r|}{\textbf{Total:}} & \textbf{\$ 493'902.84}
  \\ \cline{4-4}
-\multicolumn{4}{c}{} \\  \cline{4-4}
+\multicolumn{4}{c}{} \\ \cline{4-4}
 \multicolumn{3}{r|}{\textbf{Total Gesamt:}} & \textbf{\$ 493'902.84}
  \\ \cline{4-4}
 \end{tabular}
@@ -1107,7 +1240,7 @@ Alle Alternativen für das Szenario-1 unterstützen die Speicherung von Dateien 
 Alle Alternativen aus dem Szenario-1 erfüllen die geforderten Speicherkapazität des Szenario-1.
 
 \paragraph*{Untersuchung auf KO Kriterium \ref{KO-3}}
-Die günstigste Lösung ist die Alternative \ref{Al-1} mit Gesamtkosten von 13'422.95 CHF, somit darf gemäss KO Kriterium \ref{KO-3} die Kosten nicht 40'268.85 CHF überschreiten. Mit Ausnahme von \ref{Al-5} mit Gesamt Kosten von 39'10.52 CHF überschreiten die Alternativen \ref{Al-2} () \ref{Al-3} () \ref{Al-4} (653’646.50 CHF) die Kosten und werden somit von der weiteren Evaluation für das Szenario-1 ausgeschlossen.
+Die günstigste Lösung ist die Alternative \ref{Al-1} mit Gesamtkosten von 13'422.95 CHF, somit darf gemäss KO Kriterium \ref{KO-3} die Kosten nicht 40'268.85 CHF überschreiten. Mit Ausnahme von \ref{Al-5} mit Gesamt Kosten von 39'10.52 CHF überschreiten die Alternativen \ref{Al-2} (240’443.15 CHF), \ref{Al-3} (240’443.15 CHF) und \ref{Al-4} (653’646.50 CHF) die Kosten und werden somit von der weiteren Evaluation für das Szenario-1 ausgeschlossen.
 
 \subsection{Evaluation KO Kriteren Szenario-2}
 
@@ -1115,802 +1248,63 @@ Die günstigste Lösung ist die Alternative \ref{Al-1} mit Gesamtkosten von 13'4
 Alle Alternativen für das Szenario-2 unterstützen die Speicherung von Dateien bis 2 Gibibyte Speichergrösse (\refbf{KO-1}).
 
 \paragraph*{Untersuchung auf KO Kriterium \ref{KO-2}}
-Bis auf Alternative \ref{Al-1}, welches kein Produkte für die Erforderlichen Speicherkapazität hat, erfüllen alle die geforderten Speicherkapazität  des Szenario-2. Die Alternative \ref{Al-1} wird somit für die weitere Evaluation für das Szenario-2 ausgeschlossen.
+Bis auf Alternative \ref{Al-1}, welches kein Produkte für die Erforderlichen Speicherkapazität hat, erfüllen alle die geforderten Speicherkapazität des Szenario-2. Die Alternative \ref{Al-1} wird somit für die weitere Evaluation für das Szenario-2 ausgeschlossen.
 
 \paragraph*{Untersuchung auf KO Kriterium \ref{KO-3}}
-Die günstigste Lösung ist die Alternative \ref{Al-5} mit Gesamtkosten von 450'637.17 CHF, somit darf gemäss KO Kriterium \ref{KO-3} die Kosten nicht 1' CHF überschreiten. ????
+Die günstigste Lösung ist die Alternative \refsoll{Al-5} \ref{Al-5}  mit Gesamtkosten von 450'637.17 CHF, somit darf gemäss KO Kriterium \ref{KO-3} die Kosten nicht 1'351'911.15 CHF überschreiten. Die Alternative \ref{Al-2} (884’772.44 CHF), \ref{Al-3} (884’772.44 CHF) und \ref{Al-4} (916’965.00) überschreiten die maximal Kosten nicht. Die Alternative \ref{Al-1} bietet keine Produkt für Szenario-1.
 
 \section{Evaluation Soll Kriteren}
-\subsection{Evaluation Soll Kriteren Szenario-1}
+Die Evaluation der Soll Kriterien und die dazugehörige Begründungen für die Bewertung  sind detailliert im Anhang aufgeführt. Die Bewertungen der Vergleiche der Alternativen wurden in das Programm AHP Decision eingegeben und berechnet.
 
-\subsubsection{Kosten}
+\subsection{Auswertung Szenario-1}
 
-\paragraph*{\refsoll{} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Al-1}/\ref{Al-5})}
-Bei \ref{Al-1} Hetzner entstehen Einrichtungs-Kosten für den Root Server von 499.00 € in 600,02 CHF (Kurs 13 April 2012), weitere Kosten kommen nicht hinzu. Bei Amazon S3 \ref{Al-5} entstehen keine Einrichtung bzw. Anschaffungskosten. In Vergleich zu \ref{Al-5} sind die Anschaffungskosten von \ref{Al-1} höher, sind aber in Vergleich zu den Gesamtkosten von \ref{Al-1} oder \ref{Al-5} gering, aus diesen Grund wird die \ref{Al-1} etwas bis erheblich Geringer bewertet als \ref{Al-5}.
+Wie in \reftab{EvalResultS1} zu entnehmen ist hat die Alternative ist \refsoll{Al-5} \ref{Al-5} mit 0.698 Punkte oder 69.8\% der Gewinner der Evaluation von Szenario-1. Die Alternative \refsoll{Al-1} \ref{Al-1} hat insgesamt 0.302 Punkte oder 30.2 \% erreicht.
 
-\textbf{Bewertet: 1/5}
+\begin{table}[htbp]
+\caption{Evalutation Resultat Szenario-1}
+\begin{center}
+\begin{tabular}{|c|l|r|}
+\hline
+Rang & Alternativen & \multicolumn{1}{l|}{Priorität} \\ \hline
+1 & Amazon S3 & 0.698 \\ \hline
+2 & Hetzner & 0.302 \\ \hline
+\end{tabular}
+\end{center}
+\label{EvalResultS1}
+\end{table}
 
-\paragraph*{\refsoll{Soll-1-1} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-1-1}  \ref{Al-1}/\ref{Al-5})}
-Bei \ref{Al-1} Hetzner entstehen Einrichtungs-Kosten für den Root Server von 499.00 € in 600,02 CHF (Kurs 13 April 2012), weitere Kosten kommen nicht hinzu. Bei Amazon S3 \ref{Al-5} entstehen keine Einrichtung bzw. Anschaffungskosten. In Vergleich zu \ref{Al-5} sind die Anschaffungskosten von \ref{Al-1} höher, sind aber in Vergleich zu den Gesamtkosten von \ref{Al-1} oder \ref{Al-5} gering, aus diesen Grund wird die \ref{Al-1} etwas bis erheblich Geringer bewertet als \ref{Al-5}.
 
-\textbf{Bewertet: 1/5}
+\subsection{Auswertung Szenario-2}
 
-\paragraph*{\refsoll{Soll-1-2} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-1-2}  \ref{Al-1}/\ref{Al-5})}
-Die Unterhaltskosten von Hetzner \ref{Al-1} sind mit 13'422.95 CHF in Vergleich zu den Unterhaltskosten von Amazon S3 \ref{Al-5} mit 39'10.52 CHF erheblich tiefer. Aus diesen Grund, wird \ref{Al-1} sehr viel besser bewertet als \ref{Al-5}
+Wie in \reftab{EvalResultS2} zu entnehmen ist hat die Alternative \refsoll{Al-5} \ref{Al-5} mit 0.310  Punkte oder 31\% der Gewinner der Evaluation, auf dem zweiten Platz folgt \refsoll{Al-3} \ref{Al-3} mit 0.236 Punkte oder 23.6\%, dicht gefolgt von dritt Klassifizierten \refsoll{Al-4} \ref{Al-4} mit 0.36 Punkte oder 23.6 \%. Am Wenigsten Punkte geholt hat \refsoll{Al-2} \ref{Al-2} mit 0.218 Punkte oder 21.8 \%.
 
-\textbf{Bewertet: 7}
+\begin{table}[htbp]
+\caption{Evalutation Resultat Szenario-2}
+\begin{center}
+\begin{tabular}{|c|l|r|}
+\hline
+Rang &Alternativen & \multicolumn{1}{l|}{Priorität} \\ \hline
+1 & Amazon S3 & 0.274  \\ \hline
+2 & NetApp iSCSI & 0.232 \\ \hline
+3 & OpenStack Object Storage & 0.199 \\ \hline
+4 & NetApp NFS & 0.295\\ \hline
+\end{tabular}
+\end{center}
+\label{EvalResultS2}
+\end{table}
 
-\paragraph*{\refsoll{Soll-1-3} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-1-3}  \ref{Al-1}/\ref{Al-5})}
+Amazon S3 \ref{Al-5} hat in den Soll Kriterien, Anschaffungskosten, Langlebigkeit, Skalierbarkeit in der Speicherkapazität, Datenintegrität, Selbstheilung von Objekten und Verwaltungskomfort am meisten Punkte aller Alternativen gemacht.
 
-???
+NetApp iSCSI \ref{Al-3} hat in den Soll Kriterien, Unterhaltskosten, Redundanz,  Standort übergreifend, Performance, POSIX IO, Simultaner Schreibzugriff, Datensicherheit am meisten Punkte aller Alternativen gemacht.
 
-\textbf{Bewertet: 7}
+OpenStack Object Storage \ref{Al-4} hat in den Soll Kriterien, Systemverfügbarkeit, Standort übergreifend, Datenzugriff Skalierbarkeit, Maximal speicherbare Objekte, Max Anzahl speicherbare Objekte, Max Objekt Speichergrosse grösser als 2 GiB, Datenintegrität, Selbstheilung von Objekten, Weiterentwicklung am meisten Punkte aller Alternativen gemacht.
 
-\subsubsection{Verfügbarkeit}
+NetApp NFS \ref{Al-2} hat in den Soll Kriterien, Unterhaltskosten, Redundanz, Datensicherung,  Datenschutz, Marktverbreitung, Verfügbarkeit von Experten und Ausgereift jeweils am meisten Punkte aller Alternativen gemacht.
 
-\paragraph*{\refsoll{Soll-2-1} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-2-1}  \ref{Al-1}/\ref{Al-5})}
-Bei Hetzner \ref{Al-1} sind die Daten einfach Redundant gespeichert, wobei die Redundanz durch Parität sichergestellt ist und die Daten nicht 1:1 doppelt gespeichert sind. Bei Amazon S3 sind die Daten mindestens in dreifacher Redundanz gespeichert. Die  Redundante Speicherung von Amazon S3 hat folgende Vorteile:
 
-\begin{itemize}
-\item höhere Redundanz über mehrere Medien
-\item bei doppelter Ausfall, kein Datenverlust
-\item Keine Berechnung aus Parität notwendig
-\end{itemize}
 
-Wegen den genannten Vorteilen von \ref{Al-5 }ist die \refsoll{Soll-2-1} der Aktiven Daten von \ref{Al-1} erheblich bis sehr viel Geringer zu Bewerten als \ref{Al-5}.
 
-\textbf{Bewertet: 1/6}
 
-\paragraph*{\refsoll{Soll-2-2} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-2-2}  \ref{Al-1}/\ref{Al-5})}
-Bei Hetzner \ref{Al-1} sind die Daten nur auf einen System gespeichert, welche keine Besonderen Massnahmen hat um die System Verfügbarkeit zu erhöhen. Bei Amazon S3 sind die Daten mindestens auf drei unterschiedlichen Server verteilt, über die Restlichen Massnahmen die Amazon für die System-Redundanz trifft sind nicht bekannt, es kann davon ausgegangen werden, dass das System von Amazon S3 die Verfügbarkeit des System Harvard Research Group AEC-4 erfüllt.
 
-Die \refsoll{Soll-2-2} von \ref{Al-1} sehr viel Geringer zu Bewerten als \ref{Al-5}.
 
-\textbf{Bewertet: 1/8}
 
-\paragraph*{\refsoll{Soll-2-3} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-2-3}  \ref{Al-1}/\ref{Al-5})}
-Bei Hetzner \ref{Al-1} sind die Aktiven Daten nur auf einen System am einen Standort gespeichert. Bei Amazon S3 \ref{Al-5} sind die Daten in mehreren Rechenzentren gespeichert.
-
-Die \refsoll{Soll-2-3} Verfügbarkeit der aktiven Daten von \ref{Al-1} sind absolut Geringer zu Bewerten als \ref{Al-5}.
-
-\textbf{Bewertet: 1/9}
-
-\subsubsection{Datenzugriffe}
-
-\paragraph*{\refsoll{Soll-3-1} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-3-1} \ref{Al-1}/\ref{Al-5})}
-Bei Hetzner\ref{Al-1} handelt es sich nur um einen Server welche nur von sich selber zugegriffen werden kann. Bei Amazon S3 handelt es sich um ein Hochskalierbares System welches von hunderttausenden von Benutzer bzw. Systeme zugegriffen wird. Nachteil dabei ist , dass durch die hohe Anzahl an Benutzer die auf Amazon S3 zugreifen, Schwankungen in der Antwort und Auslieferung der Daten durch den Tag verteilt geben kann.
-Die \refsoll{Soll-3-1} ist bei \ref{Al-1} erheblich bis sehr geringer zu bewerten als bei \ref{Al-5}.
-
-\textbf{Bewertet: 1/6}
-
-\paragraph*{\refsoll{Soll-3-2} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-3-2} \ref{Al-1}/\ref{Al-5})}
-????
-\textbf{Bewertet: ???} 
-
-\paragraph*{\refsoll{Soll-3-3} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-3-3} \ref{Al-1}/\ref{Al-5})}
-????
-\textbf{Bewertet: ???} 
-Der Zugriff bei Hetzner \ref{Al-1} erfolgt über POSIX-IO, bei Amazon S3 hingegen existiert keine offizielle POSIX IO Schnittstelle. Aus diesen Grund ist der \refsoll{Soll-3-3} bei \ref{Al-1} sehr viel  bis absolut höher zu bewerten als bei \ref{Al-5}.
-
-\textbf{Bewertet: 8} 
-
-
-\paragraph*{\refsoll{Soll-3-4} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-3-4} \ref{Al-1}/\ref{Al-5})}
-????
-\textbf{Bewertet: ???} 
-Beide Alternativen \ref{Al-1} und \ref{Al-5} ermöglichen den Simultaner Zugriff auf Objekte, aus diesen Grund sind beide gleich zu Bewerten.
-
-\textbf{Bewertet: 1} 
-
-\paragraph*{\refsoll{Soll-3-4} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-3-4} \ref{Al-1}/\ref{Al-5})}
-????
-\textbf{Bewertet: ???} 
-Bei der Alternative \ref{Al-1} von Hetzner ist kein Simultaner Schreibzugriff notwendig, da diese nur von einem Server Zugriffen wird. Die Alternative \ref{Al-5} von Amazon ermöglicht es einen Simultaner Schreibzugriff auf die Objekte und gewährt dabei eine Lese Konsistenz. Aus diesen Grund ist \ref{Al-1} tiefer bis erheblich tiefer zu Bewerten als \ref{Al-5}.
-
-\textbf{Bewertet: 4}
-
-\subsubsection{Speicherkapazität}
-
-\paragraph*{\refsoll{Soll-4-1} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-4-1} \ref{Al-1}/\ref{Al-5})} 
-Die Speicherkapazität von \ref{Al-1} bei Hetzner ist auf maximal mit geringster Redundanz auf 38,192 TiB begrenzt. Durch die Begrenzung von ext3 können jedoch nicht die ganzen 38,192 TiB in einem einzigen Dateisystem genutzt werden sondern müssen auf mehre Dateisysteme aufgeteilt werden. Bei Amazon S3 \ref{Al-5} existiert eine solche Begrenzung für den Kunden nicht. Die maximale Speicherkapazität von \ref{Al-1} ist dennoch mehr als doppelt so gross wie die geforderten Speicherkapazität von Szenario-1 aus diesen Grund ist die \refsoll{Soll-4-1} von \ref{Al-1} erheblich Geringer zu Bewerten als \ref{Al-5}.
-
-\textbf{Bewertet: 1/5}
-
-\paragraph*{\refsoll{Soll-4-2} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-4-2} \ref{Al-1}/\ref{Al-5})} 
-Die \ref{Al-1} kann durch die Begrenzung von Dateisystem ext3 maimal 17'592'186'044'416 Objekte in einem Dateisystem Speichern. Bei Amazon S3 sind keine Informationen bekannt über eine mögliche Begrenzung eines Amazon S3 Bucket, über die Bucket grenze hinaus gibt es keine Begrenzung für den Kunden. Es werden jedoch Hauptsächlich grössere Objekte gespeichert weshalb im Speicher gespeichert wo durch die Begrenzung von Alternativen \ref{Al-1} ausreichend Platz für die Speicherung von Objekten hat. Aus diesen Grund ist die \refsoll{Soll-4-2} bei \ref{Al-1} etwas schlechter zu Bewerten als bei \ref{Al-5}.
-
-\textbf{Bewertet: 1/3}
-
-\paragraph*{\refsoll{Soll-4-3} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-4-3} \ref{Al-1}/\ref{Al-5})} 
-Die \ref{Al-1} kann durch die Begrenzung von Dateisystem ext3 maimal Objekte mit einer Speicherkapazität von 2 TiB gespeichert werden. Bei \ref{Al-5} ist die Begrenzung bei 5 TB, wobei hier die Objekte maximal in 5 GB Stücke hochgeladen werden können, bei späteren Zugriff ist jedoch einen Zugriff auf das Ganze Objekt möglich. Aus diesen Grund ist \ref{Al-1} etwas tiefer zu Bewerten als \ref{Al-5}.
-
-\textbf{Bewertet: 1/3}
-
-\subsubsection{Datenschutz}
-
-\paragraph*{\refsoll{Soll-5-1} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-5-1} \ref{Al-1}/\ref{Al-5})} 
-Die Alternative \ref{Al-1} kann die Integrität der Daten nur auf RAID Ebene Sicherstellen nicht aber auf Objekte. Amazon S3 \ref{Al-5} stellt mittels Hash Prüfsumme die Integrität beim Übermitteln und im Speicher sicher. Aus diesen Grund ist die \refsoll{Soll-5-1} von \ref{Al-1} sehr viel tiefer zu Bewerten als \ref{Al-5}
-
-\textbf{Bewertet: 1/7}
-
-
-\paragraph*{\refsoll{Soll-5-2} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-5-2} \ref{Al-1}/\ref{Al-5})} 
-Die Alternative \ref{Al-1} bietet keine selbstheilung von Objekten. Amazon S3\ref{Al-5} prüft Regelmässig alle gespeicherten kopien eines Objekte auf deren Integrität auf Ihren Server. Wird festgestellt das ein gespeicherte Kopie eines Objekts nicht mehr Integer ist wird es für den Zugriff gesperrt und von einer intakten Kopie wiederhergestellt. Aus diesen Grund ist die \refsoll{Soll-5-1} von \ref{Al-1} sehr viel bis absolut tiefer zu Bewerten als \ref{Al-5}.
-
-\textbf{Bewertet: 1/8}
-
-\paragraph*{\refsoll{Soll-5-3} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-5-3} \ref{Al-1}/\ref{Al-5})} 
-Die Alternative \ref{Al-1} kann über RSYNC gesichert werden oder auf eine kostenpflichtigen Sicherungsspeicherplatz von Heztner. Bei Amazon S3 gibt es keine integrierte Sicherungsmöglichkeit, da Daten werden jedoch dreifach Redundant gehalten. Eine Sicherung der Daten ausserhalb Amazon S3 währen mit hohen kosten für den Datentransfer verbunden. Aus diesen Grund ist die \refsoll{Soll-5-1} von \ref{Al-1} erheblich bis viel besser zu Bewerten als \ref{Al-5}.
-
-\textbf{Bewertet: 6}
-
-\paragraph*{\refsoll{Soll-5-4} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-5-4} \ref{Al-1}/\ref{Al-5})} 
-Die Haltung der Daten auf einen Server welche selber betreut, wie es bei \ref{Al-1} der Fall ist, kann man höheren Einfluss nehmen auf die Sicherheit. Die Sicherheit ist jedoch nur so gut, wie man selber erfahren ist in die sichere Konfiguration des Servers. Vor den Physischen Zugriff auf die Daten lassen sich diese durch eine Festplattenverschlüsselung schützen. Auf dem Server selber lassen sich durch ein Berechtigungs-Verwaltung den Zugriff von anderen Benutzer Schützen. Bei Amazon S3 ist man auf den Vertrauenswürdigkeit des Anbieters angewiesen. Zwar ermöglicht es Amazon die Daten ebenfalls zu Verschlüsseln der Hauptschlüssel bleibt jedoch bei Amazon. Zudem handelt sich bei Amazon um einen US-amerikanisches Unternehmen das den Patriot Act unterstellt ist.
-Aus diesen Grund ist die \refsoll{Soll-5-4} viel besser zu Bewerten bei \ref{Al-1} als bei \ref{Al-5}.
-
-\textbf{Bewertet: 7}
-
-
-\subsubsection{Technologie}
-
-\paragraph*{\refsoll{Soll-6-1} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-6-1} \ref{Al-1}/\ref{Al-5})} 
-Die Alternative \ref{Al-1} kann die Integrität der Daten nur auf RAID Ebene Sicherstellen nicht aber auf Objekte. Amazon S3 \ref{Al-5} stellt mittels Hash Prüfsumme die Integrität beim Übermitteln und im Speicher sicher. Aus diesen Grund ist die \refsoll{Soll-5-1} von \ref{Al-1} sehr viel tiefer zu Bewerten als \ref{Al-5}.
-
-\textbf{Bewertet: 1/7}
-
-\paragraph*{\refsoll{Soll-6-2} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-6-2} \ref{Al-1}/\ref{Al-5})} 
-Die Technologie von \ref{Al-1} ist eine Ausgereift viel verwendete Technologie, an der Basis Technologie hat sich in den letzen fünf oder mehr Jahren nichts geändert. Die Technologie von \ref{Al-5} ist dagegen im Verhältnis zur \ref{Al-1} noch eine junge Technologie die trotzdem ihre stark zunehmende Verbreitung noch am Anfang ihrer Potentielle Entwicklung steht. Die Weiterentwicklungs-Möglichkeiten sind bei \ref{Al-5} sehr viel höher zu Gewichten als bei \ref{Al-1}.
-
-\textbf{Bewertet: 1/7}
-
-\paragraph*{\refsoll{Soll-6-3} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-6-3} \ref{Al-1}/\ref{Al-5})} 
-Die Technologie von \ref{Al-1} ist eine Ausgereift viel verwendete Technologie, an der Basis Technologie hat sich in den letzen fünf oder mehr Jahren nichts geändert. Die Technologie von \ref{Al-5} ist dagegen im Verhältnis zur \ref{Al-1} noch eine junge Technologie die trotzdem ihre stark zunehmende Verbreitung noch am Anfang ihrer Potentielle Entwicklung steht. Die Weiterentwicklungs-Möglichkeiten sind bei \ref{Al-5} sehr viel höher zu Gewichten als bei \ref{Al-1}
-
-\textbf{Bewertet: 1/7}
-
-\paragraph*{\refsoll{Soll-6-3} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-6-3} \ref{Al-1}/\ref{Al-5})} 
-Die Verfügbarkeit von Experten welche sich mit \ref{Al-1} auskennen ist sehr viel grosser als bei \ref{Al-5}.  
-
-\textbf{Bewertet: 8}
-
-
-\paragraph*{\refsoll{Soll-6-3} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-6-3} \ref{Al-1}/\ref{Al-5})} 
-Der Verwaltungsaufwand ist durch den Bezug der Speicherkapazität bei Amazon S3 \ref{Al-5} sehr viel geringer als bei Hetzner \ref{Al-1}.  Für die wengien Aufgaben die für die Verwaltung notwendig sind stellt Amazon zudem eine übersichtliches Webinterface zur Verfügung.
-Aus diesen Grund ist der Verwaltungskomfort bei \ref{Al-1} erheblich geringer zu Bewerten als bei \ref{Al-5}.
-
-\textbf{Bewertet: 1/5}
-
-\paragraph*{\refsoll{Soll-6-3} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-6-3} \ref{Al-1}/\ref{Al-5})} 
-Durch das lange Bestehen der Technologie von \ref{Al-1} ist die Technologie als ausgereifter zu Betrachten als bei \ref{Al-5}
-
-\textbf{Bewertet: 3}
-
-
-\subsection{Evaluation Soll Kriteren Szenario-2}
-
-\subsubsection{Kosten}
-
-%Anschaffungskosten
-\paragraph*{\refsoll{Soll-1-1} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-1-1} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-1} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-1-1} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-1} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-1-1} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-1} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-1-1} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-1} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-1-1} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-1-1} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-1-1} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-%Unterhaltskosten
-\paragraph*{\refsoll{Soll-1-2} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-1-2} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-2} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-1-2} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-2} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-1-2} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-2} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-1-2} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-2} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-1-2} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-1-2} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-1-2} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Langlebigkeit
-\paragraph*{\refsoll{Soll-1-3} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-1-3} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-3} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-1-3} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-3} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-1-3} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-3} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-1-3} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-1-3} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-1-3} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-1-3} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-1-3} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\subsubsection{Verfügbarkeit}
-
-%Redundanz
-\paragraph*{\refsoll{Soll-2-1} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-2-1} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-1} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-2-1} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-1} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-2-1} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-1} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-2-1} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-1} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-2-1} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-2-1} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-2-1} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Systemverfügbarkeit
-\paragraph*{\refsoll{Soll-2-2} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-2-2} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-2} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-2-2} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-2} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-2-2} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-2} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-2-2} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-2} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-2-2} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-2-2} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-2-2} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Stanndortübergreifend
-\paragraph*{\refsoll{Soll-2-3} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-2-3} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-3} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-2-3} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-3} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-2-3} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-3} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-2-3} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-2-3} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-2-3} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-2-3} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-2-3} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\subsubsection{Datenzugriff}
-
-%Skalierbarkeit
-\paragraph*{\refsoll{Soll-3-1} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-3-1} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-1} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-3-1} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-1} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-3-1} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-1} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-3-1} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-1} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-3-1} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-3-1} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-3-1} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Performance
-\paragraph*{\refsoll{Soll-3-2} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-3-2} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-2} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-3-2} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-2} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-3-2} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-2} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-3-2} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-2} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-3-2} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-3-2} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-3-2} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%POSIX
-\paragraph*{\refsoll{Soll-3-3} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-3-3} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-3} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-3-3} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-3} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-3-3} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-3} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-3-3} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-3} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-3-3} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-3-3} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-3-3} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-%Simulatner Lese Zugriff auf Objekte
-\paragraph*{\refsoll{Soll-3-4} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-3-4} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-4} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-3-4} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-4} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-3-4} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-4} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-3-4} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-4} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-3-4} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-3-4} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-3-4} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Simulatner Schreib Zugriff auf Objekte
-\paragraph*{\refsoll{Soll-3-5} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-3-5} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-5} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-3-5} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-5} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-3-5} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-5} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-3-5} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-3-5} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-3-5} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-3-5} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-3-5} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\subsubsection{Speicherkapazität}
-
-%Skalierbarkeit
-\paragraph*{\refsoll{Soll-4-1} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-5-1} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-1} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-5-1} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-1} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-5-1} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-1} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-5-1} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-1} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-5-1} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-4-1} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-5-1} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Max Anzahl Objekte
-\paragraph*{\refsoll{Soll-4-2} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-5-2} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-2} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-5-2} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-2} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-5-2} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-2} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-5-2} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-2} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-5-2} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-4-2} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-5-2} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Max Objekt Grösse
-\paragraph*{\refsoll{Soll-4-3} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-5-3} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-3} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-5-3} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-3} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-5-3} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-3} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-5-3} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-4-3} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-5-3} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-4-3} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-5-3} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\subsubsection{Datenschutz}
-
-%Datenintegrität
-\paragraph*{\refsoll{Soll-5-1} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-5-1} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-1} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-5-1} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-1} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-5-1} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-1} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-5-1} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-1} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-5-1} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-5-1} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-5-1} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Selbstheilung
-\paragraph*{\refsoll{Soll-5-2} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-5-2} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-2} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-5-2} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-2} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-5-2} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-2} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-5-2} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-2} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-5-2} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-5-2} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-5-2} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Datensicherung
-\paragraph*{\refsoll{Soll-5-3} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-5-3} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-3} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-5-3} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-3} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-5-3} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-3} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-5-3} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-3} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-5-3} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-5-3} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-5-3} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-%Datensicherheit
-\paragraph*{\refsoll{Soll-5-4} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-5-4} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-4} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-5-4} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-4} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-5-4} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-4} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-5-4} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-5-4} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-5-4} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-5-4} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-5-4} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\subsubsection{Technologie}
-
-%Martverbreitung
-\paragraph*{\refsoll{Soll-6-1} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-6-1} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-1} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-6-1} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-1} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-6-1} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-1} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-6-1} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-1} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-6-1} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-6-1} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-6-1} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Weiterentwicklung
-\paragraph*{\refsoll{Soll-6-2} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-6-2} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-2} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-6-2} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-2} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-6-2} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-2} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-6-2} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-2} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-6-2} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-6-2} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-6-2} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Verfügbarkeit von Experten
-\paragraph*{\refsoll{Soll-6-3} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-6-3} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-3} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-6-3} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-3} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-6-3} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-3} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-6-3} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-3} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-6-3} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-6-3} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-6-3} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-%Verwaltungskomfort
-\paragraph*{\refsoll{Soll-6-4} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-6-4} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-4} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-6-4} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-4} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-6-4} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-4} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-6-4} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-4} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-6-4} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-6-4} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-6-4} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-%Ausgereift
-\paragraph*{\refsoll{Soll-6-5} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-6-5} \ref{Al-2}/\ref{Al-3})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-5} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-6-5} \ref{Al-2}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-5} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-6-5} \ref{Al-2}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-5} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-6-5} \ref{Al-3}/\ref{Al-4})}
-
-\textbf{Bewertet: ???}
-
-\paragraph*{\refsoll{Soll-6-5} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-6-5} \ref{Al-3}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}
-
-
-\paragraph*{\refsoll{Soll-6-5} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-6-5} \ref{Al-4}/\ref{Al-5})}
-
-\textbf{Bewertet: ???}

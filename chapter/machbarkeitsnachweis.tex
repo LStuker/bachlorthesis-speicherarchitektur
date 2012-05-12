@@ -1,28 +1,67 @@
+%!TEX root=../documentation-bachlorthesis-speicherarchitektur-lstucker.tex
 \cleardoublepage
 \chapter{Machbarkeitsnachweis}
+Mit der Machbarkeitsnachweis soll mit einen Prototyp gezeigt werden, dass die Empfohlene Variante umgesetzt werden kann. Als Prototyp wurde eine OpenStack Object Storage Cluster aufgesetzt und mit der Programmiersprache Ruby Objekte gespeichert und zugegriffen.
 
-Der selbe Hosting Provider des bestehenden Servers bietet eine Produkt an welches mit 15 SATA Festplatten mit einer Speicherkapazität von je 3 Terabyte an. Die Maximale Raid-5 Speicherkapazität \ref{eqn:maxRaid5-15disk} ist aufgrund der Anzahl Disk und der Speicherkapazität nicht die Ideale Konfiguration, da die Gefahr eines Doppelten Disk Ausfall durch die geringere MTTF \ref{eqn:MTBF15Disk}, welche durch die Zunahme der Anzahl Festplatten sinkt \ref{eqn:MTBF1Disk} und der höheren Rebuild Zeit steigt. Speichersystem Hersteller wie NetApp setze bei 
-dieser Konfiguration auf Raid-6 welche doppelte Parität bietet und somit zwei Festplattenausfälle kompensieren können.
+\section{Architetkur}
 
-Festplattenkapazität in Tebibyte:
-\begin{equation}
-3   \, \mathrm{TB} =  3 * \frac{1000^4}{1024^4} = 2.7285  \, \mathrm{TiB}
-\label{eqn:3TerrabyteTebibyte}
-\end{equation}
+\section{Installation Swift Cluster}
 
-Maximale Raid-5 Speicherkapazität:
-\begin{equation}
-(15 -1) * 2.7285  \, \mathrm{TiB} =  38.199 \, \mathrm{TiB}
-\label{eqn:maxRaid5-15disk}
-\end{equation}
+Die Installation ist nach der Empfehlung \url{http://swift.openstack.org/howto_installmultinode.html} und \url{http://docs.openstack.org/trunk/openstack-object-storage/admin/content/ch_installing-openstack-object-storage.html} erfolgt. Die dazu verwendeten Installations Befehle und die erzeugten Konfigurations Dateien sind im Anhang aufgeführt.
 
-MTBF 1 Festplatten (ST33000650SS): 
-\begin{equation}1'200'000  \, \mathrm{h}
-\label{eqn:MTBF1Disk}
-\end{equation}
+Die Verwendete Konfiguration ist für einen Prototyp geeignet für den Produktiven betrieb sind jedoch weitere Optimierungen in der Konfiguration notwendig.
 
-MTBF 15 Festplatten (Raid-5) (ST33000650SS): 
-\begin{equation}
-\frac{1'200'000  \, \mathrm{h}}{15}= 8'000  \, \mathrm{h}
-\label{eqn:MTBF15Disk}
-\end{equation}
+Als Betriebsystem für die den OpenStack Object Storage wurden das Linux Betriebsystem, Ubuntu Server 12.04 LTS von Distributor Canonical verwendet.
+  
+  
+\section{Anwendung mit Ruby API}
+Für den Ruby Zugriff auf das Speichersystem wurde das von Rackspace Quelloffene GEM Paket cloudfiles verwendet.
+
+Die Einzelnen Programmier Befehle wurden mit der Ruby Version 1.9.3 in der Interaktiven Ruby Shell irb ausgeführt und getestet. Sie können aber ohne Probleme in Bestehenden Programm Code oder eigene Klassen implementiert werden,
+ 
+Mit require 'cloudfiles' werden die Methoden von Cloudfiles geladen.
+\begin{lstlisting}[label=requireCloudfiles, language=Bash, caption=Laden ] 
+ 1 .9.3p0 :036 > require 'cloudfiles'
+\end{lstlisting}
+
+Im \reflisting{logon} wird gezeigt wie man sich mit dem Benutzer root der Gruppe system und den Passwort testpass sich über die URL \url{https://172.16.251.80:8080/auth/v1.0} am Speichersystem authentifiziert.
+
+\begin{lstlisting}[label=logon, language=Bash, caption=Anmelden an Speichersystem] 
+ 1 .9.3p0 :036 > cf = CloudFiles::Connection.new(:username => "system:root", :api_key => "testpass", :auth_url => "https://172.16.251.80:8080/auth/v1.0")
+ => #<CloudFiles::Connection:0x007fcfca04c170 @authuser="system:root", @authkey="testpass", @auth_url="https://172.16.251.80:8080/auth/v1.0", @retry_auth=true, @snet=nil, @proxy_host=nil, @proxy_port=nil, @authok=true, @http={}, @storagehost="172.16.251.80", @storagepath="/v1/AUTH_system", @storageport=8080, @storagescheme="https", @authtoken="AUTH_tk4bc3d45cef364606ad521708101ad574"> 
+\end{lstlisting}
+
+Anschliessend wird einen Container 'pictures' erstellt in welche Objekte abgelegt werden können. Im \reflisting{create_container} dargestellt.
+
+\begin{lstlisting}[label=create_container, language=Bash, caption=Server bzw. Speicher den Ringen hinzufügen]
+1.9.3p0 :033 > cf.create_container('pictures')
+ => pictures
+\end{lstlisting}
+
+Mit containers werden alle vorhandenen Containers auf gelistet, siehe \reflisting{list_contaners}
+\begin{lstlisting}[label=list_contaners, language=Bash, caption=Auflisten der Vorhandenen Containers]
+1.9.3p0 :035 > cf.containers
+ => ["pictures"] 
+\end{lstlisting}
+
+Im \reflisting{access_container} wird auf den Container 'pictures zugegriffen.
+\begin{lstlisting}[label=access_container, language=Bash, caption=Zugreifen auf den Container]
+1.9.3p0 :033 > container = cf.container('pictures')
+ => pictures 
+ \end{lstlisting}
+
+Im \reflisting{create_object} wird eine Objekt Namens ursfischer\_web.png erstellt und mit write  die Datei ins Objekt geschrieben.
+
+\begin{lstlisting}[label=create_object, language=Bash, caption=Erstellt ein Object und schreibt den Inhalt ins Objekt] 
+  1.9.3p0 :032 > object = container.create_object 'ursfischer_web.png', false
+ => ursfischer_web.png
+  1.9.3p0 :030 > object.write   open('ursfischer_web.png')
+ => true  
+\end{lstlisting}
+
+Die Vorhandenen Objekte im Containers werden wie im \reflisting{create_object} dargestellt aufgelistet
+
+\begin{lstlisting}[label=list_objects, language=Bash, caption=Objekte des Containers auflisten]
+ 1.9.3p0 :031 > container.objects
+ => ["ursfischer_web.png"] 
+\end{lstlisting}  

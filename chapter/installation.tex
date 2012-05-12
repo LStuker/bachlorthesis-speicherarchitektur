@@ -1,0 +1,271 @@
+\cleardoublepage
+\chapter{Installation OpenStack Object Storage}
+\section{Generelle Konfiguration}
+
+\begin{lstlisting}[label=paketegenerell, language=Bash, caption=Installation generelle Host Pakete ]
+sudo apt-get install swift openssh-server  rsync memcached python-netifaces python-xattr python-memcache 
+\end{lstlisting}
+
+\begin{lstlisting}[label=swiftconfdir, language=Bash, caption=Erstell /etc/swift Ordner und setzt Berechtigung ]
+sudo mkdir -p /etc/swift
+sudo chown -R swift:swift /etc/swift/
+\end{lstlisting}
+
+
+\begin{lstlisting}[label=swift.conf language=Bash, caption=Swift in /etc/swift/swift.conf konfigurieren]
+[swift-hash]
+# random unique string that can never change (DO NOT LOSE)
+swift_hash_path_suffix = KmwBretYgombitrL
+\end{lstlisting}
+
+\section{Storage Nodes Konfiguration}
+
+\begin{lstlisting}[label=paketenode, language=Bash, caption=Installation Data-Node Pakete ]
+sudo apt-get install swift-account swift-container swift-object xfsprogs
+\end{lstlisting}
+
+begin{lstlisting}[label=partition, language=Bash, caption=Partition auf zweiter Festplatte erstellen ]
+sudo fdisk /dev/sdb 
+Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
+Building a new DOS disklabel with disk identifier 0xd5f71779.
+Changes will remain in memory only, until you decide to write them.
+After that, of course, the previous content won't be recoverable.
+
+Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)
+
+Command (m for help): m
+Command action
+   a   toggle a bootable flag
+   b   edit bsd disklabel
+   c   toggle the dos compatibility flag
+   d   delete a partition
+   l   list known partition types
+   m   print this menu
+   n   add a new partition
+   o   create a new empty DOS partition table
+   p   print the partition table
+   q   quit without saving changes
+   s   create a new empty Sun disklabel
+   t   change a partition's system id
+   u   change display/entry units
+   v   verify the partition table
+   w   write table to disk and exit
+   x   extra functionality (experts only)
+
+Command (m for help): n
+Partition type:
+   p   primary (0 primary, 0 extended, 4 free)
+   e   extended
+Select (default p): p
+Partition number (1-4, default 1): 1
+First sector (2048-41943039, default 2048): 
+Using default value 2048
+Last sector, +sectors or +size{K,M,G} (2048-41943039, default 41943039): 
+Using default value 41943039
+
+Command (m for help): w
+The partition table has been altered!
+
+Calling ioctl() to re-read partition table.
+Syncing disks.
+\end{lstlisting}
+
+\begin{lstlisting}[label=xfs, language=Bash, caption=XFS Dateisystem in der Partition anlegen ]
+sudo mkfs.xfs -i size=1024 /dev/sdb1
+meta-data=/dev/sdb1              isize=1024   agcount=4, agsize=1310656 blks
+         =                       sectsz=512   attr=2, projid32bit=0
+data     =                       bsize=4096   blocks=5242624, imaxpct=25
+         =                       sunit=0      swidth=0 blks
+naming   =version 2              bsize=4096   ascii-ci=0
+log      =internal log           bsize=4096   blocks=2560, version=2
+         =                       sectsz=512   sunit=0 blks, lazy-count=1
+realtime =none                   extsz=4096   blocks=0, rtextents=0
+\end{lstlisting}
+
+\begin{lstlisting}[label=mountconfig, language=Bash, caption=Mount Konfiguration anlegen ]
+sudo echo "/dev/sdb1 /srv/node/sdb1 xfs noatime,nodiratime,nobarrier,logbufs=8 0 0" >> /etc/fstab
+\end{lstlisting}
+
+\begin{lstlisting}[label=MountPointDisk, language=Bash, caption=Mount Anlegen, Disk Mounten und Berechtigung setzen]
+sudo mkdir -p /srv/node/sdb1
+sudo mount /srv/node/sdb1
+sudo chown -R swift:swift /srv/node
+\end{lstlisting}
+
+\begin{lstlisting}[label=rsyncConf, language=Bash, caption=Rsyncd in /etc/rsyncd.conf konfigurieren]
+uid = swift
+gid = swift
+log file = /var/log/rsyncd.log
+pid file = /var/run/rsyncd.pid
+address = 172.16.251.90 
+
+[account]
+max connections = 2
+path = /srv/node/
+read only = false
+lock file = /var/lock/account.lock
+
+[container]
+max connections = 2
+path = /srv/node/
+read only = false
+lock file = /var/lock/container.lock
+
+[object]
+max connections = 2
+path = /srv/node/
+read only = false
+lock file = /var/lock/object.lock
+\end{lstlisting}
+
+\begin{lstlisting}[label=configRsyncDefault, language=Bash, caption=Rsync Aktivieren in /etc/default/rsync]
+RSYNC_ENABLE = true
+\end{lstlisting}
+
+\begin{lstlisting}[label=startRsynx, language=Bash, caption=Rsync Starten]
+sudo service rsync start
+\end{lstlisting}
+
+\begin{lstlisting}[label=account-server.conf, language=Bash, caption=Account Server in /etc/swift/account-server.conf konfigurieren]
+[DEFAULT]
+bind_ip = 172.16.251.90  # IP Addresse des Node Servers
+workers = 2
+
+[pipeline:main]
+pipeline = account-server
+
+[app:account-server]
+use = egg:swift#account
+
+[account-replicator]
+
+[account-auditor]
+
+[account-reaper]
+\end{lstlisting}
+
+
+\begin{lstlisting}[label=container-server.conf, language=Bash, caption=Container Server in /etc/swift/container-server.conf konfigurieren]
+[DEFAULT]
+bind_ip = 172.16.251.90 # IP Addresse des Node Servers
+workers = 2
+
+[pipeline:main]
+pipeline = container-server
+
+[app:container-server]
+use = egg:swift#container
+
+[container-replicator]
+
+[container-updater]
+
+[container-auditor]
+\end{lstlisting}
+
+
+\begin{lstlisting}[label=object-server.conf, language=Bash, caption=Object Server in /etc/swift/object-server.conf konfigurieren]
+[DEFAULT]
+bind_ip = 172.16.251.90 # IP Addresse des Node Servers
+workers = 2
+
+[pipeline:main]
+pipeline = object-server
+
+[app:object-server]
+use = egg:swift#object
+
+[object-replicator]
+
+[object-updater]
+
+[object-auditor]
+\end{lstlisting}
+
+\section{Proxy Node Konfiguration}
+\begin{lstlisting}[label=paketeProxy, language=Bash, caption=Installation Proxy-Node Pakete ]
+sudo apt-get install swift-proxy memcached
+\end{lstlisting}
+
+\begin{lstlisting}[label=df, language=Bash, caption=X.509 Zertifikats in /etc/swift erstellen ]
+sudo openssl req -new -x509 -nodes -out cert.crt -keyout cert.key
+Generating a 1024 bit RSA private key
+......++++++
+.......................................++++++
+writing new private key to 'cert.key'
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:CH
+State or Province Name (full name) [Some-State]:Zuerich
+Locality Name (eg, city) []:Wallisellen
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:Stuker.biz
+Organizational Unit Name (eg, section) []:Cloud Storage
+Common Name (e.g. server FQDN or YOUR name) []:swift-c1.swift.stuker.biz
+Email Address []:it@stuker.biz
+\end{lstlisting}
+
+\begin{lstlisting}[label=memcachedconf, language=Bash, caption=MemCached in /etc/memcached.conf konfigurieren ]
+-l 127.0.0.1
+in ändern
+-l 172.16.251.80
+\end{lstlisting}
+
+\begin{lstlisting}[label=startMemcached, language=Bash, caption=Memcached starten]
+sudo service memcached restart
+\end{lstlisting}
+
+\begin{lstlisting}[label=ring, language=Bash, caption=Account Container und Object Ring erstellen]
+sudo swift-ring-builder account.builder create 18 3 1
+sudo swift-ring-builder container.builder create 18 3 1
+sudo swift-ring-builder object.builder create 18 3 1
+\end{lstlisting}
+
+\begin{lstlisting}[label=ring, language=Bash, caption=Server bzw. Speicher den Ringen hinzufügen]
+sudo swift-ring-builder account.builder add z1-172.16.251.90:6002/sdb1 100
+ sudo swift-ring-builder account.builder add z2-172.16.251.91:6002/sdb1 100
+sudo swift-ring-builder account.builder add z3-172.16.251.92:6002/sdb1 100
+sudo swift-ring-builder account.builder add z4-172.16.251.93:6002/sdb1 100
+sudo swift-ring-builder account.builder add z5-172.16.251.94:6002/sdb1 100
+sudo swift-ring-builder container.builder add z1-172.16.251.90:6001/sdb1 100
+sudo swift-ring-builder container.builder add z2-172.16.251.91:6001/sdb1 100
+sudo swift-ring-builder container.builder add z3-172.16.251.92:6001/sdb1 100
+sudo swift-ring-builder container.builder add z4-172.16.251.93:6001/sdb1 100
+sudo swift-ring-builder container.builder add z5-172.16.251.94:6001/sdb1 100
+sudo swift-ring-builder object.builder add z1-172.16.251.90:6000/sdb1 100
+sudo swift-ring-builder object.builder add z2-172.16.251.91:6000/sdb1 100
+sudo swift-ring-builder object.builder add z3-172.16.251.92:6000/sdb1 100
+sudo swift-ring-builder object.builder add z4-172.16.251.93:6000/sdb1 100
+sudo swift-ring-builder object.builder add z5-172.16.251.94:6000/sdb1 100
+sudo swift-ring-builder account.builder
+sudo swift-ring-builder container.builder
+sudo swift-ring-builder object.builder
+\end{lstlisting}
+
+\begin{lstlisting}[label=ring, language=Bash, caption=Ring rebalance]
+sudo swift-ring-builder account.builder rebalance
+sudo swift-ring-builder container.builder rebalance
+sudo swift-ring-builder object.builder rebalance
+\end{lstlisting}
+
+\begin{lstlisting}[label=ring, language=Bash, caption=Dateien account.ring.gz, container.ring.gz, und object.ring.gz an alle Nodes verteilen und Berechtigung setzen]
+  scp *.gz data01-c1-d1:/etc/swift
+  scp *.gz data02-c1-d1:/etc/swift  
+  scp *.gz data03-c1-d1:/etc/swift
+  scp *.gz data04-c1-d2:/etc/swift
+  scp *.gz data05-c1-d2:/etc/swift
+  sudo chown -R swift:swift /etc/swift
+\end{lstlisting}
+
+\begin{lstlisting}[label=ring, language=Bash, caption=Proxy Dienst starten]
+swift-init proxy start
+\end{lstlisting}
+
+\begin{lstlisting}[label=ring, language=Bash, caption=Auf allen Nodes die Dienste starten]
+swift-init all start
+\end{lstlisting}
