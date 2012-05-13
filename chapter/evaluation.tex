@@ -593,6 +593,18 @@ Der Verwaltungskomfort ist deshalb absolut geringer zu Gewichten als die Ausgere
 \subsection{\ref{Al-1}: Hetzner Server}
 Hetzner ist einer der grössten Hosting Anbieter in Deutschland und bietet seit 1997 für Unternehmen und Privat Personen Hosting-Produkte an. In den Vergangenen Jahren hat Hetzer diverse Computer-Magazin Auszeichnungen bekommen. Hetzner betreibt in Deutschland mehre Rechenzentren die mehrfach Redundant an das Internet Angeschlossen sind.
 
+Die \refabb{abb:Hetzner-Infrastruktur} zeigt den gemieteten Hetzner Server mit den internen RAID Disk Speicher. In \refabb{abb:HetznerRaidSpeicher} wird die interne Architektur des RAID Speichers mit den Verschiedenen Speicherschichten dargestellt.
+
+\begin{center}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/Hetzner.png}
+\mycaption{figure}{\label{abb:Hetzner-Infrastruktur} Dezidierter Server System und Netzwerk Architektur }
+\end{center}
+
+\begin{center}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/HetznerRAID.png}
+\mycaption{figure}{\label{abb:HetznerRaidSpeicher} Interne Speicherarchitektur }
+\end{center}
+
 \subsubsection{Speicherkapazität}
 Der Grösste Dezidierter Server welche Hetzner in seinen Produkte Katalog führt, ist der Root Server XS 29. Der XS 29 ist mit 15 mal 3 Terabyte SATA Festplatten ausgerüstet. Mit dem zusätzlich eingebauten Hardware RAID Kontroller lassen, sich die 15 Festplatten zu einen RAID zusammen fügen.
 Als CPU hat der Server einen Intel Xeon E3-1245 Quad-Core eingebaut und Verfügt über 16 Gigabyte Hauptspeicher. 
@@ -680,14 +692,6 @@ Kein Produkt erhältlich welche die Anforderungen der Speicherkapazität von Sze
 
 Wie in der Markt Analyse erwähnt ist NetApp der Führende Anbieter in Mittlerer (engl. midrange) und Oberen (Highend) Bereich von NAS und Speicherlösungen. Für beide Szenarien wurde das Modell FAS2240-4 gewählt. 
 
-Die Firma NetApp beschäftigt in der Schweiz an ihren drei Standorten, Wallisellen, Lausanne und Bern ca. 80 Mitarbeiter. Zudem verfügt NetApp Schweiz über ein gut ausgebautes Partner Netzwerk, mit welche Sie die ganze Schweiz gut verankert sind. Mit FastLane und QSkills sind zwei Schulungspartner im Raum Zürich verfügbar, welche offizielle Kurse und Zertifizierenden für NetApp Produkte anbieten. 
-
-Neben der Allgemeinen Garantie Gewährleistungen, bietet NetApp weiteren kostenpflichtige Support Leistungen an. So steht mit dem SupportEdge Premium, den Remote Support mit einer Reaktionszeit von minimal 30 Minuten rund um die Uhr zur Verfügung, oder den die Installation von Ersatzteilen mit einer Reaktionszeit von minimal 2 Stunden rund um die Uhr zur Verfügung. 
-
-Für den Support und Wartungen stehen mehre Produkte bereit von Verlängerung der Hardware-Garantie, Auto-Support mit oder ohne Austausch der Hardware durch NetApp.
-
-Für die Verwaltung der NetApp stehen, neben eines Kommandzeilen, Web-Interface weitere teilweise Kostenpflichtige Lösungen von NetApp zu Verfügung. 
-
 \subsubsection{Verfügbarkeit}
 Die Netapp hat mehre Mechanismen für die Sicherstellung der Daten Verfügbarkeit. So werden die Festplatten mittels RAID-DB System zusammen gefasst. RAID-DP ist eines auf Basis von RAID-4 von NetApp weiter entwickeltes RAID. Bei RAID-DP wird jedoch im Unterschied zu RAID-4 ein weiter Paritäts-Festplatte eingesetzt. Wie im \refabb{abb:RAID-DP} ersichtlich, gibt es ein Horizontale Parität und eine Diagonale Parität, die diagonale Parität ist durch die Farben dargestellt und auf der Festplatte DP gespeichert, die horizontale ist auf der Festplatte P gespeichert, die Festplatten mit D sind normale RAID Daten Festplatten. Die Doppelte Parität hat den Vorteil, dass die Verfügbarkeit des RAID erhöht wird. So kann bei einen RAID-DP gleichzeitig zwei Festplatten im RAID zur gleichen Zeit ausfallen, ohne das diese zu einen Datenverlust führt. Im Vergleich dazu kann RAID-4 oder RAID-5 nur den Ausfall einer Festplatte kompensieren. \cite{White2010}
 
@@ -722,7 +726,7 @@ Die Anzahl möglicher Objekte die in einen NetApp Volumen gespeichert werden kö
 
 Die maximale Anzahl an möglicher Objekte eines GFS Dateisystem ist variable. Inodes werden dynamisch alloziert.
 
-\subsubsection*{Datenschutz}
+\subsubsection{Datenschutz}
 NetApp Speichert die Daten auf die Disk in 4 Kilo Byte Blocks. Zu jeden 4 Kilo Byte Block berechnet NetApp ein Prüfsumme und speichert diese in die Block Metadaten. Wenn der Block zu einen späteren Zeitpunkt wieder gelesen ist, berechnet die NetApp die Prüfsumme erneut und vergleicht diese mit der Gespeicherten Prüfsumme. Wenn die Prüfsumme nicht übereinstimmt, wird der Block mittels den Paritäts-Daten neu geschrieben, erneut gelesen und geprüft. Um die Integrität von Daten zu gewährleisten auf welche über ein langen Zeitraum nicht zugegriffen wird, wie diese zum Beispiel bei Archive Daten der Fall ist, hat NetApp ein konfigurierbare RAID durchkämmen (engl. RAID scrub) Funktion. Die Funktion geht durch alle Daten durch, wodurch die Prüfsumme von allen gespeicherten Daten geprüft wird. Die Funktion kann Zeitgesteuert oder wenn das System im Leerlauf befindet. \cite{Sundaram2006}
 
 Zu beachten ist, dass die Prüfsumme auf dem Block nur auf der Speicherebene Wirkung hat. Fehler die in einer höheren Ebene stattfindet, wie zum Beispiel beim Einsatz von iSCSI zusammen mit einen Dateisystem, könnte bereits einen Fehler im Dateisystem durch einen Software Fehler oder Memory Fehler statt finden. 
@@ -735,6 +739,15 @@ Beim Snapshots Sicherungsverfahren werden zeitbezogene Sicherung des Dateisystem
 
 Bei bedarf kann die Kommunikation zwischen Speichersystem und Applikation Server mit IPSec abhörsicher verschlüsselt werden. Zusätzlich bietet NetApp ab Version 8 die Verschlüsselung der ganzen Disk an.
 %Sicherheit NFS IPSEC, intern
+
+\subsubsection{Technologie}
+Die Firma NetApp beschäftigt in der Schweiz an ihren drei Standorten, Wallisellen, Lausanne und Bern ca. 80 Mitarbeiter. Zudem verfügt NetApp Schweiz über ein gut ausgebautes Partner Netzwerk, mit welche Sie die ganze Schweiz gut verankert sind. Mit FastLane und QSkills sind zwei Schulungspartner im Raum Zürich verfügbar, welche offizielle Kurse und Zertifizierenden für NetApp Produkte anbieten. 
+
+Neben der Allgemeinen Garantie Gewährleistungen, bietet NetApp weiteren kostenpflichtige Support Leistungen an. So steht mit dem SupportEdge Premium, den Remote Support mit einer Reaktionszeit von minimal 30 Minuten rund um die Uhr zur Verfügung, oder den die Installation von Ersatzteilen mit einer Reaktionszeit von minimal 2 Stunden rund um die Uhr zur Verfügung. 
+
+Für den Support und Wartungen stehen mehre Produkte bereit von Verlängerung der Hardware-Garantie, Auto-Support mit oder ohne Austausch der Hardware durch NetApp.
+
+Für die Verwaltung der NetApp stehen, neben eines Kommandzeilen, Web-Interface weitere teilweise Kostenpflichtige Lösungen von NetApp zu Verfügung. 
 
 \subsubsection{Kosten}
 
@@ -820,13 +833,15 @@ Personal & CHF 3'750.00 & 1 & CHF 3'750.00 \\ \hline \hline
 \subsection{\ref{Al-4}: OpenStack Objekt Storage}
 OpenStack Object Storage ist ein Quelloffene frei verfügbare Verteilter Speicherlösung. OpenStack Object Storage selbst ist kein Dateisystem sondern eher ein Speicher Cluster, welche primär für die Speicherung von Virtual Maschine Images, Bilder, E-Mail und Sicherungskopien vorgesehen ist. Für einen OpenStack Cluster kommen vergleichbar mit dem Google Filesystem, kosten günstige Konventionelle Computer Hardware zum Einsatz. 
 
+Im \refabb{abb:OpenStack-Infrastruktur} Zeigt die System und Netzwerk Architektur der OpenStack Object Storage Infrastruktur. Die Infrastruktur besteht aus zwei Proxy und Authentifizierungs Server welche mit den 5 Daten-Node in welcher jeder eine Eigene Zone Repräsentiert über eine Privates geswitches Netzwerk Verbunden sind. Die Applikations-Server Farm oder Web-Farm greift über das Offentliche Netzwerk über die Proxy Server auf den Speicher zu. Die Infrastruktur ist jeweil für Szenario-2 über zwei Standort verteilt, hier Site A und Site B.
+
 \begin{center}
 \includegraphics[width=\linewidth, keepaspectratio = true]{media/OpenStack.png}
 \mycaption{figure}{\label{abb:OpenStack-Infrastruktur} OpenStack Infrastrutkur}
 \end{center}
 
 
-\paragraph*{Verfügbarkeit}
+\subsubsection{Verfügbarkeit}
 OpenStack Object Storage wurde so konzipiert das einen Ausfall einer Hardware Komponente, der weiter Betrieb weiter aufrecht erhalten werden kann ohne dabei einen Datenverlust oder die Verfügbarkeit des System zu gefährden. Die Daten bzw. Objekte werden Redundant auf mehren Zonen gespeichert. Zonen sind Gruppierungen von Servern. Die Anzahl redundanten Replikate für ein Objekt kann konfiguriert werden, gewöhnlich werden drei Kopien verwendet.
 
 Für die Architekt wird von Joe Arnolds CEO bei SwiftStack bei dreifacher Redundanz, die Implementierung von 5 Zone empfohlen. OpenStack Object Storage, speichert die Redundante Objekte jeweils in einer separaten Zonen. Eine Zone kann bei kleinen Implementationen auch nur aus Gruppen von Festplatten bestehen, also innerhalb eines einzigen Server existieren, es wird aber empfohlen eine Zone auf Hierarchie von Server-Gruppen zu implementieren. Das bedeutet jede Redundante Kopie auf einen eigenen Server gespeichert. \cite{Arnold} 
@@ -835,12 +850,12 @@ Zusätzlich zu den Speicherserver benötigt es noch zwei oder mehrere Proxy Serv
 
 Möchte man den Speicher Standort übergreifend betreiben, ist es erforderlich, dass pro Standort nicht mehr als $(Redundanz -1)$ Zonen betrieben werden, da ansonsten die Gefahr besteht das alle Replikate am gleichen Standort gespeichert werden.
 
-\paragraph*{Speicherkapazität}
+\subsubsection{Speicherkapazität}
 Der OpenStack Object Storage Cluster lässt sich im laufenden Betreib ohne Unterbruch, vergrössern. In der Regeln können auch Software Update und Patches ohne Unterbruch des Clusters eingespielt werden, wenn darauf geachtet wird nie mehr als eine Zone gleichzeitig zu aktualisieren.
 
 Grundsätzlich ist Anzahl an Speicherbaren Objekten nicht begrenzt. Der Container Server von OpenStack Object Storage, welcher primärer Aufgabe ist die Auflistung der gespeicherten Objekten in einen Container zu handhaben, speichert die Informationen welche Objekte im Container befinden pro Container in ein SQLite Datenbank. Die Performance der Datenbank, welche mit der Anzahl Einträge abnimmt, kann sich zum Limitierenden Faktor entwickeln wie viele Objekte in einen Container gespeichert werden können. Der Performance Einbruch kann, je nach Leistung der Hardware und die generelle Last auf dem Cluster, bei einer Million Objekte pro Container eintreten. Es können jedoch pro Account mehre Container erstellt werden, wodurch sich das Problem mit der Limitierung durch Datenbank entschärfen lässt. Zu beachten ist hier jedoch, das pro Account ebenfalls eine SQLite Datenbank geführt wird mit allen Container und hier die selben Limitierung zum tragen kommt. \cite{OpenStack2012}\cite{A2011}
 
-\paragraph*{Datenzugriff}
+\subsubsection{Datenzugriff}
 Der Zugriff auf die gespeicherten Objekten erfolgt vergleichbar wie bei Amazon S3 über ein API. Das API verwendet für den Zugriff das Standard HTTP Request. Mehre Speicherlösung Hersteller haben angekündigt, das Swift API ebenfalls für den Zugriff auf Ihren Speicher unterstützen zu wollen. Glusterfs ebenfalls eine Verteile Speicherlösung, bietet in Ihrer Entwickler Version bereits die Unterstützung für Swift an. Applikationen welche, das Swift API unterstützen können Ihren Speicherlösung zukünftig einfacher austauschen ohne dabei die Applikation anpassen zu müssen. Neben den Zugriff mit dem Swift API, bietet OpenStack eine Amazon S3 kompatibles API an. Der Zugriff über POSIX IO auf den Speicher ist nicht möglich.
 
 Der Zugriff auf den Speicher erfolgt über einen Proxy welche, den Speicherort des Objektes prüft und die Anfrage weiterleitet. Pro OpenStack Object Storage Cluster können mehre Proxy eingesetzt werden. Mit Hilfe eines Load Balancers (Last Verteiler) können die Anfragen über die vorhanden Proxy verteilt werden.
@@ -848,7 +863,7 @@ Der Zugriff auf den Speicher erfolgt über einen Proxy welche, den Speicherort d
 Die Maximale Upload Grösse beträgt 5 GB, die Download Grösse selber ist jedoch unbeschränkt. Wenn ein Objekt welches grösser als 5 GB hochgeladen wird, wird das Objekt in Teilen hochgeladen und gespeichert, die Abfrage auf das Objekte erfolgt jedoch wie bei einen ganzen Objekt, es müssen also keine Teile durch das API Adressiert werden. \cite{OpenStack2012a}
 
 
-\paragraph*{Datenschutz}
+\subsubsection{Datenschutz}
 OpenStack Object Storage stellt die Datenintegrität beim Speichern von Objekten in den Speicher und beim auslesen der Daten sicher. Somit ist gewährleistet, dass die Daten im Original gespeichert werden und bei der Speicherung kein Datenverlust entsteht. Die Selbstheilung von korrupten Objekten, stellt OpenStack Objekt Storage mit dem Auditors Dienst sicher. Der Auditors Dienst läuft auf jeden Server und prüft dort die Integrität von Objekten, wenn ein korruptes Objekt festgestellt wird, wird die Datei unter Quarantäne gestellt und durch ein korrektes reblikations Objekt ersetzt.
 Um die Last die durch den Auditors möglichst gering zu halten, kann die Anzahl Objekte oder die Anzahl Bits die pro Sekunde geprüft werden konfiguriert werden. \cite{OpenStack2012}
 
@@ -857,7 +872,7 @@ OpenStack Objekt Storage bietet neben der Redundanz der Objekte keine Möglichke
 
 Die Sicherheit der Daten wird mit sogenannten Accounts Sichergestellt, dass heist das ein Account nur auf seine gespeicherten Objekten zugreifen kann. Die Daten werden auf dem OpenStack Cluster Unverschlüsselt in Binären form gespeichert. Durch die Verteilung der Daten müsste jedoch eine Angreifer Zugriff auf alle Cluster Node erlangen um an alle Daten eines Account zu gelangen.
 
-\paragraph*{Technologie}
+\subsubsection{Technologie}
 OpenStack Objekt Storage wurde von der Firma RackSpace unter dem Code Name Swift entwickelt. Zusammen mit National Aeronautics and Space Administration (kurz. NASA) hat RackSpace die Softwareprojekt-Gemeinschaft OpenStack gegründet und Swift zusammen mit den Cloud Lösungen Nova für die Verwaltung von Virutellen Maschinen und Glace für die Verwaltung von Image als Quelloffene Software veröffentlicht. Die OpenStack Gemeinschaft ist in Vergleich zu anderen Quelloffenen Gemeinschaften noch eine relative jung Gemeinschaft, es gelangt Ihr dennoch neben den beiden Gründer Unternehmen, weiter bedeutende Unternehmen aus der Informatik Branche, wie Hewlett Packard, Dell, Citrix, Intel, AMD, NetApp und weitere zu gewinnen. Eine vollständige Liste aller Unterstützende Unternehmen ist unter \url{http://openstack.org/community/companies/} zu finden. Die Aktivität auf der Projekt Seite von OpenStack Object Storage, lässt erkennen, dass die Entwicklung aktive vorangetrieben wird und viele Beiträge zur neuen Funktionen oder Verbesserungen von Anwender und Entwickler bei gesteuert werden. \cite{Ohloh2012}
 
 Die Internet-Recherche auf OpenStack spezialisierte Firmen mit Standort Schweiz ergaben keine Ergebnisse. Einige
@@ -962,7 +977,7 @@ Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
 
 
 
-\subsubsection{Kosten Szenario-2}
+\paragraph*{Kosten Szenario-2}
 
 Für die dreifache Redundanz sind für die aus der Soll-Analyse bestimmten 306 Tebibyte gemäss \refeqlb{eqn:SpeicherkapazitätS2} 918 Tebibyte an Speicherkapazität notwendig.
 
@@ -1044,7 +1059,12 @@ Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
 \subsection{\ref{Al-5}: Amazon S3}
 Amazon zählt zu den Grössten, wenn nicht der grösste Online Speicheranbieter weltweit. Genaue Anzahlen über die Anzahl Kunden und Speicherkapazität veröffentlich Amazon nicht. Seit 2006 bietet Amazon Ihren Kunden unter den Produktname S3, einen Online Speicher an. Die genaueren Technischen Eigenschaften und Architektur des Online Speicher ist bis anhin von Amazon nicht veröffentlicht worden. Nach eigenen Angaben von Amazon basiert die Dienstleistung auf gewöhnlichen Computer Hardware.
 
+Im \refabb{abb:AmazonS3-Infrastruktur} ist die Netzwerk und System Architektur dargestellt. Es zeigt wie die Applikations-Server Farm Bildobjekte über das Internet auf dem Amazon S3 Speicher ablegt und darauf zugreift. Zudem zeigt die Abbildung wie eine Client Anfrage auf eine Bildobjekt an die Applikations-Server Farm, den direkten URL Pfad zum Bildobjekt auf den Amazon S3 Speicher verweist, somit kann die Auslieferung der Bilddaten direkt über Amazon S3 erfolgen, was die Bandbreite der Applikations-Server Farm entlastet. 
 
+\begin{center}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/Amazon_S3.png}
+\mycaption{figure}{\label{abb:AmazonS3-Infrastruktur} Amazon S3 Netz und System Architektur}
+\end{center}
 
 
 
@@ -1052,12 +1072,12 @@ Amazon zählt zu den Grössten, wenn nicht der grösste Online Speicheranbieter 
 Bei Online Speicher wie Amazon S3, kann der Kunde gleich nach Anmeldung an den Dienst, die Speicherressourcen verwenden. Es fallen also keine Installation von für
 die Speicherinfrastruktur an. 
 
-\paragraph*{Verfügbarkeit}
+\subsubsection{Verfügbarkeit}
 Amazon S3 Speichert die Daten auf mehren Geräten in Verschiedenen Rechenzentren in der selben Region ab. Bei speichern werden die Daten Synchron in Verschiedene Rechenzentren gespeichert bevor die Speicherung als erfolgreich gemeldet ist, damit ist sicher gestellt, dass die Daten von beginn weg Redundant gespeichert sind. Mit diesen Massnahmen gewährleistet Amazon gemäss Dienstgütevereinbarung eine Zuverlässigkeit von 99.999999999\%. Bei bedarf kann die Zuverlässigkeit für Daten welche wenig Schutz benötigen, wie zum Beispiel Thumbnails von Bilder, mit einer geringeren Zuverlässigkeit von 99.99\% zu einen günstigeren Preis gespeichert werden. \cite{Amazon2007}
 
 Durch die Redundante Speicherung der Daten auf mehre Geräten gewährleistet Amazone gemäss Dienstgütevereinbarung von 99.99\% pro Monat
 
-\paragraph*{Datenzugriff}
+\subsubsection{Datenzugriff}
 Der Zugriff auf die Daten findet über eine API oder über die Verwaltungskonsole von Amazon statt. Für den Zugriff mit einen API bietet Amazon ein \gls{REST} und ein \gls{SOAP} Schnittstelle an. Der \gls{REST} Zugriff findet über HTTP statt, dabei werden Standard HTTP requests verwendet. Für den Zugriff kann auch einen gewöhnlichen Web-Browser verwendet werden solange die Objekte Öffentlich sind.
 
 Einen Offiziellen POSIX IO Zugriff von Amazon steht nicht zur Verfügung, es existiert jedoch eine Quelloffenes Projekt Namens s3fs\footnote{\url{https://code.google.com/p/s3fs/}} welche es ermöglicht eine Amazon S3 Speicher unter Linux zu mounten. \cite{S3fs}
@@ -1070,12 +1090,12 @@ Für das Einlesen von Grossen Datenmengen bietet Amazon einen kostenpflichtigen 
 
 Die API von Amazon ist gut Dokumentiert, weshalb für einen erfahrenen Entwickler die Anbindung der Web-Applikation an Amazon S3 umsetzbar sein sollte.
 
-\paragraph*{Speicherkapazität}
+\subsubsection{Speicherkapazität}
 Für die Skalierung der Speicherkapazität kümmert sich Amazon.
 
 Im Amazon S3 können eine unbegrenzte Zahl von Objekten gespeichert werden, welche eine Speichergrösse von 1 Byte bis zu 5 Terrabyte haben können, wobei aber in einen PUT maximal 5 Gigabyte hochgeladen werden können. Für das Hochladen von Grösseren Objekten, muss die Multipart Funktion verwendet werden, welche das Objekte in mehren Teilen hochladet.\cite{Amazon2012b}
 
-\paragraph*{Datenschutz}
+\subsubsection{Datenschutz}
 Die Daten können bei Amazon in mehren Regionen gespeichert werden. Zu den verfügbaren Regionen gehören, US Standard, US West (Oregon), US West (Northern California), EU (Ireland), Asia Pacific (Singapore), Asia Pacific (Tokyo), South America (Sao Paulo). Gemäss Amazon verlassen die Gespeicherten Daten eine Region nicht, ausser für die Erfüllung von Gesetzen oder auf Anforderung von Regierung Anweisung. Als US Amerikanisches Unternehmen steht Amazon wegen dem Patrot Act, unter der Pflicht, den USA Behörden Zugang zu Informationen zu gewährleisten auf behördlichen Anforderungen, auch wenn diese Informationen ausserhalb der USA gespeichert sind. Gemäss EU Recht darf jedoch keine gespeicherten Informationen, an dritten Zugänglich gemacht werden oder ausserhalb der EU gespeichert werden, ohne Einverständnis. Bei Microsoft ebenfalls eine Grosser Cloud Anbieter bestätigt diese Annahme, das die Daten nicht vor den Zugriff der USA geschützt sind.\cite{Amazon2012}\cite{Ostler}
 
 Die Integrität der Daten wird mit einer Prüfsumme sichergestellt. Die gespeicherten Daten werden von Amazon regelmässig auf Ihre Integrität geprüft und bei bedarf von einer Integer Kopie der Daten ersetzt. 
@@ -1088,7 +1108,7 @@ Für die Berechtigung und Verwaltung stellt Amazon ein Web-GUI zur Verfügung. B
 
 Amazon bietet neben der Redundanz der Objekte kein weiteres Sicherungsverfahren an. Beim Herunterladen der Daten fallen für den Transfer weiter Kosten an.
 
-\paragraph*{Technologie}
+\subsubsection{Technologie}
 Der Online Speicher von Amazon S3 gilt als ausgereiftes und etabliertes Produkt im Markt, weshalb davon ausgegangen werden kann, dass die Dienstleistung über die nächsten vier Jahre drübenraus noch bestehen wird und für den Kunden keine Migration notwendig ist. Amazon S3 wird ebenfalls von SmugMug ebenfalls eine Photodienstleister oder andere bekannte Web-Applikationen wie Dropbox verwendet.\cite{SmugMug}\cite{Dropbox2011}
 
 Der Online Speicher Markt ist im Verhältnis zu anderen Speicher Märkte noch relativ jung, Analysten wie Jeff Boles gehen davon aus, dass der Online Speicher Markt in den nächsten Jahren weiter stark wächst. Wie in der Marktstudie beschrieben konnte Amazon seit dem Start des Amazon S3 Produktes die Anzahl gespeicherte Objekte jeweils pro Jahr mehr als verdoppeln (sie dazu \refabb{abb:AnzahlObjekteAmazonS3}). Die Konkurrenz von grossen Anbietern wie Google, Microsoft oder Rackspace nimmt für Amazon bereits zu. Für den Kunden bedeutet diese, dass die Anbieter Ihre Preise noch stärker kalkulieren müssen um ein Konkurrenz fähiges Angebot zu haben. Amazon hat die Preise für S3 Speicher erst kürzlich angepasst.\cite{Boles2011}\cite{Barr2012a}
