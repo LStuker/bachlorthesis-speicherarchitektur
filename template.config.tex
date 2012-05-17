@@ -220,5 +220,5 @@ headsep=10mm, footskip=12mm}
 
 
 %Footnote
-\newcommand{\footnoteremember}[2{\footnote{#2}\newcounter{#1}\setcounter{#1}{\value{footnote}}}
+\newcommand{\footnoteremember}[2{\footnote{#2}\newcounter{#1}\setcounter{#1}%{\value{footnote}}}
 \newcommand{\footnoterecall}[1]{\footnotemark[\value{#1}]}
