@@ -3,39 +3,39 @@
 \chapter{Evaluation}
 
 \section{Soll-Kriterien festlegen}
-Die gewählten Kriterien für die Evaluation wurden Zusammen mit dem Auftraggeber im Meeting festgelegt. In einen weiteren schritt, sind die einzelnen Kriterien nach ihren Logischen Zugehörigkeit hierarchisch geordnet und verfeinert (\refabb{abb:AHPKriterienbaum}). Die Überarbeitete Kriterien Auswahl wurde bei einen weiteren Meeting mit dem Auftraggeber besprochen und fixiert. 
+Die gewählten Kriterien für die Evaluation wurden zusammen mit dem Auftraggeber im Gespräch festgelegt. In einem weiteren Schritt wurden die einzelnen Kriterien nach ihrer logischen Zugehörigkeit hierarchisch geordnet und verfeinert (\refabb{abb:AHPKriterienbaum}). Die überarbeitete Kriterienauswahl wurde anlässlich eines weiteren Meetings mit dem Auftraggeber besprochen und fixiert. 
 
-Die Kriterien sind für die spätere Verweise die Verweise Hierarchisch-Nummeriert.
+Die Kriterien sind für die späteren Verweise hierarchisch nummeriert.
 
 \begin{center}
-\includegraphics[width=\linewidth, keepaspectratio = true]{media/ahp_kirterienbaum.png}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/ahp_kriterienbaum.png}
 \mycaption{figure}{\label{abb:AHPKriterienbaum} Optimales Speichersystem Kriterien}
 \end{center}
 
 \subsection{Haupt Soll-Kriterien festlegen}
-Die Haupt-Kriterien sind auf der obersten Hierarchie Ebene und werden durch Ihre unter Kriterien definiert.
+Die Hauptkriterien sind in der obersten Hierarchie-Ebene dargestellt und werden durch ihre Unterkriterien weiter verfeinert und definiert.
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Soll-\arabic{paragraph}}
 \paragraph{Kosten}\label{Soll-1}
 Die Kosten sollen einen gewinnbringenden Betrieb ermöglichen. 
 
 \paragraph{Verfügbarkeit}\label{Soll-2}
-Die Verfügbarkeit der Daten soll in Bezug auf die Szenerien die Verfügbarkeit erfüllen können. 
+Die Anforderungen an die Verfügbarkeit der Daten ist pro Szenario beschrieben und sollen entsprechend erfüllt werden. 
 
 \paragraph{Datenzugriffe}\label{Soll-3}
-Der Datenzugriff soll Skalieren können, dass heisst es soll möglich sein von mehren Webserver auf den Datenspeicher zugreifen zu können. Der Datenzugriff soll über POSIX IO oder über eine Dokumentiertes API erfolgen können.
+Die Anzahl Datenzugriffe soll skalierbar sein. Es soll möglich sein, von mehreren Webservern gleichzeitig auf den Datenspeicher zugreifen zu können. Der Datenzugriff soll über POSIX IO oder über ein dokumentiertes API erfolgen können.
 
 \paragraph{Speicherkapazität}\label{Soll-4}
-Die Speicherkapazität soll die Speicheranforderungen der Szenerien erfüllen können. Zudem sollen die Speicherung von Grossen Dateien bis mindestens 2 Gigabyte möglich sein.
+Die Speicherkapazität soll die Speicheranforderungen der verschiedenen Szenerien erfüllen. Zudem soll die Speicherung von grossen Dateien bis zu 2 Gigabyte möglich sein.
 
 \paragraph{Datenschutz}\label{Soll-5}
-Der Datenschutz der Daten soll gewährleistet werden, dabei gilt das Haupt Augenmerk auf die Unveränderbarkeit der Gespeicherten Daten. Wichtig für den Auftraggeber ist ebenfalls das die Datengesichert werden können.
+Der beschriebene Datenschutz soll jederzeit gewährleistet sein. Entscheidend ist der Schutz gegen die unerlaubte Veränderung von Daten. Für den Auftraggeber wichtig ist die laufende Sicherung der Daten, um den Verlust von Daten zu verhindern.
 
 \paragraph{Technologie}\label{Soll-6}
 asdf
 
 \subsection{Unter Soll-Kriterien festlegen}
-Die unter Kriterien mit den gleichen Nummer-Ebene gehören zusammen zur gleichen oben-Kriterien und werden später bei der Gewichtung der Kriterien nur untereinander direkt Verglichen.
+Die Unterkriterien mit der gleichen Nummer-Ebene gehören zum selben Oberkriterium und werden später bei der Kriteriengewichtung nur untereinander direkt verglichen.
 
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Soll-1-\arabic{paragraph}}
@@ -50,32 +50,32 @@ Die unter Kriterien mit den gleichen Nummer-Ebene gehören zusammen zur gleichen
 \renewcommand\theparagraph{Soll-2-\arabic{paragraph}}
 
 \paragraph{Redundanz}\label{Soll-2-1}
-Die redundante Haltung der aktiven Daten, dass heisst der Daten die Aktive zugegriffen und manipuliert werden können, Dient zur Erhöhung der Verfügbarkeit der Daten bei einen Komponenten Ausfall. Die doppelt Haltung der Daten zur Sicherungszwecken, wie Archivierung wird nicht als redundant erachtet, da diese nicht direkt zu einer Erhöhung der System Verfügbarkeit ohne Menschliche Unterstützung führt. Die Speicherlösung sollte mindestens die Daten doppelt, wenn möglich dreifach Redundanz halten. 
+Die redundante Haltung von aktiven Daten, welche gelesen und manipuliert werden können, ermöglicht eine höhere Verfügbarkeit der Daten, z.B. beim Ausfall einer Systemkomponente. Die doppelte Datenhaltung wie sie bei der Datensicherung oder Archivierung entsteht, fällt nicht unter den Begriff "redundante Daten", da diese nicht direkt zur Erhöhung der Datenverfügbarkeit beiträgt. Die Speicherlösung sollte die Daten mindestens doppelt, oder wenn möglich dreifach redundant halten. 
 
 
 \paragraph{Systemverfügbarkeit}\label{Soll-2-2}
-Die Systemverfügbarkeit, wird durch Software oder Hardware Redundanz erreicht. Das System soll möglichst Redundant ausgelegt sein um eine Verfügbarkeit nach AEC-3 Standard zu erreichen.
+Die verbesserte Systemverfügbarkeit, wird durch Software- oder Hardware-Redundanz erreicht. Die IT Infrastruktur (Server, Speicher, Netzwerk usw. soll möglichst redundant ausgelegt sein, um eine Verfügbarkeit nach AEC-3 Standard zu gewährleisten.
 
 \paragraph{Standort-übergreifend}\label{Soll-2-3}
-Die aktive Daten sollen nach Möglichkeit an mindesten zwei Standorte verfügbar sein, um den Dienst bei einen Ausfall eines Rechenzentrums aufrecht zu erhalten können.
+Die aktiven Daten sollen nach Möglichkeit an mindesten zwei voneinander getrennten Standorten gespeichert werden, um den Dienst auch im Falle des Ausfalls eines Rechenzentrums aufrecht erhalten zu können.
 
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Soll-3-\arabic{paragraph}}
 
 \paragraph{Skalierbarkeit}\label{Soll-3-1}
-Die Speicherlösung sollte bei bedarf Ihren Speicher an bis zu 30 Serversysteme zur Verfügung stellen können.
+Die Speicherlösung sollte bei Bedarf den Speicher gleichzeitig an bis zu 30 Serversysteme zur Verfügung stellen können.
 
 \paragraph{Performance}\label{Soll-3-2}
-Die Speicherlösung soll eine IO Performance von mindesten 27.31 MBit pro Sekunde haben.
+Die Speicherlösung soll eine IO-Performance von mindesten 27.31 MBit pro Sekunde haben.
 
 \paragraph{POSIX IO}\label{Soll-3-3}
-Die POSIX IO (inoffizielle Bezeichnung) ist ein Teil des POSIX Standards welche die IO Schnittstelle für POSIX Kompatible Applikationen definiert. Der Standard definiert unteranderem die Funktionen read(), write(), open(), close() inklisive deren Fehler Behandlung. Die Speicherlösung soll, für ein einfache Implementierung, nach Möglichkeit diesen Standard unterstützen. 
+Die POSIX IO (inoffizielle Bezeichnung) ist ein Teil des POSIX Standards, welche die IO Schnittstelle für POSIX kompatible Applikationen definiert. Der Standard definiert ferner die Funktionen read(), write(), open(), close() inklusive deren Fehlerbehandlung. Die Speicherlösung soll für eine einfache Implementierung nach Möglichkeit diesen Standard unterstützen. 
 
 \paragraph{Simultaner Lesezugriff auf Objekte}\label{Soll-3-4}
-Das gleichzeitige Lesen auf das selbe Objekte von zwei oder mehrere Serversysteme soll möglich sein.
+Das gleichzeitige Lesen desselben Objektes von zwei oder mehreren Serversystemen soll möglich sein.
 
 \paragraph{Simulataner Schreibzugriff auf Objekte}\label{Soll-3-5}
-Das gleichzeitige schreiben auf das selbe Objekte von zwei oder mehrere Serversysteme soll optional möglich sein.
+Das gleichzeitige Schreiben auf dasselbe Objekte von zwei oder mehreren Serversystemen soll optional möglich sein.
 
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Soll-4-\arabic{paragraph}}
@@ -83,10 +83,10 @@ Das gleichzeitige schreiben auf das selbe Objekte von zwei oder mehrere Serversy
 \paragraph{Skalierbarkeit}\label{Soll-4-1}
 
 \paragraph{Max Anzahl speicherbare Objekte}\label{Soll-4-2}
-Das Speicherlösung soll die Anzahl Speicherbaren Objekten der Soll-Zenarien unterstützen. 
+Das Speicherlösung soll die Anzahl der speicherbaren Objekte gemäss den Soll-Szenarien unterstützen. 
 
-\paragraph{Max Objekte Speichergrösse grösser als 2 GB}\label{Soll-4-3}
-Das Speichersystem muss die Speicherung von Objekten mit einer Speichergrösse von mindestenz 2 GigaByte unterstützen.
+\paragraph{Max Objektgrösse von bis zu 2 GB}\label{Soll-4-3}
+Das Speichersystem muss die Speicherung von Objekten mit einer Speichergrösse von bis zu 2 GigaByte unterstützen.
 
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Soll-5-\arabic{paragraph}}
@@ -95,155 +95,153 @@ Das Speichersystem muss die Speicherung von Objekten mit einer Speichergrösse v
 Die Datenintegrität der gespeicherten Daten soll gewährleistet sein.
 
 \paragraph{Selbstheilung von Objekten}\label{Soll-5-2}
-Die Selbstheilung von nicht mehr integer Daten soll nach Möglichkeit unterstützt werden. Diese Funktion ist bei der Verwaltung von grossen Datenmengen ein unterstützende Funktion.
+Die Selbstheilung von beschädigten Daten soll nach Möglichkeit unterstützt werden. Diese Funktion ist bei der Verwaltung von grossen Datenmengen eine wichtige und geschätzte Funktion.
 
 \paragraph{Datensicherung}\label{Soll-5-3}
-Die gespeicherten Daten soll mit einen Sicherungsverfahren gesichert werden können. Wenn die aktiven Daten nicht an zwei Standorten zur Verfügung gestellt werden können, wie in (\refsoll{Soll-2-3}) definiert, ist es zwingen erforderlich das die Sicherung an einen zweiten Standort erfolgen kann.
+Die gespeicherten Daten sollen mit einem effizienten Sicherungsverfahren gesichert werden können. Wenn die aktiven Daten nicht an zwei Standorten zur Verfügung gestellt werden können, wie in (\refsoll{Soll-2-3}) definiert, ist es zwingend erforderlich, dass der Sicherungsdatenträger an einem zweiten, physisch getrennten Standort gelagert wird.
 
 \paragraph{Datensicherheit}\label{Soll-5-4}
-Die Datenberechtigung wird in der Applikation Implementiert, die Speicherlösung soll nach Möglichkeit Sicherstellen, das die Daten nicht von dritten Zugegriffen werden kann.
+Die Datenzugriffsberechtigung wird in der Applikation implementiert. Die Speicherlösung soll zudem sicherstellen, dass die Daten nicht von unerlaubten Dritten gelesen oder manipuliert werden können (physischer und logischer Zugriffsschutz).
 
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Soll-6-\arabic{paragraph}}
 
 \paragraph{Marktverbreitung / Marktchancen}\label{Soll-6-1}
-Die Speicherlösung soll im Markt verbreitet sein oder Tendenzen aufweisen die auf ein Verbreiterung im Markt in den nächsten fünf Jahren schliessen lässt.
+Die Speicherlösung soll im Markt etabliert sein oder Tendenzen aufweisen, welche in den nächsten fünf Jahren die Verbreiterung im Markt wahrscheinlich erscheinen lässt.
 
 \paragraph{Weiterentwicklung}\label{Soll-6-2}
-Die Speicher Technologien welche aktive Weiterentwickelt werden soll hoher bewertet werden als Speicherlösung Technologie welche nicht mehr weiter gepflegt werden.
+Die Speichertechnologien, welche aktiv weiterentwickelt werden, sollen höher bewertet werden.
 
 \paragraph{Verfügbarkeit von Experten}\label{Soll-6-3}
-Die Verfügbarkeit von Experten Speicherlösungstechnologie soll gegeben sein. Dabei ist das Experten Wissen auch nach Verfügbarkeit nach Lokalität zu bewerten. Die Verfügbarkeit von Experten im Raum Schweiz ist höher zu werten als im Raum Europa.
+Die Verfügbarkeit von Experten einer etablierten Speicherlösungstechnologie soll sichtbar sein. Dabei soll das Expertenwissen regional breit verfügbar sein. Die Verfügbarkeit von Experten in der Schweiz ist höher zu werten als im Ausland.
 
 \paragraph{Verwaltungskomfort}\label{Soll-6-4}
-Die Speichertechnologie soll die geforderte Datenmenge mit möglichst geringen Aufwand komfortable verwalten lassen.
+Die Speichertechnologie soll für die geforderte Datenmengen mit einem möglichst geringem Verwaltungsaufwand ermöglichen.
 
 \paragraph{Kinderschuhe / Ausgereift}\label{Soll-6-5}
-Die Speicher Technologie soll Ausgereift und Stabil laufen. Ein Implementierung von Beta Technologie ist nicht erwünscht.
-Die Technologie soll Ausgereift sein, bzw. keine erst Implementierung.
+Die Speichertechnologie soll ausgereift und stabil laufen. Eine Implementierung von Beta-Versionen ist nicht erwünscht.
 
 \section{KO-Kriterien}
-Die KO-Kriterien sind muss Kriterien die von einen Speichersystem erfüllt werden müssen. Speichersysteme welche die KO-Kriterien nicht erfüllen werden bei der AHP-Evaluation ausgeschlossen. Die KO-Kriterien wurde zusammen mit dem Auftraggeber besprochen und vereinbart.
+Die KO-Kriterien sind Muss-Kriterien, welche von dem gewählten Speichersystem erfüllt werden müssen. Speichersysteme welche die KO-Kriterien nicht erfüllen, werden bei der AHP-Evaluation ausgeschlossen. Die KO-Kriterien wurde mit dem Auftraggeber besprochen und vereinbart.
 
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{KO-\arabic{paragraph}}
 
 \paragraph{Dateigrösse bis 2 Gigibyte}\label{KO-1}
-Die Speicherung von Dateien die ein Speichergrösse von 2 Gibibyte muss unterstützt werden.
+Die Speicherung von Dateien muss eine Objektgrösse von bis zu 2 Gibibyte erlauben.
 
 \paragraph{Speicherkapazität Szenarien}\label{KO-2}
-Die geforderten Speicherkapazitäten der Szenerien inklusive die benötigte Kapazität für die Redundanz muss von der Speicherlösung unterstützt werden.
+Die geforderten Speicherkapazitäten der Szenerien plus dem benötigten Speicherplatz für die Datenredundanz muss von der Speicherlösung unterstützt werden.
 
-\paragraph{Kosten Spannweite}\label{KO-3}
-Die Kosten der teuersten Speicherlösung, darf nicht dreimal teuerer sein als die Günstigste Lösung.
+\paragraph{Kosten-Spannweite}\label{KO-3}
+Die Kosten der teuersten Speicherlösung, darf nicht dreimal teurer sein, als die günstigste Lösung.
 
 \section{Auswahl der Alternativen / Vertreter}
-Mit dem Auftraggeber wurde definiert, dass aus den Speicherlösung, SAN, NAS, Distributed Filesystem Cluster, Online Speicher und Dedizierter Server Webserver einen Vertreter für die Evaluation ausgewählt werden soll. Die Lösungen wurden nach Marktverbreitung, Technologie Leader ausgewählt.
+Mit dem Auftraggeber wurde definiert, dass für die Speicherlösungen, SAN, NAS, Distributed Filesystem Cluster, Online Speicher und dedizierter Webserver je ein Vertreter für die Evaluation ausgewählt werden sollen. Die Lösungen wurden nach Marktverbreitung und Technologie-Leader ausgewählt.
 
-Die Alternativen/ Vertreter sind für die spätere Verweise die Verweise Nummeriert.
+Die Alternativen/ Vertreter sind für die späteren Verweise nummeriert.
 
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Al-\arabic{paragraph}}
 \paragraph{Hetzner}\label{Al-1}
-Dedizierte Webserver zählen im engeren Sinn nicht als reine Speicherlösungen, der Deutsche Hosting Anbieter Hetzner bietet jedoch Dedizierte Webserver mit einer Speicherkapazität welche die Anforderung an die Kapazität des Szenario 1 (siehe \refsec{Szenario-1}) erfüllen. Hetzner als Dedizierter Webserver Anbieter wurde ausgewählt, weil die bestehende Lösungen ebenfalls mit Hetzer Webserver realisiert ist. 
+Dedizierte Webserver zählen im engeren Sinn nicht als reine Speicherlösungen. Der deutsche Hosting-Anbieter Hetzner bietet allerdings dedizierte Webserver mit der in Szenario 1 geforderten Speicherkapazität (siehe \refsec{Szenario-1}). Die bestehende Lösung wurde mit Hetzner Webserver realisiert. Hetzner als dedizierter Webserver Anbieter wurde deshalb auch berücksichtigt. 
 
 \paragraph{NetApp NFS}\label{Al-2}
-Als Vertreter für die NAS Speicherlösung wurde die NetApp FAS2240-4 ausgewählt. Für die Entscheidung zu NetApp haben dazu beigetragen, dass die Firma NetApp zu den Marktführer im NAS Bereich gehören und als Innovativ von Gartner eingestuft wurde. Zudem haben Sie ein Breites Partner Netzwerk in der Schweiz.
+Als Vertreter für die NAS Speicherlösung wurde die NetApp FAS2240-4 gewählt. Für die Entscheidung zu NetApp haben dazu beigetragen, dass die Firma NetApp zu den Marktführern im NAS Bereich gehört und von Gartner als innovativ eingestuft wurde. Zudem pflegt die Firma ein breites Partnernetzwerk in der Schweiz.
 
 \paragraph{NetApp iSCSI}\label{Al-3}
-Als Vertreter für Block Speicherlösung wurde ebenfalls die NetApp FAS2240-4 gewählt. Die NetApp FAS2240-4 beherrscht ebenfalls iSCSI und FC SAN und kann somit als Block Speicherlösung ebenfalls verwendet werden. Für iSCSI in vergleich zu FC SAN sprechen, dass nicht zusätzliche Netzwerk Technologien neben der Ethernet-Netzwerk Technologie, eingesetzt werden müssen.
+Als Vertreter für Block Speicherlösung wurde ebenfalls die NetApp FAS2240-4 gewählt. Die NetApp FAS2240-4 beherrscht ebenfalls iSCSI und FC SAN und kann somit als Block Speicherlösung ebenfalls eingesetzt werden. Für iSCSI im Vergleich zu FC-SAN spricht, dass neben der Ethernet-Netzwerk Technologie nicht zusätzliche Netzwerk Technologien eingesetzt werden müssen.
 
 \paragraph{OpenStack Object Storage}\label{Al-4}
 
-Als Vertreter für Verteilten Speicher, war ursprünglich Hadoop HDFS vorgesehen. In der aktuellen Version stellt derder Name-Node von HDFS noch als Single Point of Failure (kurz SPOF) dar. Zudem liegen die stärken bei HDFS auf die Prozessieren der Daten der gespeicherten Objekte mittels MapReduce Algorithmus. Aus diesen Grund wurden noch andere Verteilte Dateisystem untersucht wie GlusterFS und OpenStack Object Storage. OpenStack Object Storage soll von der Architektur vergleichbar sein wie Amazon S3, zudem wird es bei einen grösseren Online Speicheranbieter RackSpace erfolgreich eingesetzt. Ein weiterer Grund die für OpenStack Object Storage sprechen, ist das es dem Quelloffenen Projekt gelungen ist viele namhafte IT-Hersteller als Partner zu gewinnen.
+Als Vertreter für verteilten Speicher war ursprünglich Hadoop HDFS vorgesehen. In der aktuellen Version ist der Name-Node von HDFS noch ein Single Point of Failure (SPOF). Zudem liegen die Stärken bei HDFS bei den Datenprozessen für gespeicherte Objekte mittels MapReduce Algorithmus. Aus diesem Grund wurden weitere verteilte Dateisystem untersucht, wie etwa GlusterFS und OpenStack Object Storage. OpenStack Object Storage soll von der Architektur vergleichbar sein wie Amazon S3. Bei gewichtigen Online Speicheranbieter wird RackSpace erfolgreich eingesetzt. Ein weiterer Grund die für OpenStack Object Storage spricht, ist das gelungene quelloffene Projekt, das viele namhafte IT-Hersteller als Partner gewinnen konnte.
 
 \paragraph{Amazon S3}\label{Al-5}
-Amazon S3 wurde als Represenator für Online Speicherlösung gewählt. Amazon S3 ist gemäss \refsec{MartkEtabliert} einer der Etabliertesten wenn nicht die erfolgreichste Online Speicherlösung. Amazon betreibt mehre Rechenzentrum in der gesamten Welt, als Speicherlösung Standort wird Europa ausgewählt.
+Amazon S3 wurde als Representant für Online Speicherlösungen gewählt. Amazon S3 ist gemäss \refsec{MartkEtabliert} einer der etabliertesten Anbieter, wenn nicht die erfolgreichste Online Speicherlösung zur Zeit. Amazon betreibt mehrere Rechenzentrum verteilt auf mehrere Kontinenten. Für den Auftraggeber würde das Europäische Rechenzentrum in Frage kommen.
 
 
 \subsection{Gewichtung der Soll-Kriterien mit AHP}
 
-In diesen Abschnitt werden alle Soll-Kriteren der gleichen Hierarchie-Ebene bzw. gleichen Unter-Kriterien paarweise mit einander Verglichen und mit der Skala \reftab{tab:Gewichtsberechnung} aus dem \refchap{kab:Entscheidungsfindung} Gewicht.
+In diesem Abschnitt werden alle Soll-Kriteren der gleichen Hierarchie-Ebene bzw. gleichen Unter-Kriterien paarweise miteinander verglichen und mit der Skala \reftab{tab:Gewichtsberechnung} aus dem \refchap{kab:Entscheidungsfindung} gewichtet.
 
 % Vergleich mit Kosten
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-2} (\ref{Soll-1}/\ref{Soll-2})} 
-Mit steigenden Anforderungen an die Verfügbarkeit steigen auch die Kosten. Der Betrieb einer Infrastruktur eines Service Anbieters muss Kostendecken sein. Einen Ausfall des System während definierten Zeiten in welches das System Online sein muss, hat ebenfalls Auswirkungen auf das Unternehmen. So kann es zum Image Verlust, zu Kunden Abgänge führen, oder die Zahlung von Entschädigung erfordern. Einen Datenverlust kann trotzt Sicherungskopie bei Grossen Datenmengen zeitintensive und kostspielig werden. Aus diesen Gründen ist ein gute Balance zwischen Kosten und Verfügbarkeit zu finden. Die Kosten sind deshalb im Vergleich zur Verfügbarkeit etwas grösser zu Gewichten.
+Mit steigenden Anforderungen an die Verfügbarkeit steigen auch die Kosten. Der Betrieb einer Infrastruktur eines Service-Anbieters muss kostendeckend sein. Einen Ausfall des Systems während definierten Betriebszeiten (das System muss online verfügbar sein), hat ebenfalls Auswirkungen auf das Unternehmen. So kann es zum Imageverlust, zu Kundenabgängen führen, oder die Zahlung von Entschädigungen erfordern. Die Rekonstruktion eines Datenverlustes kann trotz Sicherungskopie bei grossen Datenmengen zeitintensiv und kostspielig sein. Aus diesen Gründen ist ein gute Balance zwischen Kosten und Verfügbarkeit zu finden. Die Kosten sind deshalb im Vergleich zur Verfügbarkeit etwas grösser zu gewichten.
 
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-3} (\ref{Soll-1}/\ref{Soll-3})}
-Die Unterkriterien von Datenzugriffe sind mit Skalierbarkeit der Datenzugriffe, Performance und usw. wichtige Entscheidungskriteren, dennoch sind diese im Gesamten im Vergleich zu den Kosten Kritikern etwas tiefer zu Gewichten. Grund dafür ist, dass der rentable Betrieb der Web-Applikation sichergestellt werden muss. Aus diesen Grund sind die Kosten etwas Hoher zu Gewichten als die Datenzugriffe.
+Die Unterkriterien von Datenzugriffe sind mit der Skalierbarkeit der Datenzugriffe, Performance usw. wichtige Entscheidungskriteren. Dennoch sind diese im Vergleich zu den Kostenkriterien etwas tiefer zu gewichten. Grund dafür ist, dass der profitable Betrieb der Web-Applikation sichergestellt werden muss. Die Kosten sind deshalb etwas höher zu gewichten als die Datenzugriffe.
 
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-4}}
-Die Kosten und die Speicherkapazität sind gleich hoch bis etwas Grösser zu Gewichten. Grund dafür ist, dass die Speicherlösung den rentablen Betrieb der Web-Applikation ermöglichen muss, zugleich muss jedoch sichergestellt werden, dass die geforderte Speicherkapazität vom Speichersystem erfüllt wird. Aus diesen Grund ist
+Die Kosten und die Speicherkapazität sind gleich hoch bis etwas höher zu gewichten. Grund dafür ist, dass die Speicherlösung den rentablen Betrieb der Web-Applikation ermöglichen muss. Zugleich ist sicherzustellen, dass die geforderte Speicherkapazität vom Speichersystem erfüllt wird. Diese Kriterien sind deshalb gleich hoch zu gewichten.
 
 \textbf{Gewichtung: 2}
 
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-5}}
-Für eine Web-Dienstleistung ist der Schutz der Daten wichtig. Ist man Opfer eine Angriffs und wird diese Publik, kann diese zu grossen Image Verlusten führen. Aus diesen Grund ist sicherzustellen, das die Web-Applikation sicher betrieben werden kann. Die Sicherheit muss jedoch in erster Linie auf der Web-Applikation und Webserver sichergestellt werden als auf dem Speichersystem. Die Kosten sind deshalb in Vergleich zur Datenschutz sehr viel  bis absolut Grösser zu Gewichten.
+Für eine Web-Dienstleistung ist der Schutz der Daten wichtig. Wird die Plattform Opfer eines Hackersangriffes und wird dies publik, kann dies zu einem grossen Imageverlust führen. Aus diesen Grund ist sicherzustellen, das die Web-Applikation sicher betrieben werden kann. Die Sicherheit muss jedoch in erster Linie auf der Web-Applikation und dem Webserver sichergestellt werden und in zweiter Priorität auf dem Speichersystem. Die Kosten sind deshalb im Vergleich zum Datenschutz sehr viel bis absolut höher zu gewichten.
 
 \textbf{Gewichtung: 8}
 
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-6}}
-Wie in den anderen Vergleiche ist sicherzustellen, das die Web-Applikation rentable Betrieben werden kann, aus diesen Grund sind möglichst tiefe Kosten erforderlich. Die Kosten sind deshalb in Vergleich zur Technologie erheblich Grösser zu Gewichten.
+Wie in den anderen Vergleichen ist sicherzustellen, dass die Web-Applikation rentabel betrieben werden kann. Deshalb sind möglichst tiefe Betriebskosten anzustreben. Die Kosten sind deshalb in Vergleich zur Technologie erheblich grösser zu gewichten.
 
 \textbf{Gewichtung: 7}
 
 % Vergleich mit Verfügbarkeit
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-3}}
-Aus Sicht des Anwenders ist die Verfügbarkeit der Daten höher zu Gewichten als möglichst schnellen Zugriff oder die Art und weise wie der Zugriff stattfindet. Allerdings kann ein langes Zeitüberschreitung beim ausliefern der Daten für den Anwender ebenfalls als nicht Verfügbarkeit empfunden werden.  Es ist daher wichtig das der Zugriff auch von Speichersystem bewältig werden kann. Die Verfügbarkeit ist deshalb gleich bis etwas Grösser zu Gewichten als der Datenzugriff.
+Aus Sicht des Anwenders ist die Verfügbarkeit der Daten höher zu gewichten als der möglichst schnelle Zugriff oder die Art und Weise wie der Zugriff stattfindet. Allerdings kann eine lange Wartezeit beim Ausliefern der Daten für den Anwender ebenfalls als "nicht verfügbar" empfunden werden.  Es ist daher wichtig, dass der Zugriff auch vom Speichersystem effizient bewältig werden kann. Die Verfügbarkeit ist deshalb gleich bis etwas grösser zu gewichten als der Datenzugriff.
 
 \textbf{Gewichtung: 2}
 
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-4}}
-Zum Geschäftsmodell der Web-Applikation gehört das Bereitstellung von Speicherkapazität für die Speicherung von grossen Bilddaten. Sind die Speicherkapazitäten ausgeschöpft und ist keine Wachstum mehr in der Speicherkapazität möglich, ist für den Auftraggeber eine weiteres Wachstum im Markt nicht mehr möglich. Aus diesen Grund ist die Verfügbarkeit etwas geringere zu Gewichten als die Speicherkapazität.
+Zum Geschäftsmodell der Web-Applikation gehört das Bereitstellung von Speicherkapazität für die Speicherung von grossen Bilddaten. Sind die Speicherkapazitäten ausgeschöpft und ist keine Wachstum mehr in der Speicherkapazität möglich, verliert der Auftraggeber ein neues Geschäft oder verliert gar einen bestehenden Kunden und kann mit dem Marktwachstum nicht Schritt halten. Aus diesen Grund ist die Verfügbarkeit etwas geringer zu gewichten als die Speicherkapazität.
 
 \textbf{Gewichtung: 1/3}
 
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-5}}
-Um eine möglichst hohe Verfügbarkeit zu erreichen, werden bei den Massnahmen zur Gewährleistung der Verfügbarkeit auch Massnahmen für den Datenschutz unternommen. Aus diesen Grund ist die Verfügbarkeit 
-Die Verfügbarkeit kann auch durch Schwachstellen erheblich höher zu Gewichten als der Datenschutz.
+Um eine möglichst hohe Verfügbarkeit zu erreichen, werden zur Gewährleistung der Verfügbarkeit Massnahmen für den Datenschutz unternommen. Aus diesen Grund ist die Verfügbarkeit höher zu gewichten. 
+Die Verfügbarkeit kann auch durch Schwachstellen erheblich höher zu gewichten sein als der Datenschutz.
 
 \textbf{Gewichtung: 5}
 
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-6}}
-Für den Betrieb ist sicherzustellen, dass die Verfügbarkeit gewährleistet ist. Im Vergleich zur, Marktverbreitung und die Verfügbarkeit von Experten, welche die Technologie beinhaltet ist deshalb die Verfügbarkeit erheblich bis sehr viel 
-Grösser zu Gewichten.
+Für den Betrieb ist sicherzustellen, dass die Verfügbarkeit gewährleistet ist. Im Vergleich zur Marktverbreitung und die Verfügbarkeit von Experten ist deshalb die Verfügbarkeit erheblich bis sehr viel grösser zu gewichten.
 
 \textbf{Gewichtung: 6}
 
 % Vergleich mit Datenzugriffe
 \paragraph*{\refsoll{Soll-3} verglichen mit \refsoll{Soll-4}}
-Die Skalierbarkeit der Datenzugriff ist für ein Speichersystem fast eben so wichtig wie die Skalierbarkeit der Speicherkapazität. Die Art uns weise wie der Zugriff stattfindet ist hingegen weniger wichtig, wie Faktoren über die Maximale Grösse eines Speicherbaren Objekts. Aus diesen Grund ist der Datenzugriff etwas weniger Gross zu Gewichten wie die Speicherkapazität. 
+Die Skalierbarkeit der Datenzugriff ist für ein Speichersystem fast gleich wichtig wie die Skalierbarkeit der Speicherkapazität. Die Art und Weise wie der Zugriff stattfindet, ist hingegen weniger wichtig als die maximale Grösse eines Objektes. Deshalb ist der Datenzugriff etwas weniger gross zu gewichten als die Speicherkapazität. 
 
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-3} verglichen mit \refsoll{Soll-5}}
-Für die Web-Applikation ist es wichtig das die geforderten Zugriffe auf das Speichersystem verarbeitbar ist. Die Sicherheit der Daten soll zudem vorwiegend auf Schicht der Applikation sichergestellt werden. Aus diesen Grund ist der Datenzugriff sehr viel Grösser zu Gewichten als der Datenschutz.
+Für die Web-Applikation ist es wichtig, dass die geforderten Zugriffe auf das Speichersystem verarbeitbar sind. Die Sicherheit der Daten soll zudem vorwiegend aus Sicht der Applikation sichergestellt werden. Aus diesen Grund ist der Datenzugriff sehr viel grösser zu gewichten als der Datenschutz.
 
 \textbf{Gewichtung: 7}
 
 \paragraph*{\refsoll{Soll-3} verglichen mit \refsoll{Soll-6}}
-Für die Web-Applikation ist es wichtig das die geforderten Zugriffe auf das Speichersystem verarbeitbar ist. Für den Langezeit Betrieb ist es aber auch wichtig, dass die Speichertechnolgie sich mit den Entwickelten Anforderungen, welche in Zukunft gestellt werden sich mitentwickelt. Aus diesen Grund ist der Datenzugriff erheblich Grösser zu Gewichten als die Technologie.
+Für die Web-Applikation ist es wichtig, dass die geforderten Zugriffe auf das Speichersystem verarbeitbar sind. Für den Langzeitbetrieb ist es aber auch wichtig, dass die Speichertechnologie mit den künftîgen Anforderungen des Marktes Schritt halten kann. Deshalb ist der Datenzugriff erheblich grösser zu gewichten als die Technologie.
 
 \textbf{Gewichtung: 5}
 
 % Vergleich mit Speicherkapazität
 \paragraph*{\refsoll{Soll-4} verglichen mit \refsoll{Soll-5}}
-Zum Geschäftsmodell der Web-Applikation gehört das Bereitstellung von Speicherkapazität für die Speicherung von grossen Bilddaten. Sind die Speicherkapazitäten ausgeschöpft und ist keine Wachstum mehr in der Speicherkapazität möglich, ist für den Auftraggeber eine weiteres Wachstum im Markt nicht mehr möglich. Der Datenschutz der Daten ist ebenfalls wichtig, der Schutz der Daten muss jedoch Hauptsächlich auf der Applikation Seite erfolgen. Aus diesen Grund ist die Speicherkapazität sehr viel bis Absolut Grösser zu Gewichten als der Datenschutz.
+Zum Geschäftsmodell der Web-Applikation gehört das Bereitstellung von Speicherkapazität zur Speicherung von grossen Bilddaten. Sind die Speicherkapazitäten erschöpft und ist kein Wachstum mehr möglich, kann der Auftraggeber mit den Marktanorderungen nicht mehr Schritt halten. Der Datenschutz der Daten ist ebenfalls wichtig. Der Schutz der Daten muss jedoch hauptsächlich auf der Applikationsseite erfolgen. Aus diesen Grund ist die Speicherkapazität sehr viel bis absolut grösser zu gewichten als der Datenschutz.
 
 \textbf{Gewichtung: 8}
 
 \paragraph*{\refsoll{Soll-4} verglichen mit \refsoll{Soll-6}}
-Für den langen Fristig Betrieb ist es wichtig das die Technologie weiter hin den neuen Anforderungen angepasst werden kann und genügend Experten vorhanden sind welche mit der Technologie vertraut sind. Für das Geschäftsmodell ist es aber wichtiger die notwendige Speicherkapazität zur Verfügung stellen zu können aus diesen Grund ist die Speicherkapazität sehr viel wichtiger als die Technologie.
+Für den langfristigen Betrieb ist es wichtig, dass die Technologie laufend den neuen Marktanforderungen angepasst werden kann und genügend Experten vorhanden sind, welche mit der Technologie vertraut sind. Für das Geschäftsmodell ist es aber wichtiger, die notwendige Speicherkapazität zur Verfügung stellen zu können. Deshalb ist die Speicherkapazität sehr viel wichtiger als die Technologie.
 
 \textbf{Gewichtung: 7}
 
 % Vergleich mit Datenschutz
 \paragraph*{\refsoll{Soll-5} verglichen mit \refsoll{Soll-6}}
-Für den Langezeit Betrieb ist es aber auch wichtig, dass die Speichertechnolgie sich mit den Entwickelten Anforderungen, welche in Zukunft gestellt werden sich mitentwickelt und das genügend Experten Vorhanden sind welche eine solche Technologie betreiben können. Aus diesen Grund ist der Datenschutz etwas bis erheblich Geringer zu Gewichten als  die Technologie.
+Für den langfristigen Betrieb ist es wichtig, dass die Technologie laufend den neuen Marktanforderungen angepasst werden kann und genügend Experten vorhanden sind, welche mit der Technologie vertraut sind. Aus diesen Grund ist der Datenschutz etwas bis erheblich geringer zu gewichten als die Technologie.
 
 \textbf{Gewichtung: 4}
 
@@ -271,19 +269,19 @@ Wie nach der Gewichtung und in der \reftab{tab:AHPKosten} zu entnehmen ist, habe
 Die Paarvergleiche im Detail:
 
 \paragraph*{\refsoll{Soll-1-1} verglichen mit \refsoll{Soll-1-2} (\ref{Soll-1-1}/\ref{Soll-1-2})}
-Die Betriebskosten sind der Hauptkostenfakor in der Lebenszeit eines Informations-Systems. Gemäss Gartner vielen die Weltweiten IT-Kosten im Jahr 2011 zu 20\% für die Computer Hardware und zu 43\% IT-Service an. Zudem Steigen die Kosten zum Beispiel von Disk Array Speicher nach Ablauf der ordentlichen von Hersteller gewährleisteten Wartung, wegen teuren weiterführenden Wartungsverträge stark an.
-Aus diesen Grund sind die Anschaffung Kosten im vergleich zur Unterhaltskosten erheblich geringer zu Gewichten.
+Die Betriebskosten sind der Hauptkostenfakor in der Lebenszeit eines Informations-Systems. Gemäss Gartner fielen die weltweiten IT-Kosten im Jahr 2011 um 20\% für Computer Hardware und um 43\% für IT-Serviceleistungen. Zudem steigen die Kosten zum Beispiel von Disk Array Speicher nach Ablauf der ordentlichen vom Hersteller gewährleisteten Wartung, wegen teuren weiterführenden Wartungsverträge stark an.
+Aus diesem Grund sind die Anschaffungskosten im Vergleich zu den Unterhaltskosten erheblich geringer zu gewichten.
 
 \textbf{Gewichtung: 1/5}
 
 \paragraph*{\refsoll{Soll-1-1} verglichen mit \refsoll{Soll-1-3} (\ref{Soll-1-1}/\ref{Soll-1-3})}
-Fällt die Langlebigkeit eines Systems, weil es technologisch veraltet ist oder weil die Kosten für Wartungsverträge nach Ablauf der ordentlichen Wartung im Vergleich zur neu Anschaffung unrentabel sind, kurz aus. Sind erneut Kosten in der Anschaffung und Migration der Daten notwendig. Aus diesen Grund sind die Anschaffungskosten im Vergleich zur Langlebigkeit etwas geringer zu Gewichten.
+Fällt die Langlebigkeit eines Systems, weil es technologisch veraltet ist oder weil die Kosten für Wartungsverträge nach Ablauf der ordentlichen Wartung im Vergleich zur Neubeschaffung unrentabel sind, kurz aus. Sind erneut Kosten in der Anschaffung und Migration der Daten notwendig. Aus diesem Grund sind die Anschaffungskosten im Vergleich zur Langlebigkeit etwas geringer zu gewichten.
 
 \textbf{Gewichtung: 1/3}
 
 
 \paragraph*{\refsoll{Soll-1-2} verglichen mit \refsoll{Soll-1-3} (\ref{Soll-1-2}/\ref{Soll-1-3})}
-Der Hauptkostenfakor in der Lebenzeit eines Information System sind die Betreibskosten, steigen diese Kosten Aufgrund hoher Wartungverträgekosten mit der Lebenspanne des Systems an, kann sich der Betrieb als unrentable herausstellen. Aus diesen Grund sind die Betriebskosten im Vergleich zu Langlebigkeit etwas grösser zu Gewichten.
+Der Hauptkostenfakor in der Lebenzeit eines Informationssystems sind die Betriebskosten. Steigen diese Kosten aufgrund hoher Wartungvertragskosten mit der Lebenspanne des Systems an, kann sich der Betrieb als unrentabel herausstellen. Aus diesen Grund sind die Betriebskosten im Vergleich zur Langlebigkeit etwas grösser zu gewichten.
 
 \textbf{Gewichtung: 3}
 
@@ -303,24 +301,24 @@ Der Hauptkostenfakor in der Lebenzeit eines Information System sind die Betreibs
 
 \subsubsection*{Gewichtung Verfügbarkeit}
 
-Wie nach der Gewichtung und in der \reftab{tab:AHPVerfügbarkeit} zu entnehmen ist, hat die Redundanz erheblich höher Gewichtung als die Systemverfügbarkeit und Standort-Übergreifende Verfügbarkeit.
+Wie nach der Gewichtung und in der \reftab{tab:AHPVerfügbarkeit} zu entnehmen ist, hat die Redundanz eine erheblich höhere Gewichtung als die Systemverfügbarkeit und Standortübergreifende Verfügbarkeit.
 
 Die Paarvergleiche im Detail:
 
 \paragraph*{\refsoll{Soll-2-1} verglichen mit \refsoll{Soll-2-2} (\ref{Soll-2-1}/\ref{Soll-2-2})}
-Die Daten eines Informationssystem sind dessen wertvollstes Gut, mit höherer Redundanz der Daten steigt auch die Verfügbarkeit der Daten.
-Die Gesamt Verfügbarkeit hängt jedoch auch von der Verfügbarkeit der System Komponenten zusammen. Aus diesen Grund sollten die Daten System übergreifend Redundant sein um ein hohe Verfügbarkeit zu erreichen. Gemäss eigener Erfahrungen, ist die Zahl der Datenträger ausfälle höher als die restlichen Komponenten ausfälle eines Systems. Die Datenredundanz ist deshalb erheblich grösser zu Gewichten als die System Redundanz.
+Die Daten eines Informationssystem sind dessen wertvollstes Gut. Mit höherer Redundanz der Daten steigt auch die Verfügbarkeit der Daten.
+Die Gesamtverfügbarkeit hängt jedoch auch von der Verfügbarkeit der einzelnen Systemkomponenten zusammen. Deshalb sollten die Daten systemübergreifend redundant sein, um ein hohe Verfügbarkeit zu gewährleisten. Gemäss eigener Erfahrungen ist die Zahl der Datenträgerausfällen höher als die restlichen Komponentenausfällen eines Systems. Die Datenredundanz ist deshalb erheblich grösser zu gewichten als die Systemredundanz.
 
 \textbf{Gewichtung: 5}
 
 \paragraph*{\refsoll{Soll-2-1} verglichen mit \refsoll{Soll-2-3} (\ref{Soll-2-1}/\ref{Soll-2-3})}
-Die Standortübergreifende Verfügbarkeit der Daten kann nur mit Redundanz der Daten erreicht werden, aus diesen Grund ist die Datenredundanz absolut höher zu Gewichten als die Standortübergreifende Verfügbarkeit.
+Die Standortübergreifende Verfügbarkeit der Daten kann nur mit Redundanz der Daten erreicht werden. Aus diesem Grund ist die Datenredundanz absolut höher zu gewichten als die standortübergreifende Verfügbarkeit.
 
 \textbf{Gewichtung: 9}
 
 \paragraph*{\refsoll{Soll-2-2} verglichen mit \refsoll{Soll-2-3} (\ref{Soll-2-2}/\ref{Soll-2-3})}
-Die Standortübergreifende Verfügbarkeit des System kann, erreicht werden wenn die Daten auf mehre Standortverteilt werden und an diesen Standorten die Daten von einen System am selben Standort gelesen werden kann. Das zweite System könnte z.B. ein Typ gleiches sein, welches am zweiten Standort abgeschaltet ist und bei einen Ausfall des Hauptstandorts hochgefahren wird.
-Um die Verfügbarkeit jedoch zu gewährleisten sollte keinen manuellen Eingriff erforderlich sein, da diese mit einen Unterbruch der Dienstleistung verbunden ist. Aus diesen Grund ist die Systemverfügbarkeit höher etwas bis erheblich höher zu Gewichten als die Standortübergreifende Verfügbarkeit.
+Die standortübergreifende Verfügbarkeit des System kann, erreicht werden, wenn die Daten auf mehrere Standorte verteilt werden und an diesen Standorten die Daten von einem lokalen System gelesen werden können. Das zweite System sollte idealerweise ein baugleiches Gerät sein, welches am zweiten Standort abgeschaltet ist und bei einem Ausfall am Hauptstandort hochgefahren wird.
+Um die Verfügbarkeit zu gewährleisten, sollten keine manuellen Eingriffe erforderlich sein, da diese mit einem Unterbruch der Dienstleistung verbunden wäre. Aus diesem Grund ist die Systemverfügbarkeit etwas höher bis erheblich höher zu gewichten als die standortübergreifende Verfügbarkeit.
 
 \textbf{Gewichtung: 4}
 
@@ -340,30 +338,30 @@ Um die Verfügbarkeit jedoch zu gewährleisten sollte keinen manuellen Eingriff 
 
 \subsubsection*{Gewichtung Datenzugriff}
 
-Wie nach der Gewichtung und in der \reftab{tab:AHPDatenzugriff} zu entnehmen ist, hat die Fähigkeit für Simultaner Lesezugriffe auf Objekte dicht gefolgt von Skalierbarkeit der Datenzugriffe die höchste Gewichtung. Gefolgt von Performance, der Unterstützung von POSIX IO. Die kleinste Gewichtung hat der Simultaner Schreibzugriff auf Objekte.
+Wie nach der Gewichtung und in der \reftab{tab:AHPDatenzugriff} zu entnehmen ist, hat die Fähigkeit für simultane Lesezugriffe auf Objekte dicht gefolgt von Skalierbarkeit der Datenzugriffe die höchste Gewichtung, gefolgt von Performance und der Unterstützung von POSIX IO. Die kleinste Gewichtung hat der simultane Schreibzugriff auf Objekte.
 
 
 Die Paarvergleiche im Detail:
 
 \paragraph*{\refsoll{Soll-3-1} verglichen mit \refsoll{Soll-3-2} (\ref{Soll-3-1}/\ref{Soll-3-2})}
-Die Skalierung der Datenzugriff, dass heisst der Zugriff von mehren Systemen, ermöglicht es die Web-Applikation höher Redundant zu betreiben und die Verarbeitung der Bilddaten auf mehre Server zu Verteilen. Der maximale Datendurchsatz ist daher weniger bedeutend als dessen kostanz bei der Verteilung der Zugriffe auf mehere Server. Aus diesen Grund. Ein Speicherlösung welche schlechte Performance aufweist, skaliert jedoch in der Regel ebenfalls nicht. Aus diesen Grund ist die Skalierung der Datenzugriffe etwas grosser Gewichten als die Performance 
+Die Skalierung der Anzahl Datenzugriffe von mehreren Systemen ermöglicht die Web-Applikation höher redundant zu betreiben und die Verarbeitung der Bilddaten auf mehrere Server zu verteilen. Der maximale Datendurchsatz ist daher weniger bedeutend als dessen balansierten Verteilung der Zugriffe auf mehrere Server. Eine Speicherlösung, welche eine schlechte Performance aufweist, skaliert in der Regel ebenfalls nicht. Aus diesem Grund ist die Skalierung der Datenzugriffe etwas grösser zu gewichten als die Performance 
 
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-3-1} verglichen mit \refsoll{Soll-3-3} (\ref{Soll-3-1}/\ref{Soll-3-2})}
-Ist ein Zugriff auf die Daten über POSIX IO möglich, fällt allenfalls die Anpassung der Entwickelte Web-Applikation geringer aus als wenn er auf die Daten per API zugreifen muss. Für den Betrieb der Web-Applikation ist die Skalierung des Datenzugriffs sehr viel bis absolut bedeutender als die Methode des Datenzugriffs.
+Ist ein Zugriff auf die Daten über POSIX IO möglich, fällt allenfalls die Anpassung der entwickelten Web-Applikation geringer aus, als wenn er auf die Daten per API zugreifen muss. Für den Betrieb der Web-Applikation ist die Skalierung der Anzahl Datenzugriffe sehr viel bis absolut bedeutender als die Methode des Datenzugriffs.
 
 \textbf{Gewichtung: 8}
 
 
 \paragraph*{\refsoll{Soll-3-1} verglichen mit \refsoll{Soll-3-4} (\ref{Soll-3-1}/\ref{Soll-3-4})}
-Der Simultaner Lese Zugriff auf ein Objekt ermöglicht es, dass ein Objekt von mehren Server simultan gelesen werden kann und den Website Besuchern dargestellt werden kann. Wird diese nicht unterstützt ist es möglich das dem Webseiten Besucher die Bilddatei nicht dargestellt werden kann, wenn ein anderer Besucher die selbe Bilddatei betrachtet. Aus diesen Grund ist die Skalierung und der Simultane Lese Zugriff auf Objekten gleich bedeutend.
+Der simultane Lesezugriff auf ein Objekt ermöglicht ein Objekt von mehreren Servern gleichzeitig zu lesen und dem Anwender darzustellen. Wird dies nicht unterstützt, kann dem Benutzer die Bilddatei nicht dargestellt werden, wenn ein anderer Besucher dieselbe Bilddatei gerade betrachtet. Aus diesem Grund ist die Skalierung und der simultane Lesezugriff auf Objekte gleich bedeutend.
 
 \textbf{Gewichtung: 1}
 
 
 \paragraph*{\refsoll{Soll-3-1} verglichen mit \refsoll{Soll-3-5} (\ref{Soll-3-1}/\ref{Soll-3-5})}
-Der Simultaner Schreibzugriff auf ein Objekt erlaubt es, dass ein Objekt simultan von zwei oder mehreren Systemen modifiziert werden kann. Die Web-Applikation des Auftraggeber führt jedoch keine Änderungen an einer Original Bilddatei durch sondern erstellt modifizierte Kopien. Aus diesen Grund ist Möglichkeit der gleichzeitigen Schreibzugriff auf ein Objekt absolut geringer zu Gewichten als die Skalierung des Datenzugriffs
+Der simultane Schreibzugriff auf ein Objekt erlaubt ein Objekt gleichzeitig von zwei oder mehreren Systemen bearbeiten zu können. Die Web-Applikation des Auftraggeber führt jedoch keine Änderungen an einer original Bilddatei durch, sondern erstellt modifizierte Kopien. Aus diesem Grund ist der gleichzeitige Schreibzugriff auf ein Objekt absolut geringer zu gewichten als die Skalierung des Datenzugriffs.
 
 \textbf{Gewichtung: 9}
 
@@ -373,30 +371,30 @@ Für den Betrieb der Web-Applikation ist die Performance der Datenzugriffe erheb
 \textbf{Gewichtung 6}
 
 \paragraph*{\refsoll{Soll-3-2} verglichen mit \refsoll{Soll-3-4} (\ref{Soll-3-2}/\ref{Soll-3-4})}
-Die Performance ist erheblich geringer bedeutend als der simultane Lesezugriff auf Objekte. Grund dafür ist das das gleiche Objekte von mehren Web-Server gelesen werden können um diese den Website Besuchern darstellen können 
+Die Performance ist erheblich geringer bedeutend als der simultane Lesezugriff auf Objekte. Grund dafür ist, dass das gleiche Objekte von mehreren Web-Servern gelesen werden kann, um diese den Website Besuchern darstellen können 
 
 \textbf{Gewichtung: 1/5}
 
 \paragraph*{\refsoll{Soll-3-2} verglichen mit \refsoll{Soll-3-5} (\ref{Soll-3-2}/\ref{Soll-3-5})}
-Aufgrund das keine Manipulationen an der Original Bilddatei durchgeführt wird, ist die Performance der Datenzugriff erheblich höher zu Gewichten als der Simultane Schreib zugriff auf Objekte 
+Weil keine Manipulationen an der original Bilddatei durchgeführt wird, ist die Performance des Datenzugriff erheblich höher zu gewichten als der simultane Schreibzugriff auf Objekte. 
 
 \textbf{Gewichtung: 5}
 
 
 \paragraph*{\refsoll{Soll-3-3} verglichen mit \refsoll{Soll-3-4} (\ref{Soll-3-3}/\ref{Soll-3-4})}
-Die Zugriff Methode der Web-Applikation kann bei bedarf durch die Entwickler angepasst werden. Für den Betrieb der Web-Applikation ist daher die Zugriffs Methode auf die Bilddaten erheblich geringer bedeutend als der Simultane Lese Zugriff.
+Die Zugriffsmethode der Web-Applikation kann bei Bedarf durch die Entwickler angepasst werden. Für den Betrieb der Web-Applikation ist daher die Zugriffsmethode auf die Bilddaten erheblich geringer bedeutend als der simultane Lesezugriff.
 
 \textbf{Gewichtung: 1/5}
 
 
 \paragraph*{\refsoll{Soll-3-3} verglichen mit \refsoll{Soll-3-5} (\ref{Soll-3-3}/\ref{Soll-3-5})}
- Aufgrund das keine Änderungen an Original Bilddateien durchgeführt werden, ist es für den Auftraggeber bedeutender, dass ein Zugriff über POSIX IO möglich ist.
+Weil keine Änderungen an original Bilddateien durchgeführt werden, ist es für den Auftraggeber bedeutender, dass ein Zugriff über POSIX IO möglich ist.
 
 \textbf{Gewichtung: 3}
 
 
 \paragraph*{\refsoll{Soll-3-4} verglichen mit \refsoll{Soll-3-5} (\ref{Soll-3-4}/\ref{Soll-3-5})}
-Die Webapplikation des Auftraggeber führt keine Änderungen an der Original Bilddatei durch, was den Simultaner Schreibzugriff auf Objekten für den Betrieb der Web-Applikation von geringer Bedeutung ist. Der Simultane Lesezugriff auf Objekten muss für den Betrieb der Web-Applikation möglich sein, damit die Bilddaten mehren Websitzungen dargestellt werden können. Aus diesen Grund ist es absolut grosser von Gewicht das ein Simultaner Lesezugriff möglich ist als der Simultaner Schreibzugriff.
+Die Webapplikation des Auftraggeber führt keine Änderungen an der original Bilddatei durch, was den simultanen Schreibzugriff auf Objekten für den Betrieb der Web-Applikation von geringer Bedeutung ist. Der simultane Lesezugriff auf Objekten muss für den Betrieb der Web-Applikation möglich sein, damit die Bilddaten mehren Websitzungen dargestellt werden können. Aus diesen Grund ist es absolut grosser von Gewicht das ein Simultaner Lesezugriff möglich ist als der Simultaner Schreibzugriff.
 
 \textbf{Gewichtung: 9}
 
@@ -424,17 +422,17 @@ Wie nach der Gewichtung und in der \reftab{tab:AHPSpeicherkapazität} zu entnehm
 Die Paarvergleiche im Detail:
 
 \paragraph*{\refsoll{Soll-4-1} verglichen mit \refsoll{Soll-4-2} (\ref{Soll-4-1}/\ref{Soll-4-2})}
-Die Skalierung der Speicherkapazität ist gleich zu Gewichten wie die maximal Anzahl Speicherbare Objekt. Beides sind limitierende Faktoren, die bei erreichen der Grenze die Speicherung von neuen Objekten verunmöglichen. Erreicht man die Grenze der Speicherbaren Objekten, kann der Vorhandene frei Speicherkapazität nicht für neue Objekte verwendet werden. Umgekehrt kann die Speicherkapazität nicht ausgebaut werden, können die frei Kapazität an Speicherbaren Objekten nicht dazu verwendet werden neue Objekte zu Speichern.
+Die Skalierung der Speicherkapazität ist gleich zu gewichten wie die maximal Anzahl Speicherbare Objekt. Beides sind limitierende Faktoren, die bei erreichen der Grenze die Speicherung von neuen Objekten verunmöglichen. Erreicht man die Grenze der Speicherbaren Objekten, kann der Vorhandene frei Speicherkapazität nicht für neue Objekte verwendet werden. Umgekehrt kann die Speicherkapazität nicht ausgebaut werden, können die frei Kapazität an Speicherbaren Objekten nicht dazu verwendet werden neue Objekte zu Speichern.
 
 \textbf{Gewichtung: 1}
 
 \paragraph*{\refsoll{Soll-4-1} verglichen mit \refsoll{Soll-4-3} (\ref{Soll-4-1}/\ref{Soll-4-3})}
-Die Skalierbarkeit der Speicherkapazität, ist für den Betrieb sehr viel grösser zu Gewichten als die Maximale Speichergrösse für Objekte die grösser als 2 Gigibyte sind.
+Die Skalierbarkeit der Speicherkapazität, ist für den Betrieb sehr viel grösser zu gewichten als die Maximale Speichergrösse für Objekte die grösser als 2 Gigibyte sind.
 
 \textbf{Gewichtung: 7}
 
 \paragraph*{\refsoll{Soll-4-2} verglichen mit \refsoll{Soll-4-3} (\ref{Soll-4-2}/\ref{Soll-4-3})}
-Die maximale Anzahl speicherbare Objekte, ist für den Betrieb sehr viel grösser zu Gewichten als die Maximale Speichergrösse für Objekte die grösser als 2 Gigibyte sind.
+Die maximale Anzahl speicherbare Objekte, ist für den Betrieb sehr viel grösser zu gewichten als die Maximale Speichergrösse für Objekte die grösser als 2 Gigibyte sind.
 
 \textbf{Gewichtung: 7}
 
@@ -460,7 +458,7 @@ Die Paarvergleiche im Detail:
 
 
 \paragraph*{\refsoll{Soll-5-1} verglichen mit \refsoll{Soll-5-2} (\ref{Soll-5-1}/\ref{Soll-5-2})}
-Damit das Speichersystem korrupte Objekte selbständig heilen kann, ist es erforderlich das die Objekte Redundant gespeichert sind und die Integrität der Gespeicherten Objekte geprüft werden kann. Die Integrität der Objekte wird dabei mit einen zuvor erstellten und gespeicherten Hash Prüfsumme verglichen. Aus diesen Grund ist die Datenintegrität erheblich höher zu Gewichten als die Selbstheilung von Objekten.
+Damit das Speichersystem korrupte Objekte selbständig heilen kann, ist es erforderlich das die Objekte Redundant gespeichert sind und die Integrität der Gespeicherten Objekte geprüft werden kann. Die Integrität der Objekte wird dabei mit einen zuvor erstellten und gespeicherten Hash Prüfsumme verglichen. Aus diesen Grund ist die Datenintegrität erheblich höher zu gewichten als die Selbstheilung von Objekten.
 
 \textbf{Gewichtung: 5}
 
@@ -468,29 +466,29 @@ Damit das Speichersystem korrupte Objekte selbständig heilen kann, ist es erfor
 Verliert man alle \gls{Primären-Daten} durch einen Hard-, Software Fehler oder durch einwirken von dritten, ist es unerlässlich das ein Sicherungskopie bereit steht um nicht den Total Datenverlust zu erleiden.
 Ein weiter Gefahr von Datenverlust besteht, wenn die Datenintegrität nicht sichergestellt ist. Ist ein Objekt nicht mehr integer bzw. korrupt und wird diese vor der Sicherung nicht festgestellt, besteht die Gefahr eines Datenverlustes.
 Der Verlust aller Daten ist jedoch schwerwiegender als der Verlust einzelner Daten.
-Aus diesen Grund ist die Datenintegrität geringer zu Gewichten als die Datensicherung.
+Aus diesen Grund ist die Datenintegrität geringer zu gewichten als die Datensicherung.
 
 \textbf{Gewichtung: 1/3}
 
 \paragraph*{\refsoll{Soll-5-1} verglichen mit \refsoll{Soll-5-4} (\ref{Soll-5-1}/\ref{Soll-5-4})}
-Primär muss bei einer Webapplikation die Sicherheit der Daten innerhalb der Webapplikation sicher gestellt werden. Aus diesen Grund ist die Datenintegrität sehr viel grösser zu Gewichten als Sicherheit.
+Primär muss bei einer Webapplikation die Sicherheit der Daten innerhalb der Webapplikation sicher gestellt werden. Aus diesen Grund ist die Datenintegrität sehr viel grösser zu gewichten als Sicherheit.
 
 \textbf{Gewichtung: 7}
 
 \paragraph*{\refsoll{Soll-5-2} verglichen mit \refsoll{Soll-5-3} (\ref{Soll-5-2}/\ref{Soll-5-3})}
 Die Selbstheilung von Daten stellt sicher das alle Redundanten gespeicherten \gls{Primären-Daten} integer sind. Durch die Selbstheilung verringert sich das Risiko der eines Datenverlust zu erleiden. 
 Der Verlust aller Daten ist jedoch schwerwiegender als der Verlust einzelner Daten.
-Aus diesen Grund ist die Selbstheilung der Daten erheblich geringer zu Gewichten als die Datensicherung.
+Aus diesen Grund ist die Selbstheilung der Daten erheblich geringer zu gewichten als die Datensicherung.
 
 \textbf{Gewichtung: 1/5}
 
 \paragraph*{\refsoll{Soll-5-2} verglichen mit \refsoll{Soll-5-4} (\ref{Soll-5-2}/\ref{Soll-5-4})}
-Primär muss bei einer Webapplikation die Sicherheit der Daten innerhalb der Webapplikation sicher gestellt werden. Aus diesen Grund ist die Selbsheilung der Daten etwas grosser zu Gewichten als Sicherheit.
+Primär muss bei einer Webapplikation die Sicherheit der Daten innerhalb der Webapplikation sicher gestellt werden. Aus diesen Grund ist die Selbsheilung der Daten etwas grosser zu gewichten als Sicherheit.
 
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-5-3} verglichen mit \refsoll{Soll-5-4} (\ref{Soll-5-3}/\ref{Soll-5-4})}
-Die Datensicherheit ist Primär auf der Web-Applikation Schicht zu gewährleisten und zu realisieren. Erfährt man einen Datenverlust durch einwirken von dritten, ist sicherzustellen das ein Sicherungskopie der Daten existiert. Aus diesen Grund ist die Sicherung der Daten sehr viel höher zu Gewichten als die Sicherheit. 
+Die Datensicherheit ist Primär auf der Web-Applikation Schicht zu gewährleisten und zu realisieren. Erfährt man einen Datenverlust durch einwirken von dritten, ist sicherzustellen das ein Sicherungskopie der Daten existiert. Aus diesen Grund ist die Sicherung der Daten sehr viel höher zu gewichten als die Sicherheit. 
 
 \textbf{Gewichtung: 7}
 
@@ -516,28 +514,28 @@ Wie nach der Gewichtung und in der \reftab{tab:AHPTechnologie} zu entnehmen ist,
 Die Paarvergleiche im Detail:
 
 
-\paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-2} (\ref{Soll-6-1}/\ref{Soll-6-2})} Ein Technologie die nicht mehr weiter Entwickelt wird, wird trotzt allfähiger aktuellen grosser Marktverbreitung, über kurz oder längere Zeit durch neuere Technologie aus dem Markt verdrängt. Beim entscheid einer neuen Lösung ist es deshalb wichtig, dass man sich für ein Technologie Entscheidet die nicht am Ende Ihrer Lebenszyklus steht. Aus diesen Grund ist die Marktverbreitung/Marktchance erheblich geringer zu Gewichten als die Weiterentwicklung.
+\paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-2} (\ref{Soll-6-1}/\ref{Soll-6-2})} Ein Technologie die nicht mehr weiter Entwickelt wird, wird trotzt allfähiger aktuellen grosser Marktverbreitung, über kurz oder längere Zeit durch neuere Technologie aus dem Markt verdrängt. Beim entscheid einer neuen Lösung ist es deshalb wichtig, dass man sich für ein Technologie Entscheidet die nicht am Ende Ihrer Lebenszyklus steht. Aus diesen Grund ist die Marktverbreitung/Marktchance erheblich geringer zu gewichten als die Weiterentwicklung.
 
 \textbf{Gewichtung: 1/5}
 
 
 \paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-3} (\ref{Soll-6-1}/\ref{Soll-6-3})}
-Durch ein hohe Marktverbreitung ist in der Regeln die Verfügbarkeit von Experten ebenfalls gegeben. Aus diesen Grund sind die Marktverbreitung und die Verfügbarkeit von Experten gleich zu Gewichten
+Durch ein hohe Marktverbreitung ist in der Regeln die Verfügbarkeit von Experten ebenfalls gegeben. Aus diesen Grund sind die Marktverbreitung und die Verfügbarkeit von Experten gleich zu gewichten
 
 \textbf{Gewichtung: 1}
 
 \paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-1}/\ref{Soll-6-4})}
-Ein Produkt welches hohen Verwaltungskomfort aufweist, jedoch wegen anderen Faktoren ein schlechte Marktverbreitung oder Marktchancen aufweist, ist für den längeren betrieb schlechter geeignet als ein Produkt mit weniger hohen Verwaltungskomfort. Die Marktverbreitung ist deshalb etwas hoher zu Gewichten als der Verwaltungskomfort.
+Ein Produkt welches hohen Verwaltungskomfort aufweist, jedoch wegen anderen Faktoren ein schlechte Marktverbreitung oder Marktchancen aufweist, ist für den längeren betrieb schlechter geeignet als ein Produkt mit weniger hohen Verwaltungskomfort. Die Marktverbreitung ist deshalb etwas hoher zu gewichten als der Verwaltungskomfort.
 
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-5} (\ref{Soll-6-1}/\ref{Soll-6-5})}
-Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und Betrieblich ausgereift sind. Die Marktverbreitung ist deshalb absolut geringer zu Gewichten als die Ausgereifheit der Speicherlösung.
+Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und Betrieblich ausgereift sind. Die Marktverbreitung ist deshalb absolut geringer zu gewichten als die Ausgereifheit der Speicherlösung.
 
 \textbf{Gewichtung: 1/9}
 
 \paragraph*{\refsoll{Soll-6-2} verglichen mit \refsoll{Soll-6-3} (\ref{Soll-6-2}/\ref{Soll-6-3})}
-Eine Technologie, welche nicht mehr weiter entwickelt wird lauft Gefahr den Markt Anforderungen nicht mehr zu genügen und auf Dauer von neuen Technologien ersetzt zu werden. Der Rückgang der Marktanteile der Technologie hat auch zur Folge, dass der Nachwuchs sich in den alten Technologien weiter Bilden. Was wiederum zur Folge hat, dass die Anzahl Experten auf Dauer ebenfalls abnimmt. Aus diesen Grund ist die Weiterentwicklung erheblich höher zu Gewichten als die Verfügbarkeit von Experten.
+Eine Technologie, welche nicht mehr weiter entwickelt wird lauft Gefahr den Markt Anforderungen nicht mehr zu genügen und auf Dauer von neuen Technologien ersetzt zu werden. Der Rückgang der Marktanteile der Technologie hat auch zur Folge, dass der Nachwuchs sich in den alten Technologien weiter Bilden. Was wiederum zur Folge hat, dass die Anzahl Experten auf Dauer ebenfalls abnimmt. Aus diesen Grund ist die Weiterentwicklung erheblich höher zu gewichten als die Verfügbarkeit von Experten.
 
 \textbf{Gewichtung: 5}
 
@@ -548,25 +546,25 @@ Die Weiterentwicklung ist für den Langzeitbetrieb wichtiger als der Verwaltungs
 \textbf{Gewichtung: 7}
 
 \paragraph*{\refsoll{Soll-6-2} verglichen mit \refsoll{Soll-6-5} (\ref{Soll-6-2}/\ref{Soll-6-5})}
-Für den Betrieb der Web-Applikation ist es wichtig, dass die Speicherlösung technisch und betrieblich ausgereift ist. Die Weiterentwicklung ist deshalb erheblich geringer zu Gewichten als die Ausgereiftheit der Speicherlösung.
+Für den Betrieb der Web-Applikation ist es wichtig, dass die Speicherlösung technisch und betrieblich ausgereift ist. Die Weiterentwicklung ist deshalb erheblich geringer zu gewichten als die Ausgereiftheit der Speicherlösung.
 
 \textbf{Gewichtung: 1/5}
 
 
 \paragraph*{\refsoll{Soll-6-3} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-3}/\ref{Soll-6-4})}
-Biete ein Speicherlösung einen hohen Verwaltungskomfort, kann die Verwaltung in der Regel schneller und von weniger gut geschultem Personal durchgeführt werden. Folglich ist verringert sich die Abhängigkeit zu Experten. Für die Konzeption, Inbetriebnahme, spätere Optimierung und Problemlösungen der Speicherinfrastruktur ist man in der Regel weiterhin auf das Wissen von Experten angewiesen. Aus diesen Grund ist es wichtig das der Zugriff auf Experten Wissen gegeben ist. Die Verfügbarkeit von Experten ist deshalb, erheblich höher zu Gewichten als der Verwaltungskomfort. 
+Biete ein Speicherlösung einen hohen Verwaltungskomfort, kann die Verwaltung in der Regel schneller und von weniger gut geschultem Personal durchgeführt werden. Folglich ist verringert sich die Abhängigkeit zu Experten. Für die Konzeption, Inbetriebnahme, spätere Optimierung und Problemlösungen der Speicherinfrastruktur ist man in der Regel weiterhin auf das Wissen von Experten angewiesen. Aus diesen Grund ist es wichtig das der Zugriff auf Experten Wissen gegeben ist. Die Verfügbarkeit von Experten ist deshalb, erheblich höher zu gewichten als der Verwaltungskomfort. 
 
 \textbf{Gewichtung: 5}
 
 \paragraph*{\refsoll{Soll-6-3} verglichen mit \refsoll{Soll-6-5} (\ref{Soll-6-3}/\ref{Soll-6-5})}
-Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und betrieblich ausgereift sind. Ist ein Produkt nicht ausgereift, bzw. verfügt über massive Mängel, die einen Betrieb gefährden, kann diese nicht gänzlich durch Experten Wissen kompensiert werden. Die Verfügbarkeit von Experten ist deshalb sehr viel geringer zu Gewichten als die Ausgereiftheit der Speicherlösung.
+Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und betrieblich ausgereift sind. Ist ein Produkt nicht ausgereift, bzw. verfügt über massive Mängel, die einen Betrieb gefährden, kann diese nicht gänzlich durch Experten Wissen kompensiert werden. Die Verfügbarkeit von Experten ist deshalb sehr viel geringer zu gewichten als die Ausgereiftheit der Speicherlösung.
 
 \textbf{Gewichtung: 1/7}
 
 \paragraph*{\refsoll{Soll-6-4} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-3}/\ref{Soll-6-5})}
 Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und betrieblich ausgereift sind. Der beste Verwaltungskomfort bring am Ende nichts, wenn das Produkt durch Mängeln den Betrieb gefährdet.
 
-Der Verwaltungskomfort ist deshalb absolut geringer zu Gewichten als die Ausgereiftheit der Speicherlösung.
+Der Verwaltungskomfort ist deshalb absolut geringer zu gewichten als die Ausgereiftheit der Speicherlösung.
 
 \textbf{Gewichtung: 1/9}
 

@@ -1,5 +1,7 @@
 %!TEX root=documentation-bachlorthesis-speicherarchitektur-lstucker.tex
 
+
+
 \documentclass[
 oneside, % einseitiges Dokument
 a4paper, % Papierformat
@@ -16,6 +18,19 @@ draft=false, % Status des Dokuments (final/draft)
 ngerman % für Umlaute, Silbentrennung etc.
 ]{scrbook}
 
+%\usepackage{helvet}
+% Umlaute ----------------------------------------------------------------------
+%   Umlaute/Sonderzeichen wie ‰¸ˆﬂ direkt im Quelltext verwenden (CodePage).
+%   Erlaubt automatische Trennung von Worten mit Umlauten.
+% ------------------------------------------------------------------------------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp} % Euro-Zeichen etc.
+
+% Anpassung an Landessprache
+\usepackage[ngerman]{babel} %Thomas hatte noch English drin
+
+\input{meta}
 
 \usepackage{geometry}
 \usepackage{fancyhdr}
@@ -39,17 +54,7 @@ ngerman % für Umlaute, Silbentrennung etc.
 \usepackage{setspace} % Einfache Definition der Zeilenabstände 
 \onehalfspacing % Zeilenabstand 1,5 Zeilen
 
-%\usepackage{helvet}
-% Umlaute ----------------------------------------------------------------------
-%   Umlaute/Sonderzeichen wie ‰¸ˆﬂ direkt im Quelltext verwenden (CodePage).
-%   Erlaubt automatische Trennung von Worten mit Umlauten.
-% ------------------------------------------------------------------------------
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{textcomp} % Euro-Zeichen etc.
 
-% Anpassung an Landessprache
-\usepackage[ngerman]{babel} %Thomas hatte noch English drin
 
 % zum Einbinden von Programmcode
 \usepackage{listings}
