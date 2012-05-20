@@ -1,7 +1,18 @@
 %!TEX root=../documentation-bachlorthesis-speicherarchitektur-lstucker.tex
 \cleardoublepage
 \chapter{Fazit}
-\section{Erkenntnisse}
+
+Für den Auftraggeber stehen unterschiedliche Speichertechnologien zur Verfügung. Doch welche der Speichertechnologien ist nun die Richtige Lösung für den Auftraggeber?
+
+Die Evaluation hat gezeigt, dass der Online Speicher Amazon S3 von allen Gewählten Alternativen die beste Lösung ist. Für Amazon S3 sprach vor allen, die niedrigsten Gesamt kosten. Die Tiefe Kosten von Amazon S3 sind vor allem durch die fehlende Lohnkosten auf Seiten Arbeitgeber für den Betrieb der Speicherarchitektur zurück zu führen. Für Amazon S3 spricht aber auch, dass der Speicher nach Anmeldung sofort zur Verfügung steht und beliebig in der Speicherkapazität skaliert.
+
+Ein Nachteil beim Einsatz von Amazon S3 könnte für den Auftraggeber die Bildaufbereitung sein. Die Daten müssten dazu über die Internetverbindung der Applikations-Server vom Speicher heruntergeladen werden um diese zu verarbeiten. Dadurch wird die Internet Verbindung der Applikations-Server zusätzlich belastet, die Transfer Geschwindigkeit währe tiefer als bei einer Lösung welche den Speicher über eine Lokales Netzwerk zur Verfügung stellt und es entstehen zusätzliche Kosten für den Datentransfer. Dieser Nachteil könnte aber allenfalls durch Amazon EC2 etwas Entschärft werden. Amazon EC2 bietet Online Rechenkapazität an für den Betrieb von Virtuelle Server. Der Transfer von Amazon S3 zu Amazon EC2 verursacht keine Kosten.
+
+Neben Amazon S3 gibt es noch weitere Online Speicheranbieter, welche in dieser Evaluation nicht berücksichtigt wurden, aber für eine Definitive Entscheidung für eine Speicherlösungen noch in die Entscheidungsfindung mit einbezogen werden sollen.
+
+
+
+\section{Erkenntnisse aus der Arbeit}
 
 \subsection{Speichertechnologie}
 Die Arbeit hat es mir ermöglicht für eine Reales Existierendes Projekt die Verschiedenen Speichertechnologien zu Vergleichen und mit ausgewählten Vertreter jeder Technologie eine Evaluation durchzuführen. Diese ermöglicht es mir Speichertechnologien kennen zu lernen mit welchen ich in der Vergangenheit keine Berührungspunkte hatte und mir somit zu diesen und den bereits bekannten Technologien neues Wissen anzueignen.
@@ -18,8 +29,23 @@ Das Verfahren ist meiner Einschätzung nach aber auch relative Aufwendig, besond
 
 Mit der Erfahrung aus der Arbeit, würde ich Empfehlen eine Evaluation nicht in Einzelarbeit durchzuführen sondern zu zweit oder allenfalls auch in einen kleinen Team. Grund dafür sehe ich, dass bei der Beurteilung der Diskussionspartner und dessen Beurteilung fehlt.
 
+\section{Offene Fragen}
+
+Fragen, die in dieser Arbeit nicht geklärt werden konnten.
+
+\textbf{Wie hoch der Effektive Arbeitsaufwand ist um eine eigne OpenStack Object Storage Installation zu Betreiben?}
+
+\textbf{Gibt es bereits oder wird es zukünftig eine echte Schweizer alternative zu Amazon S3 geben?}
+
+\textbf{Werden die grossen Speicherhersteller, eigene Produkte für Verteilte Speicher anbieten?}
+
+\textbf{Wird sich ein Echter Standard für den Zugriff auf Verteiler Speicher entwickeln?}
+
+\textbf{Wie hoch wären die Kosten für die Bearbeitung der Bilder auf Amazon EC2?}
+
+
 \section{Schlusswort}
-Ich möchte mich hiermit an alle Beteiligen Personen ganz Herzlich bedanke, die mit Ihrer Engament und Unterstützung mir es ermöglicht Haben diese Arbeit und meine Studium durch zufügen. 
+Ich möchte mich hiermit an alle Beteiligen Personen ganz Herzlich bedanke, die mit Ihrer Engagement und Unterstützung mir es ermöglicht Haben diese Arbeit und meine Studium durch zufügen. 
 
 Die Arbeit hat in mir, die Neugier in Verteile Systeme und Speicherlösungen geweckt. Ich finde es persönlich höchst Spannend, und würde mich gerne auch zukünftig weiter mit solchen Systemen beschäftigen. Ich gehe davon aus, dass der Bedarf an Verteile Speicherlösungen in Unternehmen zukünftig steigen wird. Meinen Eindruck ist aber, dass in der Schweiz der Bedarf noch nicht allzu gross ist, obwohl auch hier sicher grosses Potential vorhanden wäre. IT-Firmen und IT-Experten welche sich jetzt schon wissen aneignen. Haben wahrscheinliche mit den Wissensvorsprung die Chance sich in einen Wachsenden Markt Positionierungen zu können. 
 
