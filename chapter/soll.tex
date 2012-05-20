@@ -3,7 +3,7 @@
 \chapter{Soll-Analyse}
 Bei der Soll-Analyse sollen die erarbeiteten Szenarien aus dem Szenarienbeschrieb berücksichtigt werden. 
 
-\section{Szenario-1}\label{Soll-1}
+\section{Szenario-1}\label{Szenario-1}
 
 \subsection{Verfügbarkeit}
 Die Verfügbarkeit soll durchgehend von Speichersystem bis zum Web-Service mindestens dem AEC-2 Standard von Harvard Research entsprechen. Dies bedeutet, dass die Verfügbarkeit der Applikation, beziehungsweise der Daten, dass der Betrieb nur innerhalb festgelegter Zeitblöcke, beziehungsweise nur während der Hauptbetriebszeit minimal unterbrochen werden darf. Die bestehende Infrastruktur besteht nur aus einem einzelnen Web-Server. Dieser enthält gleichzeitig auch das Speichersystem mit seinen internen Festplatten, welche mit einem RAID-5 zusammengefasst sind. Eine defekte Komponente des Web-Servers würde das gesamte System zum Erliegen bringen. Wie in der Ist-Analyse beschrieben, erfüllt das Speichersystem für sich alleine zwar eine genügende Verfügbarkeit gemäss Definition von Harvard Research von AEC-2. Die restlichen Komponenten bzw. Softwarekomponenten des Web-Services, erfüllen diesen Anspruch allerdings nicht. Die bestehende Speicherarchitekur kann den Speicher nicht ohne Anpassung der Architektur, an weitere Web-Server zur Verfügung stellen.
@@ -46,7 +46,7 @@ Im Vergleich der neuen Anforderungen mit dem Ist-Zustand ergeben sich folgende V
 \item Ermöglicht mehrere gleichzeitige Lesezugriffe auf das gleiche Objekt
 \end{itemize}
 
-\section{Szenario-2}
+\section{Szenario-2}\label{Szenario-2}
 
 \subsection{Verfügbarkeit}
 Die Verfügbarkeit soll dem AEC-4 Standard von Harvard Research entsprechen. Das bedeutet, dass die Applikationen und Daten unterbrechungsfrei verfügbar sein müssen. ƒDer 24*7 Betrieb (24 Stunden, 7 Tage die Woche) muss gewährleistet sein. Bei hoher Kundenzahl und Speichervolumen würde ein Betriebsunterbruch der Web-Services grossen Imageschaden verursachen und die Kunden bezüglich der Zuverlässigkeit der benötigten Services verunsichern.

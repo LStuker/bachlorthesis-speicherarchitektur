@@ -31,6 +31,7 @@ ngerman % für Umlaute, Silbentrennung etc.
 \usepackage[ngerman]{babel} %Thomas hatte noch English drin
 
 \input{meta}
+\usepackage[fleqn]{amsmath}
 
 \usepackage{geometry}
 \usepackage{fancyhdr}
@@ -68,6 +69,8 @@ ngerman % für Umlaute, Silbentrennung etc.
 \usepackage{tabularx}
 \usepackage{longtable}
 
+\usepackage{bibgerm}
+
 % Farben
 \definecolor{hsztblue}{cmyk}{0.946,0.452,0,0.349}
 \definecolor{hellgelb}{rgb}{1,1,0.9}
@@ -82,9 +85,6 @@ ngerman % für Umlaute, Silbentrennung etc.
 \makeatother
 \urlstyle{leo} % Now actually use the newly defined style.
 
-
-\usepackage{minitoc} % ToC for chapters
-\minitoc[n] % No caption for mini ToCs
 
 
 
@@ -149,10 +149,11 @@ breaklines=true
     urlcolor=black % color of external links
 }
 
+
 % http://en.wikibooks.org/wiki/LaTeX/Glossary
 %\usepackage[toc,xindy,acronym]{glossaries}
 
-\usepackage{acronym} % [printonlyused]
+% \usepackage{acronym} % [printonlyused]
 
 
 %\usepackage[toc,xindy]{glossaries}
@@ -211,7 +212,7 @@ headsep=10mm, footskip=12mm}
 \newcommand{\refeql}[1]{\textbf{Gleichung \ref{#1}}}
 \newcommand{\refeqlb}[1]{\textbf{Berechnung \ref{#1}}}
 
-\usepackage[fleqn]{amsmath}
+
 
 \usepackage{tabularx}
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}} % linksbündig mit Breitenangabe
@@ -223,7 +224,3 @@ headsep=10mm, footskip=12mm}
 
 \setlength{\baselineskip}{16.5pt} % 16 pt usual spacing between lines
 
-
-%Footnote
-\newcommand{\footnoteremember}[2{\footnote{#2}\newcounter{#1}\setcounter{#1}%{\value{footnote}}}
-\newcommand{\footnoterecall}[1]{\footnotemark[\value{#1}]}

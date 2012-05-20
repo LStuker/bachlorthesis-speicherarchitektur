@@ -25,7 +25,7 @@ swift_hash_path_suffix = KmwBretYgombitrL
 sudo apt-get install swift-account swift-container swift-object xfsprogs
 \end{lstlisting}
 
-begin{lstlisting}[label=partition, language=Bash, caption=Partition auf zweiter Festplatte erstellen ]
+\begin{lstlisting}[label=partition, language=Bash, caption=Partition auf zweiter Festplatte erstellen ]
 sudo fdisk /dev/sdb 
 Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel
 Building a new DOS disklabel with disk identifier 0xd5f71779.
@@ -87,7 +87,7 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 sudo echo "/dev/sdb1 /srv/node/sdb1 xfs noatime,nodiratime,nobarrier,logbufs=8 0 0" >> /etc/fstab
 \end{lstlisting}
 
-\begin{lstlisting}[label=MountPointDisk, language=Bash, caption=Mount Anlegen, Disk Mounten und Berechtigung setzen]
+\begin{lstlisting}[label=MountPointDisk, language=Bash, caption=Mount Anlegen]
 sudo mkdir -p /srv/node/sdb1
 sudo mount /srv/node/sdb1
 sudo chown -R swift:swift /srv/node
@@ -212,8 +212,6 @@ Email Address []:it@stuker.biz
 \end{lstlisting}
 
 \begin{lstlisting}[label=memcachedconf, language=Bash, caption=MemCached in /etc/memcached.conf konfigurieren ]
--l 127.0.0.1
-in ändern
 -l 172.16.251.80
 \end{lstlisting}
 
@@ -254,7 +252,7 @@ sudo swift-ring-builder container.builder rebalance
 sudo swift-ring-builder object.builder rebalance
 \end{lstlisting}
 
-\begin{lstlisting}[label=scp, language=Bash, caption=Dateien account.ring.gz, container.ring.gz, und object.ring.gz an alle Nodes verteilen und Berechtigung setzen]
+\begin{lstlisting}[label=scp, language=Bash, caption=Dateien Verteilen]
   scp *.gz data01-c1-d1:/etc/swift
   scp *.gz data02-c1-d1:/etc/swift  
   scp *.gz data03-c1-d1:/etc/swift

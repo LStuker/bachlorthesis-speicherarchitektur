@@ -58,7 +58,7 @@ Das Speichersystem stellt im SAN den geteilten Speicher zur Verfügung. Gemäss 
 Tape Library ist eine Bandbibliothek, in welchem sich ein oder mehrere Bandlaufwerke und mehrere Magnetbänder befinden und meistens der automatische Bandwechsel mittels eines Bandroboters realisiert wird. Das Tape Library wird für die Sicherung von Daten auf Band eingesetzt.
 
 \paragraph*{Logical Unit}
-Ein Logical Unit ist ein Gerät, welches über SCSI-Protokoll über das Logical Unit Number (LUN) andressiert wird. Das Gerät wird, technisch nicht korrekt, oft als LUN bezeichnet, obwohl es sich um eine logische und nicht physische Komponente handelt ???. Im Speichersystem werden z.B. mehrere Festplatten mittels RAID zu einer Einheit zusammengefasst. Sofern keine weitere Virtualisierung von dem Speicherhersteller zum Einsatz kommt, wird die zusammengefasste Einheit wiederum in Speichereinheiten aufgeteilt und diese als LUN dem Server zugeteilt. \cite{SNIA2011}
+Ein Logical Unit ist ein Gerät, welches über SCSI-Protokoll über das Logical Unit Number (LUN) andressiert wird. Das Gerät wird, technisch nicht korrekt, oft als LUN bezeichnet. Im Speichersystem werden z.B. mehrere Festplatten mittels RAID zu einer Einheit zusammengefasst. Sofern keine weitere Virtualisierung von dem Speicherhersteller zum Einsatz kommt, wird die zusammengefasste Einheit wiederum in Speichereinheiten aufgeteilt und diese als LUN dem Server zugeteilt. \cite{SNIA2011}
 
 \subsubsection{Fibre Channel}
 SCSI ist zwar sehr populär, ist jedoch mit 80 Mbps Geschwindigkeit, mit maximal 25 Meter Buslänge und mit maximal 32 Geräten pro Bus, ein limitierender Faktor für viele Anwendungen. Unter anderem wegen den erwähnten Limitierungen von SCSI hat das American National Standards Institute (ANSI) die Fibre Channel Technik entwickelt. Fibre Channel ist ein mehrschichtiges Netzwerk, welches die charakteristischen Funktionen für die Übertragung von Daten über ein Netzwerk definiert. Der Standard enthält von der physikalischen Schnittstelle, Daten Codierung, Übertragungssteuerung (Link Control), Fluss Kontrolle, bis hinzu den Protokoll Schnittstellen. Im Vergleich zu anderen Netzwerken beinhaltet die Fibre Channel Architektur einen signifikanten Anteil von Hardware Prozessen, um eine hohe Performance zu erreichen. \cite{Gupta2002}\cite{Christopher2009}
@@ -91,7 +91,7 @@ Die einfachste Topologie, welche die Eliminierung von "'Single Point of Failure"
 \mycaption{figure}{\label{abb:DualSwitchTopologie}Fibre Channel SAN mit Dual Switch Topologie}
 \end{center}
 
-Die Meshed Fabric Topologie erhöht die zusätzlich die Ausfallsicherheit innerhalb einer einzelnen Fabric. Für die Meshed Fabric sind pro Fabric mindestens vier Fibre Channel SAN Switches erforderlich. Jeder Switch wird, wie in \refabb{abb} ersichtlich, mit mindestens einem Path, den sogenannten Inter-Switch-Link (ISL), zu allen anderen Switches in der Fabric verbunden. Die Meshed Fabric kann den gleichzeitigen Ausfall von mehreren Kabeln und Switches verkraften, ohne dass deshalb die ganze Fabric ausfällt. \cite{Christopher2009}
+Die Meshed Fabric Topologie erhöht die zusätzlich die Ausfallsicherheit innerhalb einer einzelnen Fabric. Für die Meshed Fabric sind pro Fabric mindestens vier Fibre Channel SAN Switches erforderlich. Jeder Switch wird, wie in \refabb{abb:MashedFabricTopologie} ersichtlich, mit mindestens einem Path, den sogenannten Inter-Switch-Link (ISL), zu allen anderen Switches in der Fabric verbunden. Die Meshed Fabric kann den gleichzeitigen Ausfall von mehreren Kabeln und Switches verkraften, ohne dass deshalb die ganze Fabric ausfällt. \cite{Christopher2009}
 
 \begin{center}
 \includegraphics[width=\linewidth, keepaspectratio = true]{media/MashedFabric.png}
@@ -123,7 +123,7 @@ Hersteller wie Brocade haben diese Problematik für den Betrieb von iSCSI SAN er
 Wie beim Fibre Channel SAN sollte im Geschäftsumfeld iSCSI über ein dediziertes Netzwerk laufen. Die Abgrenzung erhöht die Sicherheit einerseits und das Storage Netzwerk ist andererseits klar von anderen Netzwerken abgeschottet. Fehlerhafte Firewall-Regeln für das Computer Netzwerk haben keinen direkten Einfluss auf die Sicherheit des Datennetzwerkes. Störungen oder Überlast im Computer Netzwerk beeinflussen nicht die iSCSI Verbindungen. Mittels IPsec kann die Sicherheit durch die verbesserte Authentifizierung und der optionaler Verbindungsverschlüsselung weiter erhöht werden. 
 
 %\paragraph*{Integrität}
-iSCSI stellt die Integrität des übermittelten Paketes mit dem CRC-32c Digests sicher. Die Integrität auf anderen Ebenen, wie Speichersystem, Computer Bit-Fehler auf Speichersystem-Ebene oder Memory des Computersystems können???. 
+iSCSI stellt die Integrität des übermittelten Paketes mit dem CRC-32c Digests sicher. 
 
 \paragraph*{Skalierbarkeit Datenvolumen}
 Einem Server können mehrere Logical Units zugeteilt werden. Durch den Einsatz eines Volume Managers können mehrere Logical Units zu einer grossen logischen Volume zusammengefasst werden. Sollte die Kapazität eines Speichersystems nicht ausreichen, kann ein weiteres Speichersystem an das SAN angeschlossen werden.
@@ -221,7 +221,7 @@ Gemäss Gartner gehören die Anbieter \gls{IBM}, \gls{EMC} und NetAPP zu den fü
 \item While NetApp continues to enjoy its leading edge in unified storage, it's facing fiercer competition in the high-end NAS market, where file systems larger than 100TB are required and where high performance without the expensive Flash Cache is desired.
 NetApp is also challenged in the low-end NAS and unified storage market with new products from both major and emerging competitors.
 \end{itemize}
-\end{quotation}\cite{IEEE2003}
+\end{quotation}\cite{RogerW.CoxPushanRinnenStanleyZaffos2011}
 
 
 \section{Objekt-Basierend}

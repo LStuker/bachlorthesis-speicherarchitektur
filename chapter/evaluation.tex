@@ -8,7 +8,7 @@ Die gewählten Kriterien für die Evaluation wurden zusammen mit dem Auftraggebe
 Die Kriterien sind für die späteren Verweise hierarchisch nummeriert.
 
 \begin{center}
-\includegraphics[width=\linewidth, keepaspectratio = true]{media/ahp_kriterienbaum.png}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/ahp_kirterienbaum.png}
 \mycaption{figure}{\label{abb:AHPKriterienbaum} Optimales Speichersystem Kriterien}
 \end{center}
 
@@ -157,12 +157,12 @@ Als Vertreter für Block Speicherlösung wurde ebenfalls die NetApp FAS2240-4 ge
 Als Vertreter für verteilten Speicher war ursprünglich Hadoop HDFS vorgesehen. In der aktuellen Version ist der Name-Node von HDFS noch ein Single Point of Failure (SPOF). Zudem liegen die Stärken bei HDFS bei den Datenprozessen für gespeicherte Objekte mittels MapReduce Algorithmus. Aus diesem Grund wurden weitere verteilte Dateisystem untersucht, wie etwa GlusterFS und OpenStack Object Storage. OpenStack Object Storage soll von der Architektur vergleichbar sein wie Amazon S3. Bei gewichtigen Online Speicheranbieter wird RackSpace erfolgreich eingesetzt. Ein weiterer Grund die für OpenStack Object Storage spricht, ist das gelungene quelloffene Projekt, das viele namhafte IT-Hersteller als Partner gewinnen konnte.
 
 \paragraph{Amazon S3}\label{Al-5}
-Amazon S3 wurde als Representant für Online Speicherlösungen gewählt. Amazon S3 ist gemäss \refsec{MartkEtabliert} einer der etabliertesten Anbieter, wenn nicht die erfolgreichste Online Speicherlösung zur Zeit. Amazon betreibt mehrere Rechenzentrum verteilt auf mehrere Kontinenten. Für den Auftraggeber würde das Europäische Rechenzentrum in Frage kommen.
+Amazon S3 wurde als Representant für Online Speicherlösungen gewählt. Amazon S3 ist gemäss \refsec{sec:MarktEtabliert} einer der etabliertesten Anbieter, wenn nicht die erfolgreichste Online Speicherlösung zur Zeit. Amazon betreibt mehrere Rechenzentrum verteilt auf mehrere Kontinenten. Für den Auftraggeber würde das Europäische Rechenzentrum in Frage kommen.
 
 
 \subsection{Gewichtung der Soll-Kriterien mit AHP}
 
-In diesem Abschnitt werden alle Soll-Kriteren der gleichen Hierarchie-Ebene bzw. gleichen Unter-Kriterien paarweise miteinander verglichen und mit der Skala \reftab{tab:Gewichtsberechnung} aus dem \refchap{kab:Entscheidungsfindung} gewichtet.
+In diesem Abschnitt werden alle Soll-Kriteren der gleichen Hierarchie-Ebene bzw. gleichen Unter-Kriterien paarweise miteinander verglichen und mit der Skala \reftab{tab:9PBewertungsskala} aus dem \refchap{kab:Entscheidungsfindung} gewichtet.
 
 % Vergleich mit Kosten
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-2} (\ref{Soll-1}/\ref{Soll-2})} 
@@ -463,7 +463,7 @@ Damit das Speichersystem korrupte Objekte selbständig heilen kann, ist es erfor
 \textbf{Gewichtung: 5}
 
 \paragraph*{\refsoll{Soll-5-1} verglichen mit \refsoll{Soll-5-3} (\ref{Soll-5-1}/\ref{Soll-5-3})}
-Verliert man alle \gls{Primären-Daten} durch einen Hard-, Software Fehler oder durch einwirken von dritten, ist es unerlässlich das ein Sicherungskopie bereit steht um nicht den Total Datenverlust zu erleiden.
+Verliert man alle Primären-Daten durch einen Hard-, Software Fehler oder durch einwirken von dritten, ist es unerlässlich das ein Sicherungskopie bereit steht um nicht den Total Datenverlust zu erleiden.
 Ein weiter Gefahr von Datenverlust besteht, wenn die Datenintegrität nicht sichergestellt ist. Ist ein Objekt nicht mehr integer bzw. korrupt und wird diese vor der Sicherung nicht festgestellt, besteht die Gefahr eines Datenverlustes.
 Der Verlust aller Daten ist jedoch schwerwiegender als der Verlust einzelner Daten.
 Aus diesen Grund ist die Datenintegrität geringer zu gewichten als die Datensicherung.
@@ -476,7 +476,7 @@ Primär muss bei einer Webapplikation die Sicherheit der Daten innerhalb der Web
 \textbf{Gewichtung: 7}
 
 \paragraph*{\refsoll{Soll-5-2} verglichen mit \refsoll{Soll-5-3} (\ref{Soll-5-2}/\ref{Soll-5-3})}
-Die Selbstheilung von Daten stellt sicher das alle Redundanten gespeicherten \gls{Primären-Daten} integer sind. Durch die Selbstheilung verringert sich das Risiko der eines Datenverlust zu erleiden. 
+Die Selbstheilung von Daten stellt sicher das alle Redundanten gespeicherten Primären-Daten integer sind. Durch die Selbstheilung verringert sich das Risiko der eines Datenverlust zu erleiden. 
 Der Verlust aller Daten ist jedoch schwerwiegender als der Verlust einzelner Daten.
 Aus diesen Grund ist die Selbstheilung der Daten erheblich geringer zu gewichten als die Datensicherung.
 
@@ -581,7 +581,7 @@ Der Verwaltungskomfort ist deshalb absolut geringer zu gewichten als die Ausgere
 \textbf{Ausgereift (A)} & 9 & 5 & 7 & 9 & 1 & 0.588 \\ \hline
 \textbf{Konsistenz Kennzahl} & \multicolumn{1}{r|}{0.094} \\ \cline{1-2}
 \end{tabular}
-\label{AHPTechnologie}
+\label{tab:AHPTechnologie}
 \end{table}
 
 
@@ -907,7 +907,7 @@ Für die dreifache Redundanz sind für die aus der Soll-Analyse bestimmten 306 T
 Als Server System wurde der Transtec Lynx CALLEO Application Server 1260 gewählt. Der Server basiert auf Server Hardware des Herstellers SuperMicro. Der Server benötigt 1 Rack-Höcheneinheiten Rack platz und bieten Platz für den Einbau von 4 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen ein Intel Xeon Prozessor E5-2620 zum Einsatz, zudem verfügt der Server über 32 Gigabyte Hauptspeicher. Der Server wurde mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 1'260 CHF.
 
 
-Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der \refeqlb{eqn:SpeicherkapazitätServerS1} eine Speicherkapazität von 10,912 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 48,3 Tebibyte und der 5 Zonen insgesamt 5 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS1}). Für die Erreichung der Speicherkapazität von 48,3 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 20 Festplatten notwendig.
+Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der \refeqlb{eqn:SpeicherkapazitätServerS1} eine Speicherkapazität von 10,912 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 48,3 Tebibyte und der 5 Zonen insgesamt 5 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS1}). Für die Erreichung der Speicherkapazität von 48,3 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 20 Festplatten (\refeqlb{eqn:AnzahlFestplattenS1}) notwendig.
 
 \begin{equation}
 \mbox{Speicherkapazität}_{Server} = 2,728 \mathrm{\ TiB} * 4 \mbox{\ Einschub} = 10,912 \mathrm{\ TiB}
@@ -921,7 +921,7 @@ Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der \refeqlb{
 
 \begin{equation}
 \mbox{Anzahl Festplatten} = \frac{48,3 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx 20 \mbox{\ (Auf 5 Server gerundet)}
-\label{eqn:AnzahlServerS1}
+\label{eqn:AnzahlFestplattenS1}
 \end{equation}
 
 Gemäss \refeqlb{eqn:AnzahlRackS1} wird ein viertel Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Quarter Rack Angebot von Nine, welches 11 Rack-Höheneinheiten platz bietet. Der Preis pro Rack beträgt 450 CHF pro Monat, plus 650 CHF für die einmalige Einrichtung des Racks durch Nine.
@@ -970,7 +970,7 @@ Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
  \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 653'646.50} \\ \cline{4-4}
 \end{tabular}
 \end{small}
-\label{KostenOpenStackS1}
+\label{tab:KostenOpenStackS1}
 \end{table}
 
 
@@ -1002,7 +1002,7 @@ Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der \refeqlb{
 
 \begin{equation}
 \mbox{Anzahl Festplatten} = \frac{918 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx 340 \mbox{\ (Auf 10 Server gerundet)}
-\label{eqn:AnzahlServerS2}
+\label{eqn:AnzahlFestplattenS2}
 \end{equation}
 
 Gemäss \refeqlb{eqn:AnzahlRackS2} wird ein ganzes Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Full Rack Angebot von Nine, welches 47 Rack-Höheneinheiten platz bietet. Der Preis pro halbes Rack beträgt 750 CHF pro Monat, plus 850 CHF für die einmalige Einrichtung des Racks durch Nine.
@@ -1018,7 +1018,7 @@ Für die Berechnung der Gesamt Watt Leistung welcher der Server im Betrieb benö
 \label{eqn:AnzahlWattPaketeS2}
 \end{equation}
 
-Wie aus der \reftab{tab:KostenOpenStackS1} ersichtlich ist, betragen die Gesamtkosten 916'965.00 CHF.
+Wie aus der \reftab{tab:KostenOpenStackS2} ersichtlich ist, betragen die Gesamtkosten 916'965.00 CHF.
 
 \begin{table}[htbp]
 \caption{Kosten OpenStack}
