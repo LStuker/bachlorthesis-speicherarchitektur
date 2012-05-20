@@ -1,3 +1,4 @@
+\input{meta}
 \input{template.config.tex}
 
 % Meta-Informationen -----------------------------------------------------------
@@ -5,7 +6,7 @@
 %   werden in der Datei meta.tex definiert und können danach global
 %   verwendet werden.
 % ------------------------------------------------------------------------------
-\input{meta}
+
 
 \begin{document}
 
@@ -29,6 +30,7 @@
 \setcounter{page}{1}
 % Load at the beginngin that we can use it
 \input{chapter/glossar}
+\input{chapter/akronyme}
 
 \input{chapter/vorwort}
 \input{chapter/zusammenfassung}
@@ -42,6 +44,7 @@
 \input{chapter/evaluation}
 \input{chapter/empfehlung}
 \input{chapter/machbarkeitsnachweis}
+\input{chapter/fazit}
 \cleardoublepage
 
 % \usepackage{fancyhdr}
@@ -49,15 +52,15 @@
 %\setcounter{page}{1}
 % \input{chapter/Listings}
 % \input{chapter/glossar}
-% \input{chapter/Akronyme}
+
 % \input{chapter/literatur}
 
 \pagenumbering{roman}
 % Glossar ausgeben
 \printglossary[style=altlist,title=Glossar]
 % Abkürzungen ausgeben
-% \deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
-% \printglossary[type=\acronymtype,style=long]
+%\deftranslation[to=German]{Acronyms}{Abkürzungsverzeichnis}
+%\printglossary[type=\acronymtype,style=long]
 %Symbole ausgeben
 % \printglossary[type=symbolslist,style=long]
 

@@ -1,3 +1,4 @@
+%!TEX root=../documentation-bachlorthesis-speicherarchitektur-lstucker.tex
 \cleardoublepage
 \chapter{Installation OpenStack Object Storage}
 \section{Generelle Konfiguration}
@@ -187,7 +188,7 @@ use = egg:swift#object
 sudo apt-get install swift-proxy memcached
 \end{lstlisting}
 
-\begin{lstlisting}[label=df, language=Bash, caption=X.509 Zertifikats in /etc/swift erstellen ]
+\begin{lstlisting}[label=zertifikat, language=Bash, caption=X.509 Zertifikats in /etc/swift erstellen ]
 sudo openssl req -new -x509 -nodes -out cert.crt -keyout cert.key
 Generating a 1024 bit RSA private key
 ......++++++
@@ -220,13 +221,13 @@ in ändern
 sudo service memcached restart
 \end{lstlisting}
 
-\begin{lstlisting}[label=ring, language=Bash, caption=Account Container und Object Ring erstellen]
+\begin{lstlisting}[label=ring_create, language=Bash, caption=Account Container und Object Ring erstellen]
 sudo swift-ring-builder account.builder create 18 3 1
 sudo swift-ring-builder container.builder create 18 3 1
 sudo swift-ring-builder object.builder create 18 3 1
 \end{lstlisting}
 
-\begin{lstlisting}[label=ring, language=Bash, caption=Server bzw. Speicher den Ringen hinzufügen]
+\begin{lstlisting}[label=ring_add, language=Bash, caption=Server bzw. Speicher den Ringen hinzufügen]
 sudo swift-ring-builder account.builder add z1-172.16.251.90:6002/sdb1 100
  sudo swift-ring-builder account.builder add z2-172.16.251.91:6002/sdb1 100
 sudo swift-ring-builder account.builder add z3-172.16.251.92:6002/sdb1 100
@@ -247,13 +248,13 @@ sudo swift-ring-builder container.builder
 sudo swift-ring-builder object.builder
 \end{lstlisting}
 
-\begin{lstlisting}[label=ring, language=Bash, caption=Ring rebalance]
+\begin{lstlisting}[label=ring_rebalance, language=Bash, caption=Ring rebalance]
 sudo swift-ring-builder account.builder rebalance
 sudo swift-ring-builder container.builder rebalance
 sudo swift-ring-builder object.builder rebalance
 \end{lstlisting}
 
-\begin{lstlisting}[label=ring, language=Bash, caption=Dateien account.ring.gz, container.ring.gz, und object.ring.gz an alle Nodes verteilen und Berechtigung setzen]
+\begin{lstlisting}[label=scp, language=Bash, caption=Dateien account.ring.gz, container.ring.gz, und object.ring.gz an alle Nodes verteilen und Berechtigung setzen]
   scp *.gz data01-c1-d1:/etc/swift
   scp *.gz data02-c1-d1:/etc/swift  
   scp *.gz data03-c1-d1:/etc/swift
@@ -262,10 +263,10 @@ sudo swift-ring-builder object.builder rebalance
   sudo chown -R swift:swift /etc/swift
 \end{lstlisting}
 
-\begin{lstlisting}[label=ring, language=Bash, caption=Proxy Dienst starten]
+\begin{lstlisting}[label=startproxy, language=Bash, caption=Proxy Dienst starten]
 swift-init proxy start
 \end{lstlisting}
 
-\begin{lstlisting}[label=ring, language=Bash, caption=Auf allen Nodes die Dienste starten]
+\begin{lstlisting}[label=start_datanode, language=Bash, caption=Auf allen Nodes die Dienste starten]
 swift-init all start
 \end{lstlisting}
