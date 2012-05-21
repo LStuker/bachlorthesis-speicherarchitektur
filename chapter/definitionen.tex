@@ -12,7 +12,7 @@ Ein RAID-5 Festplatten-Array besteht aus N identischen Festplatten auf welchen d
 In der \refabb{abb:RAID-5 Architektur} wird eine Stripe-Einheit durch Blöcke dargestellt. Z.B. stellt A1 eine Stripe-Einheit dar. \cite{Kuratti1995}
 
 Stripe-Einheiten, welche auf allen Festplatten verteilt denselben physikalischen Platz bzw. Adressbereich belegen, bezeichnet man als Stripe. In der \refabb{abb:RAID-5 Architektur} sind diese durch gleichfarbige Blöcke dargestellt. Hier repräsentieren z.B. die Stripe-Einheiten A1, A2, A3 und $A_{p}$ einen Stripe.
-Jeder Stripe enthält mehrere Daten Stripe-Einheiten und eine Parität Stripe-Einheit. Eine Parität Stripe-Einheit ist eine XOR-Verknüpfung aller Daten Stripe-Einheiten eines Stripes. Durch die Speicherung und Berechnung einer Parität Stripe-Einheit pro Stripe, ermöglicht es in einem RAID-5 den Ausfall einer einzelnen Festplatte zu kompensieren. Die verlorenen Stripe-Einheiten der ausgefallenen Festplatte können durch das Lesen aller vorhandenen Daten Stripe-Einheiten und der Parität Stripe-Einheit der noch intakten Festplatten wiederberechnet bzw. rekonstruiert werden. Die Anzahl der Stripe-Einheiten eines Stripes ist durch die Stripe Width  ($W_{s}$) definiert. Die Anzahl der Daten Stripe-Einheiten in jedem Stripe ist durch $W_{s} -1$ definiert. \cite{Kuratti1995}
+Jeder Stripe enthält mehrere Daten Stripe-Einheiten und eine Parität Stripe-Einheit. Eine Parität Stripe-Einheit ist eine XOR-Verknüpfung aller Daten Stripe-Einheiten eines Stripes. Durch die Speicherung und Berechnung einer Parität Stripe-Einheit pro Stripe, ermöglicht es in einem RAID-5 den Ausfall einer einzelnen Festplatte zu kompensieren. Die verlorenen Stripe-Einheiten der ausgefallenen Festplatte können durch das Lesen aller vorhandenen Daten Stripe-Einheiten und der Parität Stripe-Einheit der noch intakten Festplatten wiederberechnet bzw. rekonstruiert werden. Die Anzahl der Stripe-Einheiten eines Stripes ist durch die Stripe Width ($W_{s}$) definiert. Die Anzahl der Daten Stripe-Einheiten in jedem Stripe ist durch $W_{s} -1$ definiert. \cite{Kuratti1995}
 
 \begin{center}
 \includegraphics[width=\linewidth, keepaspectratio = true]{media/Raid-5.png}
@@ -32,7 +32,7 @@ Für die Speicherung der Parität, muss ein Teil der gesamten Festplattenkapazit
 Spare-Disk sind leere Festplatten, welche beim Ausfall einer Festplatte im RAID vom RAID System automatisch als Ersatz-Festplatte verwendet werden kann. Durch den Einsatz von Spare-Disk verkleinert sich die MMTR, so dass die Wiederherstellung des RAID sofort nach dem Erkennen des Festplattenausfalls starten kann. 
 
 \section{MTTR}
-MTTR  ist die Abkürzung von "Mean Time To Recovery"' und bedeutet so viel wie die durchschnittliche Zeit, welche eine Komponente benötigt, um sich nach einem Fehler wieder herzustellen. Die MTTR in einen RAID-5 berechnet sich aus der Zeit bis eine Ersatzfestplatte installiert ist und der Disk Wiederherstellungszeit. 
+MTTR ist die Abkürzung von "'Mean Time To Recovery"' und bedeutet so viel wie die durchschnittliche Zeit, welche eine Komponente benötigt, um sich nach einem Fehler wieder herzustellen. Die MTTR in einen RAID-5 berechnet sich aus der Zeit bis eine Ersatzfestplatte installiert ist und der Disk Wiederherstellungszeit. 
 
 \begin{equation}
 MTTR_{RAID}=Replacement+Rebuild_{RAID}
@@ -44,15 +44,15 @@ Die Disk Wiederherstellungszeit in einem RAID-5 ist von den folgenden Faktoren a
 \item Anzahl der Festplatten
 \item Speicherkapazität
 \item Periodisierung der Rekonstruktion gegenüber dem normalen I/O
-\item  normale I/O-Last während der Rekonstruktion
-\item  CPU Last
+\item normale I/O-Last während der Rekonstruktion
+\item CPU Last
 \end{itemize}
 
 Für die Ist-Analyse stehen keine aussagekräftigen Statistiken für die Disk Wiederherstellungszeit zur Verfügung. Es wird deshalb angenommen, dass heute eine allfällige MTTR 24 Stunden betragen würde.
 
 
 \section{MTBF}
-MTBF ist die Abkürzung von "Mean Time Between Failure"' und bedeutet so viel wie die durchschnittliche Betriebszeit einer Komponenten bis ein Fehler eintritt. Hersteller von Festplatten geben diesen Wert an, um die durchschnittliche Lebensdauer einer Festplatte zu beschreiben. 
+MTBF ist die Abkürzung von "'Mean Time Between Failure"' und bedeutet so viel wie die durchschnittliche Betriebszeit einer Komponenten bis ein Fehler eintritt. Hersteller von Festplatten geben diesen Wert an, um die durchschnittliche Lebensdauer einer Festplatte zu beschreiben. 
 
 Die MTBF mit n Festplatten berechnet man in einem RAID-5 \cite{Chen1994} wie folgt:
 \begin{equation}
@@ -71,12 +71,12 @@ Die Verfügbarkeit wird aus dem Verhältnis der verfügbaren Zeit (Updatime) und
 \end{equation}
 
 \section{Datenverfügbarkeit}
-Die Datenverfügbarkeit beschreibt die vom Hardware Speicherhersteller und dem Serviceanbieter als Speicherdienstleister "'Storage Service Provider (SSP)"'  gewährleistete Verfügbarkeit der Daten und die zugesicherte Antwortzeit beim Datenzugriff während dem Normalbetrieb \cite{TechTarget2001}.
+Die Datenverfügbarkeit beschreibt die vom Hardware Speicherhersteller und dem Serviceanbieter als Speicherdienstleister "'Storage Service Provider (SSP)"' gewährleistete Verfügbarkeit der Daten und die zugesicherte Antwortzeit beim Datenzugriff während dem Normalbetrieb. \cite{TechTarget2001}
 
 In dieser Arbeit wird der Begriff dazu verwendet, die gewährleistete Verfügbarkeit für den Datenzugriff des Speichersystems zu beschreiben. Die Datenverfügbarkeit aus der Sicht des Endbenutzers der Webapplikation wird mit diesen Begriff nicht definiert. 
 
 \section{Hochverfügbarkeit}
-Die Autorin Andrea Held beschreibt in Ihren Buch den Begriff "Hochverfügbar" wie folgt:
+Die Autorin Andrea Held beschreibt in Ihren Buch den Begriff "'Hochverfügbar"' wie folgt:
 \begin{quotation}\em
 Ein System gilt als hochverfügbar, wenn eine Anwendung auch im Fehlerfall weiterhin verfügbar ist und ohne unmittelbaren menschlichen Eingriff weiter genutzt werden kann. In der Konsequenz heisst dies, dass der Anwender kein oder nur eine kurze Unterbrechung wahrnimmt.\end{quotation}\cite{Held2004}
 
@@ -96,7 +96,7 @@ In der Arbeit werden zur Verfügbarkeitsbestimmung die Verfügbarkeitsklassen vo
 
 \section{Daten Integrität}
 Daten können durch Manipulationen oder durch Bit Fehler verfälscht werden. Solche Verfälschungen können zu Informationsverlust in den Daten bis hin zu vollständigen Korruption der Daten führen. 
-Bernd Panzer-Steindel hat zusammen mit Tim Bell, Olof Barring und Peter Kelment am CERN die Integrität von Daten untersucht. Ihre Untersuchung hat gezeigt, dass die Fehlerrate auf dem Niveau von $10^{-7}$ liegt, und hat verschiedene Ursachen. Eine Ursprung stellt die Festplatte selbst dar. Für die Untersuchung haben sie auf 3000 Servern alle zwei Stunden eine 2 Gigabyte Datei mit einem speziellen Bit-Muster geschrieben, neu eingelesen und mit dem Muster verglichen. Nach einer Laufzeit von 5 Wochen konnten 500 Fehler auf 100 Servern registriert werden.\cite{Panzer-steindel2007}
+Bernd Panzer-Steindel hat zusammen mit Tim Bell, Olof Barring und Peter Kelment am CERN die Integrität von Daten untersucht. Ihre Untersuchung hat gezeigt, dass die Fehlerrate auf dem Niveau von $10^{-7}$ liegt, und hat verschiedene Ursachen. Eine Ursprung stellt die Festplatte selbst dar. Für die Untersuchung haben sie auf 3000 Servern alle zwei Stunden eine 2 Gigabyte Datei mit einem speziellen Bit-Muster geschrieben, neu eingelesen und mit dem Muster verglichen. Nach einer Laufzeit von 5 Wochen konnten 500 Fehler auf 100 Servern registriert werden. \cite{Panzer-steindel2007}
 
 \section{Standortübergreifend}
 Für die Gefahren von Datenverlust oder den Verlust der Verfügbarkeit beim Ausfall eines Standortes zu vermeiden, werden die Daten standortübergreifend verfügbar gemacht. Häufig werden dazu die Daten an zwei physisch getrennten Standorten gleichzeitig geschrieben und optional an einem dritten weiterentfernten Standort zeitversetzt geschrieben. 

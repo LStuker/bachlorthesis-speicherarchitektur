@@ -8,19 +8,15 @@ Diese Grunde sind sicher auch der Grund weshalb andere Web-2.0 Startup Unternehm
 
 Die Verfügbarkeit der Daten stellt Amazon S3 durch eine Architektur sicher, welche alle Komponenten Redundant betreiben lässt. So sind Daten im Amazon S3 Speicher mindestens dreifach Redundant gespeichert und auch über mehre Datencenter verteilt.
 
-Ein Nachteil bei Amazon S3 sind die Kosten für die Ausgehende Bandbreite, wird eine Bild für den Druck konvertiert muss das Bild zuerst auf den Applikations-Server übertragen werden. Werden viele Bilder umgerechnet können die Kosten erheblich steigen. Zudem kann die Übertragung über das Internet im vergleich zur Übertragung im internen Netzwerk relative lange dauren, was auch die Bearbeitungszeit pro Bild beeinflusst.
+Ein Nachteil bei Amazon S3 sind die Kosten für die Ausgehende Bandbreite, wird eine Bild für den Druck konvertiert muss das Bild zuerst auf den Applikations-Server übertragen werden. Werden viele Bilder umgerechnet können die Kosten erheblich steigen. Zudem kann die Übertragung über das Internet im vergleich zur Übertragung im internen Netzwerk relative lange Dauren, was auch die Bearbeitungszeit pro Bild beeinflusst.
 
 Diese Arbeit hat nur Amazon S3 als Online Speicher berücksichtigt. Diese Bedeutet jedoch nicht, dass Amazon S3 die Bedürfnisse des Auftraggeber am besten erfüllt. Neben Amazon S3 gibt es noch weiter Anbieter wie Rackspace welche ebenfalls Online Speicher an bieten. Bei der Auswahl des Dienstleisters ist neben den Kosten, generell auf die Dienstgütevereinbarung (kurz DGV) oder auch Service-Level-Agreement (kurz SLA) genannt zu Achten. Eine genaue Studie der SLA ist wichtig um entscheiden zu können ob der Online Speicher die Gesetzte Anforderungen erfüllt. Des weiteren soll man darauf achten, das der Dienstleister Wirtschaftlich gesund aufgestellt ist und man davon ausgehen kann, dass dieser die Dienstleistung in den nächsten Jahren auch noch anbieten kann. 
 
-Bei der Auswahl des Online Speicher Anbieters soll, man auch darauf achten, dass diese die Amazon S3 API oder Swift API (OpenStack Object Storage) unterstützen, da diese sich quasi zu inoffizellen Standard entwickelt haben, welche auch von Anderen Speicheranbietern unterstützt oder zukünftig unterstützt werden.
+Bei der Auswahl des Online Speicher Anbieters soll, man auch darauf achten, dass diese die Amazon S3 API oder Swift API (OpenStack Object Storage) unterstützen, da diese sich quasi zu inoffiziellen Standard entwickelt haben, welche auch von Anderen Speicheranbietern unterstützt oder zukünftig unterstützt werden.
  
-Einen Wechsel von der Aktuellen Speicherlösung ist bei folgenden Annahmen, trotzt des besseren Evaluations-Ergebnisse nicht zu empfehlen:
-
-\begin{itemize}
-\item Wenn angenommen wird, dass sich die Anforderungen für die Speicherkapazität und Bildverarbeitungsanfragen aus dem Szenario-1 nicht übersteigt.
-\end{itemize}
+Einen Wechsel von der Aktuellen Speicherlösung ist bei folgenden Annahmen, trotzt des besseren Evaluations-Ergebnisse nicht zu empfehlen. Wenn angenommen wird, dass sich die Anforderungen für die Speicherkapazität und Bildverarbeitungsanfragen aus dem Szenario-1 nicht übersteigt.
 
 Geht man davon aus, dass sich die Anforderungen von den Anforderungen aus Szenario-1 hinaus bewegen, aber noch nicht absehbar ist in welchen ausmass, ist eine welches zu einen Online Speicheranbieter empfehlendes Wert.
 
-Sollten sich die Anforderungen allen Falls sogar die Anforderungen aus Szenario-2 übertreffen. Speziell was die Anzahl an Bildverarbeitungsanfragen betrifft. Ist eine Wechsel auf OpenStack Objekt Storage zu Prüfen. Aber gerade die Kombatibilität von OpenStack Objekt Storage zum Amazon S3 API ermöglicht es, mit Amazon S3 zu starten und bei bedarf später auf eine eigene OpenStack Objekt Storage Infrastruktur zu wechseln. Somit stehen den Auftraggeber alle Optionen zur Verfügung um bedarfsgerecht die beste Speicherlösung für Ihn zu verwenden.
+Sollten sich die Anforderungen allen Falls sogar die Anforderungen aus Szenario-2 übertreffen. Speziell was die Anzahl an Bildverarbeitungsanfragen betrifft. Ist eine Wechsel auf OpenStack Object Storage zu Prüfen. Aber gerade die Kompatibilität von OpenStack Object Storage zum Amazon S3 API ermöglicht es, mit Amazon S3 zu starten und bei bedarf später auf eine eigene OpenStack Objekt Storage Infrastruktur zu wechseln. Somit stehen den Auftraggeber alle Optionen zur Verfügung um bedarfsgerecht die beste Speicherlösung für Ihn zu verwenden.
 

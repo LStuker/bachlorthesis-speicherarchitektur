@@ -6,7 +6,7 @@
 
 \subsubsection{Kosten}
 
-\paragraph*{\refsoll{Soll-1-1} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Al-1}/\ref{Al-5})}
+\paragraph*{\refsoll{Soll-1-1} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-1-1}\ref{Al-1}/\ref{Al-5})}
 Bei \ref{Al-1} Hetzner entstehen Einrichtungs-Kosten für den Root Server von 499.00 € in 600,02 CHF (Kurs 13 April 2012), weitere Kosten kommen nicht hinzu. Bei Amazon S3 \ref{Al-5} entstehen keine Einrichtung bzw. Anschaffungskosten. In Vergleich zu \ref{Al-5} sind die Anschaffungskosten von \ref{Al-1} höher, sind aber in Vergleich zu den Gesamtkosten von \ref{Al-1} oder \ref{Al-5} gering, aus diesem Grund wird die \ref{Al-1} etwas bis erheblich Geringer bewertet als \ref{Al-5}.
 
 \textbf{Bewertet: 1/5}
@@ -33,7 +33,7 @@ Bei Hetzner \ref{Al-1} sind die Daten einfach redundant gespeichert, wobei die R
 \item Keine Berechnung aus Parität notwendig
 \end{itemize}
 
-Wegen der genannten Vorteile von \ref{Al-5 }ist die \refsoll{Soll-2-1} der Aktiven Daten von \ref{Al-1} erheblich bis sehr viel geringer zu bewerten als \ref{Al-5}.
+Wegen der genannten Vorteile von \ref{Al-5} ist die \refsoll{Soll-2-1} der Aktiven Daten von \ref{Al-1} erheblich bis sehr viel geringer zu bewerten als \ref{Al-5}.
 
 \textbf{Bewertet: 1/6}
 
@@ -54,7 +54,7 @@ Die \refsoll{Soll-2-3} Verfügbarkeit der aktiven Daten von \ref{Al-1} sind abso
 \subsubsection{Datenzugriffe}
 
 \paragraph*{\refsoll{Soll-3-1} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-3-1} \ref{Al-1}/\ref{Al-5})}
-Bei Hetzner\ref{Al-1} handelt es sich nur um einen Server welche nur von sich selber zugegriffen werden kann. Bei Amazon S3 handelt es sich um ein hochskalierbares System, welches von Hunderttausenden von Benutzer bzw. Systeme zugegriffen wird. Nachteil dabei ist, dass durch die hohe Anzahl an Benutzer die auf Amazon S3 zugreifen, Schwankungen in der Antwort und Auslieferung der Daten durch den Tag verteilt geben kann.
+Bei Hetzner \ref{Al-1} handelt es sich nur um einen Server welche nur von sich selber zugegriffen werden kann. Bei Amazon S3 handelt es sich um ein hochskalierbares System, welches von Hunderttausenden von Benutzer bzw. Systeme zugegriffen wird. Nachteil dabei ist, dass durch die hohe Anzahl an Benutzer die auf Amazon S3 zugreifen, Schwankungen in der Antwort und Auslieferung der Daten durch den Tag verteilt geben kann.
 Die \refsoll{Soll-3-1} ist bei \ref{Al-1} erheblich bis sehr geringer zu bewerten als bei \ref{Al-5}.
 
 \textbf{Bewertet: 1/6}
@@ -107,7 +107,7 @@ Die Alternative \ref{Al-1} kann die Integrität der Daten nur auf RAID-Ebene Sic
 
 
 \paragraph*{\refsoll{Soll-5-2} \refsoll{Al-1} verglichen mit \refsoll{Al-5} (\ref{Soll-5-2} \ref{Al-1}/\ref{Al-5})} 
-Die Alternative \ref{Al-1} bietet keine Selbstheilung von Objekten. Amazon S3\ref{Al-5} prüft regelmässig alle gespeicherten Kopien eines Objekte auf deren Integrität auf Ihren Server. Wird festgestellt, dass eingespeicherte Kopie eines Objekts nicht mehr Integer ist, wird es für den Zugriff gesperrt und von einer intakten Kopie wiederhergestellt. Aus diesen Grund ist die \refsoll{Soll-5-1} von \ref{Al-1} sehr viel bis absolut tiefer zu bewerten als \ref{Al-5}.
+Die Alternative \ref{Al-1} bietet keine Selbstheilung von Objekten. Amazon S3 \ref{Al-5} prüft regelmässig alle gespeicherten Kopien eines Objekte auf deren Integrität auf Ihren Server. Wird festgestellt, dass eingespeicherte Kopie eines Objekts nicht mehr Integer ist, wird es für den Zugriff gesperrt und von einer intakten Kopie wiederhergestellt. Aus diesen Grund ist die \refsoll{Soll-5-1} von \ref{Al-1} sehr viel bis absolut tiefer zu bewerten als \ref{Al-5}.
 
 \textbf{Bewertet: 1/8}
 
@@ -384,7 +384,7 @@ Aus diesen Grund ist die Skalierbarkeit von NetApp NFS \refsoll{Al-2} in Verglei
 
 \paragraph*{\refsoll{Soll-3-1} \refsoll{Al-2} verglichen mit \refsoll{Al-4} (\ref{Soll-3-1} \ref{Al-2}/\ref{Al-4})}
 Bei NetApp NFS \ref{Al-2} ist der Datenzugriff mittels NFS stark optimiert, es kann davon ausgegangen werden, dass NetApp besser skaliert als eine gewöhnliche NAS Lösung. NFS wurde jedoch nicht für hoch skalierte Lösung entwickelt. Reicht eine NetApp NFS nicht aus für die Bewältigung der Datenzugriffe kann diese nicht durch eine weitere NetApp erweitert werden. Bei OpenStack Object Storage \ref{Al-5} handelt sich eine Lösung, welche in Hinblick auf die Skalierung entwickelt wurde. Durch Erweiterung von Daten-Proxy Servern und Daten-Server kann die Speicherlösung skaliert werden. So werden die Datenzugriffe auf mehr Server verteilt. Wie höher die Anzahl der Datenzugriffe sind, desto besser sollten die Skalierung von OpenStack Object Storage in Vergleich zur NetApp sein.
-Aus diesen Grund ist \ref{Al-2} sehr viel tiefer zu bewerten als \ref{Al-4}
+Aus diesen Grund ist \ref{Al-2} sehr viel tiefer zu bewerten als \ref{Al-4}.
 
 \textbf{Bewertet: 1/7}
 
@@ -414,7 +414,7 @@ Aus diesen Grund ist die Skalierung von \refsoll{Al-3} \ref{Al-3} erheblich höh
 
 
 \paragraph*{\refsoll{Soll-3-1} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-3-1} \ref{Al-4}/\ref{Al-5})}
-Die Alternative OpenStack Object Storage\ref{Al-4} kann durch den Ausbau der Daten-Proxy-Server und Daten-Server im Datenzugriff skalieren. Bei Amazon S3 ist der Dienstleister für die Skalierung verantwortlich von der Architektur her sollte Amazon S3 gleich skalierbar sein wie OpenStack Object Storage.
+Die Alternative OpenStack Object Storage \ref{Al-4} kann durch den Ausbau der Daten-Proxy-Server und Daten-Server im Datenzugriff skalieren. Bei Amazon S3 ist der Dienstleister für die Skalierung verantwortlich von der Architektur her sollte Amazon S3 gleich skalierbar sein wie OpenStack Object Storage.
 
 Nachteil von Amazon S3 ist jedoch, dass der Speicher über eine Internetverbindung bereitgestellt wird und nicht über Ethernet, welche die schlechtere Bandbreite besitzt. Dieser Nachteil kommt jedoch nur bei der Bearbeitung der Bilder für den Druck zum Tragen, wo die Bilder von Speicher auf den Applikations-Server übertragen werden müssen. Bei der Auslieferung der Bilder an den Endanwender kann der Zugriff hingegen direkt auf den Speicher erfolgen und entlastet somit die Internet Verbindung des Applikations-Servers.
 Deshalb ist \refsoll{Al-4} \ref{Al-4} sehr viel besser zu bewerten als \refsoll{Al-4} \ref{Al-5}
@@ -424,7 +424,7 @@ Deshalb ist \refsoll{Al-4} \ref{Al-4} sehr viel besser zu bewerten als \refsoll{
 
 %Performance
 \paragraph*{\refsoll{Soll-3-2} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-3-2} \ref{Al-2}/\ref{Al-3})}
-Die Studie von NetApp wie die \refabb{abb:NetappIOPS} aus \refsec{DurchsatzIO} zeigt, unterscheidet sich die Performance der beiden Protokolle NFS und iSCSI im 1Gb und 10Gb mit einer NetApp Speichersystem kaum. Aus diesen Grund sind \ref{Al-2} und \ref{Al-3} gleich zu bewerten.
+Die Studie von NetApp wie die \refabb{abb:NetappIOPS} aus \refsec{sec:DurchsatzIO} zeigt, unterscheidet sich die Performance der beiden Protokolle NFS und iSCSI im 1Gb und 10Gb mit einer NetApp Speichersystem kaum. Aus diesen Grund sind \ref{Al-2} und \ref{Al-3} gleich zu bewerten.
 
 \textbf{Bewertet: 1}
 
@@ -510,13 +510,13 @@ Beide Alternativen NetApp iSCSI \ref{Al-3} (abhängig von Dateisystem und Volume
 \textbf{Bewertet: 1}
 
 \paragraph*{\refsoll{Soll-3-4} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-3-4} \ref{Al-3}/\ref{Al-5})}
-Beide Alternativen NetApp iSCSI \ref{Al-3} (abhängig von Dateisystem und Volume Manager) und Amazon S3\ref{Al-5} unterstützen den simultane Lese Zugriff auf Objekte. Aus diesen Grund sind beide gleich zu Werten.
+Beide Alternativen NetApp iSCSI \ref{Al-3} (abhängig von Dateisystem und Volume Manager) und Amazon S3 \ref{Al-5} unterstützen den simultane Lese Zugriff auf Objekte. Aus diesen Grund sind beide gleich zu Werten.
 
 \textbf{Bewertet: 1}
 
 
 \paragraph*{\refsoll{Soll-3-4} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-3-4} \ref{Al-4}/\ref{Al-5})}
-Beide Alternativen OpenStack Object Storage\ref{Al-4} und Amazon S3\ref{Al-5} unterstützen den simultane Lese Zugriff auf Objekte. Aus diesen Grund sind beide gleich zu Werten.
+Beide Alternativen OpenStack Object Storage \ref{Al-4} und Amazon S3 \ref{Al-5} unterstützen den simultane Lese Zugriff auf Objekte. Aus diesen Grund sind beide gleich zu Werten.
 
 
 \textbf{Bewertet: 1}
@@ -604,7 +604,7 @@ Aus diesen Grund ist die Skalierbarkeit von \refsoll{Al-3} \ref{Al-3} absolut ti
 \textbf{Bewertet: 1/9}
 
 \paragraph*{\refsoll{Soll-4-1} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-5-1} \ref{Al-4}/\ref{Al-5})}
-Von der Architektur her skalieren bei Alternativen OpenStack Object Storage \ref{Al-4} und Amazon S3 \ref{Al-5} gleich gut. Durch den Bezug des Speichers als Dienstleitung muss man sich bei Amazon S3 \ref{Al-5} nicht um einen Ausbau kümmern, sondern wird von Dienstleiter geplant und umgesetzt. Bei \ref{Al-4} muss man selber den Speicher überwachen und frühzeitig den Ausbau planen. Die eingesetzten Server können alle mit zwei weiteren Festplatten ausgerüstet werden, sollte der Speicherbedarf noch grösser sein, müssen weitere Server installiert werden. Aus diesen Grund ist die Skalierung bei \ref{A-4} etwas tiefer zu bewerten als \ref{Al-5}.
+Von der Architektur her skalieren bei Alternativen OpenStack Object Storage \ref{Al-4} und Amazon S3 \ref{Al-5} gleich gut. Durch den Bezug des Speichers als Dienstleitung muss man sich bei Amazon S3 \ref{Al-5} nicht um einen Ausbau kümmern, sondern wird von Dienstleiter geplant und umgesetzt. Bei \ref{Al-4} muss man selber den Speicher überwachen und frühzeitig den Ausbau planen. Die eingesetzten Server können alle mit zwei weiteren Festplatten ausgerüstet werden, sollte der Speicherbedarf noch grösser sein, müssen weitere Server installiert werden. Aus diesen Grund ist die Skalierung bei \ref{Al-4} etwas tiefer zu bewerten als \ref{Al-5}.
 
 \textbf{Bewertet: 1/3}
 
@@ -793,7 +793,7 @@ Die Alternative \refsoll{Al-2} \ref{Al-2} ist im Vergleich zur Alternative \refs
 \textbf{Bewertet: 3}
 
 \paragraph*{\refsoll{Soll-5-4} \refsoll{Al-2} verglichen mit \refsoll{Al-5} (\ref{Soll-5-4} \ref{Al-2}/\ref{Al-5})}
-Bei der Alternative NetApp NFS \ref{Al-2} werden die Daten abgesehen von Rechenzentrum in der eignen Infrastruktur betrieben und müssen nicht einer Drittpartei anvertraut werden. Im Vergleich dazu vertraut man seine Daten bei der Alternative \ref{Al-5} an Amazon an. Da es sich bei Amazon um eine Amerikanisches unternehmen handelt, dass dem Patriot Act unterstellt ist, besteht die Gefahr, dass auf Verlanden von US Behörden diese, diesen ausgehändigt werden. Aus diesen Grund ist die Sicherheit der Daten bei \refsoll{Al-2}\ref{Al-2} sehr viel bis absolut höher zu bewerten als bei \refsoll{Al-5}\ref{Al-5}.
+Bei der Alternative NetApp NFS \ref{Al-2} werden die Daten abgesehen von Rechenzentrum in der eignen Infrastruktur betrieben und müssen nicht einer Drittpartei anvertraut werden. Im Vergleich dazu vertraut man seine Daten bei der Alternative \ref{Al-5} an Amazon an. Da es sich bei Amazon um eine Amerikanisches unternehmen handelt, dass dem Patriot Act unterstellt ist, besteht die Gefahr, dass auf Verlanden von US Behörden diese, diesen ausgehändigt werden. Aus diesen Grund ist die Sicherheit der Daten bei \refsoll{Al-2} \ref{Al-2} sehr viel bis absolut höher zu bewerten als bei \refsoll{Al-5} \ref{Al-5}.
 
 \textbf{Bewertet: 8}
 
@@ -805,7 +805,7 @@ Die Alternative \refsoll{Al-3} \ref{Al-3} ist im Vergleich zur Alternative \refs
 \textbf{Bewertet: 3}
 
 \paragraph*{\refsoll{Soll-5-4} \refsoll{Al-3} verglichen mit \refsoll{Al-5} (\ref{Soll-5-4} \ref{Al-3}/\ref{Al-5})}
-Bei der Alternative NetApp iSCSI \ref{Al-3} werden die Daten abgesehen von Rechenzentrum in der eignen Infrastruktur betrieben und müssen nicht einer Drittpartei anvertraut werden. Im Vergleich dazu vertraut man seine Daten bei der Alternative \ref{Al-5} an Amazon an. Da es sich bei Amazon um eine Amerikanisches unternehmen handelt, dass dem Patriot Act unterstellt ist, besteht die Gefahr, dass auf Verlanden von US Behörden diese, diesen ausgehändigt werden. Aus diesen Grund ist die Sicherheit der Daten bei \refsoll{Al-3} \ref{Al-3} sehr viel bis absolut höher zu bewerten als bei \refsoll{Al-5}\ref{Al-5}.
+Bei der Alternative NetApp iSCSI \ref{Al-3} werden die Daten abgesehen von Rechenzentrum in der eignen Infrastruktur betrieben und müssen nicht einer Drittpartei anvertraut werden. Im Vergleich dazu vertraut man seine Daten bei der Alternative \ref{Al-5} an Amazon an. Da es sich bei Amazon um eine Amerikanisches unternehmen handelt, dass dem Patriot Act unterstellt ist, besteht die Gefahr, dass auf Verlanden von US Behörden diese, diesen ausgehändigt werden. Aus diesen Grund ist die Sicherheit der Daten bei \refsoll{Al-3} \ref{Al-3} sehr viel bis absolut höher zu bewerten als bei \refsoll{Al-5} \ref{Al-5}.
 
 \textbf{Bewertet: 8}
 
@@ -848,7 +848,7 @@ Beide Alternativen sind führend in ihrem Marktsegment. Durch das breitere Kunde
 
 
 \paragraph*{\refsoll{Soll-6-1} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-6-1} \ref{Al-4}/\ref{Al-5})}
-Bei OpenStack Object Storage \ref{Al-4} handelt sich im Vergleich zur Amazon S3 \ref{Al-5} um eine jüngere Lösung, weshalb Amazon S3 die bekanntere Lösung der beiden sind. OpenStack Object Storage wird zunehmen von mehr und mehr Hersteller unterstützt, weshalb hier es sich zukünftig gut im Markt behaupten könnte. Da beiden Alternativen sich in einem Marktsegment befinden, welche sich stark am Entwickeln sind, ist schwer vorhersagbar, wie sich der Markt entwickeln wird. Zurzeit ist \ref{Al-5}noch etwas tiefer zu bewerten als \ref{Al-6}
+Bei OpenStack Object Storage \ref{Al-4} handelt sich im Vergleich zur Amazon S3 \ref{Al-5} um eine jüngere Lösung, weshalb Amazon S3 die bekanntere Lösung der beiden sind. OpenStack Object Storage wird zunehmen von mehr und mehr Hersteller unterstützt, weshalb hier es sich zukünftig gut im Markt behaupten könnte. Da beiden Alternativen sich in einem Marktsegment befinden, welche sich stark am Entwickeln sind, ist schwer vorhersagbar, wie sich der Markt entwickeln wird. Zurzeit ist \ref{Al-5} noch etwas tiefer zu bewerten als \ref{Al-5}.
 
 \textbf{Bewertet: 1/3}
 

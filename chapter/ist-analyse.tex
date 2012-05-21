@@ -25,16 +25,16 @@ Beides, Ruby On Rails und Ruby sind Open-Source Programme. Die Quellprogramme si
 Die bestehende Kunden-System-Architektur besteht aus einem einzelnen Server, welcher von einem bekannten deutschen Webhosting-Provider gemietet wird. Beim gemieteten System handelt es sich um einen x64 Mikroarchitektur.
 
 \subsection{Speicher-Architektur}
-Die Speicher-Architektur besteht aus einem internen Block-basierendem RAID-5 Festplattenspeicher. Die im Server verbauten Festplatten (RAID-5) werden mittels dem Linux Software RAID Kernel\footnote{\url{https://raid.wiki.kernel.org/}} und dem Verwaltungstool mdadm\footnote{\url{http://neil.brown.name/blog/mdadm}} zu einer logischen Einheit zusammengefasst. Für das RAID-5 werden drei "'SATA 2"' Festplatten verwendet, welche jeweils eine Speicherkapazität von 2 Terabyte bzw. 1.818 Tebibyte aufweisen.
+Die Speicher-Architektur besteht aus einem internen Block-basierendem RAID-5 Festplattenspeicher. Die im Server verbauten Festplatten (RAID-5) werden mittels dem Linux Software RAID Kernel\footnote{\url{https://raid.wiki.kernel.org/}} und dem Verwaltungstool mdadm\footnote{\url{http://neil.brown.name/blog/mdadm}} zu einer logischen Einheit zusammengefasst. Für das RAID-5 werden drei "'SATA 2"' Festplatten verwendet, welche jeweils eine Speicherkapazität von 2 Terabyte bzw. 1,818 Tebibyte aufweisen.
 
 Im RAID Speicher sind ein root Dateisystem für das Betriebsystem, die Webapplikation, Datenbank, Logdateien und sämtliche Bilddaten installiert.
 
 \subsection{Speicherkapazität}
-Die von RAID-5 zur Verfügung gestellte Speicherkapazität beträgt gemäss \refeqlb{eqn:RAID-5-3disk} 3.636 Tebibyte, davon sind nach Installation des Dateisystems $\approx 3.5$ Tebibyte bzw. ca. 3.8 Terabyte effektiv verfügbar. Davon sind anhand des \textit{df}\footnote{\url{http://www.debianadmin.com/manpages/dfmanpage.htm}}
- Befehls, wie im \reflisting{df} ersichtlich, ca. 2.5 Terabyte für das Betriebsystem, die Webapplikation, Datenbank, Logdateien und Bilddaten reserviert. Als freier Speicherplatz verbleiben ca. 1.3 Terabyte.
+Die von RAID-5 zur Verfügung gestellte Speicherkapazität beträgt gemäss \refeqlb{eqn:RAID-5-3disk} 3,636 Tebibyte, davon sind nach Installation des Dateisystems $\approx 3,5$ Tebibyte bzw. ca. 3,8 Terabyte effektiv verfügbar. Davon sind anhand des \textit{df}\footnote{\url{http://www.debianadmin.com/manpages/dfmanpage.htm}}
+ Befehls, wie im \reflisting{df} ersichtlich, ca. 2,5 Terabyte für das Betriebsystem, die Webapplikation, Datenbank, Logdateien und Bilddaten reserviert. Als freier Speicherplatz verbleiben ca. 1,3 Terabyte.
 
 \begin{equation}
-\mbox{Speicherkapazität RAID-5}= (3 - 1) * 1.818 \, \mathrm{TiB} = 3.636 \, \mathrm{TiB}
+\mbox{Speicherkapazität RAID-5}= (3 - 1) * 1,818 \, \mathrm{TiB} = 3,636 \, \mathrm{TiB}
 \label{eqn:RAID-5-3disk}
 \end{equation}
 
@@ -90,8 +90,6 @@ Die Web-Applikation inklusive dessen \gls{Primearen-Daten} werden am selben Stan
 
 \section{Analyse-Ergebnisse}
 
-\subsection{System-Architektur}
-
 \subsection{Datenwachstum und Speicherkapazität}
 Die Messdaten aus dem \refabb{abb:disk-usage-by-year} zeigen, dass das Datenvolumen seit Juni 2011 bis Ende November 2011 mit Ausnahme einer unregelmässigen Spitze und einem grösseren Wachstumsschub Ende Oktober kontinuierlich zugenommen hat. Die etwas erhöhte Spitze lässt sich durch eine vorübergehende technische Änderung am System erklären und hat somit für die Auswertung keine Relevanz. Während der erwähnten Zeitspanne hat das Datenvolumen von 1,634 Terabyte auf 2,546 Terabyte zugenommen. Dies entspricht einer Datenzuwachsrate von 0,912 Terabyte bzw. 55,8\% in fünf Monate. Das durchschnittliche Datenwachstum beträgt 0,182 Terabyte bzw. 11,1\% pro Monat.
 
@@ -129,7 +127,7 @@ Eine mögliche Skalierung bezüglich des Datendurchsatzes könnte durch schnelle
 
 \textbf{Skalierung durch schnellere Festplatten:}
 Moderne Festplatten, mit Ausnahme von den teuren Solid State Disk (SSD), bieten zwar eine grössere Speicherdichte, aber aufgrund der erreichten physikalischen Grenzen keine bedeutend effizientere IOPS. Eine Festplatte mit 7200 RPM erreicht durchschnittlich ein IOPS zwischen 75 und 100 IOPS. Bei SSD Disks wurden schon 1'190'000 IOPS in einem einzelnen PCI Geräte gemessen. \cite{Symantec2011} \cite{Fusionio} 
-Ein Wechsel auf die genannten SSD Festplatten, ist momentan noch mit sehr hohen Kosten pro Gigabyte verbunden. Gartner geht davon aus, dass 2012 die Preise pro Gigabyte bei SSD auf durchschnittliche 1\$ sinken werden. Gegenüber den heutigen Preisen bei konventionellen Festplatten von 30 Cents pro Gigabyte ist dies immerhin 3x teurer. Aus diesem Grund werden SSD Disks bei grossen Datenvolumen meist noch nicht eingesetzt, ausser spezielle Anforderungen an die Performance rechtfertigt die höhere Investition. \cite{AgamShah2011}
+Ein Wechsel auf die genannten SSD Festplatten, ist momentan noch mit sehr hohen Kosten pro Gigabyte verbunden. Gartner geht davon aus, dass 2012 die Preise pro Gigabyte bei SSD auf durchschnittliche 1 \$ sinken werden. Gegenüber den heutigen Preisen bei konventionellen Festplatten von 30 Cents pro Gigabyte ist dies immerhin 3x teurer. Aus diesem Grund werden SSD Disks bei grossen Datenvolumen meist noch nicht eingesetzt, ausser spezielle Anforderungen an die Performance rechtfertigt die höhere Investition. \cite{AgamShah2011}
 
 \textbf{Skalierung duch Verteilung der I/O Operationen:}
 Ein RAID oder Volume Manager bietet die Möglichkeit, die I/O Operationen auf mehrere Festplatten zu verteilen. In einem RAID-5 verkleinert sich wie in Kapitel \refchap{AnalyseSkalierbarkeitDatenvolumen} beschrieben, die MTTF mit jeder weiteren Festplatte. Zudem sind die verfügbaren Anschlüsse in einem Server ebenfalls ein zu berücksichtigender limitierender Faktor.
@@ -151,7 +149,7 @@ Bei Festplatten aus dem gleichen Produktionszyklus ist die Wahrscheinlichkeit ei
 \subsection{Service- und Daten-Verfügbarkeit}
 Die bisherige System-Architektur ermöglicht keine AEC-2 Hochverfügbarkeit. Grund dafür ist die Fokussierung auf einen einzelnen Server in der Produktivumgebung. Der Server stellt eine "'Single Point of Failure"' (kurz SPOF) dar. Tritt beim Server eine Störung auf, wie sie zum Beispiel aufgrund eines Gerätedefektes oder bei Softwarefehlern auftreten können, kann der Service nicht von einem redundantem System übernommen oder weitergeführt werden. Eine Störung wird voraussichtlich die Verfügbarkeit während den Betriebszeiten stark gefährden und entspricht nicht den heutigen Anforderungen. Allfälliger SLAs gegenüber den Kunden könnten kaum eingehalten werden.
 
-Die Netzwerkverfügbarkeit wird vom Hosting Anbieter gemäss den Allgemeinen Geschäftsbedingungen \cite{Ag2009} mit einer Verfügbarkeit von 99\% im Jahresmittel gewährleistet. Die Verfügbarkeit könnte somit bei einem 24x365 Stunden Betrieb während 87,6 Stunden nicht gewährleistet sein. Die max. Ausfallzeit (engl. Downtime) pro Ereignis oder Monat wäre zu untersuchen und mit dem Hostingprovider zu vereinbaren bzw. mit den SLAs gegenüber den Kunden in Einklang zu bringen.
+Die Netzwerkverfügbarkeit wird vom Hosting Anbieter gemäss den Allgemeinen Geschäftsbedingungen \cite{Ag2009} mit einer Verfügbarkeit von 99 \% im Jahresmittel gewährleistet. Die Verfügbarkeit könnte somit bei einem 24x365 Stunden Betrieb während 87,6 Stunden nicht gewährleistet sein. Die max. Ausfallzeit (engl. Downtime) pro Ereignis oder Monat wäre zu untersuchen und mit dem Hostingprovider zu vereinbaren bzw. mit den SLAs gegenüber den Kunden in Einklang zu bringen.
 
 Das Speichersystem für sich selbst betrachtet kann die Verfügbarkeit und die Daten-Integrität gewährleisten, sofern keine Störung durch einen Festplattendefekt eintritt. Das Speichersystem, welches ein interner Block-basierenden RAID-5 Speicher darstellt, ist ein Bestandteil des Serversystems und weist deshalb die selbe Verfügbarkeitsstufe wie das Serversystem auf. Die Service und Datenverfügbarkeit weist aus den genannten Gründen eine Verfügbarkeit Stufe von "'Highly Reliable"' AEC-1 auf.
 
