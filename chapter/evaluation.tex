@@ -8,17 +8,15 @@ Die gewählten Kriterien für die Evaluation wurden zusammen mit dem Auftraggebe
 Die Kriterien sind für die späteren Verweise hierarchisch nummeriert.
 
 \begin{center}
-\includegraphics[width=\linewidth, keepaspectratio = true]{media/ahp_kirterienbaum.png}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/ahp_kriterienbaum.png}
 \mycaption{figure}{\label{abb:AHPKriterienbaum} Optimales Speichersystem Kriterien}
 \end{center}
 
 \subsection{Haupt Soll-Kriterien festlegen}
 Die Hauptkriterien sind in der obersten Hierarchie-Ebene dargestellt und werden durch ihre Unterkriterien weiter verfeinert und definiert.
-
-\renewcommand{\theparagraph}{Soll-\arabic{paragraph}}
 \setcounter{paragraph}{0}
+\renewcommand\theparagraph{Soll-\arabic{paragraph}}
 \paragraph{Kosten}\label{Soll-1}
-
 Die Kosten sollen einen gewinnbringenden Betrieb ermöglichen. 
 
 \paragraph{Verfügbarkeit}\label{Soll-2}
@@ -36,23 +34,24 @@ Der beschriebene Datenschutz soll jederzeit gewährleistet sein. Entscheidend is
 \paragraph{Technologie}\label{Soll-6}
 asdf
 
-
 \subsection{Unter Soll-Kriterien festlegen}
-Die Unterkriterien mit der gleichen Nummer-Ebene gehören zum selben Oberkriterium und werden später bei der Kriteriengewichtung nur untereinander direkt verglichen.
+Die Unterkriterien mit der gleichen Nummer-Ebene gehören zum selben Oberkriterium und werden später bei der Kriteriengewichtung untereinander direkt verglichen.
 
-
-\renewcommand\theparagraph{Soll-1-\arabic{paragraph}}
 \setcounter{paragraph}{0}
+\renewcommand\theparagraph{Soll-1-\arabic{paragraph}}
 
 \paragraph{Anschaffungskosten}\label{Soll-1-1}
+Die IT Infrastruktur soll über eine Abschreibungsdauer von 5 Jahren ausgelegt werden. Die gewählte Lösung kann sowohl eine Miete der Anlagen (Hosting) als auch die eigene Beschaffung der Hardware-Infrastruktur enthalten (managed servers). Um die Anbieter besser vergleichen zu können sind die Kosten auf 3 Jahre zu berechnen. 
 
 \paragraph{Unterhaltskosten}\label{Soll-1-2}
+Zu den Unterhaltskosten zählen sämtliche anfallenden Kosten für den Betrieb und Unterhalt der IT Infrastruktur eines Hosting-Anbieters. Nicht dazu zählen Kosten für die Anwendungs-Software (Anschaffung und Entwicklung) sowie die internen Kosten des Auftraggebers, sofern diese nicht direkt mit dem Betrieb der IT Infrastruktur verbunden sind (nicht direkt zurechenbare Kosten).
 
 \paragraph{Nachhaltigkeit}\label{Soll-1-3}
+Die Gesamtkosten (Anschaffung und Unterhalt) soll auf drei Jahre für alle Varianten gerechnet werden. Dabei soll auf eine gute Qualität der Komponenten für den Betrieb über 5 Jahre geachtet werden. Eine nachhaltige Planung steht im Vordergrund. Im Vergleich sollen sowohl die Anschaffungskosten und die Betriebskosten separat und auch insgesamt (TCO über 3 Jahre) verglichen werden.
+Die Gesamtkosten sollten 50% der Einnahmen aus derselben Periode (3 Jahre) nicht übersteigen, damit ein langjähriger Betrieb wirtschaftlich realisierbar ist. Je tiefer die Gesamtkosten bei gleichbleibender Qualität, umso besser die Bewertung.
 
-
-\renewcommand\theparagraph{Soll-2-\arabic{paragraph}}
 \setcounter{paragraph}{0}
+\renewcommand\theparagraph{Soll-2-\arabic{paragraph}}
 
 \paragraph{Redundanz}\label{Soll-2-1}
 Die redundante Haltung von aktiven Daten, welche gelesen und manipuliert werden können, ermöglicht eine höhere Verfügbarkeit der Daten, z.B. beim Ausfall einer Systemkomponente. Die doppelte Datenhaltung wie sie bei der Datensicherung oder Archivierung entsteht, fällt nicht unter den Begriff "redundante Daten", da diese nicht direkt zur Erhöhung der Datenverfügbarkeit beiträgt. Die Speicherlösung sollte die Daten mindestens doppelt, oder wenn möglich dreifach redundant halten. 
@@ -64,9 +63,8 @@ Die verbesserte Systemverfügbarkeit, wird durch Software- oder Hardware-Redunda
 \paragraph{Standort-übergreifend}\label{Soll-2-3}
 Die aktiven Daten sollen nach Möglichkeit an mindesten zwei voneinander getrennten Standorten gespeichert werden, um den Dienst auch im Falle des Ausfalls eines Rechenzentrums aufrecht erhalten zu können.
 
-
-\renewcommand\theparagraph{Soll-3-\arabic{paragraph}}
 \setcounter{paragraph}{0}
+\renewcommand\theparagraph{Soll-3-\arabic{paragraph}}
 
 \paragraph{Skalierbarkeit}\label{Soll-3-1}
 Die Speicherlösung sollte bei Bedarf den Speicher gleichzeitig an bis zu 30 Serversysteme zur Verfügung stellen können.
@@ -83,9 +81,8 @@ Das gleichzeitige Lesen desselben Objektes von zwei oder mehreren Serversystemen
 \paragraph{Simulataner Schreibzugriff auf Objekte}\label{Soll-3-5}
 Das gleichzeitige Schreiben auf dasselbe Objekte von zwei oder mehreren Serversystemen soll optional möglich sein.
 
-
-\renewcommand\theparagraph{Soll-4-\arabic{paragraph}}
 \setcounter{paragraph}{0}
+\renewcommand\theparagraph{Soll-4-\arabic{paragraph}}
 
 \paragraph{Skalierbarkeit}\label{Soll-4-1}
 
@@ -95,9 +92,8 @@ Das Speicherlösung soll die Anzahl der speicherbaren Objekte gemäss den Soll-S
 \paragraph{Max Objektgrösse von bis zu 2 GB}\label{Soll-4-3}
 Das Speichersystem muss die Speicherung von Objekten mit einer Speichergrösse von bis zu 2 GigaByte unterstützen.
 
-
-\renewcommand\theparagraph{Soll-5-\arabic{paragraph}}
 \setcounter{paragraph}{0}
+\renewcommand\theparagraph{Soll-5-\arabic{paragraph}}
 
 \paragraph{Datenintegrität}\label{Soll-5-1}
 Die Datenintegrität der gespeicherten Daten soll gewährleistet sein.
@@ -111,9 +107,8 @@ Die gespeicherten Daten sollen mit einem effizienten Sicherungsverfahren gesiche
 \paragraph{Datensicherheit}\label{Soll-5-4}
 Die Datenzugriffsberechtigung wird in der Applikation implementiert. Die Speicherlösung soll zudem sicherstellen, dass die Daten nicht von unerlaubten Dritten gelesen oder manipuliert werden können (physischer und logischer Zugriffsschutz).
 
-
-\renewcommand\theparagraph{Soll-6-\arabic{paragraph}}
 \setcounter{paragraph}{0}
+\renewcommand\theparagraph{Soll-6-\arabic{paragraph}}
 
 \paragraph{Marktverbreitung / Marktchancen}\label{Soll-6-1}
 Die Speicherlösung soll im Markt etabliert sein oder Tendenzen aufweisen, welche in den nächsten fünf Jahren die Verbreiterung im Markt wahrscheinlich erscheinen lässt.
@@ -133,9 +128,8 @@ Die Speichertechnologie soll ausgereift und stabil laufen. Eine Implementierung 
 \section{KO-Kriterien}
 Die KO-Kriterien sind Muss-Kriterien, welche von dem gewählten Speichersystem erfüllt werden müssen. Speichersysteme welche die KO-Kriterien nicht erfüllen, werden bei der AHP-Evaluation ausgeschlossen. Die KO-Kriterien wurde mit dem Auftraggeber besprochen und vereinbart.
 
-
-\renewcommand\theparagraph{KO-\arabic{paragraph}}
 \setcounter{paragraph}{0}
+\renewcommand\theparagraph{KO-\arabic{paragraph}}
 
 \paragraph{Dateigrösse bis 2 Gigibyte}\label{KO-1}
 Die Speicherung von Dateien muss eine Objektgrösse von bis zu 2 Gibibyte erlauben.
@@ -151,9 +145,8 @@ Mit dem Auftraggeber wurde definiert, dass für die Speicherlösungen, SAN, NAS,
 
 Die Alternativen/ Vertreter sind für die späteren Verweise nummeriert.
 
-\renewcommand\theparagraph{Al-\arabic{paragraph}}
 \setcounter{paragraph}{0}
-
+\renewcommand\theparagraph{Al-\arabic{paragraph}}
 \paragraph{Hetzner}\label{Al-1}
 Dedizierte Webserver zählen im engeren Sinn nicht als reine Speicherlösungen. Der deutsche Hosting-Anbieter Hetzner bietet allerdings dedizierte Webserver mit der in Szenario 1 geforderten Speicherkapazität (siehe \refsec{Szenario-1}). Die bestehende Lösung wurde mit Hetzner Webserver realisiert. Hetzner als dedizierter Webserver Anbieter wurde deshalb auch berücksichtigt. 
 
@@ -168,12 +161,12 @@ Als Vertreter für Block Speicherlösung wurde ebenfalls die NetApp FAS2240-4 ge
 Als Vertreter für verteilten Speicher war ursprünglich Hadoop HDFS vorgesehen. In der aktuellen Version ist der Name-Node von HDFS noch ein Single Point of Failure (SPOF). Zudem liegen die Stärken bei HDFS bei den Datenprozessen für gespeicherte Objekte mittels MapReduce Algorithmus. Aus diesem Grund wurden weitere verteilte Dateisystem untersucht, wie etwa GlusterFS und OpenStack Object Storage. OpenStack Object Storage soll von der Architektur vergleichbar sein wie Amazon S3. Bei gewichtigen Online Speicheranbieter wird RackSpace erfolgreich eingesetzt. Ein weiterer Grund die für OpenStack Object Storage spricht, ist das gelungene quelloffene Projekt, das viele namhafte IT-Hersteller als Partner gewinnen konnte.
 
 \paragraph{Amazon S3}\label{Al-5}
-Amazon S3 wurde als Representant für Online Speicherlösungen gewählt. Amazon S3 ist gemäss \refsec{sec:MarktEtabliert} einer der etabliertesten Anbieter, wenn nicht die erfolgreichste Online Speicherlösung zur Zeit. Amazon betreibt mehrere Rechenzentrum verteilt auf mehrere Kontinenten. Für den Auftraggeber würde das Europäische Rechenzentrum in Frage kommen.
+Amazon S3 wurde als Representant für Online Speicherlösungen gewählt. Amazon S3 ist gemäss \refsec{MartkEtabliert} einer der etabliertesten Anbieter, wenn nicht die erfolgreichste Online Speicherlösung zur Zeit. Amazon betreibt mehrere Rechenzentrum verteilt auf mehrere Kontinenten. Für den Auftraggeber würde das Europäische Rechenzentrum in Frage kommen.
 
 
 \subsection{Gewichtung der Soll-Kriterien mit AHP}
 
-In diesem Abschnitt werden alle Soll-Kriteren der gleichen Hierarchie-Ebene bzw. gleichen Unter-Kriterien paarweise miteinander verglichen und mit der Skala \reftab{tab:9PBewertungsskala} aus dem \refchap{kab:Entscheidungsfindung} gewichtet.
+In diesem Abschnitt werden alle Soll-Kriteren der gleichen Hierarchie-Ebene bzw. gleichen Unter-Kriterien paarweise miteinander verglichen und mit der Skala \reftab{tab:Gewichtsberechnung} aus dem \refchap{kab:Entscheidungsfindung} gewichtet.
 
 % Vergleich mit Kosten
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-2} (\ref{Soll-1}/\ref{Soll-2})} 
@@ -192,7 +185,7 @@ Die Kosten und die Speicherkapazität sind gleich hoch bis etwas höher zu gewic
 \textbf{Gewichtung: 2}
 
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-5}}
-Für eine Web-Dienstleistung ist der Schutz der Daten wichtig. Wird die Plattform Opfer eines Hackersangriffes und wird dies publik, kann dies zu einem grossen Imageverlust führen. Aus diesen Grund ist sicherzustellen, das die Web-Applikation sicher betrieben werden kann. Die Sicherheit muss jedoch in erster Linie auf der Web-Applikation und dem Webserver sichergestellt werden und in zweiter Priorität auf dem Speichersystem. Die Kosten sind deshalb im Vergleich zum Datenschutz sehr viel bis absolut höher zu gewichten.
+Für eine Web-Dienstleistung ist der Schutz der Daten wichtig. Wird die Plattform Opfer eines Hackersangriffes und wird dies publik, kann dies zu einem grossen Imageverlust führen. Aus diesem Grund ist sicherzustellen, das die Web-Applikation sicher betrieben werden kann. Die Sicherheit muss jedoch in erster Linie auf der Web-Applikation und dem Webserver sichergestellt werden und in zweiter Priorität auf dem Speichersystem. Die Kosten sind deshalb im Vergleich zum Datenschutz sehr viel bis absolut höher zu gewichten.
 
 \textbf{Gewichtung: 8}
 
@@ -208,12 +201,12 @@ Aus Sicht des Anwenders ist die Verfügbarkeit der Daten höher zu gewichten als
 \textbf{Gewichtung: 2}
 
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-4}}
-Zum Geschäftsmodell der Web-Applikation gehört das Bereitstellung von Speicherkapazität für die Speicherung von grossen Bilddaten. Sind die Speicherkapazitäten ausgeschöpft und ist keine Wachstum mehr in der Speicherkapazität möglich, verliert der Auftraggeber ein neues Geschäft oder verliert gar einen bestehenden Kunden und kann mit dem Marktwachstum nicht Schritt halten. Aus diesen Grund ist die Verfügbarkeit etwas geringer zu gewichten als die Speicherkapazität.
+Zum Geschäftsmodell der Web-Applikation gehört das Bereitstellung von Speicherkapazität für die Speicherung von grossen Bilddaten. Sind die Speicherkapazitäten ausgeschöpft und ist keine Wachstum mehr in der Speicherkapazität möglich, verliert der Auftraggeber ein neues Geschäft oder verliert gar einen bestehenden Kunden und kann mit dem Marktwachstum nicht Schritt halten. Aus diesem Grund ist die Verfügbarkeit etwas geringer zu gewichten als die Speicherkapazität.
 
 \textbf{Gewichtung: 1/3}
 
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-5}}
-Um eine möglichst hohe Verfügbarkeit zu erreichen, werden zur Gewährleistung der Verfügbarkeit Massnahmen für den Datenschutz unternommen. Aus diesen Grund ist die Verfügbarkeit höher zu gewichten. 
+Um eine möglichst hohe Verfügbarkeit zu erreichen, werden zur Gewährleistung der Verfügbarkeit Massnahmen für den Datenschutz unternommen. Aus diesem Grund ist die Verfügbarkeit höher zu gewichten. 
 Die Verfügbarkeit kann auch durch Schwachstellen erheblich höher zu gewichten sein als der Datenschutz.
 
 \textbf{Gewichtung: 5}
@@ -230,7 +223,7 @@ Die Skalierbarkeit der Datenzugriff ist für ein Speichersystem fast gleich wich
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-3} verglichen mit \refsoll{Soll-5}}
-Für die Web-Applikation ist es wichtig, dass die geforderten Zugriffe auf das Speichersystem verarbeitbar sind. Die Sicherheit der Daten soll zudem vorwiegend aus Sicht der Applikation sichergestellt werden. Aus diesen Grund ist der Datenzugriff sehr viel grösser zu gewichten als der Datenschutz.
+Für die Web-Applikation ist es wichtig, dass die geforderten Zugriffe auf das Speichersystem verarbeitbar sind. Die Sicherheit der Daten soll zudem vorwiegend aus Sicht der Applikation sichergestellt werden. Aus diesem Grund ist der Datenzugriff sehr viel grösser zu gewichten als der Datenschutz.
 
 \textbf{Gewichtung: 7}
 
@@ -241,7 +234,7 @@ Für die Web-Applikation ist es wichtig, dass die geforderten Zugriffe auf das S
 
 % Vergleich mit Speicherkapazität
 \paragraph*{\refsoll{Soll-4} verglichen mit \refsoll{Soll-5}}
-Zum Geschäftsmodell der Web-Applikation gehört das Bereitstellung von Speicherkapazität zur Speicherung von grossen Bilddaten. Sind die Speicherkapazitäten erschöpft und ist kein Wachstum mehr möglich, kann der Auftraggeber mit den Marktanorderungen nicht mehr Schritt halten. Der Datenschutz der Daten ist ebenfalls wichtig. Der Schutz der Daten muss jedoch hauptsächlich auf der Applikationsseite erfolgen. Aus diesen Grund ist die Speicherkapazität sehr viel bis absolut grösser zu gewichten als der Datenschutz.
+Zum Geschäftsmodell der Web-Applikation gehört das Bereitstellung von Speicherkapazität zur Speicherung von grossen Bilddaten. Sind die Speicherkapazitäten erschöpft und ist kein Wachstum mehr möglich, kann der Auftraggeber mit den Marktanorderungen nicht mehr Schritt halten. Der Datenschutz der Daten ist ebenfalls wichtig. Der Schutz der Daten muss jedoch hauptsächlich auf der Applikationsseite erfolgen. Aus diesem Grund ist die Speicherkapazität sehr viel bis absolut grösser zu gewichten als der Datenschutz.
 
 \textbf{Gewichtung: 8}
 
@@ -252,7 +245,7 @@ Für den langfristigen Betrieb ist es wichtig, dass die Technologie laufend den 
 
 % Vergleich mit Datenschutz
 \paragraph*{\refsoll{Soll-5} verglichen mit \refsoll{Soll-6}}
-Für den langfristigen Betrieb ist es wichtig, dass die Technologie laufend den neuen Marktanforderungen angepasst werden kann und genügend Experten vorhanden sind, welche mit der Technologie vertraut sind. Aus diesen Grund ist der Datenschutz etwas bis erheblich geringer zu gewichten als die Technologie.
+Für den langfristigen Betrieb ist es wichtig, dass die Technologie laufend den neuen Marktanforderungen angepasst werden kann und genügend Experten vorhanden sind, welche mit der Technologie vertraut sind. Aus diesem Grund ist der Datenschutz etwas bis erheblich geringer zu gewichten als die Technologie.
 
 \textbf{Gewichtung: 4}
 
@@ -292,7 +285,7 @@ Fällt die Langlebigkeit eines Systems, weil es technologisch veraltet ist oder 
 
 
 \paragraph*{\refsoll{Soll-1-2} verglichen mit \refsoll{Soll-1-3} (\ref{Soll-1-2}/\ref{Soll-1-3})}
-Der Hauptkostenfakor in der Lebenzeit eines Informationssystems sind die Betriebskosten. Steigen diese Kosten aufgrund hoher Wartungvertragskosten mit der Lebenspanne des Systems an, kann sich der Betrieb als unrentabel herausstellen. Aus diesen Grund sind die Betriebskosten im Vergleich zur Langlebigkeit etwas grösser zu gewichten.
+Der Hauptkostenfakor in der Lebenzeit eines Informationssystems sind die Betriebskosten. Steigen diese Kosten aufgrund hoher Wartungvertragskosten mit der Lebenspanne des Systems an, kann sich der Betrieb als unrentabel herausstellen. Aus diesem Grund sind die Betriebskosten im Vergleich zur Langlebigkeit etwas grösser zu gewichten.
 
 \textbf{Gewichtung: 3}
 
@@ -405,7 +398,7 @@ Weil keine Änderungen an original Bilddateien durchgeführt werden, ist es für
 
 
 \paragraph*{\refsoll{Soll-3-4} verglichen mit \refsoll{Soll-3-5} (\ref{Soll-3-4}/\ref{Soll-3-5})}
-Die Webapplikation des Auftraggeber führt keine Änderungen an der original Bilddatei durch, was den simultanen Schreibzugriff auf Objekten für den Betrieb der Web-Applikation von geringer Bedeutung ist. Der simultane Lesezugriff auf Objekten muss für den Betrieb der Web-Applikation möglich sein, damit die Bilddaten mehren Websitzungen dargestellt werden können. Aus diesen Grund ist es absolut grosser von Gewicht das ein Simultaner Lesezugriff möglich ist als der Simultaner Schreibzugriff.
+Die Webapplikation des Auftraggeber führt keine Änderungen an der original Bilddatei durch, was den simultanen Schreibzugriff auf Objekten für den Betrieb der Web-Applikation von geringer Bedeutung ist. Der simultane Lesezugriff auf Objekten muss für den Betrieb der Web-Applikation möglich sein, damit die Bilddaten in mehreren Websitzungen gleichzeitig dargestellt werden können. Deshalb ist der simultane Lesezugriff gegenüber dem simultanen Schreibzugriff absolut höher gewichtet.
 
 \textbf{Gewichtung: 9}
 
@@ -428,22 +421,22 @@ Die Webapplikation des Auftraggeber führt keine Änderungen an der original Bil
 \subsubsection*{Gewichtung Speicherkapazität}
 
 
-Wie nach der Gewichtung und in der \reftab{tab:AHPSpeicherkapazität} zu entnehmen ist, hat die Skalierbarkeit zusammen mit Max Anzahl speicherbare Objekte die höchste Gewichtung. Die Möglichkeit zur Speicherung von Objekte grösser als 2 GiB hat die tiefste Gewichtung, da die mindestens Speichergrösse von 2 GiB bereits im KO Kriterium \ref{KO-1} festgelegt und es sich somit um ein Optionales Kriterien handelt wurde.
+Wie nach der Gewichtung und in der \reftab{tab:AHPSpeicherkapazität} zu entnehmen ist, hat die Skalierbarkeit zusammen mit der max. Anzahl speicherbarer Objekte die höchste Gewichtung. Die Möglichkeit zur Speicherung von Objekte grösser als 2 GiB hat die tiefste Gewichtung, da die mindest Speichergrösse von bis zu 2 GiB bereits als KO Kriterium \ref{KO-1} festgelegt wurde und es sich somit um ein optionales Kriterium handelt.
 
 Die Paarvergleiche im Detail:
 
 \paragraph*{\refsoll{Soll-4-1} verglichen mit \refsoll{Soll-4-2} (\ref{Soll-4-1}/\ref{Soll-4-2})}
-Die Skalierung der Speicherkapazität ist gleich zu gewichten wie die maximal Anzahl Speicherbare Objekt. Beides sind limitierende Faktoren, die bei erreichen der Grenze die Speicherung von neuen Objekten verunmöglichen. Erreicht man die Grenze der Speicherbaren Objekten, kann der Vorhandene frei Speicherkapazität nicht für neue Objekte verwendet werden. Umgekehrt kann die Speicherkapazität nicht ausgebaut werden, können die frei Kapazität an Speicherbaren Objekten nicht dazu verwendet werden neue Objekte zu Speichern.
+Die Skalierung der Speicherkapazität ist gleich zu gewichten wie die maximale Anzahl speicherbarer Objekte. Beides sind limitierende Faktoren, die bei erreichen der Grenze die Speicherung von neuen Objekten verunmöglichen. Erreicht man die Grenze der speicherbaren Objekten, kann die vorhandene freie Speicherkapazität nicht für neue Objekte verwendet werden. Umgekehrt wenn die Speicherkapazität nicht ausgebaut werden kann, kann die freie Kapazität an speicherbaren Objekten nicht dazu verwendet werden, neue Objekte zu speichern.
 
 \textbf{Gewichtung: 1}
 
 \paragraph*{\refsoll{Soll-4-1} verglichen mit \refsoll{Soll-4-3} (\ref{Soll-4-1}/\ref{Soll-4-3})}
-Die Skalierbarkeit der Speicherkapazität, ist für den Betrieb sehr viel grösser zu gewichten als die Maximale Speichergrösse für Objekte die grösser als 2 Gigibyte sind.
+Die Skalierbarkeit der Speicherkapazität ist für den Betrieb sehr viel höher zu gewichten als die maximale Speichergrösse für Objekte grösser als 2 Gigibyte.
 
 \textbf{Gewichtung: 7}
 
 \paragraph*{\refsoll{Soll-4-2} verglichen mit \refsoll{Soll-4-3} (\ref{Soll-4-2}/\ref{Soll-4-3})}
-Die maximale Anzahl speicherbare Objekte, ist für den Betrieb sehr viel grösser zu gewichten als die Maximale Speichergrösse für Objekte die grösser als 2 Gigibyte sind.
+Die maximale Anzahl speicherbarer Objekte ist für den Betrieb sehr viel höher zu gewichten als die maximale Speichergrösse für Objekte grösser als 2 Gigibyte.
 
 \textbf{Gewichtung: 7}
 
@@ -455,7 +448,7 @@ Die maximale Anzahl speicherbare Objekte, ist für den Betrieb sehr viel grösse
  & \multicolumn{1}{l|}{\textbf{S}} & \textbf{A} & \textbf{O} & \textbf{Gewicht} \\ \hline
 \textbf{Skalierbarkeit (S)} & 1 & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{7} & \multicolumn{1}{r|}{0,467} \\ \hline
 \textbf{Max Anzahl speicherbare Objekte (A)} & 1 & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{7} & \multicolumn{1}{r|}{0,467} \\ \hline
-\textbf{Max Objekt Speichergrosse grösser als 2 GiB (O)} & 1/7 & \multicolumn{1}{r|}{1/7} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0.067} \\ \hline
+\textbf{Max Objekt Speichergrösse grösser als 2 GiB (O)} & 1/7 & \multicolumn{1}{r|}{1/7} & \multicolumn{1}{r|}{1} & \multicolumn{1}{r|}{0.067} \\ \hline
 \textbf{Konsistenz Kennzahl} & 0 \\ \cline{1-2}
 \end{tabular}
 \label{tab:AHPSpeicherkapazität}
@@ -469,37 +462,37 @@ Die Paarvergleiche im Detail:
 
 
 \paragraph*{\refsoll{Soll-5-1} verglichen mit \refsoll{Soll-5-2} (\ref{Soll-5-1}/\ref{Soll-5-2})}
-Damit das Speichersystem korrupte Objekte selbständig heilen kann, ist es erforderlich das die Objekte Redundant gespeichert sind und die Integrität der Gespeicherten Objekte geprüft werden kann. Die Integrität der Objekte wird dabei mit einen zuvor erstellten und gespeicherten Hash Prüfsumme verglichen. Aus diesen Grund ist die Datenintegrität erheblich höher zu gewichten als die Selbstheilung von Objekten.
+Damit das Speichersystem beschädigte Objekte selbständig heilen kann, ist es erforderlich, dass die Objekte redundant gespeichert werden und die Integrität der gespeicherten Objekte geprüft wird. Die Integrität der Objekte wird dabei mit einer zuvor erstellten und gespeicherten Hash-Prüfsumme verglichen. Aus diesem Grund ist die Datenintegrität erheblich höher zu gewichten als die Selbstheilung von Objekten.
 
 \textbf{Gewichtung: 5}
 
 \paragraph*{\refsoll{Soll-5-1} verglichen mit \refsoll{Soll-5-3} (\ref{Soll-5-1}/\ref{Soll-5-3})}
-Verliert man alle Primären-Daten durch einen Hard-, Software Fehler oder durch einwirken von dritten, ist es unerlässlich das ein Sicherungskopie bereit steht um nicht den Total Datenverlust zu erleiden.
-Ein weiter Gefahr von Datenverlust besteht, wenn die Datenintegrität nicht sichergestellt ist. Ist ein Objekt nicht mehr integer bzw. korrupt und wird diese vor der Sicherung nicht festgestellt, besteht die Gefahr eines Datenverlustes.
-Der Verlust aller Daten ist jedoch schwerwiegender als der Verlust einzelner Daten.
-Aus diesen Grund ist die Datenintegrität geringer zu gewichten als die Datensicherung.
+Verliert man alle primären Daten durch einen Hard- bzw. Software Fehler oder durch unerlaubtes Einwirken von Dritten, ist es unerlässlich, dass eine vollständige und konsistente Sicherungskopie der Daten besteht, um keinen totalen Datenverlust hinnehmen zu müssen.
+Wenn ferner die Datenintegrität nicht sichergestellt ist, besteht ebenfalls die Gefahr eines Datenverlustes. Ist ein Objekt nicht mehr integer sondern korrupt und wird dies nicht vor der Datensicherung festgestellt, besteht die Gefahr eines Datenverlustes.
+Der Verlust aller Daten ist schwerwiegender als der Verlust einzelner Daten.
+Aus diesem Grund ist die Datenintegrität geringer zu gewichten als die Datensicherung.
 
 \textbf{Gewichtung: 1/3}
 
 \paragraph*{\refsoll{Soll-5-1} verglichen mit \refsoll{Soll-5-4} (\ref{Soll-5-1}/\ref{Soll-5-4})}
-Primär muss bei einer Webapplikation die Sicherheit der Daten innerhalb der Webapplikation sicher gestellt werden. Aus diesen Grund ist die Datenintegrität sehr viel grösser zu gewichten als Sicherheit.
+Primär muss bei einer Webapplikation die Datensicherheit innerhalb der Webapplikation sichergestellt werden. Aus diesem Grund ist die Datensicherheit sehr viel höher zu gewichten als die Datenintegrität.
 
 \textbf{Gewichtung: 7}
 
 \paragraph*{\refsoll{Soll-5-2} verglichen mit \refsoll{Soll-5-3} (\ref{Soll-5-2}/\ref{Soll-5-3})}
-Die Selbstheilung von Daten stellt sicher das alle Redundanten gespeicherten Primären-Daten integer sind. Durch die Selbstheilung verringert sich das Risiko der eines Datenverlust zu erleiden. 
+Die Selbstheilung von Daten stellt sicher, dass alle redundant gespeicherten Primären-Daten}integer sind. Durch die Selbstheilung verringert sich das Risiko des Datenverlustes. 
 Der Verlust aller Daten ist jedoch schwerwiegender als der Verlust einzelner Daten.
-Aus diesen Grund ist die Selbstheilung der Daten erheblich geringer zu gewichten als die Datensicherung.
+Aus diesem Grund ist die Selbstheilung der Daten erheblich geringer zu gewichten als die Datensicherung.
 
 \textbf{Gewichtung: 1/5}
 
 \paragraph*{\refsoll{Soll-5-2} verglichen mit \refsoll{Soll-5-4} (\ref{Soll-5-2}/\ref{Soll-5-4})}
-Primär muss bei einer Webapplikation die Sicherheit der Daten innerhalb der Webapplikation sicher gestellt werden. Aus diesen Grund ist die Selbsheilung der Daten etwas grosser zu gewichten als Sicherheit.
+Primär muss bei einer Webapplikation die Datensicherheit innerhalb der Webapplikation sichergestellt werden. Aus diesem Grund ist die Selbsheilung der Daten etwas höher zu gewichten als die Datensicherheit.
 
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-5-3} verglichen mit \refsoll{Soll-5-4} (\ref{Soll-5-3}/\ref{Soll-5-4})}
-Die Datensicherheit ist Primär auf der Web-Applikation Schicht zu gewährleisten und zu realisieren. Erfährt man einen Datenverlust durch einwirken von dritten, ist sicherzustellen das ein Sicherungskopie der Daten existiert. Aus diesen Grund ist die Sicherung der Daten sehr viel höher zu gewichten als die Sicherheit. 
+Die Datensicherheit ist primär auf der Web-Applikationschicht zu gewährleisten und zu realisieren. Erfährt man einen Datenverlust durch das Einwirken von Dritten, ist sicherzustellen, dass eine Sicherungskopie der Daten existiert. Aus diesem Grund ist die Sicherung der Daten sehr viel höher zu gewichten als die Sicherheit. 
 
 \textbf{Gewichtung: 7}
 
@@ -520,62 +513,62 @@ Die Datensicherheit ist Primär auf der Web-Applikation Schicht zu gewährleiste
 
 \subsubsection*{Gewichtung Technologie}
 
-Wie nach der Gewichtung und in der \reftab{tab:AHPTechnologie} zu entnehmen ist, hat das Kriterium Ausgereift mit abstand die höchste Gewichtung. Die zweit höchste Gewichtung weist die Weiterentwicklung auf gefolgt von Verfügbarkeit von Experten, Marktverbreitung/Marktchancen auf. Am wenigsten Gewicht hat der Verwaltungskomfort.
+Wie nach der Gewichtung und in der \reftab{tab:AHPTechnologie} zu entnehmen ist, hat das Kriterium Ausgereift mit Abstand die höchste Gewichtung. Die zweithöchste Gewichtung ist der Weiterentwicklung zugeordnet, gefolgt von der Verfügbarkeit von Experten und der Marktverbreitung/Marktchancen. Am wenigsten Gewicht wird dem Verwaltungskomfort zugeteilt.
 
 Die Paarvergleiche im Detail:
 
 
-\paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-2} (\ref{Soll-6-1}/\ref{Soll-6-2})} Ein Technologie die nicht mehr weiter Entwickelt wird, wird trotzt allfähiger aktuellen grosser Marktverbreitung, über kurz oder längere Zeit durch neuere Technologie aus dem Markt verdrängt. Beim entscheid einer neuen Lösung ist es deshalb wichtig, dass man sich für ein Technologie Entscheidet die nicht am Ende Ihrer Lebenszyklus steht. Aus diesen Grund ist die Marktverbreitung/Marktchance erheblich geringer zu gewichten als die Weiterentwicklung.
+\paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-2} (\ref{Soll-6-1}/\ref{Soll-6-2})} Ein Technologie, die nicht mehr weiterentwickelt wird, hat trotzt einer allfälligen grossen Marktverbreitung über kurz oder lang keine Chancen und wird durch neuere und bessere Technologien aus dem Markt verdrängt. Beim Entscheid zu einer neuen Lösung ist es wichtig, dass man sich für ein Technologie entscheidet, welche noch nicht am Ende ihres Lebenszyklus angelangt ist. Aus diesem Grund ist die Marktverbreitung/Marktchance erheblich geringer zu gewichten als die Weiterentwicklung.
 
 \textbf{Gewichtung: 1/5}
 
 
 \paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-3} (\ref{Soll-6-1}/\ref{Soll-6-3})}
-Durch ein hohe Marktverbreitung ist in der Regeln die Verfügbarkeit von Experten ebenfalls gegeben. Aus diesen Grund sind die Marktverbreitung und die Verfügbarkeit von Experten gleich zu gewichten
+Mit einer hohe Marktverbreitung ist in der Regeln die Verfügbarkeit von Experten ebenfalls gegeben. Aus diesem Grund ist die Marktverbreitung und die Verfügbarkeit von Experten gleich zu gewichten
 
 \textbf{Gewichtung: 1}
 
 \paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-1}/\ref{Soll-6-4})}
-Ein Produkt welches hohen Verwaltungskomfort aufweist, jedoch wegen anderen Faktoren ein schlechte Marktverbreitung oder Marktchancen aufweist, ist für den längeren betrieb schlechter geeignet als ein Produkt mit weniger hohen Verwaltungskomfort. Die Marktverbreitung ist deshalb etwas hoher zu gewichten als der Verwaltungskomfort.
+Ein Produkt welches hohen Verwaltungskomfort aufweist, jedoch wegen anderen Faktoren ein schlechte Marktverbreitung oder Marktchancen aufweist, ist für den langfristigen Betrieb eher ungeeignet. Die Marktverbreitung ist deshalb etwas höher zu gewichten als der Verwaltungskomfort.
 
 \textbf{Gewichtung: 3}
 
 \paragraph*{\refsoll{Soll-6-1} verglichen mit \refsoll{Soll-6-5} (\ref{Soll-6-1}/\ref{Soll-6-5})}
-Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und Betrieblich ausgereift sind. Die Marktverbreitung ist deshalb absolut geringer zu gewichten als die Ausgereifheit der Speicherlösung.
+Für den Betrieb der Web-Applikation ist es wichtig, dass die Speicherlösung technisch und und im Alltagseinsatz ausgereift ist. Die Marktverbreitung ist deshalb absolut geringer zu gewichten als eine ausgereifte Speicherlösung.
 
 \textbf{Gewichtung: 1/9}
 
 \paragraph*{\refsoll{Soll-6-2} verglichen mit \refsoll{Soll-6-3} (\ref{Soll-6-2}/\ref{Soll-6-3})}
-Eine Technologie, welche nicht mehr weiter entwickelt wird lauft Gefahr den Markt Anforderungen nicht mehr zu genügen und auf Dauer von neuen Technologien ersetzt zu werden. Der Rückgang der Marktanteile der Technologie hat auch zur Folge, dass der Nachwuchs sich in den alten Technologien weiter Bilden. Was wiederum zur Folge hat, dass die Anzahl Experten auf Dauer ebenfalls abnimmt. Aus diesen Grund ist die Weiterentwicklung erheblich höher zu gewichten als die Verfügbarkeit von Experten.
+Eine Technologie, welche nicht mehr weiter entwickelt wird, lauft Gefahr, den Marktanforderungen bald nicht mehr zu genügen und könnte in der Folge von neuen Technologien ersetzt werden. Der Rückgang der Marktanteile der Technologie hat auch zur Folge, dass der Nachwuchs sich in den alten Technologien ebenfalls weiterbilden muss. Dies wiederum hat zur Folge, dass die Anzahl Experten mittelfristig ebenfalls abnimmt. Aus diesem Grund ist die Weiterentwicklung erheblich höher zu gewichten als die Verfügbarkeit von Experten.
 
 \textbf{Gewichtung: 5}
 
 \paragraph*{\refsoll{Soll-6-2} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-2}/\ref{Soll-6-4})}
 
-Die Weiterentwicklung ist für den Langzeitbetrieb wichtiger als der Verwaltungskomfort. Bestehende Schwächen im Verwaltungskomfort könnten in weiterentwickelten Versionen behoben oder verbessert sein. Die Weiterentwicklung wird deshalb für den Langzeitbetrieb sehr höher gewichtet als der Verwaltungskomfort.
+Die Weiterentwicklung ist für den Langzeitbetrieb wichtiger als der Verwaltungskomfort. Bestehende Schwächen im Verwaltungskomfort könnten in weiterentwickelten Versionen behoben oder verbessert sein. Die Weiterentwicklung wird deshalb für den Langzeitbetrieb sehr viel höher gewichtet als der Verwaltungskomfort.
 
 \textbf{Gewichtung: 7}
 
 \paragraph*{\refsoll{Soll-6-2} verglichen mit \refsoll{Soll-6-5} (\ref{Soll-6-2}/\ref{Soll-6-5})}
-Für den Betrieb der Web-Applikation ist es wichtig, dass die Speicherlösung technisch und betrieblich ausgereift ist. Die Weiterentwicklung ist deshalb erheblich geringer zu gewichten als die Ausgereiftheit der Speicherlösung.
+Für den Betrieb der Web-Applikation ist es wichtig, dass die Speicherlösung technisch und betrieblich ausgereift ist. Die Weiterentwicklung ist deshalb erheblich geringer zu gewichten als eine ausgereifte Speicherlösung.
 
 \textbf{Gewichtung: 1/5}
 
 
 \paragraph*{\refsoll{Soll-6-3} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-3}/\ref{Soll-6-4})}
-Biete ein Speicherlösung einen hohen Verwaltungskomfort, kann die Verwaltung in der Regel schneller und von weniger gut geschultem Personal durchgeführt werden. Folglich ist verringert sich die Abhängigkeit zu Experten. Für die Konzeption, Inbetriebnahme, spätere Optimierung und Problemlösungen der Speicherinfrastruktur ist man in der Regel weiterhin auf das Wissen von Experten angewiesen. Aus diesen Grund ist es wichtig das der Zugriff auf Experten Wissen gegeben ist. Die Verfügbarkeit von Experten ist deshalb, erheblich höher zu gewichten als der Verwaltungskomfort. 
+Bietet ein Speicherlösung einen hohen Verwaltungskomfort, kann die Verwaltung in der Regel schneller und von weniger gut geschultem Personal durchgeführt werden. Folglich verringert sich die Abhängigkeit zu Experten. Für die Konzeption, Inbetriebnahme, spätere Optimierung und Problemlösungen der Speicherinfrastruktur ist man in der Regel weiterhin auf das Wissen von Experten angewiesen. Aus diesem Grund ist es wichtig, dass der Zugriff auf Expertenwissen vorhanden ist. Die Verfügbarkeit von Experten ist deshalb, erheblich höher zu gewichten als der Verwaltungskomfort. 
 
 \textbf{Gewichtung: 5}
 
 \paragraph*{\refsoll{Soll-6-3} verglichen mit \refsoll{Soll-6-5} (\ref{Soll-6-3}/\ref{Soll-6-5})}
-Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und betrieblich ausgereift sind. Ist ein Produkt nicht ausgereift, bzw. verfügt über massive Mängel, die einen Betrieb gefährden, kann diese nicht gänzlich durch Experten Wissen kompensiert werden. Die Verfügbarkeit von Experten ist deshalb sehr viel geringer zu gewichten als die Ausgereiftheit der Speicherlösung.
+Für den Betrieb der Web-Applikation ist es wichtig, dass die Speicherlösung technisch und betrieblich ausgereift sind. Ein nicht ausgereiftes Produkt könnte massive Mängel ausweisen, die einen effizienten Betrieb gefährden würden, falls dies nicht gänzlich durch Experten kompensiert werden könnte. Die Verfügbarkeit von Experten ist deshalb sehr viel geringer zu gewichten als die ausgereifte Speicherlösung.
 
 \textbf{Gewichtung: 1/7}
 
 \paragraph*{\refsoll{Soll-6-4} verglichen mit \refsoll{Soll-6-4} (\ref{Soll-6-3}/\ref{Soll-6-5})}
-Für den Betrieb der Web-Applikation ist es wichtig das die Speicherlösung technisch und betrieblich ausgereift sind. Der beste Verwaltungskomfort bring am Ende nichts, wenn das Produkt durch Mängeln den Betrieb gefährdet.
+Für den Betrieb der Web-Applikation ist es wichtig, dass die Speicherlösung technisch und betrieblich ausgereift ist. Der höchste Verwaltungskomfort bringt letztendlich nichts, wenn das Produkt Mängeln aufweist und den Betrieb gefährdet.
 
-Der Verwaltungskomfort ist deshalb absolut geringer zu gewichten als die Ausgereiftheit der Speicherlösung.
+Der Verwaltungskomfort ist deshalb absolut geringer zu gewichten als die ausgereifte Speicherlösung.
 
 \textbf{Gewichtung: 1/9}
 
@@ -592,7 +585,7 @@ Der Verwaltungskomfort ist deshalb absolut geringer zu gewichten als die Ausgere
 \textbf{Ausgereift (A)} & 9 & 5 & 7 & 9 & 1 & 0.588 \\ \hline
 \textbf{Konsistenz Kennzahl} & \multicolumn{1}{r|}{0.094} \\ \cline{1-2}
 \end{tabular}
-\label{tab:AHPTechnologie}
+\label{AHPTechnologie}
 \end{table}
 
 
@@ -600,9 +593,9 @@ Der Verwaltungskomfort ist deshalb absolut geringer zu gewichten als die Ausgere
 
 \section{Daten Sammeln}
 \subsection{\ref{Al-1}: Hetzner Server}
-Hetzner ist einer der grössten Hosting Anbieter in Deutschland und bietet seit 1997 für Unternehmen und Privat Personen Hosting-Produkte an. In den Vergangenen Jahren hat Hetzer diverse Computer-Magazin Auszeichnungen bekommen. Hetzner betreibt in Deutschland mehre Rechenzentren die mehrfach Redundant an das Internet Angeschlossen sind.
+Hetzner ist einer der grössten Hosting Anbieter in Deutschland und bietet seit 1997 für Unternehmen und Privatpersonen Hosting-Produkte an. In den vergangenen Jahren hat Hetzner von diversen Computer-Magazinen Auszeichnungen bekommen. Hetzner betreibt in Deutschland mehrere Rechenzentren die mehrfach redundant an das Internet angeschlossen sind.
 
-Die \refabb{abb:Hetzner-Infrastruktur} zeigt den gemieteten Hetzner Server mit den internen RAID Disk Speicher. In \refabb{abb:HetznerRaidSpeicher} wird die interne Architektur des RAID Speichers mit den Verschiedenen Speicherschichten dargestellt.
+Die \refabb{abb:Hetzner-Infrastruktur} zeigt den gemieteten Hetzner Server mit dem internen RAID Disk Speicher. In \refabb{abb:HetznerRaidSpeicher} wird die interne Architektur des RAID-Speichers mit den verschiedenen Speicherschichten dargestellt.
 
 \begin{center}
 \includegraphics[width=\linewidth, keepaspectratio = true]{media/Hetzner.png}
@@ -615,19 +608,19 @@ Die \refabb{abb:Hetzner-Infrastruktur} zeigt den gemieteten Hetzner Server mit d
 \end{center}
 
 \subsubsection*{Speicherkapazität}
-Der Grösste Dezidierter Server welche Hetzner in seinen Produkte Katalog führt, ist der Root Server XS 29. Der XS 29 ist mit 15 mal 3 Terabyte SATA Festplatten ausgerüstet. Mit dem zusätzlich eingebauten Hardware RAID Kontroller lassen, sich die 15 Festplatten zu einen RAID zusammen fügen.
-Als CPU hat der Server einen Intel Xeon E3-1245 Quad-Core eingebaut und Verfügt über 16 Gigabyte Hauptspeicher. 
+Der grösste dedizierte Server, welcher Hetzner in seinem Produktkatalog führt, ist der Root-Server XS 29. Der XS 29 ist mit 15 mal 3 Terabyte SATA Festplatten ausgerüstet. Mit dem zusätzlich eingebauten Hardware-RAID-Controller lassen sich die 15 Festplatten zu einen RAID zusammenfügen.
+Als CPU hat der Server einen Intel Xeon E3-1245 Quad-Core eingebaut und verfügt über 16 Gigabyte Hauptspeicher. 
 
-Die Max Grösse einer Datei ist von Dateisystem abhängig. ext3 oder "third extended filesystem" genannt, ist bei den meisten bekannten Linux Distributoren das Standard Dateisystem. Die maximale grösse einer Datei hängt von der verwendeten Blockgrösse ab. Nach eigener Test ist die Standard Blockgrösse bei Debian, Ubuntu, Red Hat und Suse 4 Kibibyte, gross. Bei einer Blockgrösse von 4 Kibibyte, kann ein Datei maximal 2 Tebibyte und das Dateisystem 16 Tebibyte gross sein. \cite{Card1993}
+Die max. Grösse einer Datei ist vom Dateisystem abhängig. ext3 oder "third extended filesystem" genannt, ist bei den meisten bekannten Linux Distributoren das standard Dateisystem. Die maximale Grösse einer Datei hängt von der verwendeten Blockgrösse ab. Nach eigenen Tests ist die standard Blockgrösse bei Debian, Ubuntu, Red Hat und Suse 4 Kibibyte gross. Bei einer Blockgrösse von 4 Kibibyte, kann eine Datei maximal 2 Tebibyte und das Dateisystem 16 Tebibyte gross sein. \cite{Card1993}
 
-Die Maximale Anzahl an Objekte, hängt von der grösse des Dateisystems ab. Bei einen 16 Tebibyte ist mit der Standard Konfiguration maximal 17'592'186'044'416 Objekte. 
+Die maximale Anzahl an Objekten hängt von der Grösse des Dateisystems ab. Bei einem 16 Tebibyte unterstützt die standard Konfiguration maximal 17'592'186'044'416 Objekte. 
 
 \subsubsection*{Verfügbarkeit}
-Die RAID-5 Konfiguration mit dem 15 Festplatten im RAID bietet mit 38,192 Tebibyte gemäss \refeqlb{eqn:MaxSpeicherkapazitätHeztner} bei einfacher Redundanz die grösste mögliche Speicherkapazität. Wegen der möglicherweise langen Wiederherstellungs-Zeit (MTTR) dieser Konfiguration, ist man darauf angewiesen, dass der Ausfall durch die eigene Überwachungssystem erkannt und nach Benachrichtigung des Hetzner Support die defekte Festplatte rasch ausgetauscht wird. Die Festplatten selber sind während des Betriebs austauschbar, es ist somit kein Unterbruch des Betriebs erforderlich.
+Die RAID-5 Konfiguration mit 15 Festplatten im RAID, bietet mit 38,192 Tebibyte gemäss \refeqlb{eqn:MaxSpeicherkapazitätHeztner} bei einfacher Redundanz die grösst mögliche Speicherkapazität. Wegen der möglicherweise langen Wiederherstellungs-Zeit (MTTR) dieser Konfiguration, ist man darauf angewiesen, dass der Ausfall vom eigenen Überwachungssystem erkannt und nach Benachrichtigung des Hetzner Support die defekte Festplatte rasch ausgetauscht wird. Die Festplatten selber sind während des Betriebs austauschbar, es ist somit kein Unterbruch des Betriebs erforderlich.
 
-Der eingesetzte LSI RAID Kontrolle lässt auch die Konfiguration einer Hot-Spare Festplatte zu. Ein Host-Spare Festplatte ist ein leere ungenutzte Festplatte, die bei einen Ausfall einer Festplatte im RAID automatisch die defekte Festplatte ersetzt. 
+Der eingesetzte LSI RAID Kontrolle lässt auch die Konfiguration einer Hot-Spare Festplatte zu. Ein Host-Spare Festplatte ist ein leere ungenutzte Festplatte, die beim Ausfall einer Festplatte im RAID automatisch die defekte Festplatte ersetzt. 
 
-Da es sich nur um ein Server System handelt, ist ein Standort-übergreifende Verfügbarkeit der Daten nicht möglich.
+Da es sich nur um ein Server System handelt, ist ein standortübergreifende Verfügbarkeit der Daten nicht möglich.
 
 
 \begin{equation}
@@ -643,31 +636,31 @@ Da es sich nur um ein Server System handelt, ist ein Standort-übergreifende Ver
 \subsubsection*{Datenzugriff}
 Der Datenzugriff findet lokal über POSIX IO statt, dass heisst das die Web-Applikation auf dem selben Server betrieben wird. 
 
-Der Lese Zugriff und Schreibzugriff ist auf den Server begrenzt. Theoretisch könnte der Speicher mit Protokollen wie NFS zwischen, mehreren Systemen geteilt werden. Es handelt sich jedoch beim System um einen Miete Server, es kann deshalb nicht davon ausgegangen werden, das weitere Miete Server am selben Netzwerk Knoten angeschlossen sind, oder sich sogar im gleichen Rechenzentrum befindet. Es muss aus diesen Gründen mit einer schlechten Bandbreite mit hoher Latenz zwischen den Systemen gerechnet werden, was die Teilung des Speichers aus Performance gründen unbefriedigend macht.
+Der Lese- und Schreibzugriff ist auf den Server begrenzt. Theoretisch könnte der Speicher mit Protokollen wie NFS zwischen mehreren Systemen geteilt werden. Es handelt sich beim System um einen Miet-Server. Es kann deshalb nicht davon ausgegangen werden, dass weitere Miet-Server am selben Netzwerk-Knoten angeschlossen sind, oder sich sogar im gleichen Rechenzentrum befinden. Es muss aus diesen Gründen mit einer schlechten Bandbreite mit hoher Latenz zwischen den Systemen gerechnet werden, was die Teilung des Speichers aus Performancegründen unbefriedigend macht.
 
 \subsubsection*{Datenschutz}
-Die Integrität der Daten wird nur auf RAID Ebene sichergestellt und nicht auf Objekt ebene. Die Selbstheilung von Objekten wird aus diesen Grund nicht unterstützt.
+Die Integrität der Daten wird nur auf RAID Ebene sichergestellt und nicht auf Objekt-Ebene. Die Selbstheilung von Objekten wird nicht unterstützt.
 
-Die Daten können mit einen RSYNC Job in Gesichert werden, gegen zusätzliche Gebühre von 79 € für 10 GB ist die Sicherung auch ein Sicherung bei Hetzner möglich.
+Die Daten können mit einen RSYNC Job gesichert werden. Gegen eine zusätzliche Gebühre von 79 € für 10 GB ist die Datensicherung bei Hetzner möglich.
 
-Der Datenzugriff lässt sich über die Dateiberechtigung im Dateisystem auf Benutzer und Gruppen ebene steuern. Vor den Physischen Datenzugriff, lässt sich durch Verschlüsselung der Disk schützen.
+Der Datenzugriff lässt sich über die Dateiberechtigung im Dateisystem auf Benutzer- und Gruppen-Ebene steuern. Gegen den unerlaubten physischen Datenzugriff bietet die Verschlüsselung der Disk einen ausreichenden Schutz.
 
 \subsubsection*{Technologie}
-Die Konfiguration und Betrieb des Server inklusive RAID ist dem Mieter überlassen. Die RAID Technologie ist ein viele eingesetzte und bewehrte Technologie.
+Die Konfiguration und Betrieb des Server inklusive RAID ist dem Mieter überlassen. Die RAID Technologie ist eine viel eingesetzte und bewährte Technologie.
 
-Für die Konfiguration und Betrieb des Server, reichen Standard Linux Administration Wissen aus.
+Für die Konfiguration und den Betrieb des Servers reicht das Administratoren-Wissen für standard Linux aus.
 
-Die Verwaltung des Speicher erfolgt über Kommandozeile bzw. über \gls{SSH}.
+Die Verwaltung des Speichers erfolgt über Kommandozeile bzw. über \gls{SSH}.
 
 \subsubsection*{Kosten}
-Abgesehen von den einmaligen Einrichtung Kosten, welche 499 € Betragen, und die Installation der Servers, gibt es keine weitere Investitionskosten. 
+Abgesehen von den einmaligen Einrichtungskosten von 499 € und den Server Installationskosten gibt es keine weitere Investitionskosten. 
 
-Für die Installation und Betrieb des gemieteten Server ist der Mieter selber Verantwortlich. Die Mietkosten betragen pro Monat 299 €.
+Für die Installation und Betrieb des gemieteten Servers ist der Mieter selber verantwortlich. Die Mietkosten betragen pro Monat 299 €.
 
-Die Kosten für die Miete des Server bleiben während der gesamten Mietdauer konstant. Die Kündigung ist jeweils auf 30 Tage zum Monatsende möglich. 
+Die Kosten für die Miete des Servers bleiben während der gesamten Mietdauer konstant. Die Kündigung ist jeweils auf 30 Tage zum Monatsende möglich. 
 
 \paragraph*{Kosten Szenario-1}
-Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der Tabelle (10.9) Total € 11'163.00 das sind zum aktuellen Tageskurs (13 April 2012) 13'422.95 CHF.
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der Tabelle (10.9) Total € 11'163.00. Das entspricht zum aktuellen Tageskurs (13 April 2012) 13'422.95 CHF.
 
 \begin{table}[htbp]
 \caption{Kosten Hetzner S1}
@@ -695,73 +688,73 @@ Root Server XS 29 & € 299.00 & 1 & € 299.00 \\ \hline \hline
 
 
 \paragraph*{Kosten Szenario-2}
-Kein Produkt erhältlich welche die Anforderungen der Speicherkapazität von Szenario-2 erfüllen.
+Es ist kein Produkt erhältlich, welches die Anforderungen der vorgeschlagenen Speicherkapazität von Szenario-2 erfüllen könnte.
 
 \subsection{\ref{Al-2} und \ref{Al-3}: Netapp NFS und iSCSI}
 
-Wie in der Markt Analyse erwähnt ist NetApp der Führende Anbieter in Mittlerer (engl. midrange) und Oberen (Highend) Bereich von NAS und Speicherlösungen. Für beide Szenarien wurde das Modell FAS2240-4 gewählt. 
+Wie in der Markt Analyse erwähnt, ist NetApp der führende Anbieter im mittleren (engl. midrange) und oberen (Highend) Bereich von NAS und Speicherlösungen. Für beide Szenarien wurde das Modell FAS2240-4 gewählt. 
 
 \subsubsection*{Verfügbarkeit}
-Die Netapp hat mehre Mechanismen für die Sicherstellung der Daten Verfügbarkeit. So werden die Festplatten mittels RAID-DB System zusammen gefasst. RAID-DP ist eines auf Basis von RAID-4 von NetApp weiter entwickeltes RAID. Bei RAID-DP wird jedoch im Unterschied zu RAID-4 ein weiter Paritäts-Festplatte eingesetzt. Wie im \refabb{abb:RAID-DP} ersichtlich, gibt es ein Horizontale Parität und eine Diagonale Parität, die diagonale Parität ist durch die Farben dargestellt und auf der Festplatte DP gespeichert, die horizontale ist auf der Festplatte P gespeichert, die Festplatten mit D sind normale RAID Daten Festplatten. Die Doppelte Parität hat den Vorteil, dass die Verfügbarkeit des RAID erhöht wird. So kann bei einen RAID-DP gleichzeitig zwei Festplatten im RAID zur gleichen Zeit ausfallen, ohne das diese zu einen Datenverlust führt. Im Vergleich dazu kann RAID-4 oder RAID-5 nur den Ausfall einer Festplatte kompensieren. \cite{White2010}
+Die Netapp hat mehrere Mechanismen für die Sicherstellung der Datenverfügbarkeit. So werden die Festplatten mittels RAID-DB System zusammen gefasst. RAID-DP ist eines auf Basis von RAID-4 von NetApp weiterentwickeltes RAID. Bei RAID-DP wird jedoch im Unterschied zu RAID-4 eine zusätzliche Paritäts-Festplatte eingesetzt. Wie in \refabb{abb:RAID-DP} ersichtlich, gibt es ein horizontale Parität und eine diagonale Parität. Die diagonale Parität ist durch die Farben dargestellt und auf der Festplatte DP gespeichert. Die horizontale Parität ist auf der Festplatte P gespeichert. Die mit D bezeichneten Festplatten sind normale RAID Daten-Festplatten. Die doppelte Parität hat den Vorteil, dass die Verfügbarkeit des RAID erhöht wird. So können bei einem RAID-DP gleichzeitig zwei Festplatten zur gleichen Zeit ausfallen, ohne dass dies zu einem Datenverlust führt, was in der Praxis immer wieder mal vorkommt. Im Vergleich dazu kann RAID-4 oder RAID-5 nur den Ausfall einer Festplatte kompensieren. \cite{White2010}
 
 \begin{center}
 \includegraphics[ keepaspectratio = true]{media/raid-dp.png}
 \mycaption{figure}{\label{abb:RAID-DP}NetApp RAID-DP doppelte Parität \cite{White2010}}
 \end{center}
 
-Als weiteren Schutzmassnahme vor Datenverluste, empfiehlt NetApp den Einsatz von Spare-Festplatten. Durch den Einsatz von Spare-Festplatten kann die Wiederherstellungszeit MTTR verkleinert werden, da die Wiederherstellung automatisch starten kann. Die Anzahl an Spare-Festplatten ist abhängig von der Anzahl Festplatten und Enclosure.
+Als weitere Schutzmassnahme vor Datenverlusten empfiehlt NetApp den Einsatz von Spare-Festplatten. Durch den Einsatz von Spare-Festplatten kann die Wiederherstellungszeit MTTR verkleinert werden, da die Wiederherstellung automatisch starten kann. Die Anzahl an Spare-Festplatten ist abhängig von der Anzahl Festplatten und Enclosure.
 
-Die NetApp FAS2240-4 ist mit zwei Storage Controller im Aktiv-/Aktiv-Betrieb mit Cluster Failover Funktionausgerüstet.
+Die NetApp FAS2240-4 ist mit zwei Storage Controller im Aktiv-/Aktiv-Betrieb mit Cluster Failover Funktion ausgerüstet.
 
 
 \subsubsection*{Datenzugriff}
 Der Datenzugriff auf die NetApp kann per NFS, CIFS, iSCSI oder Fibre Channel erfolgen.
 
-Bei NFS ist es möglich dass mehre Server Simultan ein Datei lesen. Das Simultane Schreiben wird mit einen Sperr (engl. Locking) Verfahren verhindert, damit die Konsistenz der Datei gewährleistet bleibt.
+Bei NFS ist es möglich, dass mehrere Server simultan eine Datei lesen. Das simultane Schreiben wird mit einem Sperr-Verfahren (engl. Locking) verhindert, damit die Dateikonsistenz gewährleistet bleibt.
 
-Bei iSCSI wird der Simultane Lese Zugriff auf Dateien mittels Cluster fähigen Dateisystem und Volume Manager wie dem Global Filesystem bzw. LVM sichergestellt. Der Simultane Schreibzugriff wird vom Dateisystem mit einem Sperr Verfahren verhindert.
+Bei iSCSI wird der simultane Lesezugriff auf Dateien mittels clusterfähigem Dateisystem und Volume-Manager wie dem Global Filesystem bzw. LVM sichergestellt. Der simultane Schreibzugriff wird vom Dateisystem mit einem Sperrverfahren verhindert.
 
 \subsubsection*{Speicherkapazität}
-Die Maximale Grösse einer Datei bzw. eines Objekts wird bei NetApp durch die maximale Grösse des Aggregates bestimmt. Seit der Betriebsystem Version OnTab 8.0 sind Aggregate von 100 TiB möglich.
+Die maximale Grösse einer Datei bzw. eines Objekts wird bei NetApp durch die maximale Grösse des Aggregates bestimmt. Seit der Betriebsystem-Version OnTab 8.0 sind Aggregate von 100 TiB möglich.
 
-Bei iSCSI werden auf der NetApp LUN Dateien erstellt, die über iSCSI anderen Server zur Verfügung gestellt werden. Die LUN Datei ist für den Zugeteilten Server wie ein gewöhnliche Disk. Die Limitierungen für die Maximale Datei Grösse und maximal Anzahl an Dateien, wird bei iSCSI nicht mehr durch die NetApp Limitiert sondern durch das auf dem Server verwendete Dateisystem. So gewährleistet Red Hat für Global Filesystem (kurz GFS) maximal 100 Terabyte grosses Dateisystem Produktive zu betreiben. Die selbe Beschränkung gilt für Dateien. 
+Bei iSCSI werden auf der NetApp LUN Dateien erstellt, die über iSCSI anderen Servern zur Verfügung gestellt werden. Die LUN Datei ist für den zugeteilten Server wie eine gewöhnliche Disk. Die Limitierungen für die maximale Dateigrösse und maximale Anzahl an Dateien wird bei iSCSI nicht mehr durch die NetApp limitiert, sondern durch das auf dem Server verwendete Dateisystem. So gewährleistet Red Hat für Global Filesystem (GFS) maximal ein 100 Terabyte grosses Dateisystem produktiv zu betreiben. Dieselbe Einschränkung gilt für Dateien. 
 
-Die Anzahl möglicher Objekte die in einen NetApp Volumen gespeichert werden können werden durch die Anzahl Inodes des WAFEL Dateisystem bestimmt. NetApp legt standardmässig für jedes 32KiB eine Inode an. Bei einen 100 TiB Volume können somit maximal 3'355'443'200 Objekte gespeichert werden (\refeql{eqn:MaxObjekteNetApp}).
+Die Anzahl möglicher Objekte, die in einen NetApp Volumen gespeichert werden können, werden durch die Anzahl Inodes des WAFEL Dateisystem bestimmt. NetApp legt standardmässig für jedes 32KiB eine Inode an. Bei einen 100 TiB Volume können somit maximal 3'355'443'200 Objekte gespeichert werden (\refeql{eqn:MaxObjekteNetApp}).
 
 \begin{equation}
 \mbox{Max Objekte} = \frac{107'374'182'400 \mathrm{\ KiB}}{32 \mathrm{\ KiB}}= 3'355'443'200 
 \label{eqn:MaxObjekteNetApp}
 \end{equation}
 
-Die maximale Anzahl an möglicher Objekte eines GFS Dateisystem ist variable. Inodes werden dynamisch alloziert.
+Die maximale Anzahl möglicher Objekte eines GFS Dateisystem ist variable. Inodes werden dynamisch alloziert.
 
 \subsubsection*{Datenschutz}
-NetApp Speichert die Daten auf die Disk in 4 Kilo Byte Blocks. Zu jeden 4 Kilo Byte Block berechnet NetApp ein Prüfsumme und speichert diese in die Block Metadaten. Wenn der Block zu einen späteren Zeitpunkt wieder gelesen ist, berechnet die NetApp die Prüfsumme erneut und vergleicht diese mit der Gespeicherten Prüfsumme. Wenn die Prüfsumme nicht übereinstimmt, wird der Block mittels den Paritäts-Daten neu geschrieben, erneut gelesen und geprüft. Um die Integrität von Daten zu gewährleisten auf welche über ein langen Zeitraum nicht zugegriffen wird, wie diese zum Beispiel bei Archive Daten der Fall ist, hat NetApp ein konfigurierbare RAID durchkämmen (engl. RAID scrub) Funktion. Die Funktion geht durch alle Daten durch, wodurch die Prüfsumme von allen gespeicherten Daten geprüft wird. Die Funktion kann Zeitgesteuert oder wenn das System im Leerlauf befindet. \cite{Sundaram2006}
+NetApp speichert die Daten auf die Disk in 4 Kilo Byte Blocks. Zu jedem 4 Kilo Byte Block berechnet NetApp ein Prüfsumme und speichert diese in die Block Metadaten. Wenn der Block zu einem späteren Zeitpunkt wieder gelesen wird, berechnet die NetApp die Prüfsumme erneut und vergleicht diese mit der gespeicherten Prüfsumme. Stimmt diese nicht überein, wird der Block mittels den Paritäts-Daten neu geschrieben, erneut gelesen und geprüft. Um die Integrität von Daten zu gewährleisten, auf welche über einen längeren Zeitraum nicht mehr zugegriffen wurde, wie dies zum Beispiel bei Archivdaten der Fall ist, bietet NetApp ein konfigurierbare RAID Funktion (engl. RAID scrub) zum Durchkämmen und Prüfen der Daten. Die Funktion kann zeitgesteuert durchgeführt werden oder wenn das System sich im Leerlauf befindet. \cite{Sundaram2006}
 
-Zu beachten ist, dass die Prüfsumme auf dem Block nur auf der Speicherebene Wirkung hat. Fehler die in einer höheren Ebene stattfindet, wie zum Beispiel beim Einsatz von iSCSI zusammen mit einen Dateisystem, könnte bereits einen Fehler im Dateisystem durch einen Software Fehler oder Memory Fehler statt finden. 
+Zu beachten ist, dass die Prüfsumme auf dem Block nur auf der Speicherebene Wirkung hat. Fehler die in einer höheren Ebene entstanden sind, wie zum Beispiel beim Einsatz von iSCSI zusammen mit einen Dateisystem, könnte bereits ein Fehler im Dateisystem durch einen Softwarefehler oder Memoryfehler entstanden sein. 
 
-NetApp bietet mehre Möglichkeiten ein Sicherungskopie der Daten herzustellen. Beim Einsatz von NFS oder iSCSI können die Daten über die Web-Servern mit einer Handels üblichen Sicherungs-Software gesichert werden. Bei NFS wird dazu die angefügten NFS Freigaben gesichert, bei iSCSI werden die Daten wie bei allen anderen Dateisystemen gesichert. Zubeachten ist jedoch, bei diesen verfahren, dass die Daten von der NetApp über den Server transferiert werden müssen, und dadurch der Web-Server mit dem Sicherungslast belastet wird. Neben der Sicherung der NetApp über den Server lässt sich die NetApp auch direkt sichern, dabei gibt es zwei Verfahren, mittels Network Data Management Protocol (kurz NDMP) oder Mittels Snapshots. 
+NetApp bietet mehrere Möglichkeiten eine Sicherungskopie der Daten herzustellen. Beim Einsatz von NFS oder iSCSI können die Daten über die Web-Servern mit einer handelsüblichen Sicherungs-Software gesichert werden. Bei NFS wird dazu die angefügten NFS Freigaben gesichert, bei iSCSI werden die Daten wie bei allen anderen Dateisystemen gesichert. Zu beachten ist bei diesen Verfahren, dass die Daten von der NetApp über den Server transferiert werden müssen und dadurch der Web-Server mit der Sicherungsaufgabe belastet wird. Neben der Sicherung der NetApp über den Server lässt sich die NetApp auch direkt sichern. Diese erfolgt mittels Network Data Management Protocol (NDMP) oder Mittels Snapshots. 
 
-NDMP ist eines von NetApp mitentwickeltes Protokoll, welches für die Sicherung von NAS Geräte entwickelt wurde. Das Problem bei NAS Geräte ist, dass auf Ihnen ein dezidierte Betriebsystem läuft auf welche keine Installation eines Sicherungs-Agenten erlaubt, aus diesen Grund wurde das NDMP Protokoll entwickelt um ein allgemeines Agenten-Loses Sicherungsverfahren für NAS Geräte zu ermöglichen. NDMP wurde dem IETF im Jahr 2000 von der NDMP Initianden als Entwurf eingereicht, bis anhin ist jedoch noch kein RFC für NDMP Standardisiert. Trotzdem wird es von vielen NAS-Geräte- und Sicherungs-Software- Herstellern unterstützt. Ein Liste mit Sicherungs-Software Produkten, welche das NDMP Verfahren unterstützen gibt es auf der Webseite der NDMP Initianden\footnote{\url{http://www.ndmp.org/products/index.shtml#backup}} zu finden. \cite{NDMP.orga}\cite{NDMP.org}
+NDMP ist eines von NetApp mitentwickeltes Protokoll, welches für die Sicherung von NAS Geräte entwickelt wurde. Das Problem bei NAS Geräte ist, dass auf ihnen ein dediziertes Betriebsystem läuft, welche nicht erlaubt einen Sicherungs-Agenten zu installieren. Deswegen wurde das NDMP Protokoll entwickelt, um ein allgemeines agentenfreies Sicherungsverfahren für NAS Geräte zu ermöglichen. NDMP wurde dem IETF im Jahr 2000 von der NDMP Initianten als Entwurf eingereicht. Bis anhin ist jedoch noch kein RFC für NDMP standardisiert worden. Trotzdem wird es von vielen NAS-Geräte- und Sicherungs-Software- Herstellern unterstützt. Ein Liste mit Sicherungs-Software Produkten, welche das NDMP Verfahren unterstützen gibt es auf der Webseite der NDMP Initianden\footnote{\url{http://www.ndmp.org/products/index.shtml#backup}} zu finden. \cite{NDMP.orga}\cite{NDMP.org}
 
-Beim Snapshots Sicherungsverfahren werden zeitbezogene Sicherung des Dateisystem erstellt. Bei den Snapshots wird nicht ein eigentliche Kopie der Daten bzw. Blöcke erstellt sondern die Referenz auf die Blöcke gespeichert. Wird nach dem erstellen eines Snapshots ein Block geändert wird die Änderung nicht im Original Block vorgenommen sondern in einen neuen Block und diesen Referenziert. Dadurch benötigt ein Snapshot minimalen Speicher, zudem lassen sich die Snapshots und damit die Sicherung in Sekunden erstellen unabhängig von der Anzahl Dateien oder der Verwendete Speicherkapazität. Durch den Einsatz von zwei NetApp Systemen und der SnapMirror Funktion kann, das ganze Dateisystem bzw. Volume inklusive aller Snapshots auf der zweiten NetApp gesichert werden. Die Sicherung mit Snapshots hat bei grossen Datenmengen entscheidende Vorteile, die Sicherung benötigt minimalen Speicherplatz, die Sicherung und Wiederherstellung ist innert Sekunden erstellt bzw. wiederhergestellt. Nachteile sind, dass der Speicherplatz mit der Sicherung bzw. Snapshots geteilt werden muss und das löschen der Daten zusätzlichen Speicherplatz verbraucht.
+Beim Snapshots Sicherungsverfahren werden zeitbezogene Sicherungen des Dateisystem erstellt. Bei den Snapshots wird nicht eine eigentliche Kopie der Daten bzw. Blöcke erstellt, sondern die Referenz auf die Blöcke gespeichert. Wird nach dem Erstellen eines Snapshots ein Block geändert wird die Änderung nicht im Originalblock vorgenommen, sondern in einem neuen Block und diesen referenziert. Dadurch benötigt ein Snapshot einen minimalen Speicherplatz. Zudem lassen sich die Snapshots und damit die Sicherung in wenigen Sekunden erstellen, unabhängig von der Anzahl Dateien oder der verwendeten Speicherkapazität. Durch den Einsatz von zwei NetApp Systemen und der SnapMirror Funktion kann, das ganze Dateisystem bzw. Volume inklusive aller Snapshots auf der zweiten NetApp gesichert werden. Die Sicherung mit Snapshots hat bei grossen Datenmengen entscheidende Vorteile. Die Sicherung benötigt minimalen Speicherplatz, die Sicherung und Wiederherstellung ist innert Sekunden erstellt bzw. wiederhergestellt. Nachteile sind, dass der Speicherplatz mit der Sicherung bzw. Snapshots geteilt werden muss und das Löschen von Daten zusätzlichen Speicherplatz verbraucht.
 
-Bei bedarf kann die Kommunikation zwischen Speichersystem und Applikation Server mit IPSec abhörsicher verschlüsselt werden. Zusätzlich bietet NetApp ab Version 8 die Verschlüsselung der ganzen Disk an.
+Bei Bedarf kann die Kommunikation zwischen Speichersystem und Applikations-Server mit IPSec abhörsicher verschlüsselt werden. Zusätzlich bietet NetApp ab Version 8 die Verschlüsselung der ganzen Disk an.
 %Sicherheit NFS IPSEC, intern
 
 \subsubsection*{Technologie}
-Die Firma NetApp beschäftigt in der Schweiz an ihren drei Standorten, Wallisellen, Lausanne und Bern ca. 80 Mitarbeiter. Zudem verfügt NetApp Schweiz über ein gut ausgebautes Partner Netzwerk, mit welche Sie die ganze Schweiz gut verankert sind. Mit FastLane und QSkills sind zwei Schulungspartner im Raum Zürich verfügbar, welche offizielle Kurse und Zertifizierenden für NetApp Produkte anbieten. 
+Die Firma NetApp beschäftigt in der Schweiz an ihren drei Standorten, Wallisellen, Lausanne und Bern ca. 80 Mitarbeiter. Zudem verfügt NetApp Schweiz über ein gut ausgebautes Partner Netzwerk, mit welchem die ganze Schweiz gut abgedeckt werden kann. Mit FastLane und QSkills sind zwei Schulungspartner im Raum Zürich verfügbar, welche offizielle Kurse und Zertifizierungen für NetApp Produkte anbieten. 
 
-Neben der Allgemeinen Garantie Gewährleistungen, bietet NetApp weiteren kostenpflichtige Support Leistungen an. So steht mit dem SupportEdge Premium, den Remote Support mit einer Reaktionszeit von minimal 30 Minuten rund um die Uhr zur Verfügung, oder den die Installation von Ersatzteilen mit einer Reaktionszeit von minimal 2 Stunden rund um die Uhr zur Verfügung. 
+Neben den allgemeinen Garantie-Gewährleistungen bietet NetApp weitere kostenpflichtige Supportleistungen an. So steht eine Anlaufstelle mit dem SupportEdge Premium, den Remote Support mit einer Reaktionszeit von minimal 30 Minuten rund um die Uhr zur Verfügung. Die Installation von Ersatzteilen steht mit einer Reaktionszeit von minimal 2 Stunden rund um die Uhr zur Verfügung. 
 
-Für den Support und Wartungen stehen mehre Produkte bereit von Verlängerung der Hardware-Garantie, Auto-Support mit oder ohne Austausch der Hardware durch NetApp.
+Für den Support und Wartung stehen mehrere Produkte bereit, wie die Verlängerung der Hardware-Garantie, der Auto-Support mit oder ohne Austausch der Hardware durch NetApp.
 
-Für die Verwaltung der NetApp stehen, neben eines Kommandzeilen, Web-Interface weitere teilweise Kostenpflichtige Lösungen von NetApp zu Verfügung. 
+Für die Verwaltung der NetApp stehen neben einer Kommandzeilen, Web-Interface und weitere teilweise kostenpflichtige Lösungen von NetApp zur Verfügung. 
 
 \subsubsection*{Kosten}
 
 \paragraph*{Kosten Szenario-1}
-Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der Total 225'711.15 CHF. Davon sind 44'811.15 CHF Investitionskosten und 180'900.00 CHF Fortlaufende Kosten für die drei Jahre.
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung total 225'711.15 CHF. Davon sind 44'811.15 CHF Investitionskosten und 180'900.00 CHF laufende Kosten für drei Jahre.
 
 \begin{table}[htbp]
 \caption{Kosten NetApp NFS/iSCSI Szenario-1}
@@ -794,11 +787,11 @@ Personal & CHF 3'750.00 & 1 & CHF 3'750.00 \\ \hline \hline
 
 
 \paragraph*{Kosten Szenario-2}
-Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der Total 884'772.44 CHF. Davon sind 550'152.44 CHF Investitionskosten und 334'620.00 CHF Fortlaufende Kosten für die drei Jahre.
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung total 884'772.44 CHF. Davon sind 550'152.44 CHF Investitionskosten und 334'620.00 CHF laufende Kosten für drei Jahre.
 
-% Zur Bereitstellung der 306 TiB sind 5 Disk Selfs des Typ DS4243 in der maximal Konfiguration mit 24 mal 3 TB SATA Festplatten erforderlich.
+% Zur Bereitstellung der 306 TiB sind 5 Disk Selfs des Typs DS4243 in der maximal Konfiguration mit 24 mal 3 TB SATA Festplatten erforderlich.
 
-% Gemäss \refeqlb{eqn:AnzahlRackNetappS2} werden zwei ganzes Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Full Rack Angebot von Nine, welches 47 Rack-Höheneinheiten platz bietet. Der Preis pro Rack beträgt 1450 CHF pro Monat, plus 1500 CHF für die einmalige Einrichtung des Racks durch Nine.
+% Gemäss \refeqlb{eqn:AnzahlRackNetappS2} werden zwei ganze Racks für den Einbau aller Komponenten benötigt. Der benötigte Rackplatz entspricht dem Full Rack Angebot von Nine, welches 47 Rack-Höheneinheiten platz bietet. Der Preis pro Rack beträgt 1450 CHF pro Monat, plus 1500 CHF für die einmalige Einrichtung des Racks durch Nine.
 
 % \begin{equation}
 % \mbox{Anzahl Rack} = \frac{2*4\mathrm{\ U}+10*\mathrm{\ U}+2*1\mathrm{\ U}}{47\mathrm{\ U} } \approx 2 \mbox{(Auf ganze Rack gerundet)}
@@ -840,9 +833,9 @@ Personal & CHF 3'750.00 & 1 & CHF 3'750.00 \\ \hline \hline
 \end{table}
 
 \subsection{\ref{Al-4}: OpenStack Objekt Storage}
-OpenStack Object Storage ist ein Quelloffene frei verfügbare Verteilter Speicherlösung. OpenStack Object Storage selbst ist kein Dateisystem sondern eher ein Speicher Cluster, welche primär für die Speicherung von Virtual Maschine Images, Bilder, E-Mail und Sicherungskopien vorgesehen ist. Für einen OpenStack Cluster kommen vergleichbar mit dem Google Filesystem, kosten günstige Konventionelle Computer Hardware zum Einsatz. 
+OpenStack Object Storage ist ein quelloffene, frei verfügbare verteilte Speicherlösung. OpenStack Object Storage selbst ist kein Dateisystem, sondern eher ein Speicher-Cluster, welcher primär für die Speicherung von Virtual Maschine Images, Bilder, E-Mail und Sicherungskopien vorgesehen ist. Für einen OpenStack Cluster kommen vergleichbar mit dem Google Filesystem, kostengünstige konventionelle Computer-Hardware zum Einsatz. 
 
-Im \refabb{abb:OpenStack-Infrastruktur} Zeigt die System und Netzwerk Architektur der OpenStack Object Storage Infrastruktur. Die Infrastruktur besteht aus zwei Proxy und Authentifizierungs Server welche mit den 5 Daten-Node in welcher jeder eine Eigene Zone Repräsentiert über eine Privates geswitches Netzwerk Verbunden sind. Die Applikations-Server Farm oder Web-Farm greift über das Offentliche Netzwerk über die Proxy Server auf den Speicher zu. Die Infrastruktur ist jeweil für Szenario-2 über zwei Standort verteilt, hier Site A und Site B.
+In \refabb{abb:OpenStack-Infrastruktur} zeigt die System und Netzwerk Architektur der OpenStack Object Storage Infrastruktur. Die Infrastruktur besteht aus zwei Proxy und Authentifizierungs-Servern, welche mit den 5 Daten-Nodes, in welcher jeder eine eigene Zone repräsentiert, über ein privates geswitches Netzwerk verbunden sind. Die Applikations-Server-Farm oder Web-Farm greift über das öffentliche Netzwerk über die Proxy-Server auf den Speicher zu. Die Infrastruktur ist jeweil für Szenario-2 über zwei Standorte verteilt, hier Site A und Site B.
 
 \begin{center}
 \includegraphics[width=\linewidth, keepaspectratio = true]{media/OpenStack.png}
@@ -851,58 +844,58 @@ Im \refabb{abb:OpenStack-Infrastruktur} Zeigt die System und Netzwerk Architektu
 
 
 \subsubsection*{Verfügbarkeit}
-OpenStack Object Storage wurde so konzipiert das einen Ausfall einer Hardware Komponente, der weiter Betrieb weiter aufrecht erhalten werden kann ohne dabei einen Datenverlust oder die Verfügbarkeit des System zu gefährden. Die Daten bzw. Objekte werden Redundant auf mehren Zonen gespeichert. Zonen sind Gruppierungen von Servern. Die Anzahl redundanten Replikate für ein Objekt kann konfiguriert werden, gewöhnlich werden drei Kopien verwendet.
+OpenStack Object Storage wurde so konzipiert, dass ein Ausfall einer Hardwarekomponente den Weiterbetrieb aufrecht erhalten kann, ohne dabei einen Datenverlust oder die Verfügbarkeit des Systems zu gefährden. Die Daten bzw. Objekte werden redundant auf mehreren Zonen gespeichert. Zonen sind Gruppierungen von Servern. Die Anzahl redundanten Replikate für ein Objekt kann konfiguriert werden. Gewöhnlich werden drei Kopien verwaltet.
 
-Für die Architekt wird von Joe Arnolds CEO bei SwiftStack bei dreifacher Redundanz, die Implementierung von 5 Zone empfohlen. OpenStack Object Storage, speichert die Redundante Objekte jeweils in einer separaten Zonen. Eine Zone kann bei kleinen Implementationen auch nur aus Gruppen von Festplatten bestehen, also innerhalb eines einzigen Server existieren, es wird aber empfohlen eine Zone auf Hierarchie von Server-Gruppen zu implementieren. Das bedeutet jede Redundante Kopie auf einen eigenen Server gespeichert. \cite{Arnold} 
+Für die Architektur wird von Joe Arnolds CEO bei SwiftStack bei dreifacher Redundanz die Implementierung von 5 Zonen empfohlen. OpenStack Object Storage, speichert die redundanten Objekte jeweils in einer separaten Zonen. Eine Zone kann bei kleinen Implementationen auch nur aus Gruppen von Festplatten bestehen, also innerhalb eines einzigen Servers existieren. Es wird aber empfohlen, eine Zone auf Hierarchie von Server-Gruppen zu implementieren. Das bedeutet, jede redundante Kopie ist auf einem eigenen Server gespeichert. \cite{Arnold} 
 
-Zusätzlich zu den Speicherserver benötigt es noch zwei oder mehrere Proxy Server um die hohe Verfügbarkeit zu gewährleisten. Die Proxy Server, werden bei Rackspace mit 10 Gb Ethernet an den Netzwerk-Switch angeschlossen werden. \cite{OpenStack2011}
+Zusätzlich zu den Speicherservern benötigt es noch zwei oder mehrere Proxy Server, um die hohe Verfügbarkeit zu gewährleisten. Die Proxy Server werden bei Rackspace mit 10 Gb Ethernet an den Netzwerk-Switch angeschlossen. \cite{OpenStack2011}
 
-Möchte man den Speicher Standort übergreifend betreiben, ist es erforderlich, dass pro Standort nicht mehr als $(Redundanz -1)$ Zonen betrieben werden, da ansonsten die Gefahr besteht das alle Replikate am gleichen Standort gespeichert werden.
+Möchte man den Speicher standortübergreifend betreiben, ist es erforderlich, dass pro Standort nicht mehr als $(Redundanz -1)$ Zonen betrieben werden, da ansonsten die Gefahr besteht, dass alle Replikate am gleichen Standort gespeichert werden. Das möchte niemand.
 
 \subsubsection*{Speicherkapazität}
-Der OpenStack Object Storage Cluster lässt sich im laufenden Betreib ohne Unterbruch, vergrössern. In der Regeln können auch Software Update und Patches ohne Unterbruch des Clusters eingespielt werden, wenn darauf geachtet wird nie mehr als eine Zone gleichzeitig zu aktualisieren.
+Der OpenStack Object Storage Cluster lässt sich im laufenden Betrieb ohne Unterbruch vergrössern. In der Regeln können auch Software Updates und Patches ohne Unterbruch des Clusters eingespielt werden, wenn darauf geachtet wird, nie mehr als eine Zone gleichzeitig zu aktualisieren.
 
-Grundsätzlich ist Anzahl an Speicherbaren Objekten nicht begrenzt. Der Container Server von OpenStack Object Storage, welcher primärer Aufgabe ist die Auflistung der gespeicherten Objekten in einen Container zu handhaben, speichert die Informationen welche Objekte im Container befinden pro Container in ein SQLite Datenbank. Die Performance der Datenbank, welche mit der Anzahl Einträge abnimmt, kann sich zum Limitierenden Faktor entwickeln wie viele Objekte in einen Container gespeichert werden können. Der Performance Einbruch kann, je nach Leistung der Hardware und die generelle Last auf dem Cluster, bei einer Million Objekte pro Container eintreten. Es können jedoch pro Account mehre Container erstellt werden, wodurch sich das Problem mit der Limitierung durch Datenbank entschärfen lässt. Zu beachten ist hier jedoch, das pro Account ebenfalls eine SQLite Datenbank geführt wird mit allen Container und hier die selben Limitierung zum tragen kommt. \cite{OpenStack2012}\cite{A2011}
+Grundsätzlich ist die Anzahl an speicherbaren Objekten nicht begrenzt. Der Container Server von OpenStack Object Storage, dessen primäre Aufgabe es ist, die Auflistung der gespeicherten Objekten in einen Container zu verwalten, speichert die Informationen, welche Objekte sich im Container befinden. Pro Container in ein SQLite Datenbank angelegt. Die Performance der Datenbank, welche mit der Anzahl Einträge abnimmt, kann sich zum limitierenden Faktor entwickeln. Wie viele Objekte in einem Container gespeichert werden können. Der Performance Einbruch kann, je nach Leistung der Hardware und die generelle Last auf dem Cluster, bei ca. einer Million Objekten pro Container eintreten. Es können pro Account mehrere Container erstellt werden, wodurch die Limitierung entschärft wäre. Zu beachten ist hier, dass pro Account ebenfalls eine SQLite Datenbank mit allen Containern geführt wird und auch hier dieselben Einschränkungen zum tragen kommen. \cite{OpenStack2012}\cite{A2011}
 
 \subsubsection*{Datenzugriff}
-Der Zugriff auf die gespeicherten Objekten erfolgt vergleichbar wie bei Amazon S3 über ein API. Das API verwendet für den Zugriff das Standard HTTP Request. Mehre Speicherlösung Hersteller haben angekündigt, das Swift API ebenfalls für den Zugriff auf Ihren Speicher unterstützen zu wollen. Glusterfs ebenfalls eine Verteile Speicherlösung, bietet in Ihrer Entwickler Version bereits die Unterstützung für Swift an. Applikationen welche, das Swift API unterstützen können Ihren Speicherlösung zukünftig einfacher austauschen ohne dabei die Applikation anpassen zu müssen. Neben den Zugriff mit dem Swift API, bietet OpenStack eine Amazon S3 kompatibles API an. Der Zugriff über POSIX IO auf den Speicher ist nicht möglich.
+Der Zugriff auf die gespeicherten Objekten erfolgt ähnlich wie bei Amazon S3 über ein API. Das API verwendet für den Zugriff den standard HTTP Request. Verschiedene Speicherlösungs-Hersteller haben angekündigt, das Swift API ebenfalls für den Zugriff auf ihren Speicher unterstützen zu wollen. Glusterfs mit seiner verteilten Speicherlösung, bietet in der Entwicklerversion bereits die Unterstützung für Swift an. Applikationen, welche, das Swift API unterstützen, können ihre Speicherlösung künftig einfacher austauschen, ohne dabei die Applikation anpassen zu müssen. Neben dem Zugriff mit dem Swift API, bietet OpenStack eine Amazon S3 kompatibles API an. Der Zugriff über POSIX IO auf den Speicher ist nicht möglich.
 
-Der Zugriff auf den Speicher erfolgt über einen Proxy welche, den Speicherort des Objektes prüft und die Anfrage weiterleitet. Pro OpenStack Object Storage Cluster können mehre Proxy eingesetzt werden. Mit Hilfe eines Load Balancers (Last Verteiler) können die Anfragen über die vorhanden Proxy verteilt werden.
+Der Zugriff auf den Speicher erfolgt über einen Proxy, welcher den Speicherort des Objektes prüft und die Anfrage weiterleitet. Pro OpenStack Object Storage Cluster können mehrere Proxys eingesetzt werden. Mit Hilfe eines Load Balancers (Last Verteiler) können die Anfragen über die vorhandenen Proxys verteilt werden.
 
-Die Maximale Upload Grösse beträgt 5 GB, die Download Grösse selber ist jedoch unbeschränkt. Wenn ein Objekt welches grösser als 5 GB hochgeladen wird, wird das Objekt in Teilen hochgeladen und gespeichert, die Abfrage auf das Objekte erfolgt jedoch wie bei einen ganzen Objekt, es müssen also keine Teile durch das API Adressiert werden. \cite{OpenStack2012a}
+Die maximale Uploadgrösse beträgt 5 GB, die Downloadgrösse ist jedoch unbeschränkt. Wenn ein Objekt grösser als 5 GB hochgeladen wird, wird das Objekt in Teilen hochgeladen und gespeichert. Die Abfrage auf das Objekt erfolgt wie bei einem ganzen Objekt. Es müssen also keine Teile durch das API adressiert werden. \cite{OpenStack2012a}
 
 
 \subsubsection*{Datenschutz}
-OpenStack Object Storage stellt die Datenintegrität beim Speichern von Objekten in den Speicher und beim auslesen der Daten sicher. Somit ist gewährleistet, dass die Daten im Original gespeichert werden und bei der Speicherung kein Datenverlust entsteht. Die Selbstheilung von korrupten Objekten, stellt OpenStack Objekt Storage mit dem Auditors Dienst sicher. Der Auditors Dienst läuft auf jeden Server und prüft dort die Integrität von Objekten, wenn ein korruptes Objekt festgestellt wird, wird die Datei unter Quarantäne gestellt und durch ein korrektes reblikations Objekt ersetzt.
-Um die Last die durch den Auditors möglichst gering zu halten, kann die Anzahl Objekte oder die Anzahl Bits die pro Sekunde geprüft werden konfiguriert werden. \cite{OpenStack2012}
+OpenStack Object Storage stellt die Datenintegrität beim Speichern von Objekten und beim Auslesen der Daten sicher. Somit ist gewährleistet, dass die Daten im original gespeichert werden und bei der Speicherung kein Datenverlust entsteht. Die Selbstheilung von korrupten Objekten stellt OpenStack Objekt Storage mit dem Auditors Dien6st sicher. Der Auditors Dienst läuft auf jedem Server und prüft dort die Integrität von Objekten. Wenn ein korruptes Objekt erkannt wird, wird die Datei sofort unter Quarantäne gestellt und durch ein korrektes Reblikations-Objekt ersetzt.
+Um die Last die durch den Auditors möglichst gering zu halten, kann die Anzahl Objekte oder die Anzahl Bits, die pro Sekunde geprüft werden, konfiguriert werden. \cite{OpenStack2012}
 
-OpenStack Objekt Storage bietet neben der Redundanz der Objekte keine Möglichkeit, die Daten zu Sichern. Dadurch ist keine Versionierung der Objekte möglich. Zwar lässt sich die Cluster Nodes mit einen konventionellen Sicherungssoftware direkt sichern, jedoch wurde sich nur der gesamte Cluster wiederherstellen und nicht einzelne Objekte. Zudem wäre die Speicherkapazität pro Sicherung, so gross wie es für die redundante Speicherung der Objekte Speicherkapazität benötigt wird. \cite{AndyBrezinsky2011}
+OpenStack Objekt Storage bietet neben der Redundanz der Objekte keine Möglichkeit, die Daten zu sichern. Dadurch ist keine Versionierung der Objekte möglich. Zwar lassen sich die Cluster Nodes mit einer konventionellen Sicherungssoftware direkt sichern. Dadurch lässt sich nur der gesamte Cluster wiederherstellen und nicht einzelne Objekte. Zudem wäre die Speicherkapazität pro Sicherung so gross wie es für die redundante Speicherung der Objekte Speicherkapazität benötigt würde. \cite{AndyBrezinsky2011}
 
 
-Die Sicherheit der Daten wird mit sogenannten Accounts Sichergestellt, dass heist das ein Account nur auf seine gespeicherten Objekten zugreifen kann. Die Daten werden auf dem OpenStack Cluster Unverschlüsselt in Binären form gespeichert. Durch die Verteilung der Daten müsste jedoch eine Angreifer Zugriff auf alle Cluster Node erlangen um an alle Daten eines Account zu gelangen.
+Die Sicherheit der Daten wird mit sogenannten Accounts sichergestellt. Das heisst, dass ein Account nur auf seine gespeicherten Objekten zugreifen kann. Die Daten werden auf dem OpenStack Cluster unverschlüsselt in binärer Form gespeichert. Durch die Verteilung der Daten müsste jedoch ein Angreifer Zugriff auf alle Cluster Node erlangen, um an alle Daten eines Account zu gelangen.
 
 \subsubsection*{Technologie}
-OpenStack Objekt Storage wurde von der Firma RackSpace unter dem Code Name Swift entwickelt. Zusammen mit National Aeronautics and Space Administration (kurz. NASA) hat RackSpace die Softwareprojekt-Gemeinschaft OpenStack gegründet und Swift zusammen mit den Cloud Lösungen Nova für die Verwaltung von Virutellen Maschinen und Glace für die Verwaltung von Image als Quelloffene Software veröffentlicht. Die OpenStack Gemeinschaft ist in Vergleich zu anderen Quelloffenen Gemeinschaften noch eine relative jung Gemeinschaft, es gelangt Ihr dennoch neben den beiden Gründer Unternehmen, weiter bedeutende Unternehmen aus der Informatik Branche, wie Hewlett Packard, Dell, Citrix, Intel, AMD, NetApp und weitere zu gewinnen. Eine vollständige Liste aller Unterstützende Unternehmen ist unter \url{http://openstack.org/community/companies/} zu finden. Die Aktivität auf der Projekt Seite von OpenStack Object Storage, lässt erkennen, dass die Entwicklung aktive vorangetrieben wird und viele Beiträge zur neuen Funktionen oder Verbesserungen von Anwender und Entwickler bei gesteuert werden. \cite{Ohloh2012}
+OpenStack Objekt Storage wurde von der Firma RackSpace unter dem Code Name Swift entwickelt. Zusammen mit National Aeronautics and Space Administration (NASA) hat RackSpace die Softwareprojekt-Gemeinschaft OpenStack gegründet und Swift zusammen mit der Cloud-Lösung Nova für die Verwaltung von virtuellen Maschinen und Glace für die Verwaltung von Images als quelloffene Software veröffentlicht. Die OpenStack Gemeinschaft ist in Vergleich zu anderen quelloffenen Gemeinschaften noch eine relative jung Gemeinschaft. Es gelang ihr dennoch neben den beiden Gründerunternehmen weiter bedeutende Unternehmen aus der Informatikbranche, wie Hewlett Packard, Dell, Citrix, Intel, AMD, NetApp und weitere zu gewinnen. Eine vollständige Liste aller unterstützenden Unternehmen ist unter \url{http://openstack.org/community/companies/} zu finden. Die Aktivität auf der Projektseite von OpenStack Object Storage lässt erkennen, dass die Entwicklung aktiv vorangetrieben wird und viele Beiträge zu neuen Funktionen oder Verbesserungen von Anwendern und Entwickler beigetragen werden. \cite{Ohloh2012}
 
-Die Internet-Recherche auf OpenStack spezialisierte Firmen mit Standort Schweiz ergaben keine Ergebnisse. Einige
-Gemäss Internet Recherchen gibt es noch keine spezialisierte Firma für OpenStack Lösungen. Einige wenige Experten für OpenStack mit Domizil in der Schweiz konnten über die Profile bei LinkedIn einen Soziales Netzwerk für Geschäft gefunden werden. 
+Die Internet-Recherche für auf OpenStack spezialisierte Schweizer Firmen ergaben keine Ergebnisse. 
+Gemäss Internet-Recherchen gibt es noch keine spezialisierten Firmen für OpenStack Lösungen. Einige wenige Experten für OpenStack mit Domizil in der Schweiz konnten über die Profile bei LinkedIn, einem Social Network für Firmen, gefunden werden. 
 
-Die Verwaltung des Speichers bietet OpenStack ein Kommandozeilen Tools an. Ein Web-GUI für Objekt Storage von OpenStack gibt es nicht. Die Firma SwiftStack bietet hierfür jedoch Kostenpflichtige Lösungen an. Die Überwachung des Speichers, zum Beispiel die Verfügbarkeit einzelner Cluster Nodes, muss jedoch mit zusätzlichen Fremdlösungen erfolgen. 
+Für die Verwaltung des Speichers bietet OpenStack ein Kommandozeilen-Tools an. Ein Web-GUI für Objekt Storage von OpenStack gibt es nicht. Die Firma SwiftStack bietet hierfür eine kostenpflichtige Lösung an. Die Überwachung des Speichers, zum Beispiel für die Verfügbarkeit einzelner Cluster Nodes, muss mit zusätzlichen Fremdlösungen erfolgen. 
 
 \subsubsection*{Kosten}
-Grundsätzlich unterscheidet sich die Kosten für die beiden Szenario nur in der Anzahl Server, den Verwendeten Server Typen, in der Anzahl Festplatten und den benötigten Rack Platz. Die restlichen Faktoren sind für beide Szenerien die selben und werden in diesen Abschnitt behandelt.
+Grundsätzlich unterscheiden sich die Kosten für die beiden Szenario nur in der Anzahl Server, den verwendeten Server Typen, der Anzahl Festplatten und dem benötigten Rackplatz. Die restlichen Faktoren sind für beide Szenarien gleich und werden in diesem Abschnitt behandelt.
 
-Um die Kosten der Rechenzentrumskosten möglichst tief zu halten, welche pro Rack verrechnet werden, soll möglichst viel Speicherkapazität in eine Rackeinheit gepackt werden. Dass bedeutet, dass die Richtigen Server für die Anzahl zur Verfügung gestellten Speicherkapazität verwendet werden soll.
+Um die Rechenzentrumskosten möglichst tief zu halten, welche pro Rack verrechnet werden, soll möglichst viel Speicherkapazität in einer Rackeinheit gepackt werden. Dies bedeutet, dass die richtigen Server für die Anzahl der zur Verfügung gestellten Speicherkapazität verwendet werden sollen.
 
-Um die Preise für die Festplatten möglichst tief zu halten werden diese separate beschaffen. Als Festplatte soll eine SATA-3 3.5 Zoll 3 Terabyte Festplatte eingesetzt werden, diese entspricht 2.728 Tebibyte. Die Kosten für Festplatten sind stark Marktabhängig, für die Arbeit wird deshalb der einfachhalber mit ca. 300 CHF pro Festplatte gerechnet.
+Um die Preise für die Festplatten möglichst tief zu halten werden diese separate beschaffen. Als Festplatte soll eine SATA-3 3.5 Zoll 3 Terabyte Festplatte eingesetzt werden. Dies entspricht 2.728 Tebibyte. Die Kosten für Festplatten sind stark marktabhängig, Für die Arbeit wird einfachheitshalber mit ca. 300 CHF pro Festplatte budgetiert.
 
-Für beide Szenerien werden die gleichen Proxy-Server verwendet. Als Proxy Server wurden die Transtec Server-Systeme "'Lynx CALLEO Application Server 2260S'" ausgewählt. Die Proxy Server stammen von selben Hersteller wie die in den Szenerien aufgeführten Datenserver, diese hat den Vorteil, dass nur ein Ansprechpartner für die Server Hardware gibt. Es ist jedoch kein muss Kriterium und kann bei bedarf auch durch eine besseres Angebot eines anderen Hersteller ersetzt werden. Die Proxy sind mit einen Intel Xeon Prozessor E5-2665 mit 64 Gigabyte Hauptspeicher ausgerüstet. Die Server haben eine Rack-Höheneinheit von je 2 Einheiten. Wie bei den Datenserver wurde ein 365 mal 24 Stunden vor Ort Service ausgewählt. Der Preis pro Server beträgt 9'954 CHF.
+Für beide Szenarien werden die gleichen Proxy-Server verwendet. Als Proxy Server wurden die Transtec Server-Systeme "'Lynx CALLEO Application Server 2260S'" ausgewählt. Die Proxy Server stammen vom selben Hersteller wie die in den Szenarien aufgeführten Datenserver. Dies hat den Vorteil, dass nur ein Ansprechpartner für die Server-Farm benötigt wird. Es ist kein Muss-Kriterium und kann bei Bedarf durch ein besseres Angebot eines anderen Herstellers ersetzt werden. Die Proxy sind mit einem Intel Xeon Prozessor E5-2665 mit 64 Gigabyte Hauptspeicher ausgerüstet. Die Server haben eine Rack-Höheneinheit von je 2 Einheiten. Wie bei den Datenserver wurde ein 365 mal 24 Stunden vor Ort Service ausgewählt. Der Preis pro Server beträgt 9'954 CHF.
 
-Neben der Server Infrastruktur sind noch zwei Netzwerk-Switches notwendig. Der Dell PowerConnect 8024 bietet 24 Port mit 10GbE. Die Switch haben eine Rack-Höheneinheit von je 1 Einheiten und benötigen gemäss Hersteller maximal 237,77 Watt. Dell gewährt einen 3 Jahres Support für den Switch. Der Preis pro Switch beträgt 14'732 CHF.
+Neben der Server Infrastruktur sind noch zwei Netzwerk-Switches notwendig. Der Dell PowerConnect 8024 bietet 24 Port mit 10GbE. Die Switches haben eine Rack-Höheneinheit von je 1 Einheiten und benötigen gemäss Hersteller maximal 237,77 Watt. Dell gewährt einen 3 Jahres Support für den Switch. Der Preis pro Switch beträgt 14'732 CHF.
 
-Als Rechenzentrum Betreiber wurde Nine Internet Solution ausgewählt. Nine Betreibt seine Rechenzentrum in Zürich und ist auf die Hosting Spezialisiert. Mit seinen Rechenzentrum Standort in der Stadt Zürich, befindet sich Nine Geographisch in der Nähe des Auftraggeber. Die Anfahrtszeit und Anfahrtsweg kann so für den Auftraggeber kurz gehalten werden. Die Verschiedenen Rack Produkte welche Nine anbietet, unterscheiden sich von der Anzahl beinhalteten Rack-Höheneinheiten und deren beinhalteten Watt Leistung. In den Produkten ist zusätzlich die Anbindung ans Internet Anbindung mit 100 Mbps beinhaltet. Bei Zusätzlichen Watt bedarf, bietet Nine die Möglichkeit die Zusätliche Watt in 500 Pakete zu 165 CHF pro Monat an.
+Als Rechenzentrumsbetreiber wurde Nine Internet Solution ausgewählt. Nine betreibt ihr Rechenzentrum in Zürich und ist auf das Hosting spezialisiert. Mit seinem Rechenzentrumsstandort in der Stadt Zürich befindet sich Nine geographisch in der Nähe des Auftraggebers. Die Anfahrtszeit und der Anfahrtsweg kann so für den Auftraggeber kurz gehalten werden. Die verschiedenen Rack-Produkte, welche Nine anbietet, unterscheiden sich von der Anzahl Rack-Höheneinheiten und deren Watt-Leistung. In den Produkten ist zusätzlich die Anbindung ans Internet mit 100 Mbps enthalten. Bei zusätzlichem Wattbedarf bietet Nine die Möglichkeit, die zusätzliche Watts in 500er Pakete zu 165 CHF pro Monat an.
 
-Für den den Betrieb der Speicherinfrastruktur wird mit einer Mann Stelle gerechnet. Organisatorisch kann diese auch auf mehre Prozentual Stellen aufgeteilt werden, somit ist auch der Betreib während Ferien Abwesenheit geregelt. Pro Monat wird mit Personal Kosten von 15'000 CHF gerechnet.
+Für den den Betrieb der Speicherinfrastruktur wird mit einer Mannstelle gerechnet. Organisatorisch kann diese auch auf mehrere teilprozentuale Stellen aufgeteilt werden, damit auch der Betrieb während Ferienabwesenheiten sichergestellt ist. Pro Monat wird mit Personalkosten von 15'000 CHF gerechnet.
 
 
 \paragraph*{Kosten Szenario-1}
@@ -915,10 +908,10 @@ Für die dreifache Redundanz sind für die aus der Soll-Analyse bestimmten 306 T
 \end{equation}
 
 
-Als Server System wurde der Transtec Lynx CALLEO Application Server 1260 gewählt. Der Server basiert auf Server Hardware des Herstellers SuperMicro. Der Server benötigt 1 Rack-Höcheneinheiten Rack platz und bieten Platz für den Einbau von 4 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen ein Intel Xeon Prozessor E5-2620 zum Einsatz, zudem verfügt der Server über 32 Gigabyte Hauptspeicher. Der Server wurde mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 1'260 CHF.
+Als Server System wurde der Transtec Lynx CALLEO Application Server 1260 gewählt. Der Server basiert auf Server-Hardware des Herstellers SuperMicro. Der Server benötigt 1 Rack-Höcheneinheiten und bietet Platz für den Einbau von 4 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen ein Intel Xeon Prozessor E5-2620 zum Einsatz. Ferner verfügt der Server über 32 Gigabyte Hauptspeicher. Der Server wurde mit einem 3 Jahres, 24 Stunden, 365 Tage Vor-Ort Service gerechnet. Somit ist sichergestellt, dass im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 1'260 CHF.
 
 
-Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der \refeqlb{eqn:SpeicherkapazitätServerS1} eine Speicherkapazität von 10,912 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 48,3 Tebibyte und der 5 Zonen insgesamt 5 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS1}). Für die Erreichung der Speicherkapazität von 48,3 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 20 Festplatten (\refeqlb{eqn:AnzahlFestplattenS1}) notwendig.
+Ein Server mit Festplatten ausgerüstet, weist gemäss der \refeqlb{eqn:SpeicherkapazitätServerS1} eine Speicherkapazität von 10,912 Tebibyte aus. Damit sind in anbetracht der notwendigen Speicherkapazität von 48,3 Tebibyte und der 5 Zonen insgesamt 5 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS1}). Für die Speicherkapazität von 48,3 Tebibyte bei gleich ausgerüsteten Servern sind insgesamt nur 20 Festplatten notwendig.
 
 \begin{equation}
 \mbox{Speicherkapazität}_{Server} = 2,728 \mathrm{\ TiB} * 4 \mbox{\ Einschub} = 10,912 \mathrm{\ TiB}
@@ -932,11 +925,11 @@ Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der \refeqlb{
 
 \begin{equation}
 \mbox{Anzahl Festplatten} = \frac{48,3 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx 20 \mbox{\ (Auf 5 Server gerundet)}
-\label{eqn:AnzahlFestplattenS1}
+\label{eqn:AnzahlServerS1}
 \end{equation}
 
-Gemäss \refeqlb{eqn:AnzahlRackS1} wird ein viertel Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Quarter Rack Angebot von Nine, welches 11 Rack-Höheneinheiten platz bietet. Der Preis pro Rack beträgt 450 CHF pro Monat, plus 650 CHF für die einmalige Einrichtung des Racks durch Nine.
-Für die Berechnung der Gesamt Watt Leistung welcher der Server im Betrieb benötigt, fehlen die Angaben des Hersteller. Aus diesen Grund wird angenommen, dass der Daten-Server ca. 300 Watt und der Proxy-Server 500 Watt bezieht. Mit diesen Annahmen benötigt es gemäss \refeqlb{eqn:AnzahlWattPaketeS1}, den 500 Watt welche im Rack beinhaltet sind, zusätzliche 5 Pakete a 500 Watt pro Monat.
+Gemäss \refeqlb{eqn:AnzahlRackS1} wird ein viertel-Rack für den Einbau aller Komponenten benötigt. Der Rackplatz entspricht dem Quarter Rack Angebot von Nine, welches 11 Rack-Höheneinheiten platz bietet. Der Preis pro Rack beträgt 450 CHF pro Monat, plus 650 CHF für die einmalige Einrichtung des Racks durch Nine.
+Für die Berechnung der Gesamt Watt-Leistung fehlen die Angaben des Herstellers. Aus diesem Grund wird angenommen, dass der Daten-Server ca. 300 Watt und der Proxy-Server ca. 500 Watt bezieht. Mit diesen Annahmen benötigt es gemäss \refeqlb{eqn:AnzahlWattPaketeS1}, die 500 Watt, welche im Rackpreis enthalten sind, zusätzliche 5 Pakete a je 500 Watt pro Monat.
 
 \begin{equation}
 \mbox{Anzahl Racks} = \frac{5 * 1 \mathrm{\ U} + 2 * 2 \mathrm{\ U} + 2 * 2 \mathrm{\ U}}{11\mathrm{\ U}} \approx 1 \mbox{\ (Auf viertel Rack gerundet)}
@@ -981,7 +974,7 @@ Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
  \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 653'646.50} \\ \cline{4-4}
 \end{tabular}
 \end{small}
-\label{tab:KostenOpenStackS1}
+\label{KostenOpenStackS1}
 \end{table}
 
 
@@ -996,10 +989,10 @@ Für die dreifache Redundanz sind für die aus der Soll-Analyse bestimmten 306 T
 \end{equation}
 
 
-Als Server System wurde der Transtec Lynx CALLEO Application Server 4260 gewählt. Der Server basiert auf Server Hardware des Herstellers SuperMicro, welche gemäss eigenen Recherchen auch bei anderen OpenStack Lösungen verwendet wird. Der Server benötigt 4 Rack-Höcheneinheiten Rack platz und bieten Platz für den Einbau von 36 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen zwei Intel Xeon Prozessor E5-2620 zum Einsatz, zudem verfügt der Server über 64 Gigabyte Hauptspeicher. Der Server wurde mit einen 3 Jahres, 24 Stunden, 365 Tage im Jahr Vor-Ort Service ausgestattet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 8'672 CHF.
+Als Server-System wurde der Transtec Lynx CALLEO Application Server 4260 gewählt. Der Server basiert auf Server-Hardware des Herstellers SuperMicro, welche gemäss eigenen Recherchen auch bei anderen OpenStack Lösungen verwendet wird. Der Server benötigt 4 Rack-Höcheneinheiten Platz und bietet Platz für den Einbau von 36 3.5 Zoll Festplatten, welche auch während des Betriebs ausgetauscht werden können. Als Prozessoreinheit kommen zwei Intel Xeon Prozessor E5-2620 zum Einsatz. Ferner verfügt der Server über 64 Gigabyte Hauptspeicher. Der Server wurde mit einem 3 Jahres, 24 Stunden, 365 Tage Vor-Ort Service gerechnet. Somit ist sichergestellt, das im Störungsfall der Unterbruch möglichst gering gehalten werden kann. Der Preis pro Server beträgt ohne Festplatten 8'672 CHF.
 
 
-Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der \refeqlb{eqn:SpeicherkapazitätServerS2} eine Speicherkapazität von 98.208 Tebibyte aus. Damit sind in Anbetracht der notwendigen Speicherkapazität von 918 Tebibyte und der 5 Zonen insgesamt 10 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS2}). Für die Erreichung der Speicherkapazität von 918 Tebibyte bei gleich ausgerüsteten Server sind jedoch insgesamt nur 340 Festplatten notwendig, dass heisst pro Server sind 34 Einschub mit Festplatten belegt. Sie könnten also bei Bedarf noch weiter aufgerüstet werden.
+Ein Server ausgerüstet mit Festplatten weist gemäss der \refeqlb{eqn:SpeicherkapazitätServerS2} eine Speicherkapazität von 98.208 Tebibyte aus. Damit sind in anbetracht der notwendigen Speicherkapazität von 918 Tebibyte und der 5 Zonen insgesamt 10 Server notwendig (siehe \refeqlb{eqn:AnzahlServerS2}). Für die Speicherkapazität von 918 Tebibyte bei gleich ausgerüsteten Servern sind insgesamt nur 340 Festplatten notwendig. Das heisst, pro Server sind 34 Einschübe mit Festplatten belegt. Sie könnten bei Bedarf noch weiter aufgerüstet werden.
 
 \begin{equation}
 \mbox{Speicherkapazität}_{Server} = 2,728 \mathrm{\ TiB} * 36 \mbox{\ Einschub} = 98.208 \mathrm{\ TiB}
@@ -1013,11 +1006,11 @@ Ein Server welche voll Ausgerüstet mit Festplatten, weist gemäss der \refeqlb{
 
 \begin{equation}
 \mbox{Anzahl Festplatten} = \frac{918 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx 340 \mbox{\ (Auf 10 Server gerundet)}
-\label{eqn:AnzahlFestplattenS2}
+\label{eqn:AnzahlServerS2}
 \end{equation}
 
-Gemäss \refeqlb{eqn:AnzahlRackS2} wird ein ganzes Rack für den Einbau aller Komponenten. Der Benötigte Rack Platz entspricht den Full Rack Angebot von Nine, welches 47 Rack-Höheneinheiten platz bietet. Der Preis pro halbes Rack beträgt 750 CHF pro Monat, plus 850 CHF für die einmalige Einrichtung des Racks durch Nine.
-Für die Berechnung der Gesamt Watt Leistung welcher der Server im Betrieb benötigt, fehlen die Angaben des Hersteller. Aus diesen Grund wird angenommen, dass der Daten-Server ca. 700 Watt und der Proxy-Server 500 Watt bezieht. Mit diesen Annahmen benötigt es gemäss \refeqlb{eqn:AnzahlWattPaketeS2}, den 2000 Watt welche im Rack beinhaltet sind, zusätliche 13 Pakete a 500 Watt pro Monat.
+Gemäss \refeqlb{eqn:AnzahlRackS2} wird ein ganzes Rack für den Einbau aller Komponenten benötigt. Der Rackplatz entspricht den Full Rack Angebot von Nine, welches 47 Rack-Höheneinheiten platz bietet. Der Preis pro halbes Rack beträgt 750 CHF pro Monat, plus 850 CHF für die einmalige Einrichtung des Racks durch Nine.
+Für die Berechnung der Gesamt Watt-Leistung fehlen die Angaben des Herstellers. Aus diesem Grund wird angenommen, dass der Daten-Server ca. 700 Watt und der Proxy-Server ca. 500 Watt bezieht. Mit diesen Annahmen benötigt es gemäss \refeqlb{eqn:AnzahlWattPaketeS2}, den 2000 Watt, welche im Rackpreis enthalten sind, zusätliche 13 Pakete zu je 500 Watt pro Monat.
 
 \begin{equation}
 \mbox{Anzahl Racks} = \frac{10 * 4 \mathrm{\ U} + 2 * 2 \mathrm{\ U} + 2 * 2 \mathrm{\ U}}{47\mathrm{\ U}} \approx 1 \mbox{\ (Auf ganze Rack gerundet)}
@@ -1029,7 +1022,7 @@ Für die Berechnung der Gesamt Watt Leistung welcher der Server im Betrieb benö
 \label{eqn:AnzahlWattPaketeS2}
 \end{equation}
 
-Wie aus der \reftab{tab:KostenOpenStackS2} ersichtlich ist, betragen die Gesamtkosten 916'965.00 CHF.
+Wie aus der \reftab{tab:KostenOpenStackS1} ersichtlich ist, betragen die Gesamtkosten 916'965.00 CHF.
 
 \begin{table}[htbp]
 \caption{Kosten OpenStack}
@@ -1066,9 +1059,9 @@ Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
 
 
 \subsection{\ref{Al-5}: Amazon S3}
-Amazon zählt zu den Grössten, wenn nicht der grösste Online Speicheranbieter weltweit. Genaue Anzahlen über die Anzahl Kunden und Speicherkapazität veröffentlich Amazon nicht. Seit 2006 bietet Amazon Ihren Kunden unter den Produktname S3, einen Online Speicher an. Die genaueren Technischen Eigenschaften und Architektur des Online Speicher ist bis anhin von Amazon nicht veröffentlicht worden. Nach eigenen Angaben von Amazon basiert die Dienstleistung auf gewöhnlichen Computer Hardware.
+Amazon zählt zu den grössten, wenn nicht der grösste Online Speicheranbieter weltweit. Genaue Angaben über die Anzahl Kunden und Speicherkapazität veröffentlich Amazon nicht. Seit 2006 bietet Amazon Ihren Kunden unter dem Produktname S3, einen Online Speicher an. Die genaueren technischen Eigenschaften und Architektur des Online Speicher ist bis anhin von Amazon nicht veröffentlicht worden. Nach eigenen Angaben von Amazon basiert die Dienstleistung auf gewöhnlicher Computer Hardware.
 
-Im \refabb{abb:AmazonS3-Infrastruktur} ist die Netzwerk und System Architektur dargestellt. Es zeigt wie die Applikations-Server Farm Bildobjekte über das Internet auf dem Amazon S3 Speicher ablegt und darauf zugreift. Zudem zeigt die Abbildung wie eine Client Anfrage auf eine Bildobjekt an die Applikations-Server Farm, den direkten URL Pfad zum Bildobjekt auf den Amazon S3 Speicher verweist, somit kann die Auslieferung der Bilddaten direkt über Amazon S3 erfolgen, was die Bandbreite der Applikations-Server Farm entlastet. 
+Im \refabb{abb:AmazonS3-Infrastruktur} ist die Netzwerk und System-Architektur dargestellt. Es zeigt wie die Applikations-Server Farm Bildobjekte über das Internet auf dem Amazon S3 Speicher ablegt und darauf zugreift. Zudem zeigt die Abbildung wie eine Client-Anfrage auf ein Bildobjekt an die Applikations-Server Farm, den direkten URL Pfad zum Bildobjekt auf den Amazon S3 Speicher verweist. Somit kann die Auslieferung der Bilddaten direkt über Amazon S3 erfolgen, was die Bandbreite der Applikations-Server Farm entlastet. 
 
 \begin{center}
 \includegraphics[width=\linewidth, keepaspectratio = true]{media/Amazon_S3.png}
@@ -1078,67 +1071,66 @@ Im \refabb{abb:AmazonS3-Infrastruktur} ist die Netzwerk und System Architektur d
 
 
 
-Bei Online Speicher wie Amazon S3, kann der Kunde gleich nach Anmeldung an den Dienst, die Speicherressourcen verwenden. Es fallen also keine Installation von für
-die Speicherinfrastruktur an. 
+Bei Online Speicher wie Amazon S3, kann der Kunde gleich nach Anmeldung an den Dienst, die Speicherressourcen verwenden. Es fallen also keine Installationkosten für die Speicherinfrastruktur an. 
 
 \subsubsection*{Verfügbarkeit}
-Amazon S3 Speichert die Daten auf mehren Geräten in Verschiedenen Rechenzentren in der selben Region ab. Bei speichern werden die Daten Synchron in Verschiedene Rechenzentren gespeichert bevor die Speicherung als erfolgreich gemeldet ist, damit ist sicher gestellt, dass die Daten von beginn weg Redundant gespeichert sind. Mit diesen Massnahmen gewährleistet Amazon gemäss Dienstgütevereinbarung eine Zuverlässigkeit von 99.999999999\%. Bei bedarf kann die Zuverlässigkeit für Daten welche wenig Schutz benötigen, wie zum Beispiel Thumbnails von Bilder, mit einer geringeren Zuverlässigkeit von 99.99\% zu einen günstigeren Preis gespeichert werden. \cite{Amazon2007}
+Amazon S3 speichert die Daten auf mehreren Geräten in verschiedenen Rechenzentren in derselben Region ab. Beim Speichern werden die Daten synchron in verschiedene Rechenzentren abgelegt bevor die Speicherung als erfolgreich gemeldet wird. Damit ist sichergestellt, dass die Daten von Beginn weg einwandfrei redundant gespeichert sind. Mit diesen Massnahmen gewährleistet Amazon gemäss Dienstgütevereinbarung eine Zuverlässigkeit von 99.999999999\%. Bei Bedarf kann die Zuverlässigkeit für Daten, welche wenig Schutz benötigen, wie zum Beispiel Thumbnails von Bilder, mit einer geringeren Zuverlässigkeit von 99.99\% zu einem günstigeren Preis gespeichert werden. \cite{Amazon2007}
 
-Durch die Redundante Speicherung der Daten auf mehre Geräten gewährleistet Amazone gemäss Dienstgütevereinbarung von 99.99\% pro Monat
+Durch die redundante Speicherung der Daten auf mehrere Geräte gewährleistet Amazone gemäss Dienstgütevereinbarung von 99.99\% pro Monat.
 
 \subsubsection*{Datenzugriff}
-Der Zugriff auf die Daten findet über eine API oder über die Verwaltungskonsole von Amazon statt. Für den Zugriff mit einen API bietet Amazon ein \gls{REST} und ein \gls{SOAP} Schnittstelle an. Der \gls{REST} Zugriff findet über HTTP statt, dabei werden Standard HTTP requests verwendet. Für den Zugriff kann auch einen gewöhnlichen Web-Browser verwendet werden solange die Objekte Öffentlich sind.
+Der Zugriff auf die Daten findet über eine API oder über die Verwaltungskonsole von Amazon statt. Für den Zugriff mit einem API bietet Amazon ein \gls{REST} und eine \gls{SOAP} Schnittstelle an. Der \gls{REST} Zugriff findet über HTTP statt. Dabei werden standard HTTP requests verwendet. Für den Zugriff kann auch ein gewöhnlicher Web-Browser verwendet werden solange die Objekte öffentlich sind.
 
-Einen Offiziellen POSIX IO Zugriff von Amazon steht nicht zur Verfügung, es existiert jedoch eine Quelloffenes Projekt Namens s3fs\footnote{\url{https://code.google.com/p/s3fs/}} welche es ermöglicht eine Amazon S3 Speicher unter Linux zu mounten. \cite{S3fs}
+Einen offiziellen POSIX IO Zugriff von Amazon steht nicht zur Verfügung. Es existiert allerdings ein quelloffenes Projekt Namens s3fs\footnote{\url{https://code.google.com/p/s3fs/}}, welches es ermöglicht, einen Amazon S3 Speicher unter Linux zu mounten. \cite{S3fs}
 
-Da die Infrastruktur von Amazon S3 nicht bekannt ist, können keine detailierte Angaben wie Amazon die Skalierung der Datenzugriffe handhabt. Es kann jedoch von einen hochskalierbaren System ausgegangen werden, da Amazon die Zugriffe von tausenden von Kunden gleichzeitig handhaben muss.
+Da die Infrastruktur von Amazon S3 nicht bekannt ist, können keine detaillierten Angaben über die Skalierung der Datenzugriffe gemacht werden. Es kann von einem hochskalierbaren System ausgegangen werden, da Amazon die Zugriffe von tausenden von Kunden gleichzeitig handhaben muss.
 
-Amazon S3 unterstützt das Lesen und Schreiben von mehren Systemen. Beim Lesen einen Objekts welche von mehren Systemen Zugegriffen wird und beschrieben, stellt Amazon S3 die Lese konsistent sicher. \cite{Amazon2012a}
+Amazon S3 unterstützt das Lesen und Schreiben von mehreren Systemen. Beim Lesen einen Objektes, welches aus mehreren Systemen zugegriffen und beschrieben wird, stellt Amazon S3 die Lesekonsistenz sicher. \cite{Amazon2012a}
 
-Für das Einlesen von Grossen Datenmengen bietet Amazon einen kostenpflichtigen Import/Export Dienstleistung an. Bei dieser Dienstleistung sendet der Kunde die Daten gespeichert auf einen tragbares Speichergeräte an Amazon, welches die Daten direkt in Ihre Cloud ohne Umwege über das Internet einliesst.
+Für das Einlesen von grossen Datenmengen bietet Amazon einen kostenpflichtigen Import/Export Dienstleistung an. Bei dieser Dienstleistung sendet der Kunde die Daten gespeichert auf einem tragbaren Speichermedium an Amazon, welches die Daten direkt in ihre Cloud ohne Umwege über das Internet einliesst.
 
-Die API von Amazon ist gut Dokumentiert, weshalb für einen erfahrenen Entwickler die Anbindung der Web-Applikation an Amazon S3 umsetzbar sein sollte.
+Die API von Amazon ist gut dokumentiert, weshalb für einen erfahrenen Entwickler die Anbindung der Web-Applikation an Amazon S3 umsetzbar sein sollte.
 
 \subsubsection*{Speicherkapazität}
 Für die Skalierung der Speicherkapazität kümmert sich Amazon.
 
-Im Amazon S3 können eine unbegrenzte Zahl von Objekten gespeichert werden, welche eine Speichergrösse von 1 Byte bis zu 5 Terrabyte haben können, wobei aber in einen PUT maximal 5 Gigabyte hochgeladen werden können. Für das Hochladen von Grösseren Objekten, muss die Multipart Funktion verwendet werden, welche das Objekte in mehren Teilen hochladet.\cite{Amazon2012b}
+Im Amazon S3 können eine unbegrenzte Anzahl von Objekten gespeichert werden, welche eine Speichergrösse von 1 Byte bis zu 5 Terrabyte haben können. In einem PUT können maximal 5 Gigabyte hochgeladen werden. Für das Hochladen von grösseren Objekten muss die Multipart Funktion verwendet werden, welche das Objekte in mehrere Teilen gliedert und hochladet.\cite{Amazon2012b}
 
 \subsubsection*{Datenschutz}
-Die Daten können bei Amazon in mehren Regionen gespeichert werden. Zu den verfügbaren Regionen gehören, US Standard, US West (Oregon), US West (Northern California), EU (Ireland), Asia Pacific (Singapore), Asia Pacific (Tokyo), South America (Sao Paulo). Gemäss Amazon verlassen die Gespeicherten Daten eine Region nicht, ausser für die Erfüllung von Gesetzen oder auf Anforderung von Regierung Anweisung. Als US Amerikanisches Unternehmen steht Amazon wegen dem Patrot Act, unter der Pflicht, den USA Behörden Zugang zu Informationen zu gewährleisten auf behördlichen Anforderungen, auch wenn diese Informationen ausserhalb der USA gespeichert sind. Gemäss EU Recht darf jedoch keine gespeicherten Informationen, an dritten Zugänglich gemacht werden oder ausserhalb der EU gespeichert werden, ohne Einverständnis. Bei Microsoft ebenfalls eine Grosser Cloud Anbieter bestätigt diese Annahme, das die Daten nicht vor den Zugriff der USA geschützt sind.\cite{Amazon2012}\cite{Ostler}
+Die Daten können bei Amazon in mehren Regionen gespeichert werden. Zu den verfügbaren Regionen gehören, US Standard, US West (Oregon), US West (Northern California), EU (Ireland), Asia Pacific (Singapore), Asia Pacific (Tokyo), South America (Sao Paulo). Gemäss Amazon verlassen die gespeicherten Daten eine Region nicht, ausser für die Erfüllung von Gesetzen oder auf Anforderung einer Regierung. Als US amerikanisches Unternehmen steht Amazon wegen dem Patriot Act unter der Pflicht, den US-Behörden auf Anforderung Zugang zu den Daten zu gewährleisten, auch wenn diese Informationen ausserhalb der USA gespeichert sind. Gemäss EU Recht dürfen ohne Einverständnis der Behörden keine gespeicherten Informationen an Dritten zugänglich gemacht werden, auch nicht solche Daten die ausserhalb der EU gespeichert sind. Bei Microsoft, ebenfalls ein grosser Cloud-Anbieter bestätigt diese Regel, dass die Daten nicht vor dem Zugriff der USA geschützt sind.\cite{Amazon2012}\cite{Ostler}
 
-Die Integrität der Daten wird mit einer Prüfsumme sichergestellt. Die gespeicherten Daten werden von Amazon regelmässig auf Ihre Integrität geprüft und bei bedarf von einer Integer Kopie der Daten ersetzt. 
+Die Integrität der Daten wird mit einer Prüfsumme sichergestellt. Die gespeicherten Daten werden von Amazon regelmässig auf ihre Integrität geprüft und bei Bedarf von einer integren Kopie der Daten ersetzt. 
 
-Die Daten können Verschlüsselt per SSL Zugegriffen bzw. gespeichert werden, somit ist gewährleistet, das dritte die Daten beim Transport nicht lesen können. Seit 2011 bietet Amazon kostenlos ebenfalls die Verschlüsselung mit AES-256 von Objekten im Speicher an. Dabei wird jedes Objekt mit einen eigenen Schluss ver- und entschlüsselt. Die erzeugten Schlüssel werden mit einen Master-Schlüssel ebenfalls Verschlüsselt und auf den Amazon-Servern gespeichert. Das Schlüsselmanagment bleibt jedoch bei Amazon, weshalb man abhängig von den Massnahmen zum schuzt des Schlusselmanagment die Amazon trifft. Wird diese Kompromittiert oder fällt aus ist der Zugriff auf die Verschlüsselten Daten nicht mehr möglich.\cite{RobertLippert2011}
+Die Daten können verschlüsselt per SSL zugegriffen bzw. gespeichert werden. Somit ist gewährleistet, dass Dritte die Daten beim Transport nicht lesen können. Seit 2011 bietet Amazon kostenlos ebenfalls die Verschlüsselung mit AES-256 von Objekten im Speicher an. Dabei wird jedes Objekt mit einem eigenen Schlüssel ver- und entschlüsselt. Die erzeugten Schlüssel werden mit einem Master-Schlüssel ebenfalls verschlüsselt und auf den Amazon-Servern gespeichert. Das Schlüsselmanagment bleibt jedoch bei Amazon, weshalb man abhängig von den Massnahmen zum Schutz des Schlusselmanagment ist die Amazon alleine trifft. Wird diese kompromitiert oder fällt sie aus, ist der Zugriff auf die verschlüsselten Daten nicht mehr möglich.\cite{RobertLippert2011}
 
-Die Berechtigung auf gespeicherte Objekte oder Ordner können mit einen Rechte-Management verwaltet werden. Objekte können öffentlich zugänglich gemacht werden oder nur an bestimmte Authentifizierte Benutzer zur Verfügung gestellt werden. Zudem lassen Sich Zugriffe auf Objekte Protokollieren.\cite{Amazon2012b}
+Die Berechtigung auf gespeicherte Objekte oder Ordner können mit einem Rechte-Management verwaltet werden. Objekte können öffentlich zugänglich gemacht werden oder nur an bestimmte authentifizierte Benutzer zur Verfügung gestellt werden. Zudem lassen sich Zugriffe auf Objekte protokollieren.\cite{Amazon2012b}
 
-Für die Berechtigung und Verwaltung stellt Amazon ein Web-GUI zur Verfügung. Bis auf das eröffnen eines Speichers und die Initial Berechtigung sollten, wahrscheinlich nicht viel mehr Verwaltungsaufgaben anfallen.
+Für die Berechtigung und Verwaltung stellt Amazon ein Web-GUI zur Verfügung. Bis auf das Eröffnen eines Speichers und die Initialberechtigung sollten voraussichtlich nicht weitere Verwaltungsaufgaben anfallen.
 
-Amazon bietet neben der Redundanz der Objekte kein weiteres Sicherungsverfahren an. Beim Herunterladen der Daten fallen für den Transfer weiter Kosten an.
+Amazon bietet neben der Redundanz der Objekte kein weiteres Sicherungsverfahren an. Beim Herunterladen der Daten fallen für den Transfer zusätzliche Kosten an.
 
 \subsubsection*{Technologie}
-Der Online Speicher von Amazon S3 gilt als ausgereiftes und etabliertes Produkt im Markt, weshalb davon ausgegangen werden kann, dass die Dienstleistung über die nächsten vier Jahre drübenraus noch bestehen wird und für den Kunden keine Migration notwendig ist. Amazon S3 wird ebenfalls von SmugMug ebenfalls eine Photodienstleister oder andere bekannte Web-Applikationen wie Dropbox verwendet.\cite{SmugMug}\cite{Dropbox2011}
+Der Online Speicher von Amazon S3 gilt als ausgereiftes und etabliertes Produkt im Markt. Es kann davon ausgegangen werden, dass die Dienstleistung über die nächsten vier Jahre hinaus bestehen wird und für den Kunden keine Migration notwendig ist. Amazon S3 wird ebenfalls von SmugMug, ein Photodienstleister, verwendet oder andere bekannte Web-Applikationen wie Dropbox verwendet.\cite{SmugMug}\cite{Dropbox2011}
 
-Der Online Speicher Markt ist im Verhältnis zu anderen Speicher Märkte noch relativ jung, Analysten wie Jeff Boles gehen davon aus, dass der Online Speicher Markt in den nächsten Jahren weiter stark wächst. Wie in der Marktstudie beschrieben konnte Amazon seit dem Start des Amazon S3 Produktes die Anzahl gespeicherte Objekte jeweils pro Jahr mehr als verdoppeln (sie dazu \refabb{abb:AnzahlObjekteAmazonS3}). Die Konkurrenz von grossen Anbietern wie Google, Microsoft oder Rackspace nimmt für Amazon bereits zu. Für den Kunden bedeutet diese, dass die Anbieter Ihre Preise noch stärker kalkulieren müssen um ein Konkurrenz fähiges Angebot zu haben. Amazon hat die Preise für S3 Speicher erst kürzlich angepasst.\cite{Boles2011}\cite{Barr2012a}
+Der Online-Speicher-Markt ist im Verhältnis zu anderen Speichermärkten noch relativ jung. Analysten wie Jeff Boles gehen davon aus, dass der Online-Speicher-Markt in den nächsten Jahren stark wachsen wird. Wie in der Marktstudie beschrieben, konnte Amazon seit dem Start des Amazon S3 Produktes die Anzahl gespeicherte Objekte jeweils pro Jahr mehr als verdoppeln (sie dazu \refabb{abb:AnzahlObjekteAmazonS3}). Die Konkurrenz wie Google, Microsoft oder Rackspace machen Amazon den Markt streitig. Der Kunden darf hoffen, dass die Anbieter ihre Preise noch spitzer kalkulieren müssen, um konkurrenzfähig zu bleiben. Amazon hat die Preise für S3 Speicher erst kürzlich angepasst.\cite{Boles2011}\cite{Barr2012a}
 
 
 \subsubsection*{Kosten}
-Durch den Bezug des Speichersressourcen als Dienstleistung, fallen für den Kunden keine Investitionskosten für die Speicher Infrastruktur an.
-Dafür muss in den meisten Fällen, die Applikation für den Zugriff mittels Amazon S3 API vorbereitet werden, wodurch Entwicklungskosten anfallen könnten.
+Durch den Bezug der Speicherressourcen als Dienstleistung fallen für den Kunden keine Investitionskosten für die Speicherinfrastruktur an.
+Dafür muss in den meisten Fällen die Applikation für den Zugriff mittels Amazon S3 API programmiert werden, wodurch Entwicklungskosten anfallen können.
 
-Beim Amazon S3 wird jeweils nur der Effektive verwendete Speicherplatz pro Monat verrechnet, im Preis von Amazon ist jeweils die dreifache Redundanz inbegriffen. Der Speicherplatz Kostet ab 1 Terabyte bis 49 Terabyte \$ 0.110 per Gigiabyte. Ab 49 Terabyte bis 450 Terabyte reduzieren sich die Kosten pro Gigabyte auf \$ 0.095. Anders als beim betrieb seiner eigenen Speicherinfrastruktur muss der Kunden keine zusätzliche Speicherkapazitätsreserven für unvorhergesehenes einrechnen, da Ihm diese bei Bedarf jederzeit von Amazon zur Verfügung gestellt wird, was wiederum die Kosten für den Kunden senkt, da er keine Reserve zu Verfügung stellen muss.
+Beim Amazon S3 wird jeweils nur der effektiv verwendete Speicherplatz pro Monat verrechnet. Im Preis von Amazon ist jeweils die dreifache Redundanz inbegriffen. Der Speicherplatz kostet ab 1 Terabyte bis 49 Terabyte \$ 0.110 per Gigabyte. Ab 49 Terabyte bis 450 Terabyte reduzieren sich die Kosten pro Gigabyte auf \$ 0.095. Anders als beim Betrieb einer eigenen Speicherinfrastruktur muss der Kunden keine zusätzliche Speicherkapazitätsreserven für Unvorhergesehenes einrechnen, da diese erst bei Bedarf von Amazon zur Verfügung gestellt wird. Dies spart substantiell Kosten für den Kunden.
 
 Bei Verwendung von Amazon S3 fallen für den Kunden zudem keine Wartungskosten für den Betrieb der Speicherinfrastruktur an. 
 
-Im vergleich zu betrieb der eignen Speicherinfrastruktur, fallen dem Kunden, stattdessen Kosten für den Transfer und Abfragen der Daten an, welche bei der eignenden Infrastruktur generell durch die Investition in die Infrastruktur beinhaltet ist. So Kostet der Transfer der Daten aus der Amazon S3 Speicher aus, für jedes GB \$ 0.12 bei einen Transfervolumen bis 10 TB. Für die Abfrage wird unterschieden zwischen Schreibenden und Lesenden Abfragen. Für den Lese Zugriff auf die Daten wird pro 10'000 Abfragen \$ 0.01 und für jede Schreibzugriff pro 1'000 Abfragen\$ 0.01 verrechnet. Gerade diese Kosten sind jedoch schwer vorher zubestimmen und könnten zu Überraschungen sorgen. Grund dafür ist, dass diese jeweils stark von jeweiligen Anzahl Benutzer und deren Benutzerverhalten abhängig sind und diese schwer zu vorhersagen ist.
+Im Vergleich zum eigenen Betrieb fallen dem Kunden allerdings Kosten für den Transfer und Abfragen der Daten an. So kostet der Transfer der Daten aus dem Amazon S3 Speicher für jedes GB \$ 0.12 bei einem Transfervolumen bis zu 10 TB. Für die Abfrage wird unterschieden zwischen schreibenden und lesenden Abfragen. Der Lesezugriff kostet pro 10'000 Abfragen \$ 0.01 und für jeden Schreibzugriff pro 1'000 Abfragen \$ 0.01. Die tatsächlichen Kosten sind schwierig vorherzusagen und könnten zu Überraschungen führen. Die zu budgetierenden Kosten sind stark von den Anzahl Benutzern und deren Benutzerverhalten abhängig und können saisonalen Schwankungen unterliegen.
 
 \paragraph*{Kosten Szenario-1}
-Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der\reftab{tab:KostenAmazonS3S1} Total \$ 42'646.32 das sind zum aktuellen Tageskurs (13 April 2012) 39'10.52 CHF. 
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der\reftab{tab:KostenAmazonS3S1} total \$ 42'646.32. Das entspricht zum aktuellen Tageskurs gerechnet (13 April 2012) 39'10.52 CHF. 
 
 
 \subsubsection**{Kosten Szenario-2}
-Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der \reftab{tab:KostenAmazonS3S2} Total \$ 493'902.84 das sind zum aktuellen Tageskurs (13 April 2012) 450'637.17 CHF. 
+Die Kosten für Szenario-1 betragen gemäss Zusammenstellung der \reftab{tab:KostenAmazonS3S2} total \$ 493'902.84. Das entspricht zum aktuellen Tageskurs gerechnet (13 April 2012) 450'637.17 CHF. 
 
 \begin{table}
 \caption{Kosten Amazon S3 Szenario-1}
@@ -1269,7 +1261,7 @@ Alle Alternativen für das Szenario-1 unterstützen die Speicherung von Dateien 
 Alle Alternativen aus dem Szenario-1 erfüllen die geforderten Speicherkapazität des Szenario-1.
 
 \paragraph*{Untersuchung auf KO Kriterium \ref{KO-3}}
-Die günstigste Lösung ist die Alternative \ref{Al-1} mit Gesamtkosten von 13'422.95 CHF, somit darf gemäss KO Kriterium \ref{KO-3} die Kosten nicht 40'268.85 CHF überschreiten. Mit Ausnahme von \ref{Al-5} mit Gesamt Kosten von 39'10.52 CHF überschreiten die Alternativen \ref{Al-2} (240’443.15 CHF), \ref{Al-3} (240’443.15 CHF) und \ref{Al-4} (653’646.50 CHF) die Kosten und werden somit von der weiteren Evaluation für das Szenario-1 ausgeschlossen.
+Die günstigste Lösung ist die Alternative \ref{Al-1} mit Gesamtkosten von 13'422.95 CHF. Gemäss KO Kriterium \ref{KO-3} dürfen die Kosten 40'268.85 CHF nicht überschritten werden. Mit Ausnahme von \ref{Al-5} mit Kosten von insgesamt 39'10.52 CHF überschreiten die Alternativen \ref{Al-2} (240’443.15 CHF), \ref{Al-3} (240’443.15 CHF) und \ref{Al-4} (653’646.50 CHF) die Kosten und werden somit von der weiteren Evaluation für das Szenario-1 ausgeschlossen.
 
 \subsection{Evaluation KO Kriteren Szenario-2}
 
@@ -1277,17 +1269,17 @@ Die günstigste Lösung ist die Alternative \ref{Al-1} mit Gesamtkosten von 13'4
 Alle Alternativen für das Szenario-2 unterstützen die Speicherung von Dateien bis 2 Gibibyte Speichergrösse (\refbf{KO-1}).
 
 \paragraph*{Untersuchung auf KO Kriterium \ref{KO-2}}
-Bis auf Alternative \ref{Al-1}, welches kein Produkte für die Erforderlichen Speicherkapazität hat, erfüllen alle die geforderten Speicherkapazität des Szenario-2. Die Alternative \ref{Al-1} wird somit für die weitere Evaluation für das Szenario-2 ausgeschlossen.
+Bis auf Alternative \ref{Al-1}, welches kein Produkte für die geforderten Speicherkapazität hat, erfüllen alle die vorgegebene Speicherkapazität des Szenario-2. Die Alternative \ref{Al-1} wird somit für die weitere Evaluation für das Szenario-2 ausgeschlossen.
 
 \paragraph*{Untersuchung auf KO Kriterium \ref{KO-3}}
-Die günstigste Lösung ist die Alternative \refsoll{Al-5} \ref{Al-5}  mit Gesamtkosten von 450'637.17 CHF, somit darf gemäss KO Kriterium \ref{KO-3} die Kosten nicht 1'351'911.15 CHF überschreiten. Die Alternative \ref{Al-2} (884’772.44 CHF), \ref{Al-3} (884’772.44 CHF) und \ref{Al-4} (916’965.00) überschreiten die maximal Kosten nicht. Die Alternative \ref{Al-1} bietet keine Produkt für Szenario-1.
+Die günstigste Lösung ist die Alternative \refsoll{Al-5} \ref{Al-5}  mit Gesamtkosten von 450'637.17 CHF. Gemäss KO Kriterium \ref{KO-3} dürfen die Kosten von 1'351'911.15 CHF nicht überschritten werden. Die Alternative \ref{Al-2} (884’772.44 CHF), \ref{Al-3} (884’772.44 CHF) und \ref{Al-4} (916’965.00) überschreiten die maximalen Kosten nicht. Die Alternative \ref{Al-1} bietet keine Produkt für Szenario-2.
 
 \section{Evaluation Soll Kriteren}
-Die Evaluation der Soll Kriterien und die dazugehörige Begründungen für die Bewertung  sind detailliert im Anhang aufgeführt. Die Bewertungen der Vergleiche der Alternativen wurden in das Programm AHP Decision eingegeben und berechnet.
+Die Evaluation der Soll Kriterien und die dazugehörigen Begründungen für die Bewertung  sind detailliert im Anhang aufgeführt. Die Bewertungen der Vergleiche der Alternativen wurden in das Programm AHP Decision eingegeben und ausgewertet.
 
 \subsection{Auswertung Szenario-1}
 
-Wie in \reftab{EvalResultS1} zu entnehmen ist hat die Alternative ist \refsoll{Al-5} \ref{Al-5} mit 0.698 Punkte oder 69.8\% der Gewinner der Evaluation von Szenario-1. Die Alternative \refsoll{Al-1} \ref{Al-1} hat insgesamt 0.302 Punkte oder 30.2 \% erreicht.
+Wie in \reftab{EvalResultS1} zu entnehmen ist, gewinnt die Alternative \refsoll{Al-5} \ref{Al-5} mit 0.698 Punkte oder 69.8\% die Evaluation von Szenario-1. Die Alternative \refsoll{Al-1} \ref{Al-1} hat insgesamt 0.302 Punkte oder 30.2 \% erreicht.
 
 \begin{table}[htbp]
 \caption{Evalutation Resultat Szenario-1}
@@ -1305,7 +1297,7 @@ Rang & Alternativen & \multicolumn{1}{l|}{Priorität} \\ \hline
 
 \subsection{Auswertung Szenario-2}
 
-Wie in \reftab{EvalResultS2} zu entnehmen ist hat die Alternative \refsoll{Al-5} \ref{Al-5} mit 0.310  Punkte oder 31\% der Gewinner der Evaluation, auf dem zweiten Platz folgt \refsoll{Al-3} \ref{Al-3} mit 0.236 Punkte oder 23.6\%, dicht gefolgt von dritt Klassifizierten \refsoll{Al-4} \ref{Al-4} mit 0.36 Punkte oder 23.6 \%. Am Wenigsten Punkte geholt hat \refsoll{Al-2} \ref{Al-2} mit 0.218 Punkte oder 21.8 \%.
+Wie in \reftab{EvalResultS2} zu entnehmen ist, gewinnt die Alternative \refsoll{Al-5} \ref{Al-5} mit 0.310  Punkte oder 31\% die Evaluation. Auf dem zweiten Platz folgt \refsoll{Al-3} \ref{Al-3} mit 0.236 Punkte oder 23.6\%, dicht gefolgt vom drittklassierten \refsoll{Al-4} \ref{Al-4} mit 0.36 Punkte oder 23.6 \%. Die wenigsten Punkte erhielt \refsoll{Al-2} \ref{Al-2} mit 0.218 Punkte oder 21.8 \%.
 
 \begin{table}[htbp]
 \caption{Evalutation Resultat Szenario-2}
@@ -1322,13 +1314,13 @@ Rang &Alternativen & \multicolumn{1}{l|}{Priorität} \\ \hline
 \label{EvalResultS2}
 \end{table}
 
-Amazon S3 \ref{Al-5} hat in den Soll Kriterien, Anschaffungskosten, Langlebigkeit, Skalierbarkeit in der Speicherkapazität, Datenintegrität, Selbstheilung von Objekten und Verwaltungskomfort am meisten Punkte aller Alternativen gemacht.
+Amazon S3 \ref{Al-5} hat in den Soll-Kriterien, Anschaffungskosten, Langlebigkeit, Skalierbarkeit der Speicherkapazität, Datenintegrität, Selbstheilung von Objekten und Verwaltungskomfort am meisten Punkte von allen Alternativen erhalten.
 
-NetApp iSCSI \ref{Al-3} hat in den Soll Kriterien, Unterhaltskosten, Redundanz,  Standort übergreifend, Performance, POSIX IO, Simultaner Schreibzugriff, Datensicherheit am meisten Punkte aller Alternativen gemacht.
+NetApp iSCSI \ref{Al-3} hat in den Soll-Kriterien, Unterhaltskosten, Redundanz, standortübergreifend, Performance, POSIX IO, simultaner Schreibzugriff, Datensicherheit am meisten Punkte von allen Alternativen erhalten.
 
-OpenStack Object Storage \ref{Al-4} hat in den Soll Kriterien, Systemverfügbarkeit, Standort übergreifend, Datenzugriff Skalierbarkeit, Maximal speicherbare Objekte, Max Anzahl speicherbare Objekte, Max Objekt Speichergrosse grösser als 2 GiB, Datenintegrität, Selbstheilung von Objekten, Weiterentwicklung am meisten Punkte aller Alternativen gemacht.
+OpenStack Object Storage \ref{Al-4} hat in den Soll-Kriterien, Systemverfügbarkeit, standortübergreifend, Datenzugriff Skalierbarkeit, maximale Anzahl speicherbare Objekte, maximale Objektspeichergrösse grösser als 2 GiB, Datenintegrität, Selbstheilung von Objekten und Weiterentwicklung am meisten Punkte von allen Alternativen erhalten.
 
-NetApp NFS \ref{Al-2} hat in den Soll Kriterien, Unterhaltskosten, Redundanz, Datensicherung,  Datenschutz, Marktverbreitung, Verfügbarkeit von Experten und Ausgereift jeweils am meisten Punkte aller Alternativen gemacht.
+NetApp NFS \ref{Al-2} hat in den Soll-Kriterien, Unterhaltskosten, Redundanz, Datensicherung,  Datenschutz, Marktverbreitung, Verfügbarkeit von Experten und ausgereifte Anwendung jeweils am meisten Punkte von allen Alternativen erhalten.
 
 
 
