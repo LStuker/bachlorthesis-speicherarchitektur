@@ -32,7 +32,7 @@ Für die Speicherung der Parität, muss ein Teil der gesamten Festplattenkapazit
 Spare-Disk sind leere Festplatten, welche bei einen Ausfall einer Festplatte im RAID vom RAID System automatisch als Ersatz Festplatte verwendet werden kann. Durch den Einsatz von Spare-Disk verkleinert sich die MMTR, dadurch das die Wiederherstellung des RAID sofort nach dem erkennen des Festplattenausfalls starten kann. 
 
 \section{MTTR}
-MTTR  ist die Abkürzung von "Mean Time To Recovery"' und bedeutet so viel wie die durchschnittliche Zeit, welche eine Komponente benötigt, um sich nach einem Fehler wieder herzustellen. Die MTTR in einen RAID-5 berechnet sich aus der Zeit bis eine Ersatzfestplatte installiert ist und der Disk Wiederherstellungszeit. 
+MTTR  ist die Abkürzung von "'Mean Time To Recovery"' und bedeutet so viel wie die durchschnittliche Zeit, welche eine Komponente benötigt, um sich nach einem Fehler wieder herzustellen. Die MTTR in einen RAID-5 berechnet sich aus der Zeit bis eine Ersatzfestplatte installiert ist und der Disk Wiederherstellungszeit. 
 
 \begin{equation}
 MTTR_{RAID}=Replacement+Rebuild_{RAID}
@@ -52,7 +52,7 @@ Für die Ist-Analyse stehen keine aussagekräftigen Statistiken für die Disk Wi
 
 
 \section{MTBF}
-MTBF ist die Abkürzung von "Mean Time Between Failure"' und bedeutet so viel wie die durchschnittliche Betriebszeit einer Komponenten bis ein Fehler eintritt. Hersteller von Festplatten geben diesen Wert an, um die durchschnittliche Lebensdauer einer Festplatte zu beschreiben. 
+MTBF ist die Abkürzung von "'Mean Time Between Failure"' und bedeutet so viel wie die durchschnittliche Betriebszeit einer Komponenten bis ein Fehler eintritt. Hersteller von Festplatten geben diesen Wert an, um die durchschnittliche Lebensdauer einer Festplatte zu beschreiben. 
 
 Die MTBF mit n Festplatten berechnet man in einem RAID-5 \cite{Chen1994} wie folgt:
 \begin{equation}
@@ -71,12 +71,12 @@ Die Verfügbarkeit wird aus dem Verhältnis der verfügbaren Zeit (Updatime) und
 \end{equation}
 
 \section{Datenverfügbarkeit}
-Die Datenverfügbarkeit beschreibt die vom Hardware Speicherhersteller und dem Serviceanbieter als Speicherdienstleister "'Storage Service Provider (SSP)"'  gewährleistete Verfügbarkeit der Daten und die zugesicherte Antwortzeit beim Datenzugriff während dem Normalbetrieb \cite{TechTarget2001}.
+Die Datenverfügbarkeit beschreibt die vom Hardware Speicherhersteller und dem Serviceanbieter als Speicherdienstleister "'Storage Service Provider (SSP)"'  gewährleistete Verfügbarkeit der Daten und die zugesicherte Antwortzeit beim Datenzugriff während dem Normalbetrieb. \cite{TechTarget2001}
 
 In dieser Arbeit wird der Begriff dazu verwendet, die gewährleistete Verfügbarkeit für den Datenzugriff des Speichersystems zu beschreiben. Die Datenverfügbarkeit aus der Sicht des Endbenutzers der Webapplikation wird mit diesen Begriff nicht definiert. 
 
 \section{Hochverfügbarkeit}
-Die Autorin Andrea Held beschreibt in Ihren Buch den Begriff "Hochverfügbar" wie folgt:
+Die Autorin Andrea Held beschreibt in Ihren Buch den Begriff "'Hochverfügbar"' wie folgt:
 \begin{quotation}\em
 Ein System gilt als hochverfügbar, wenn eine Anwendung auch im Fehlerfall weiterhin verfügbar ist und ohne unmittelbaren menschlichen Eingriff weiter genutzt werden kann. In der Konsequenz heisst dies, dass der Anwender kein oder nur eine kurze Unterbrechung wahrnimmt.\end{quotation}\cite{Held2004}
 
@@ -96,7 +96,7 @@ In der Arbeit werden zur Verfügbarkeitsbestimmung die Verfügbarkeitsklassen vo
 
 \section{Daten Integrität}
 Daten können durch Manipulationen oder durch Bit Fehler verfälscht werden. Solche Verfälschungen können zu Informationsverlust in den Daten bis hin zu vollständigen Korruption der Daten führen. 
-Bernd Panzer-Steindel hat zusammen mit Tim Bell, Olof Barring und Peter Kelment am CERN die Integrität von Daten untersucht. Ihre Untersuchung hat gezeigt, dass die Fehlerrate auf dem Niveau von $10^{-7}$ liegt, und hat verschiedene Ursprünge. Eine Ursprung stellt die Festplatte selbst dar, für den Untersuch haben Sie auf 3000 Server alle zwei Stunden ein 2 Gigabyte Datei mit einen speziellen Bit Muster geschrieben, neu eingelesen und mit dem Muster verglichen. Nach einer Laufzeit von 5 Wochen hatten es 500 Fehler auf 100 Server gegeben.\cite{Panzer-steindel2007}
+Bernd Panzer-Steindel hat zusammen mit Tim Bell, Olof Barring und Peter Kelment am CERN die Integrität von Daten untersucht. Ihre Untersuchung hat gezeigt, dass die Fehlerrate auf dem Niveau von $10^{-7}$ liegt, und hat verschiedene Ursprünge. Eine Ursprung stellt die Festplatte selbst dar, für den Untersuch haben Sie auf 3000 Server alle zwei Stunden ein 2 Gigabyte Datei mit einen speziellen Bit Muster geschrieben, neu eingelesen und mit dem Muster verglichen. Nach einer Laufzeit von 5 Wochen hatten es 500 Fehler auf 100 Server gegeben. \cite{Panzer-steindel2007}
 
 \section{Standortübergreifend}
 Für die Gefahren von Datenverlust oder den Verlust der Verfügbarkeit bei einen Ausfall eines Standort zu vermeiden, werden die Daten Standort übergreifend verfügbar gemacht. Häufig werden dazu die Daten an zwei Standort gleichzeitig geschrieben und optional an einen dritten weiter entfernten Standort zeitversetzt geschrieben. 

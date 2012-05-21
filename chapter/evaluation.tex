@@ -14,9 +14,11 @@ Die Kriterien sind für die späteren Verweise hierarchisch nummeriert.
 
 \subsection{Haupt Soll-Kriterien festlegen}
 Die Hauptkriterien sind in der obersten Hierarchie-Ebene dargestellt und werden durch ihre Unterkriterien weiter verfeinert und definiert.
+
+\renewcommand{\theparagraph}{Soll-\arabic{paragraph}}
 \setcounter{paragraph}{0}
-\renewcommand\theparagraph{Soll-\arabic{paragraph}}
 \paragraph{Kosten}\label{Soll-1}
+
 Die Kosten sollen einen gewinnbringenden Betrieb ermöglichen. 
 
 \paragraph{Verfügbarkeit}\label{Soll-2}
@@ -34,11 +36,13 @@ Der beschriebene Datenschutz soll jederzeit gewährleistet sein. Entscheidend is
 \paragraph{Technologie}\label{Soll-6}
 asdf
 
+
 \subsection{Unter Soll-Kriterien festlegen}
 Die Unterkriterien mit der gleichen Nummer-Ebene gehören zum selben Oberkriterium und werden später bei der Kriteriengewichtung nur untereinander direkt verglichen.
 
-\setcounter{paragraph}{0}
+
 \renewcommand\theparagraph{Soll-1-\arabic{paragraph}}
+\setcounter{paragraph}{0}
 
 \paragraph{Anschaffungskosten}\label{Soll-1-1}
 
@@ -46,8 +50,9 @@ Die Unterkriterien mit der gleichen Nummer-Ebene gehören zum selben Oberkriteri
 
 \paragraph{Nachhaltigkeit}\label{Soll-1-3}
 
-\setcounter{paragraph}{0}
+
 \renewcommand\theparagraph{Soll-2-\arabic{paragraph}}
+\setcounter{paragraph}{0}
 
 \paragraph{Redundanz}\label{Soll-2-1}
 Die redundante Haltung von aktiven Daten, welche gelesen und manipuliert werden können, ermöglicht eine höhere Verfügbarkeit der Daten, z.B. beim Ausfall einer Systemkomponente. Die doppelte Datenhaltung wie sie bei der Datensicherung oder Archivierung entsteht, fällt nicht unter den Begriff "redundante Daten", da diese nicht direkt zur Erhöhung der Datenverfügbarkeit beiträgt. Die Speicherlösung sollte die Daten mindestens doppelt, oder wenn möglich dreifach redundant halten. 
@@ -59,8 +64,9 @@ Die verbesserte Systemverfügbarkeit, wird durch Software- oder Hardware-Redunda
 \paragraph{Standort-übergreifend}\label{Soll-2-3}
 Die aktiven Daten sollen nach Möglichkeit an mindesten zwei voneinander getrennten Standorten gespeichert werden, um den Dienst auch im Falle des Ausfalls eines Rechenzentrums aufrecht erhalten zu können.
 
-\setcounter{paragraph}{0}
+
 \renewcommand\theparagraph{Soll-3-\arabic{paragraph}}
+\setcounter{paragraph}{0}
 
 \paragraph{Skalierbarkeit}\label{Soll-3-1}
 Die Speicherlösung sollte bei Bedarf den Speicher gleichzeitig an bis zu 30 Serversysteme zur Verfügung stellen können.
@@ -77,8 +83,9 @@ Das gleichzeitige Lesen desselben Objektes von zwei oder mehreren Serversystemen
 \paragraph{Simulataner Schreibzugriff auf Objekte}\label{Soll-3-5}
 Das gleichzeitige Schreiben auf dasselbe Objekte von zwei oder mehreren Serversystemen soll optional möglich sein.
 
-\setcounter{paragraph}{0}
+
 \renewcommand\theparagraph{Soll-4-\arabic{paragraph}}
+\setcounter{paragraph}{0}
 
 \paragraph{Skalierbarkeit}\label{Soll-4-1}
 
@@ -88,8 +95,9 @@ Das Speicherlösung soll die Anzahl der speicherbaren Objekte gemäss den Soll-S
 \paragraph{Max Objektgrösse von bis zu 2 GB}\label{Soll-4-3}
 Das Speichersystem muss die Speicherung von Objekten mit einer Speichergrösse von bis zu 2 GigaByte unterstützen.
 
-\setcounter{paragraph}{0}
+
 \renewcommand\theparagraph{Soll-5-\arabic{paragraph}}
+\setcounter{paragraph}{0}
 
 \paragraph{Datenintegrität}\label{Soll-5-1}
 Die Datenintegrität der gespeicherten Daten soll gewährleistet sein.
@@ -103,8 +111,9 @@ Die gespeicherten Daten sollen mit einem effizienten Sicherungsverfahren gesiche
 \paragraph{Datensicherheit}\label{Soll-5-4}
 Die Datenzugriffsberechtigung wird in der Applikation implementiert. Die Speicherlösung soll zudem sicherstellen, dass die Daten nicht von unerlaubten Dritten gelesen oder manipuliert werden können (physischer und logischer Zugriffsschutz).
 
-\setcounter{paragraph}{0}
+
 \renewcommand\theparagraph{Soll-6-\arabic{paragraph}}
+\setcounter{paragraph}{0}
 
 \paragraph{Marktverbreitung / Marktchancen}\label{Soll-6-1}
 Die Speicherlösung soll im Markt etabliert sein oder Tendenzen aufweisen, welche in den nächsten fünf Jahren die Verbreiterung im Markt wahrscheinlich erscheinen lässt.
@@ -124,8 +133,9 @@ Die Speichertechnologie soll ausgereift und stabil laufen. Eine Implementierung 
 \section{KO-Kriterien}
 Die KO-Kriterien sind Muss-Kriterien, welche von dem gewählten Speichersystem erfüllt werden müssen. Speichersysteme welche die KO-Kriterien nicht erfüllen, werden bei der AHP-Evaluation ausgeschlossen. Die KO-Kriterien wurde mit dem Auftraggeber besprochen und vereinbart.
 
-\setcounter{paragraph}{0}
+
 \renewcommand\theparagraph{KO-\arabic{paragraph}}
+\setcounter{paragraph}{0}
 
 \paragraph{Dateigrösse bis 2 Gigibyte}\label{KO-1}
 Die Speicherung von Dateien muss eine Objektgrösse von bis zu 2 Gibibyte erlauben.
@@ -141,8 +151,9 @@ Mit dem Auftraggeber wurde definiert, dass für die Speicherlösungen, SAN, NAS,
 
 Die Alternativen/ Vertreter sind für die späteren Verweise nummeriert.
 
-\setcounter{paragraph}{0}
 \renewcommand\theparagraph{Al-\arabic{paragraph}}
+\setcounter{paragraph}{0}
+
 \paragraph{Hetzner}\label{Al-1}
 Dedizierte Webserver zählen im engeren Sinn nicht als reine Speicherlösungen. Der deutsche Hosting-Anbieter Hetzner bietet allerdings dedizierte Webserver mit der in Szenario 1 geforderten Speicherkapazität (siehe \refsec{Szenario-1}). Die bestehende Lösung wurde mit Hetzner Webserver realisiert. Hetzner als dedizierter Webserver Anbieter wurde deshalb auch berücksichtigt. 
 
