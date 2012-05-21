@@ -1,4 +1,12 @@
+%\input{meta}
 \input{template.config.tex}
+
+% Meta-Informationen -----------------------------------------------------------
+%   Informationen über das Dokument, wie z.B. Titel, Autor, Matrikelnr. etc
+%   werden in der Datei meta.tex definiert und können danach global
+%   verwendet werden.
+% ------------------------------------------------------------------------------
+
 
 \begin{document}
 
@@ -14,14 +22,15 @@
 \setcounter{page}{1}
 
 \phantomsection
- %\input{tables} %tableofcontents
+ \input{tables} %tableofcontents
 \cleardoublepage
 
 \mainmatter
 \pagenumbering{arabic}
-%\setcounter{page}{1}
+\setcounter{page}{1}
 % Load at the beginngin that we can use it
 \input{chapter/glossar}
+
 
 \input{chapter/vorwort}
 \input{chapter/zusammenfassung}
@@ -56,8 +65,6 @@
 % \printglossary[type=symbolslist,style=long]
 
 % Literatur
-%\bibliographystyle{plainnat}
-
 \bibliographystyle{gerplain}
 \bibliography{library.bib}
 % \input{Index}

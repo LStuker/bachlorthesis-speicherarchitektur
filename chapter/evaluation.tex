@@ -32,7 +32,7 @@ Die Speicherkapazität soll die Speicheranforderungen der verschiedenen Szenerie
 Der beschriebene Datenschutz soll jederzeit gewährleistet sein. Entscheidend ist der Schutz gegen die unerlaubte Veränderung von Daten. Für den Auftraggeber wichtig ist die laufende Sicherung der Daten, um den Verlust von Daten zu verhindern.
 
 \paragraph{Technologie}\label{Soll-6}
-asdf
+Die Technologie bzw. das Produkt soll im Markt verbreitet sein, oder die Aussicht auf eine zukünftige Verbreitung im Markt. Zudem sollte die Technologie ausgereift sein, damit eine stabiler Betrieb gewährleistet ist. Nach Möglichkeit sollten genügen Experten verfügbar sein die sich mit der Technologie auskennen.
 
 \subsection{Unter Soll-Kriterien festlegen}
 Die Unterkriterien mit der gleichen Nummer-Ebene gehören zum selben Oberkriterium und werden später bei der Kriteriengewichtung untereinander direkt verglichen.
@@ -48,7 +48,7 @@ Zu den Unterhaltskosten zählen sämtliche anfallenden Kosten für den Betrieb u
 
 \paragraph{Nachhaltigkeit}\label{Soll-1-3}
 Die Gesamtkosten (Anschaffung und Unterhalt) soll auf drei Jahre für alle Varianten gerechnet werden. Dabei soll auf eine gute Qualität der Komponenten für den Betrieb über 5 Jahre geachtet werden. Eine nachhaltige Planung steht im Vordergrund. Im Vergleich sollen sowohl die Anschaffungskosten und die Betriebskosten separat und auch insgesamt (TCO über 3 Jahre) verglichen werden.
-Die Gesamtkosten sollten 50% der Einnahmen aus derselben Periode (3 Jahre) nicht übersteigen, damit ein langjähriger Betrieb wirtschaftlich realisierbar ist. Je tiefer die Gesamtkosten bei gleichbleibender Qualität, umso besser die Bewertung.
+Die Gesamtkosten sollten 50 \% der Einnahmen aus derselben Periode (3 Jahre) nicht übersteigen, damit ein langjähriger Betrieb wirtschaftlich realisierbar ist. Je tiefer die Gesamtkosten bei gleichbleibender Qualität, umso besser die Bewertung.
 
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Soll-2-\arabic{paragraph}}
@@ -90,7 +90,7 @@ Das gleichzeitige Schreiben auf dasselbe Objekte von zwei oder mehreren Serversy
 Das Speicherlösung soll die Anzahl der speicherbaren Objekte gemäss den Soll-Szenarien unterstützen. 
 
 \paragraph{Max Objektgrösse von bis zu 2 GB}\label{Soll-4-3}
-Das Speichersystem muss die Speicherung von Objekten mit einer Speichergrösse von bis zu 2 GigaByte unterstützen.
+Das Speichersystem muss die Speicherung von Objekten mit einer Speichergrösse von bis zu 2 Gigabyte unterstützen.
 
 \setcounter{paragraph}{0}
 \renewcommand\theparagraph{Soll-5-\arabic{paragraph}}
@@ -161,12 +161,12 @@ Als Vertreter für Block Speicherlösung wurde ebenfalls die NetApp FAS2240-4 ge
 Als Vertreter für verteilten Speicher war ursprünglich Hadoop HDFS vorgesehen. In der aktuellen Version ist der Name-Node von HDFS noch ein Single Point of Failure (SPOF). Zudem liegen die Stärken bei HDFS bei den Datenprozessen für gespeicherte Objekte mittels MapReduce Algorithmus. Aus diesem Grund wurden weitere verteilte Dateisystem untersucht, wie etwa GlusterFS und OpenStack Object Storage. OpenStack Object Storage soll von der Architektur vergleichbar sein wie Amazon S3. Bei gewichtigen Online Speicheranbieter wird RackSpace erfolgreich eingesetzt. Ein weiterer Grund die für OpenStack Object Storage spricht, ist das gelungene quelloffene Projekt, das viele namhafte IT-Hersteller als Partner gewinnen konnte.
 
 \paragraph{Amazon S3}\label{Al-5}
-Amazon S3 wurde als Representant für Online Speicherlösungen gewählt. Amazon S3 ist gemäss \refsec{MartkEtabliert} einer der etabliertesten Anbieter, wenn nicht die erfolgreichste Online Speicherlösung zur Zeit. Amazon betreibt mehrere Rechenzentrum verteilt auf mehrere Kontinenten. Für den Auftraggeber würde das Europäische Rechenzentrum in Frage kommen.
+Amazon S3 wurde als Representant für Online Speicherlösungen gewählt. Amazon S3 ist gemäss \refsec{ref:MartkEtabliert} einer der etabliertesten Anbieter, wenn nicht die erfolgreichste Online Speicherlösung zur Zeit. Amazon betreibt mehrere Rechenzentrum verteilt auf mehrere Kontinenten. Für den Auftraggeber würde das Europäische Rechenzentrum in Frage kommen.
 
 
 \subsection{Gewichtung der Soll-Kriterien mit AHP}
 
-In diesem Abschnitt werden alle Soll-Kriteren der gleichen Hierarchie-Ebene bzw. gleichen Unter-Kriterien paarweise miteinander verglichen und mit der Skala \reftab{tab:Gewichtsberechnung} aus dem \refchap{kab:Entscheidungsfindung} gewichtet.
+In diesem Abschnitt werden alle Soll-Kriteren der gleichen Hierarchie-Ebene bzw. gleichen Unter-Kriterien paarweise miteinander verglichen und mit der Skala \reftab{tab:9PBewertungsskala} aus dem \refchap{kab:Entscheidungsfindung} gewichtet.
 
 % Vergleich mit Kosten
 \paragraph*{\refsoll{Soll-1} verglichen mit \refsoll{Soll-2} (\ref{Soll-1}/\ref{Soll-2})} 
@@ -196,7 +196,7 @@ Wie in den anderen Vergleichen ist sicherzustellen, dass die Web-Applikation ren
 
 % Vergleich mit Verfügbarkeit
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-3}}
-Aus Sicht des Anwenders ist die Verfügbarkeit der Daten höher zu gewichten als der möglichst schnelle Zugriff oder die Art und Weise wie der Zugriff stattfindet. Allerdings kann eine lange Wartezeit beim Ausliefern der Daten für den Anwender ebenfalls als "nicht verfügbar" empfunden werden.  Es ist daher wichtig, dass der Zugriff auch vom Speichersystem effizient bewältig werden kann. Die Verfügbarkeit ist deshalb gleich bis etwas grösser zu gewichten als der Datenzugriff.
+Aus Sicht des Anwenders ist die Verfügbarkeit der Daten höher zu gewichten als der möglichst schnelle Zugriff oder die Art und Weise wie der Zugriff stattfindet. Allerdings kann eine lange Wartezeit beim Ausliefern der Daten für den Anwender ebenfalls als "'nicht verfügbar"' empfunden werden.  Es ist daher wichtig, dass der Zugriff auch vom Speichersystem effizient bewältig werden kann. Die Verfügbarkeit ist deshalb gleich bis etwas grösser zu gewichten als der Datenzugriff.
 
 \textbf{Gewichtung: 2}
 
@@ -273,7 +273,7 @@ Wie nach der Gewichtung und in der \reftab{tab:AHPKosten} zu entnehmen ist, habe
 Die Paarvergleiche im Detail:
 
 \paragraph*{\refsoll{Soll-1-1} verglichen mit \refsoll{Soll-1-2} (\ref{Soll-1-1}/\ref{Soll-1-2})}
-Die Betriebskosten sind der Hauptkostenfakor in der Lebenszeit eines Informations-Systems. Gemäss Gartner fielen die weltweiten IT-Kosten im Jahr 2011 um 20\% für Computer Hardware und um 43\% für IT-Serviceleistungen. Zudem steigen die Kosten zum Beispiel von Disk Array Speicher nach Ablauf der ordentlichen vom Hersteller gewährleisteten Wartung, wegen teuren weiterführenden Wartungsverträge stark an.
+Die Betriebskosten sind der Hauptkostenfakor in der Lebenszeit eines Informations-Systems. Gemäss Gartner fielen die weltweiten IT-Kosten im Jahr 2011 um 20 \% für Computer Hardware und um 43 \% für IT-Serviceleistungen. Zudem steigen die Kosten zum Beispiel von Disk Array Speicher nach Ablauf der ordentlichen vom Hersteller gewährleisteten Wartung, wegen teuren weiterführenden Wartungsverträge stark an.
 Aus diesem Grund sind die Anschaffungskosten im Vergleich zu den Unterhaltskosten erheblich geringer zu gewichten.
 
 \textbf{Gewichtung: 1/5}
@@ -602,10 +602,7 @@ Die \refabb{abb:Hetzner-Infrastruktur} zeigt den gemieteten Hetzner Server mit d
 \mycaption{figure}{\label{abb:Hetzner-Infrastruktur} Dezidierter Server System und Netzwerk Architektur }
 \end{center}
 
-\begin{center}
-\includegraphics[width=\linewidth, keepaspectratio = true]{media/HetznerRAID.png}
-\mycaption{figure}{\label{abb:HetznerRaidSpeicher} Interne Speicherarchitektur }
-\end{center}
+
 
 \subsubsection*{Speicherkapazität}
 Der grösste dedizierte Server, welcher Hetzner in seinem Produktkatalog führt, ist der Root-Server XS 29. Der XS 29 ist mit 15 mal 3 Terabyte SATA Festplatten ausgerüstet. Mit dem zusätzlich eingebauten Hardware-RAID-Controller lassen sich die 15 Festplatten zu einen RAID zusammenfügen.
@@ -637,6 +634,11 @@ Da es sich nur um ein Server System handelt, ist ein standortübergreifende Verf
 Der Datenzugriff findet lokal über POSIX IO statt, dass heisst das die Web-Applikation auf dem selben Server betrieben wird. 
 
 Der Lese- und Schreibzugriff ist auf den Server begrenzt. Theoretisch könnte der Speicher mit Protokollen wie NFS zwischen mehreren Systemen geteilt werden. Es handelt sich beim System um einen Miet-Server. Es kann deshalb nicht davon ausgegangen werden, dass weitere Miet-Server am selben Netzwerk-Knoten angeschlossen sind, oder sich sogar im gleichen Rechenzentrum befinden. Es muss aus diesen Gründen mit einer schlechten Bandbreite mit hoher Latenz zwischen den Systemen gerechnet werden, was die Teilung des Speichers aus Performancegründen unbefriedigend macht.
+
+\begin{center}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/HetznerRAID.png}
+\mycaption{figure}{\label{abb:HetznerRaidSpeicher} Interne Speicherarchitektur }
+\end{center}
 
 \subsubsection*{Datenschutz}
 Die Integrität der Daten wird nur auf RAID Ebene sichergestellt und nicht auf Objekt-Ebene. Die Selbstheilung von Objekten wird nicht unterstützt.
