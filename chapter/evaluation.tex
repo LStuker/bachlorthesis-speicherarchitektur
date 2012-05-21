@@ -161,7 +161,7 @@ Als Vertreter für Block Speicherlösung wurde ebenfalls die NetApp FAS2240-4 ge
 Als Vertreter für verteilten Speicher war ursprünglich Hadoop HDFS vorgesehen. In der aktuellen Version ist der Name-Node von HDFS noch ein Single Point of Failure (SPOF). Zudem liegen die Stärken bei HDFS bei den Datenprozessen für gespeicherte Objekte mittels MapReduce Algorithmus. Aus diesem Grund wurden weitere verteilte Dateisystem untersucht, wie etwa GlusterFS und OpenStack Object Storage. OpenStack Object Storage soll von der Architektur vergleichbar sein wie Amazon S3. Bei gewichtigen Online Speicheranbieter wird RackSpace erfolgreich eingesetzt. Ein weiterer Grund die für OpenStack Object Storage spricht, ist das gelungene quelloffene Projekt, das viele namhafte IT-Hersteller als Partner gewinnen konnte.
 
 \paragraph{Amazon S3}\label{Al-5}
-Amazon S3 wurde als Representant für Online Speicherlösungen gewählt. Amazon S3 ist gemäss \refsec{ref:MartkEtabliert} einer der etabliertesten Anbieter, wenn nicht die erfolgreichste Online Speicherlösung zur Zeit. Amazon betreibt mehrere Rechenzentrum verteilt auf mehrere Kontinenten. Für den Auftraggeber würde das Europäische Rechenzentrum in Frage kommen.
+Amazon S3 wurde als Representant für Online Speicherlösungen gewählt. Amazon S3 ist gemäss \refsec{sec:MarktEtabliert} einer der etabliertesten Anbieter, wenn nicht die erfolgreichste Online Speicherlösung zur Zeit. Amazon betreibt mehrere Rechenzentrum verteilt auf mehrere Kontinenten. Für den Auftraggeber würde das Europäische Rechenzentrum in Frage kommen.
 
 
 \subsection{Gewichtung der Soll-Kriterien mit AHP}
@@ -585,7 +585,7 @@ Der Verwaltungskomfort ist deshalb absolut geringer zu gewichten als die ausgere
 \textbf{Ausgereift (A)} & 9 & 5 & 7 & 9 & 1 & 0.588 \\ \hline
 \textbf{Konsistenz Kennzahl} & \multicolumn{1}{r|}{0.094} \\ \cline{1-2}
 \end{tabular}
-\label{AHPTechnologie}
+\label{tab:AHPTechnologie}
 \end{table}
 
 
@@ -976,7 +976,7 @@ Personal & CHF 15'000.00 & 1 & CHF 15'000.00 \\ \hline \hline
  \multicolumn{ 3}{r|}{\textbf{Total Gesamt:}} & \textbf{CHF 653'646.50} \\ \cline{4-4}
 \end{tabular}
 \end{small}
-\label{KostenOpenStackS1}
+\label{tab:KostenOpenStackS1}
 \end{table}
 
 
@@ -1024,7 +1024,7 @@ Für die Berechnung der Gesamt Watt-Leistung fehlen die Angaben des Herstellers.
 \label{eqn:AnzahlWattPaketeS2}
 \end{equation}
 
-Wie aus der \reftab{tab:KostenOpenStackS1} ersichtlich ist, betragen die Gesamtkosten 916'965.00 CHF.
+Wie aus der \reftab{tab:KostenOpenStackS2} ersichtlich ist, betragen die Gesamtkosten 916'965.00 CHF.
 
 \begin{table}[htbp]
 \caption{Kosten OpenStack}
@@ -1096,25 +1096,25 @@ Die API von Amazon ist gut dokumentiert, weshalb für einen erfahrenen Entwickle
 \subsubsection*{Speicherkapazität}
 Für die Skalierung der Speicherkapazität kümmert sich Amazon.
 
-Im Amazon S3 können eine unbegrenzte Anzahl von Objekten gespeichert werden, welche eine Speichergrösse von 1 Byte bis zu 5 Terrabyte haben können. In einem PUT können maximal 5 Gigabyte hochgeladen werden. Für das Hochladen von grösseren Objekten muss die Multipart Funktion verwendet werden, welche das Objekte in mehrere Teilen gliedert und hochladet.\cite{Amazon2012b}
+Im Amazon S3 können eine unbegrenzte Anzahl von Objekten gespeichert werden, welche eine Speichergrösse von 1 Byte bis zu 5 Terrabyte haben können. In einem PUT können maximal 5 Gigabyte hochgeladen werden. Für das Hochladen von grösseren Objekten muss die Multipart Funktion verwendet werden, welche das Objekte in mehrere Teilen gliedert und hochladet. \cite{Amazon2012b}
 
 \subsubsection*{Datenschutz}
-Die Daten können bei Amazon in mehren Regionen gespeichert werden. Zu den verfügbaren Regionen gehören, US Standard, US West (Oregon), US West (Northern California), EU (Ireland), Asia Pacific (Singapore), Asia Pacific (Tokyo), South America (Sao Paulo). Gemäss Amazon verlassen die gespeicherten Daten eine Region nicht, ausser für die Erfüllung von Gesetzen oder auf Anforderung einer Regierung. Als US amerikanisches Unternehmen steht Amazon wegen dem Patriot Act unter der Pflicht, den US-Behörden auf Anforderung Zugang zu den Daten zu gewährleisten, auch wenn diese Informationen ausserhalb der USA gespeichert sind. Gemäss EU Recht dürfen ohne Einverständnis der Behörden keine gespeicherten Informationen an Dritten zugänglich gemacht werden, auch nicht solche Daten die ausserhalb der EU gespeichert sind. Bei Microsoft, ebenfalls ein grosser Cloud-Anbieter bestätigt diese Regel, dass die Daten nicht vor dem Zugriff der USA geschützt sind.\cite{Amazon2012}\cite{Ostler}
+Die Daten können bei Amazon in mehren Regionen gespeichert werden. Zu den verfügbaren Regionen gehören, US Standard, US West (Oregon), US West (Northern California), EU (Ireland), Asia Pacific (Singapore), Asia Pacific (Tokyo), South America (Sao Paulo). Gemäss Amazon verlassen die gespeicherten Daten eine Region nicht, ausser für die Erfüllung von Gesetzen oder auf Anforderung einer Regierung. Als US amerikanisches Unternehmen steht Amazon wegen dem Patriot Act unter der Pflicht, den US-Behörden auf Anforderung Zugang zu den Daten zu gewährleisten, auch wenn diese Informationen ausserhalb der USA gespeichert sind. Gemäss EU Recht dürfen ohne Einverständnis der Behörden keine gespeicherten Informationen an Dritten zugänglich gemacht werden, auch nicht solche Daten die ausserhalb der EU gespeichert sind. Bei Microsoft, ebenfalls ein grosser Cloud-Anbieter bestätigt diese Regel, dass die Daten nicht vor dem Zugriff der USA geschützt sind. \cite{Amazon2012}\cite{Ostler}
 
 Die Integrität der Daten wird mit einer Prüfsumme sichergestellt. Die gespeicherten Daten werden von Amazon regelmässig auf ihre Integrität geprüft und bei Bedarf von einer integren Kopie der Daten ersetzt. 
 
-Die Daten können verschlüsselt per SSL zugegriffen bzw. gespeichert werden. Somit ist gewährleistet, dass Dritte die Daten beim Transport nicht lesen können. Seit 2011 bietet Amazon kostenlos ebenfalls die Verschlüsselung mit AES-256 von Objekten im Speicher an. Dabei wird jedes Objekt mit einem eigenen Schlüssel ver- und entschlüsselt. Die erzeugten Schlüssel werden mit einem Master-Schlüssel ebenfalls verschlüsselt und auf den Amazon-Servern gespeichert. Das Schlüsselmanagment bleibt jedoch bei Amazon, weshalb man abhängig von den Massnahmen zum Schutz des Schlusselmanagment ist die Amazon alleine trifft. Wird diese kompromitiert oder fällt sie aus, ist der Zugriff auf die verschlüsselten Daten nicht mehr möglich.\cite{RobertLippert2011}
+Die Daten können verschlüsselt per SSL zugegriffen bzw. gespeichert werden. Somit ist gewährleistet, dass Dritte die Daten beim Transport nicht lesen können. Seit 2011 bietet Amazon kostenlos ebenfalls die Verschlüsselung mit AES-256 von Objekten im Speicher an. Dabei wird jedes Objekt mit einem eigenen Schlüssel ver- und entschlüsselt. Die erzeugten Schlüssel werden mit einem Master-Schlüssel ebenfalls verschlüsselt und auf den Amazon-Servern gespeichert. Das Schlüsselmanagment bleibt jedoch bei Amazon, weshalb man abhängig von den Massnahmen zum Schutz des Schlusselmanagment ist die Amazon alleine trifft. Wird diese kompromitiert oder fällt sie aus, ist der Zugriff auf die verschlüsselten Daten nicht mehr möglich. \cite{RobertLippert2011}
 
-Die Berechtigung auf gespeicherte Objekte oder Ordner können mit einem Rechte-Management verwaltet werden. Objekte können öffentlich zugänglich gemacht werden oder nur an bestimmte authentifizierte Benutzer zur Verfügung gestellt werden. Zudem lassen sich Zugriffe auf Objekte protokollieren.\cite{Amazon2012b}
+Die Berechtigung auf gespeicherte Objekte oder Ordner können mit einem Rechte-Management verwaltet werden. Objekte können öffentlich zugänglich gemacht werden oder nur an bestimmte authentifizierte Benutzer zur Verfügung gestellt werden. Zudem lassen sich Zugriffe auf Objekte protokollieren. \cite{Amazon2012b}
 
 Für die Berechtigung und Verwaltung stellt Amazon ein Web-GUI zur Verfügung. Bis auf das Eröffnen eines Speichers und die Initialberechtigung sollten voraussichtlich nicht weitere Verwaltungsaufgaben anfallen.
 
 Amazon bietet neben der Redundanz der Objekte kein weiteres Sicherungsverfahren an. Beim Herunterladen der Daten fallen für den Transfer zusätzliche Kosten an.
 
 \subsubsection*{Technologie}
-Der Online Speicher von Amazon S3 gilt als ausgereiftes und etabliertes Produkt im Markt. Es kann davon ausgegangen werden, dass die Dienstleistung über die nächsten vier Jahre hinaus bestehen wird und für den Kunden keine Migration notwendig ist. Amazon S3 wird ebenfalls von SmugMug, ein Photodienstleister, verwendet oder andere bekannte Web-Applikationen wie Dropbox verwendet.\cite{SmugMug}\cite{Dropbox2011}
+Der Online Speicher von Amazon S3 gilt als ausgereiftes und etabliertes Produkt im Markt. Es kann davon ausgegangen werden, dass die Dienstleistung über die nächsten vier Jahre hinaus bestehen wird und für den Kunden keine Migration notwendig ist. Amazon S3 wird ebenfalls von SmugMug, ein Photodienstleister, verwendet oder andere bekannte Web-Applikationen wie Dropbox verwendet. \cite{SmugMug}\cite{Dropbox2011}
 
-Der Online-Speicher-Markt ist im Verhältnis zu anderen Speichermärkten noch relativ jung. Analysten wie Jeff Boles gehen davon aus, dass der Online-Speicher-Markt in den nächsten Jahren stark wachsen wird. Wie in der Marktstudie beschrieben, konnte Amazon seit dem Start des Amazon S3 Produktes die Anzahl gespeicherte Objekte jeweils pro Jahr mehr als verdoppeln (sie dazu \refabb{abb:AnzahlObjekteAmazonS3}). Die Konkurrenz wie Google, Microsoft oder Rackspace machen Amazon den Markt streitig. Der Kunden darf hoffen, dass die Anbieter ihre Preise noch spitzer kalkulieren müssen, um konkurrenzfähig zu bleiben. Amazon hat die Preise für S3 Speicher erst kürzlich angepasst.\cite{Boles2011}\cite{Barr2012a}
+Der Online-Speicher-Markt ist im Verhältnis zu anderen Speichermärkten noch relativ jung. Analysten wie Jeff Boles gehen davon aus, dass der Online-Speicher-Markt in den nächsten Jahren stark wachsen wird. Wie in der Marktstudie beschrieben, konnte Amazon seit dem Start des Amazon S3 Produktes die Anzahl gespeicherte Objekte jeweils pro Jahr mehr als verdoppeln (sie dazu \refabb{abb:AnzahlObjekteAmazonS3}). Die Konkurrenz wie Google, Microsoft oder Rackspace machen Amazon den Markt streitig. Der Kunden darf hoffen, dass die Anbieter ihre Preise noch spitzer kalkulieren müssen, um konkurrenzfähig zu bleiben. Amazon hat die Preise für S3 Speicher erst kürzlich angepasst. \cite{Boles2011}\cite{Barr2012a}
 
 
 \subsubsection*{Kosten}
