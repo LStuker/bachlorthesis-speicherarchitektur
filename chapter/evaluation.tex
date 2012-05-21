@@ -196,7 +196,7 @@ Wie in den anderen Vergleichen ist sicherzustellen, dass die Web-Applikation ren
 
 % Vergleich mit Verfügbarkeit
 \paragraph*{\refsoll{Soll-2} verglichen mit \refsoll{Soll-3}}
-Aus Sicht des Anwenders ist die Verfügbarkeit der Daten höher zu gewichten als der möglichst schnelle Zugriff oder die Art und Weise wie der Zugriff stattfindet. Allerdings kann eine lange Wartezeit beim Ausliefern der Daten für den Anwender ebenfalls als "'nicht verfügbar"' empfunden werden.  Es ist daher wichtig, dass der Zugriff auch vom Speichersystem effizient bewältig werden kann. Die Verfügbarkeit ist deshalb gleich bis etwas grösser zu gewichten als der Datenzugriff.
+Aus Sicht des Anwenders ist die Verfügbarkeit der Daten höher zu gewichten als der möglichst schnelle Zugriff oder die Art und Weise wie der Zugriff stattfindet. Allerdings kann eine lange Wartezeit beim Ausliefern der Daten für den Anwender ebenfalls als "'nicht verfügbar"' empfunden werden. Es ist daher wichtig, dass der Zugriff auch vom Speichersystem effizient bewältig werden kann. Die Verfügbarkeit ist deshalb gleich bis etwas grösser zu gewichten als der Datenzugriff.
 
 \textbf{Gewichtung: 2}
 
@@ -256,12 +256,12 @@ Für den langfristigen Betrieb ist es wichtig, dass die Technologie laufend den 
 \multicolumn{ 8}{|c|}{\textbf{Top Kriterien}} \\ \hline
  & \multicolumn{1}{l|}{\textbf{K}} & \multicolumn{1}{l|}{\textbf{V}} & \multicolumn{1}{l|}{\textbf{D}} & \multicolumn{1}{l|}{\textbf{S}} & \multicolumn{1}{l|}{\textbf{Ds}} & \multicolumn{1}{l|}{\textbf{T}} & \multicolumn{1}{l|}{\textbf{Gewicht}} \\ \hline
 \textbf{Kosten (K)} & \textbf{1} & 3 & 3 & 2 & 8 & 7 & 0.353 \\ \hline
-\textbf{Verfügbarkeit (V)} &  1/3 & \textbf{1} & 2 &  1/3 & 5 & 6 & 0.155 \\ \hline
-\textbf{Datenzugriff (D)} &  1/3 &  1/2 & \textbf{1} &  1/4 & 7 & 5 & 0.122 \\ \hline
+\textbf{Verfügbarkeit (V)} & 1/3 & \textbf{1} & 2 & 1/3 & 5 & 6 & 0.155 \\ \hline
+\textbf{Datenzugriff (D)} & 1/3 & 1/2 & \textbf{1} & 1/4 & 7 & 5 & 0.122 \\ \hline
 \textbf{Speicherkapazität (S)} & 0.5 & 3 & 4 & \textbf{1} & 8 & 7 & 0.299 \\ \hline
-\textbf{Datenschutz (Ds)} &  1/8 &  1/5 &  1/7 &  1/8 & \textbf{1} &  1/4 & 0.026 \\ \hline
-\textbf{Technologie (T)} &  1/7 &  1/6 &  1/5 &  1/7 & 4 & \textbf{1} & 0.045 \\ \hline
-\textbf{Konsistenz Kennzahl} & 0.083  \\ \cline{1-2}
+\textbf{Datenschutz (Ds)} & 1/8 & 1/5 & 1/7 & 1/8 & \textbf{1} & 1/4 & 0.026 \\ \hline
+\textbf{Technologie (T)} & 1/7 & 1/6 & 1/5 & 1/7 & 4 & \textbf{1} & 0.045 \\ \hline
+\textbf{Konsistenz Kennzahl} & 0.083 \\ \cline{1-2}
 \end{tabular}
 \label{AHPTop}
 \end{table}
@@ -812,7 +812,7 @@ Die Kosten für Szenario-1 betragen gemäss Zusammenstellung total 884'772.44 CH
 Dell PowerConnect 8024 & CHF 14'732.00 & 2 & CHF 29'464.00 \\ \hline
 NetApp FAS2240-2 24*3TB & CHF 51'133.77 & 2 & CHF 102'267.54 \\ \hline
 Disk Shelf DS4243 24*3TB & CHF 40'251.65 & 10 & CHF 402'516.50 \\ \hline
-SnapMirror Lizenz & CHF 11'404.40 & 1 & CHF  11'404.40 \\ \hline
+SnapMirror Lizenz & CHF 11'404.40 & 1 & CHF 11'404.40 \\ \hline
 Rack Einrichtung & CHF 1'500.00 & 2 & CHF 3'000.00 \\ \hline 
 Multi-Site Einrichtung & CHF 1'500.00 & 1 & CHF 1'500.00 \\ \hline \hline
  \multicolumn{ 3}{r|}{\textbf{Total:}} & \textbf{CHF 550'152.44} \\ 
@@ -1274,10 +1274,10 @@ Alle Alternativen für das Szenario-2 unterstützen die Speicherung von Dateien 
 Bis auf Alternative \ref{Al-1}, welches kein Produkte für die geforderten Speicherkapazität hat, erfüllen alle die vorgegebene Speicherkapazität des Szenario-2. Die Alternative \ref{Al-1} wird somit für die weitere Evaluation für das Szenario-2 ausgeschlossen.
 
 \paragraph*{Untersuchung auf KO Kriterium \ref{KO-3}}
-Die günstigste Lösung ist die Alternative \refsoll{Al-5} \ref{Al-5}  mit Gesamtkosten von 450'637.17 CHF. Gemäss KO Kriterium \ref{KO-3} dürfen die Kosten von 1'351'911.15 CHF nicht überschritten werden. Die Alternative \ref{Al-2} (884’772.44 CHF), \ref{Al-3} (884’772.44 CHF) und \ref{Al-4} (916’965.00) überschreiten die maximalen Kosten nicht. Die Alternative \ref{Al-1} bietet keine Produkt für Szenario-2.
+Die günstigste Lösung ist die Alternative \refsoll{Al-5} \ref{Al-5} mit Gesamtkosten von 450'637.17 CHF. Gemäss KO Kriterium \ref{KO-3} dürfen die Kosten von 1'351'911.15 CHF nicht überschritten werden. Die Alternative \ref{Al-2} (884’772.44 CHF), \ref{Al-3} (884’772.44 CHF) und \ref{Al-4} (916’965.00) überschreiten die maximalen Kosten nicht. Die Alternative \ref{Al-1} bietet keine Produkt für Szenario-2.
 
 \section{Evaluation Soll Kriteren}
-Die Evaluation der Soll Kriterien und die dazugehörigen Begründungen für die Bewertung  sind detailliert im Anhang aufgeführt. Die Bewertungen der Vergleiche der Alternativen wurden in das Programm AHP Decision eingegeben und ausgewertet.
+Die Evaluation der Soll Kriterien und die dazugehörigen Begründungen für die Bewertung sind detailliert im Anhang aufgeführt. Die Bewertungen der Vergleiche der Alternativen wurden in das Programm AHP Decision eingegeben und ausgewertet.
 
 \subsection{Auswertung Szenario-1}
 
@@ -1299,7 +1299,7 @@ Rang & Alternativen & \multicolumn{1}{l|}{Priorität} \\ \hline
 
 \subsection{Auswertung Szenario-2}
 
-Wie in \reftab{EvalResultS2} zu entnehmen ist, gewinnt die Alternative \refsoll{Al-5} \ref{Al-5} mit 0.310  Punkte oder 31\% die Evaluation. Auf dem zweiten Platz folgt \refsoll{Al-3} \ref{Al-3} mit 0.236 Punkte oder 23.6\%, dicht gefolgt vom drittklassierten \refsoll{Al-4} \ref{Al-4} mit 0.36 Punkte oder 23.6 \%. Die wenigsten Punkte erhielt \refsoll{Al-2} \ref{Al-2} mit 0.218 Punkte oder 21.8 \%.
+Wie in \reftab{EvalResultS2} zu entnehmen ist, gewinnt die Alternative \refsoll{Al-5} \ref{Al-5} mit 0.310 Punkte oder 31\% die Evaluation. Auf dem zweiten Platz folgt \refsoll{Al-3} \ref{Al-3} mit 0.236 Punkte oder 23.6\%, dicht gefolgt vom drittklassierten \refsoll{Al-4} \ref{Al-4} mit 0.36 Punkte oder 23.6 \%. Die wenigsten Punkte erhielt \refsoll{Al-2} \ref{Al-2} mit 0.218 Punkte oder 21.8 \%.
 
 \begin{table}[htbp]
 \caption{Evalutation Resultat Szenario-2}
@@ -1307,7 +1307,7 @@ Wie in \reftab{EvalResultS2} zu entnehmen ist, gewinnt die Alternative \refsoll{
 \begin{tabular}{|c|l|r|}
 \hline
 Rang &Alternativen & \multicolumn{1}{l|}{Priorität} \\ \hline
-1 & Amazon S3 & 0.274  \\ \hline
+1 & Amazon S3 & 0.274 \\ \hline
 2 & NetApp iSCSI & 0.232 \\ \hline
 3 & OpenStack Object Storage & 0.199 \\ \hline
 4 & NetApp NFS & 0.295\\ \hline
@@ -1322,7 +1322,7 @@ NetApp iSCSI \ref{Al-3} hat in den Soll-Kriterien, Unterhaltskosten, Redundanz, 
 
 OpenStack Object Storage \ref{Al-4} hat in den Soll-Kriterien, Systemverfügbarkeit, standortübergreifend, Datenzugriff Skalierbarkeit, maximale Anzahl speicherbare Objekte, maximale Objektspeichergrösse grösser als 2 GiB, Datenintegrität, Selbstheilung von Objekten und Weiterentwicklung am meisten Punkte von allen Alternativen erhalten.
 
-NetApp NFS \ref{Al-2} hat in den Soll-Kriterien, Unterhaltskosten, Redundanz, Datensicherung,  Datenschutz, Marktverbreitung, Verfügbarkeit von Experten und ausgereifte Anwendung jeweils am meisten Punkte von allen Alternativen erhalten.
+NetApp NFS \ref{Al-2} hat in den Soll-Kriterien, Unterhaltskosten, Redundanz, Datensicherung, Datenschutz, Marktverbreitung, Verfügbarkeit von Experten und ausgereifte Anwendung jeweils am meisten Punkte von allen Alternativen erhalten.
 
 
 

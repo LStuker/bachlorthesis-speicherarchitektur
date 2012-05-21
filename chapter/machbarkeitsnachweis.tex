@@ -12,8 +12,8 @@ Die Installation ist nach der Empfehlung \url{http://swift.openstack.org/howto_i
 Die Verwendete Konfiguration ist für einen Prototyp geeignet für den Produktiven betrieb sind jedoch weitere Optimierungen in der Konfiguration notwendig.
 
 Als Betriebsystem für die den OpenStack Object Storage wurden das Linux Betriebsystem, Ubuntu Server 12.04 LTS von Distributor Canonical verwendet.
-  
-  
+ 
+ 
 \section{Anwendung mit Ruby API}
 Für den Ruby Zugriff auf das Speichersystem wurde das von Rackspace Quelloffene GEM Paket cloudfiles verwendet.
 
@@ -50,7 +50,7 @@ Im \reflisting{access_container} wird auf den Container 'pictures zugegriffen.
  => pictures 
  \end{lstlisting}
 
-Im \reflisting{create_object} wird eine Objekt Namens ursfischer\_web.png erstellt und mit write  die Datei ins Objekt geschrieben.
+Im \reflisting{create_object} wird eine Objekt Namens ursfischer\_web.png erstellt und mit write die Datei ins Objekt geschrieben.
 
 \begin{lstlisting}[label=create_object, language=Bash, caption=Erstellt ein Object und schreibt den Inhalt ins Objekt] 
   1.9.3p0 :032 > object = container.create_object 'ursfischer_web.png', false
@@ -64,4 +64,4 @@ Die Vorhandenen Objekte im Containers werden wie im \reflisting{create_object} d
 \begin{lstlisting}[label=list_objects, language=Bash, caption=Objekte des Containers auflisten]
  1.9.3p0 :031 > container.objects
  => ["ursfischer_web.png"] 
-\end{lstlisting}  
+\end{lstlisting} 

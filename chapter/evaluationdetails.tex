@@ -366,7 +366,7 @@ Beide Alternativen stellen die Verfügbarkeit der Daten über mindestens zwei St
 \textbf{Bewertet: 2}
 
 \paragraph*{\refsoll{Soll-2-3} \refsoll{Al-4} verglichen mit \refsoll{Al-5} (\ref{Soll-2-3} \ref{Al-4}/\ref{Al-5})}
-Beide Alternativen stellen die Verfügbarkeit der Daten über mindestens zwei Standorte zur Verfügung. Die genaue Standort übergreifende Architektur ist jedoch nicht bekannt.  Aus diesen Grund ist \refsoll{Al-3} \ref{Al-3} etwas besser zu bewerten als \refsoll{Al-5} \ref{Al-5}.
+Beide Alternativen stellen die Verfügbarkeit der Daten über mindestens zwei Standorte zur Verfügung. Die genaue Standort übergreifende Architektur ist jedoch nicht bekannt. Aus diesen Grund ist \refsoll{Al-3} \ref{Al-3} etwas besser zu bewerten als \refsoll{Al-5} \ref{Al-5}.
 
 \textbf{Bewertet: 2}
 
@@ -525,7 +525,7 @@ Beide Alternativen OpenStack Object Storage \ref{Al-4} und Amazon S3 \ref{Al-5} 
 %Simulatner Schreib Zugriff auf Objekte
 \paragraph*{\refsoll{Soll-3-5} \refsoll{Al-2} verglichen mit \refsoll{Al-3} (\ref{Soll-3-5} \ref{Al-2}/\ref{Al-3})}
 Beide Alternativen verhindern das gleichzeitige Schreiben auf eine Datei mit einem Locking verfahren. Dadurch wird sichergestellt, dass Dateien Konsistenz bleiben. Bei NFS bis Version 3 wird das Locking von NFS Client gehalten und beim nicht mehr gebrauch dem Server mitgeteilt, dass die Datei wieder zugänglich ist. Stürzt der Client während er das Locking hält ab, kann er dem Server die Freigabe der Datei nicht mitteilen und die Datei bleibt gesperrt. 
-Diese Schwäche der Sperrung der Dateien ist bei NetApp iSCSI mit GFS nicht vorhanden. Aus diesen Grund ist der simultane Schreibzugriff bei \refsoll{Al-2} \ref{Al-2} erheblich tiefer zu bewerten als bei  \refsoll{Al-3} \ref{Al-3}.
+Diese Schwäche der Sperrung der Dateien ist bei NetApp iSCSI mit GFS nicht vorhanden. Aus diesen Grund ist der simultane Schreibzugriff bei \refsoll{Al-2} \ref{Al-2} erheblich tiefer zu bewerten als bei \refsoll{Al-3} \ref{Al-3}.
 
 \textbf{Bewertet: 1/3}
 
@@ -977,7 +977,7 @@ Aus diesen Grund ist \refsoll{Al-2} \ref{Al-2} besser zu bewerten als \refsoll{A
  \textbf{Bewertet: 3}
 
 \paragraph*{\refsoll{Soll-6-5} \refsoll{Al-3} verglichen mit \refsoll{Al-4} (\ref{Soll-6-5} \ref{Al-3}/\ref{Al-4})}
-OpenStack  Object Storage ist eine relative junge Speicherlösung, zudem ist es eine Lösung die sich noch weiterentwickelt. Im Vergleich dazu ist iSCSI eine Technologie die schon lange erhältlich ist die Weiterentwicklung für iSCSI erfahren vor allem in Netzwerkbereich. Sie gilt deshalb als ausgereift und stabil.
+OpenStack Object Storage ist eine relative junge Speicherlösung, zudem ist es eine Lösung die sich noch weiterentwickelt. Im Vergleich dazu ist iSCSI eine Technologie die schon lange erhältlich ist die Weiterentwicklung für iSCSI erfahren vor allem in Netzwerkbereich. Sie gilt deshalb als ausgereift und stabil.
 Aus diesen Grund ist \refsoll{Al-3} \ref{Al-3} etwas bis sehr viel grosser zu bewerten als \refsoll{Al-4} \ref{Al-4}.
 
  \textbf{Bewertet: 6}
