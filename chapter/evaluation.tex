@@ -696,6 +696,12 @@ Es ist kein Produkt erhältlich, welches die Anforderungen der vorgeschlagenen S
 
 Wie in der Markt Analyse erwähnt, ist NetApp der führende Anbieter im mittleren (engl. midrange) und oberen (Highend) Bereich von NAS und Speicherlösungen. Für beide Szenarien wurde das Modell FAS2240-4 gewählt. 
 
+\begin{center}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/NetAppISCSI.png}
+\mycaption{figure}{\label{abb:NetAppISCSI} Interne Speicherarchitektur }
+\end{center}
+
+
 \subsubsection*{Verfügbarkeit}
 Die Netapp hat mehrere Mechanismen für die Sicherstellung der Datenverfügbarkeit. So werden die Festplatten mittels RAID-DB System zusammen gefasst. RAID-DP ist eines auf Basis von RAID-4 von NetApp weiterentwickeltes RAID. Bei RAID-DP wird jedoch im Unterschied zu RAID-4 eine zusätzliche Paritäts-Festplatte eingesetzt. Wie in \refabb{abb:RAID-DP} ersichtlich, gibt es ein horizontale Parität und eine diagonale Parität. Die diagonale Parität ist durch die Farben dargestellt und auf der Festplatte DP gespeichert. Die horizontale Parität ist auf der Festplatte P gespeichert. Die mit D bezeichneten Festplatten sind normale RAID Daten-Festplatten. Die doppelte Parität hat den Vorteil, dass die Verfügbarkeit des RAID erhöht wird. So können bei einem RAID-DP gleichzeitig zwei Festplatten zur gleichen Zeit ausfallen, ohne dass dies zu einem Datenverlust führt, was in der Praxis immer wieder mal vorkommt. Im Vergleich dazu kann RAID-4 oder RAID-5 nur den Ausfall einer Festplatte kompensieren. \cite{White2010}
 
@@ -715,6 +721,11 @@ Der Datenzugriff auf die NetApp kann per NFS, CIFS, iSCSI oder Fibre Channel erf
 Bei NFS ist es möglich, dass mehrere Server simultan eine Datei lesen. Das simultane Schreiben wird mit einem Sperr-Verfahren (engl. Locking) verhindert, damit die Dateikonsistenz gewährleistet bleibt.
 
 Bei iSCSI wird der simultane Lesezugriff auf Dateien mittels clusterfähigem Dateisystem und Volume-Manager wie dem Global Filesystem bzw. LVM sichergestellt. Der simultane Schreibzugriff wird vom Dateisystem mit einem Sperrverfahren verhindert.
+
+\begin{center}
+\includegraphics[width=\linewidth, keepaspectratio = true]{media/NetAppNFS.png}
+\mycaption{figure}{\label{abb:NetAppNFS} Interne Speicherarchitektur }
+\end{center}
 
 \subsubsection*{Speicherkapazität}
 Die maximale Grösse einer Datei bzw. eines Objekts wird bei NetApp durch die maximale Grösse des Aggregates bestimmt. Seit der Betriebsystem-Version OnTab 8.0 sind Aggregate von 100 TiB möglich.
@@ -1008,7 +1019,7 @@ Ein Server ausgerüstet mit Festplatten weist gemäss der \refeqlb{eqn:Speicherk
 
 \begin{equation}
 \mbox{Anzahl Festplatten} = \frac{918 \mathrm{\ TiB}}{2,728 \mathrm{\ TiB}} \approx 340 \mbox{\ (Auf 10 Server gerundet)}
-\label{eqn:AnzahlServerS2}
+\label{eqn:AnzahlFestplattenS2}
 \end{equation}
 
 Gemäss \refeqlb{eqn:AnzahlRackS2} wird ein ganzes Rack für den Einbau aller Komponenten benötigt. Der Rackplatz entspricht den Full Rack Angebot von Nine, welches 47 Rack-Höheneinheiten platz bietet. Der Preis pro halbes Rack beträgt 750 CHF pro Monat, plus 850 CHF für die einmalige Einrichtung des Racks durch Nine.
